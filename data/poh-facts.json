@@ -1,0 +1,233 @@
+{
+  "dimensions": {
+    "source": "Sling 2 POH Rev 2.8, section 1.4",
+    "span_m": 9.165,
+    "wing_area_m2": 11.845,
+    "mac_m": 1.339,
+    "overall_length_m": 6.675,
+    "fuselage_length_m": 5.77,
+    "overall_width_m": 1.18,
+    "height_m": 2.45,
+    "dihedral_deg": 5,
+    "wheel_track_m": 1.95,
+    "wheelbase_m": 1.41
+  },
+  "weights": {
+    "source": "Sling 2 POH Rev 2.8, section 2.8",
+    "maximum_takeoff_kg": 700,
+    "maximum_landing_kg": 700,
+    "total_baggage_kg": 35,
+    "forward_baggage_kg": 35,
+    "aft_baggage_kg": 25
+  },
+  "cg": {
+    "source": "Sling 2 POH Rev 2.8, section 2.9",
+    "forward_aft_of_datum_m": 1.635,
+    "rear_aft_of_datum_m": 1.808
+  },
+  "stations": {
+    "source": "Sling 2 POH Rev 2.8, section 6.5",
+    "occupants_arm_aft_m": 1.959,
+    "forward_baggage_arm_aft_m": 2.508,
+    "aft_baggage_arm_aft_m": 2.896,
+    "fuel_arm_aft_m": 1.511
+  },
+  "fuel": {
+    "source": "Sling 2 POH Rev 2.8, section 1.4",
+    "per_tank_l": 75,
+    "total_l": 150,
+    "usable_l": 146
+  },
+  "load_factors": {
+    "source": "Sling 2 POH Rev 2.8, section 2.7",
+    "clean_positive_g": 4,
+    "clean_negative_g": -2,
+    "flaps_positive_g": 2,
+    "flaps_negative_g": -1
+  },
+  "speeds": {
+    "source": "Sling 2 POH Rev 2.8, section 2.2",
+    "vne_kias": 135,
+    "vno_kias": 110,
+    "va_kias": 91,
+    "vfe_kias": 85,
+    "vh_kias": 116,
+    "vs_kias": 46,
+    "vso_kias": 42
+  },
+  "normal_speeds": {
+    "source": "Sling 2 POH Rev 2.8, section 4.2",
+    "vx_kias": 65,
+    "vy_kias": 74,
+    "rotation_kias": 40,
+    "liftoff_kias": 48,
+    "threshold_minimum_kias": 65
+  },
+  "flaps": {
+    "source": "Sling 2 POH Rev 2.8, section 7.5",
+    "detents_deg": [
+      0,
+      10,
+      20,
+      30
+    ]
+  },
+  "performance_conditions": {
+    "source": "Sling 2 POH Rev 2.8, section 5.1; Sling 2 POH Rev 2.8, section 9.4",
+    "gross_mass_kg": 700,
+    "description": "ISA, calm air; section 5 baseline has equal engine power, with applicability to 912 iS explained in section 9.4."
+  },
+  "ground_rolls": {
+    "source": "Sling 2 POH Rev 2.8, section 5.2",
+    "concrete_takeoff_m": 140,
+    "grass_takeoff_m": 160,
+    "concrete_landing_m": 90,
+    "grass_landing_m": 90,
+    "concrete_takeoff_15m_m": 280,
+    "grass_takeoff_15m_m": 300,
+    "concrete_landing_15m_m": 260,
+    "grass_landing_15m_m": 260
+  },
+  "climb": {
+    "source": "Sling 2 POH Rev 2.8, section 5.3",
+    "engine_rpm": 5500,
+    "ias_kt": 74,
+    "samples_ft_fpm": [
+      [
+        0,
+        700
+      ],
+      [
+        3000,
+        500
+      ],
+      [
+        6000,
+        420
+      ],
+      [
+        9000,
+        330
+      ]
+    ]
+  },
+  "cruise": {
+    "source": "Sling 2 POH Rev 2.8, section 5.4",
+    "rpm": [
+      4500,
+      4800,
+      5000,
+      5300,
+      5500
+    ],
+    "samples_ft_kias_ktas": [
+      [
+        100,
+        [
+          78,
+          93,
+          98,
+          103,
+          109
+        ],
+        [
+          79,
+          94,
+          99,
+          105,
+          111
+        ]
+      ],
+      [
+        3000,
+        [
+          69,
+          84,
+          95,
+          101,
+          105
+        ],
+        [
+          73,
+          90,
+          102,
+          107,
+          111
+        ]
+      ],
+      [
+        6000,
+        [
+          62,
+          77,
+          87,
+          95,
+          98
+        ],
+        [
+          70,
+          86,
+          97,
+          105,
+          112
+        ]
+      ],
+      [
+        9000,
+        [
+          60,
+          71,
+          84,
+          88,
+          91
+        ],
+        [
+          70,
+          85,
+          96,
+          102,
+          105
+        ]
+      ]
+    ]
+  },
+  "engine_limits": {
+    "source": "Sling 2 POH Rev 2.8, section 9.4.1",
+    "takeoff_w": 73500,
+    "continuous_w": 69000,
+    "takeoff_rpm": 5800,
+    "continuous_rpm": 5500,
+    "takeoff_time_s": 300,
+    "minimum_idle_rpm": 1400,
+    "egt_max_c": 950,
+    "cht_max_c": 150,
+    "oil_min_c": 50,
+    "oil_max_c": 130,
+    "oil_normal_c": [
+      90,
+      110
+    ],
+    "oil_pressure_idle_min_pa": 80000,
+    "oil_pressure_normal_pa": [
+      200000,
+      500000
+    ],
+    "oil_pressure_cold_max_pa": 700000,
+    "coolant_max_c": 120,
+    "fuel_pressure_pa": [
+      280000,
+      320000
+    ],
+    "manifold_inflight_max_c": 60,
+    "ambient_start_max_c": 50,
+    "oil_start_min_c": -20,
+    "negative_g_limit": -0.5,
+    "negative_g_duration_s": 5
+  },
+  "fuel_flow": {
+    "source": "Sling 2 POH Rev 2.8, section 9.4.9",
+    "takeoff_lph": 26.1,
+    "continuous_lph": 23.6,
+    "three_quarters_continuous_lph": 16.5
+  }
+}

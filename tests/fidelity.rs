@@ -1,0 +1,519 @@
+#![allow(clippy::indexing_slicing)]
+use flightcraft_aero::{coefficients, propulsion};
+use flightcraft_sim::{Controls, Readout, Sim, Start};
+use sling2_fidelity::*;
+
+fn pitch_control(sim: &mut Sim, pitch: f64, throttle: f64, flaps: f64, brake: f64) {
+    let r = sim.readout();
+    let [_, q, _] = sim.state().angular_rate_rps;
+    let c = coefficients(sim.aircraft(), r.alpha_rad, flaps);
+    let gain = if brake > 0. { 0.3 } else { 2.5 };
+    let elevator = -c.pitch + gain * (pitch - r.pitch_rad) - 0.8 * q;
+    sim.set_controls(Controls {
+        elevator,
+        throttle,
+        flaps,
+        brake,
+        ..Default::default()
+    });
+}
+fn rpm_throttle(sim: &Sim, rpm: f64) -> f64 {
+    let r = sim.readout();
+    let rho = flightcraft_world::atmosphere(r.altitude_msl_m).density_kg_m3;
+    let mut lo = 0.;
+    let mut hi = 1.;
+    for _ in 0..32 {
+        let t = (lo + hi) * 0.5;
+        let n = propulsion(
+            sim.aircraft(),
+            r.true_airspeed_mps * libm::cos(r.alpha_rad),
+            t,
+            rho,
+        )
+        .1 * 2.43;
+        if n > rpm {
+            hi = t;
+        } else {
+            lo = t;
+        }
+    }
+    (lo + hi) * 0.5
+}
+fn cruise(ft: f64, rpm: f64, target: f64) -> Result<Readout, Error> {
+    let c = gross_configuration()?;
+    let height = ft * 0.3048;
+    let mut sim = flight(&c, height, target * KNOT)?;
+    // RPM is a measured power-setting proxy for this fixed-pitch installation.
+    // The pilot holds height with pitch and adjusts throttle to hold engine RPM.
+    let mut vs_integral = 0.;
+    for _ in 0..1800 {
+        let r = sim.readout();
+        let [_, _, down] = sim.state().velocity_mps;
+        vs_integral = (vs_integral + (height - r.altitude_msl_m) * 0.05 * 0.001).clamp(-0.03, 0.03);
+        let gamma = libm::atan2(-down, r.ground_speed_mps.max(1.));
+        let pitch = r.alpha_rad + gamma + 0.012 * (height - r.altitude_msl_m)
+            - 0.10 * r.vertical_speed_mps
+            + vs_integral;
+        let throttle = rpm_throttle(&sim, rpm);
+        pitch_control(&mut sim, pitch.clamp(-0.1, 0.35), throttle, 0., 0.);
+        sim.step(6);
+    }
+    Ok(sim.readout())
+}
+fn climb(ft: f64, ias: f64) -> Result<Readout, Error> {
+    let c = gross_configuration()?;
+    let height = (ft * 0.3048).max(30.);
+    let rho = flightcraft_world::atmosphere(height).density_kg_m3;
+    let speed = ias * KNOT / libm::sqrt(rho / 1.225);
+    let mut sim = flight(&c, height, speed)?;
+    for _ in 0..800 {
+        let r = sim.readout();
+        let rho = flightcraft_world::atmosphere(r.altitude_msl_m).density_kg_m3;
+        let target_speed = ias * KNOT / libm::sqrt(rho / 1.225);
+        let mut low = -0.05;
+        let mut high = 0.26;
+        for _ in 0..30 {
+            let alpha = (low + high) * 0.5;
+            let c = coefficients(sim.aircraft(), alpha, 0.);
+            let n = 5500. / 2.43 / 60.;
+            let d = sim.aircraft().propulsion.prop_diameter_m;
+            let j = target_speed * libm::cos(alpha) / (n * d);
+            let thrust =
+                flightcraft_aero::interpolate(&sim.aircraft().propulsion.prop_ct.points, j)
+                    * rho
+                    * n
+                    * n
+                    * libm::pow(d, 4.);
+            let dynamic =
+                0.5 * rho * target_speed * target_speed * sim.aircraft().geometry.wing_area_m2;
+            let weight = sim.aircraft().mass.mass_kg * G;
+            let gamma = libm::asin(
+                ((thrust * libm::cos(alpha) - dynamic * c.drag) / weight).clamp(-0.5, 0.5),
+            );
+            if dynamic * c.lift + thrust * libm::sin(alpha) > weight * libm::cos(gamma) {
+                high = alpha;
+            } else {
+                low = alpha;
+            }
+        }
+        let alpha = (low + high) * 0.5;
+        let coefficient = coefficients(sim.aircraft(), alpha, 0.);
+        let throttle = rpm_throttle(&sim, 5500.);
+        let thrust = propulsion(
+            sim.aircraft(),
+            r.true_airspeed_mps * libm::cos(alpha),
+            throttle,
+            rho,
+        )
+        .0;
+        let dynamic =
+            0.5 * rho * target_speed * target_speed * sim.aircraft().geometry.wing_area_m2;
+        let gamma = libm::asin(
+            ((thrust * libm::cos(alpha) - dynamic * coefficient.drag)
+                / (sim.aircraft().mass.mass_kg * G))
+                .clamp(-0.5, 0.5),
+        );
+        let pitch = alpha + gamma + 0.04 * (r.indicated_airspeed_mps - ias * KNOT);
+        pitch_control(&mut sim, pitch.clamp(-0.1, 0.4), throttle, 0., 0.);
+        sim.step(6);
+    }
+    Ok(sim.readout())
+}
+
+#[test]
+fn all_twenty_poh_cruise_settings() -> Result<(), Error> {
+    let c = gross_configuration()?;
+    assert_eq!(c.weight_balance.mass_kg, 700.);
+    for (ft, targets) in [
+        (100., [79., 94., 99., 105., 111.]),
+        (3000., [73., 90., 102., 107., 111.]),
+        (6000., [70., 86., 97., 105., 112.]),
+        (9000., [70., 85., 96., 102., 105.]),
+    ] {
+        for (rpm, target) in [4500., 4800., 5000., 5300., 5500.].into_iter().zip(targets) {
+            let r = cruise(ft, rpm, target)?;
+            println!(
+                "cruise {ft}ft {rpm}rpm: {:.2} vs {target} KTAS, {:.1}% error, height {:.1}, vs {:.3}",
+                r.true_airspeed_mps / KNOT,
+                100. * (r.true_airspeed_mps / KNOT / target - 1.),
+                r.altitude_msl_m,
+                r.vertical_speed_mps
+            );
+            assert!(!r.crashed);
+            assert!(
+                (r.true_airspeed_mps / KNOT / target - 1.).abs() <= 0.05,
+                "cruise tolerance at {ft} ft / {rpm} RPM"
+            );
+            assert!((r.engine_rpm - rpm).abs() < 15., "RPM setting not achieved");
+            assert!(
+                (r.altitude_msl_m - ft * 0.3048).abs() < 3.,
+                "cruise not level"
+            );
+            assert!(r.vertical_speed_mps.abs() < 0.1, "cruise not settled");
+        }
+    }
+    Ok(())
+}
+#[test]
+fn vy_climb_and_vx() -> Result<(), Error> {
+    for (ft, target) in [(0., 700.), (3000., 500.), (6000., 420.), (9000., 330.)] {
+        let r = climb(ft, 74.)?;
+        println!(
+            "climb {ft}ft IAS {:.1} roc {:.1}fpm alt {:.1}",
+            r.indicated_airspeed_mps / KNOT,
+            r.vertical_speed_mps / 0.00508,
+            r.altitude_msl_m
+        );
+        assert!(!r.crashed);
+        assert!(
+            (r.indicated_airspeed_mps / KNOT - 74.).abs() < 0.5,
+            "climb pilot failed to hold Vy"
+        );
+        assert!(
+            (r.vertical_speed_mps / 0.00508 / target - 1.).abs() <= 0.1,
+            "climb rate tolerance at {ft} ft"
+        );
+    }
+    let mut best = (0., f64::NEG_INFINITY);
+    // Rate is measured from the rigid-body trajectory at the commanded IAS.
+    for kt in [55., 60., 65., 70., 74., 78., 82.] {
+        let r = climb(0., kt)?;
+        println!(
+            "sweep {kt}kt IAS {:.1} roc {:.1}fpm angle {:.3}",
+            r.indicated_airspeed_mps / KNOT,
+            r.vertical_speed_mps / 0.00508,
+            r.vertical_speed_mps / r.true_airspeed_mps
+        );
+        let angle = r.vertical_speed_mps / r.true_airspeed_mps;
+        if angle > best.1 {
+            best = (r.indicated_airspeed_mps / KNOT, angle);
+        }
+        assert!(!r.crashed);
+    }
+    assert!(
+        (best.0 / 65. - 1.).abs() <= 0.1,
+        "Vx measured {} kt",
+        best.0
+    );
+    Ok(())
+}
+#[test]
+fn clean_and_full_flap_stalls() -> Result<(), Error> {
+    for flaps in [0., 1.] {
+        let c = gross_configuration()?;
+        let rho = flightcraft_world::atmosphere(1000.).density_kg_m3;
+        let mut sim = flight(&c, 1000., 58. * KNOT / libm::sqrt(rho / 1.225))?;
+        let mut found = false;
+        for _ in 0..5000 {
+            let r = sim.readout();
+            let gamma =
+                libm::asin((r.vertical_speed_mps / r.true_airspeed_mps.max(1.)).clamp(-0.5, 0.5));
+            let pitch = (r.alpha_rad + gamma - 0.06 * r.vertical_speed_mps).clamp(-0.1, 0.45);
+            pitch_control(&mut sim, pitch, 0., flaps, 0.);
+            sim.step(6);
+            if r.alpha_rad
+                > if flaps == 0. {
+                    16_f64.to_radians()
+                } else {
+                    15_f64.to_radians()
+                }
+            {
+                println!(
+                    "stall flap {flaps} {:.2} KIAS vs {:.2}, height {}",
+                    r.indicated_airspeed_mps / KNOT,
+                    r.vertical_speed_mps,
+                    r.altitude_msl_m
+                );
+                let target = if flaps == 0. { 46. } else { 42. };
+                assert!(
+                    (r.indicated_airspeed_mps / KNOT - target).abs() <= 2.,
+                    "stall tolerance"
+                );
+                assert!(!r.crashed);
+                found = true;
+                break;
+            }
+            assert!(!r.crashed, "stall flight impacted");
+        }
+        assert!(found, "stall not reached");
+    }
+    Ok(())
+}
+fn takeoff_roll(grass: bool) -> Result<f64, Error> {
+    let c = gross_configuration()?;
+    let start_kind = Start::RunwayAt {
+        threshold_ned_m: [0., if grass { 50. } else { 0. }, 0.],
+        heading_rad: 0.,
+    };
+    let mut sim = Sim::new_with_aircraft(&start_kind, c.aircraft.clone())?;
+    sim.configure_systems(&c)?;
+    sim.step(360);
+    let start = sim.state().position_m[0];
+    for _ in 0..2000 {
+        let r = sim.readout();
+        let pitch = if r.indicated_airspeed_mps > 40. * KNOT {
+            0.23
+        } else {
+            0.
+        };
+        pitch_control(&mut sim, pitch, 1., 1. / 3., 0.);
+        sim.step(2);
+        let r = sim.readout();
+        assert!(!r.crashed, "takeoff impact");
+        if !r.on_ground {
+            return Ok(sim.state().position_m[0] - start);
+        }
+    }
+    Err("takeoff failed to become airborne".into())
+}
+fn landing_roll(grass: bool) -> Result<f64, Error> {
+    let c = gross_configuration()?;
+    let start = Start::AirAt {
+        position_m: [0., if grass { 50. } else { 0. }, -15.],
+        airspeed_mps: 65. * KNOT,
+        heading_rad: 0.,
+    };
+    let mut sim = Sim::new_with_aircraft(&start, c.aircraft.clone())?;
+    sim.configure_systems(&c)?;
+    let mut touchdown = None;
+    for _ in 0..5000 {
+        let r = sim.readout();
+        let target_vs = if r.height_agl_m > 1.5 { -1.5 } else { -0.25 };
+        let gamma =
+            libm::asin((r.vertical_speed_mps / r.true_airspeed_mps.max(1.)).clamp(-0.5, 0.5));
+        let pitch =
+            (r.alpha_rad + gamma + 0.05 * (target_vs - r.vertical_speed_mps)).clamp(-0.1, 0.28);
+        pitch_control(
+            &mut sim,
+            if touchdown.is_some() { 0. } else { pitch },
+            0.,
+            1.,
+            if touchdown.is_some() { 1. } else { 0. },
+        );
+        sim.step(2);
+        let r = sim.readout();
+        assert!(!r.crashed, "landing impact");
+        if r.on_ground && touchdown.is_none() {
+            touchdown = Some(sim.state().position_m[0]);
+        }
+        if let Some(start) = touchdown
+            && r.ground_speed_mps < 0.2
+        {
+            return Ok(sim.state().position_m[0] - start);
+        }
+    }
+    Err("landing did not stop".into())
+}
+#[test]
+fn concrete_and_grass_ground_rolls() -> Result<(), Error> {
+    for (grass, target) in [(false, 140.), (true, 160.)] {
+        let distance = takeoff_roll(grass)?;
+        println!("takeoff grass={grass}: {distance:.2}m (target {target}m)");
+        assert!(
+            (distance / target - 1.).abs() <= 0.1,
+            "takeoff ground-roll tolerance"
+        );
+        let distance = landing_roll(grass)?;
+        println!("landing grass={grass}: {distance:.2}m (target 90m)");
+        assert!(
+            (distance / 90. - 1.).abs() <= 0.1,
+            "landing ground-roll tolerance"
+        );
+    }
+    Ok(())
+}
+
+#[test]
+fn published_cg_edges_and_mass_limits() -> Result<(), Error> {
+    use flightcraft_aero::Load;
+    let c = configuration()?;
+    let mut v = c.variant;
+    // Probe the actual polygon calculation independently of loading-arm combinations.
+    for mass in [370., 500., 700.] {
+        for (arm, inside) in [
+            (1.6349, false),
+            (1.635, true),
+            (1.72, true),
+            (1.808, true),
+            (1.8081, false),
+        ] {
+            v.empty_mass.mass_kg = mass;
+            v.empty_mass.cg_m = [-arm, 0., 0.];
+            let b = v.weight_balance(&Load::default())?;
+            assert_eq!(b.in_limits, inside, "mass {mass}, aft arm {arm}");
+        }
+    }
+    for mass in [369.9, 700.1] {
+        v.empty_mass.mass_kg = mass;
+        v.empty_mass.cg_m = [-1.72, 0., 0.];
+        assert!(!v.weight_balance(&Load::default())?.in_limits);
+    }
+    Ok(())
+}
+
+#[test]
+fn every_layer_number_has_provenance() -> Result<(), Error> {
+    use serde_json::Value;
+    let sources: Value = serde_json::from_str(include_str!("../data/sources.json"))?;
+    let documents = [
+        ("family.json", include_str!("../family.json")),
+        ("variant.json", include_str!("../variant.json")),
+        ("engine.json", include_str!("../engine.json")),
+        ("systems.json", include_str!("../systems.json")),
+        ("panel.json", include_str!("../panel.json")),
+        ("aircraft.json", include_str!("../aircraft.json")),
+    ];
+    fn walk(v: &Value, pointer: &str, ledger: &Value) {
+        match v {
+            Value::Number(_) => {
+                assert_eq!(&ledger[pointer]["value"], v, "stale source at {pointer}");
+                assert!(
+                    ledger[pointer]["source"]
+                        .as_str()
+                        .is_some_and(|s| !s.is_empty()),
+                    "missing source at {pointer}"
+                );
+            }
+            Value::Object(map) => {
+                for (k, v) in map {
+                    walk(v, &format!("{pointer}/{k}"), ledger);
+                }
+            }
+            Value::Array(array) => {
+                for (i, v) in array.iter().enumerate() {
+                    walk(v, &format!("{pointer}/{i}"), ledger);
+                }
+            }
+            _ => {}
+        }
+    }
+    for (file, text) in documents {
+        walk(&serde_json::from_str(text)?, "", &sources[file]);
+    }
+    Ok(())
+}
+
+#[test]
+fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
+    let c = configuration()?;
+    let p = c.panel.equipment.ok_or("missing equipment")?;
+    let scale = 0.77;
+    for (id, x, y, w, h) in [
+        ("left_display", 248., 308., 424., 308.),
+        ("right_display", 1062., 308., 424., 308.),
+        ("navigator", 745., 382., 235., 98.),
+        ("autopilot", 742., 485., 243., 77.),
+        ("standby", 798., 238., 132., 137.),
+    ] {
+        let e = p
+            .elements
+            .iter()
+            .find(|e| e.id == id)
+            .ok_or("missing unit")?;
+        for (actual, target) in e.position.into_iter().chain(e.size).zip([x, y, w, h]) {
+            assert!((actual / scale - target).abs() < 0.01, "{id} moved");
+        }
+    }
+    let slots: serde_json::Value = serde_json::from_str(include_str!("../data/skin-slots.json"))?;
+    for slot in slots["slots"].as_array().ok_or("slots not array")? {
+        let e = p
+            .elements
+            .iter()
+            .find(|e| Some(e.id.as_str()) == slot["id"].as_str())
+            .ok_or("slot missing")?;
+        assert_eq!(serde_json::to_value(e.position)?, slot["position_mm"]);
+        assert_eq!(serde_json::to_value(e.size)?, slot["size_mm"]);
+    }
+    Ok(())
+}
+
+#[test]
+fn electronic_engine_pumps_key_breakers_and_selector() -> Result<(), Error> {
+    use flightcraft_sim::modern::{KeyPosition, Lane, ModernSetting, Pump};
+    use flightcraft_sim::systems::{FuelSelector, SystemSetting};
+    let c = configuration()?;
+    let mut sim = flight(&c, 1200., 50.)?;
+    let action = |sim: &mut Sim, setting| sim.set_systems(SystemSetting::Equipment { setting });
+    action(
+        &mut sim,
+        ModernSetting::Lane {
+            lane: Lane::A,
+            on: false,
+        },
+    )?;
+    sim.step(1);
+    assert!(sim.systems().engine_running);
+    assert!((sim.systems().engine_power_fraction - 0.98).abs() < 1e-9);
+    action(
+        &mut sim,
+        ModernSetting::Lane {
+            lane: Lane::B,
+            on: false,
+        },
+    )?;
+    sim.step(1);
+    assert!(!sim.systems().engine_running);
+    for lane in [Lane::A, Lane::B] {
+        action(&mut sim, ModernSetting::Lane { lane, on: true })?;
+    }
+    action(
+        &mut sim,
+        ModernSetting::Key {
+            position: KeyPosition::Start,
+        },
+    )?;
+    sim.step(260);
+    action(
+        &mut sim,
+        ModernSetting::Key {
+            position: KeyPosition::On,
+        },
+    )?;
+    assert!(sim.systems().engine_running);
+    action(
+        &mut sim,
+        ModernSetting::Pump {
+            pump: Pump::One,
+            on: false,
+        },
+    )?;
+    sim.step(1);
+    assert!(sim.systems().engine_running);
+    sim.set_systems(SystemSetting::Breaker {
+        load: "pump_2".into(),
+        closed: false,
+    })?;
+    sim.step(1);
+    assert!(!sim.systems().engine_running);
+    sim.set_systems(SystemSetting::Breaker {
+        load: "pump_2".into(),
+        closed: true,
+    })?;
+    action(
+        &mut sim,
+        ModernSetting::Key {
+            position: KeyPosition::Start,
+        },
+    )?;
+    sim.step(260);
+    action(
+        &mut sim,
+        ModernSetting::Key {
+            position: KeyPosition::On,
+        },
+    )?;
+    assert!(sim.systems().engine_running);
+    sim.set_systems(SystemSetting::FuelSelector {
+        position: FuelSelector::Off,
+    })?;
+    sim.step(1);
+    assert!(!sim.systems().engine_running);
+    let modern = sim
+        .systems()
+        .modern
+        .as_ref()
+        .ok_or("missing modern controls")?;
+    assert!(modern.master_warning);
+    assert!((modern.propeller_rpm * 2.43 - sim.readout().engine_rpm).abs() < 1e-6);
+    Ok(())
+}

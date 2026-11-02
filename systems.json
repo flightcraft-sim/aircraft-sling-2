@@ -1,0 +1,410 @@
+{
+  "kind": "systems",
+  "format_version": 2,
+  "identity": {
+    "id": "sling2-systems",
+    "display_name": "Sling 2 electronic systems",
+    "description": "Sling 2 POH Rev 2.8, section 1.4; Sling 2 POH Rev 2.8, section 9.4.1; Sling 2 POH Rev 2.8, section 9.4.2. Electrical dynamics, sensors, backups, and recovery dynamics are estimates.",
+    "author": "FlightCraft contributors"
+  },
+  "installed": [
+    "electrical",
+    "pitot_static",
+    "fuel",
+    "engine_operation",
+    "glass_suite"
+  ],
+  "definition": {
+    "electrical": {
+      "battery_capacity_ah": 18,
+      "battery_voltage": 12.6,
+      "alternator_voltage": 14.2,
+      "alternator_amps": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1400,
+            8
+          ],
+          [
+            2500,
+            25
+          ],
+          [
+            5500,
+            40
+          ],
+          [
+            5800,
+            40
+          ]
+        ],
+        "source": "estimate: lumped electrical supply; not the dual-generator wiring of an individual installation."
+      },
+      "loads": [
+        {
+          "id": "lane_a",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0.5
+        },
+        {
+          "id": "lane_b",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0.5
+        },
+        {
+          "id": "pump_1",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 3,
+          "breaker_amps": 10,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "pump_2",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 3,
+          "breaker_amps": 10,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "touch_left",
+          "bus": "main",
+          "switch": "avionics",
+          "amps": 2,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "touch_right",
+          "bus": "main",
+          "switch": "avionics",
+          "amps": 2,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "glass_standby",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 0.5,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0.5
+        },
+        {
+          "id": "glass_ahrs",
+          "bus": "essential",
+          "switch": "avionics",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0.25
+        },
+        {
+          "id": "avionics",
+          "bus": "main",
+          "switch": "avionics",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "navigator",
+          "bus": "main",
+          "switch": "avionics",
+          "amps": 2,
+          "breaker_amps": 10,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "adc",
+          "bus": "essential",
+          "switch": "avionics",
+          "amps": 0.5,
+          "breaker_amps": 2,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "ahrs2",
+          "bus": "essential",
+          "switch": "avionics",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0.25
+        },
+        {
+          "id": "efis_backup",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 1,
+          "breaker_amps": 10,
+          "backup_capacity_ah": 0.5
+        },
+        {
+          "id": "standby_aux",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 0.3,
+          "breaker_amps": 2,
+          "backup_capacity_ah": 0.5
+        },
+        {
+          "id": "ap",
+          "bus": "main",
+          "switch": "avionics",
+          "amps": 2,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "main_bus",
+          "bus": "main",
+          "switch": "always",
+          "amps": 0.1,
+          "breaker_amps": 30,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "backup_bus",
+          "bus": "essential",
+          "switch": "always",
+          "amps": 0.1,
+          "breaker_amps": 30,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "beacon",
+          "bus": "main",
+          "switch": "beacon",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "landing",
+          "bus": "main",
+          "switch": "landing",
+          "amps": 5,
+          "breaker_amps": 10,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "taxi",
+          "bus": "main",
+          "switch": "taxi",
+          "amps": 5,
+          "breaker_amps": 10,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "nav",
+          "bus": "main",
+          "switch": "nav",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "strobe",
+          "bus": "main",
+          "switch": "nav",
+          "amps": 3,
+          "breaker_amps": 7,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "usb",
+          "bus": "main",
+          "switch": "always",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "aux",
+          "bus": "main",
+          "switch": "always",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "cabin",
+          "bus": "main",
+          "switch": "always",
+          "amps": 0.5,
+          "breaker_amps": 2,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "flaps",
+          "bus": "main",
+          "switch": "always",
+          "amps": 1,
+          "breaker_amps": 10,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "efis_aux",
+          "bus": "main",
+          "switch": "avionics",
+          "amps": 1,
+          "breaker_amps": 5,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "start_relay",
+          "bus": "main",
+          "switch": "always",
+          "amps": 0.1,
+          "breaker_amps": 2,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "pitot_heat",
+          "bus": "main",
+          "switch": "pitot_heat",
+          "amps": 8,
+          "breaker_amps": 15,
+          "backup_capacity_ah": 0
+        }
+      ]
+    },
+    "pitot_static": {
+      "position_error_pa": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "source": "estimate: ideal calibrated static source."
+      },
+      "alternate_static_error_pa": -70,
+      "vsi_lag_s": 5
+    },
+    "tanks": [
+      {
+        "id": "left",
+        "wing": "left",
+        "station": "fuel_left",
+        "capacity_kg": 54,
+        "unusable_kg": 1.44,
+        "gauge_lag_s": 8,
+        "gauge_bias_kg": 0
+      },
+      {
+        "id": "right",
+        "wing": "right",
+        "station": "fuel_right",
+        "capacity_kg": 54,
+        "unusable_kg": 1.44,
+        "gauge_lag_s": 8,
+        "gauge_bias_kg": 0
+      }
+    ],
+    "engine": {
+      "single_mag_power_fraction": 0.85,
+      "carb_heat_power_fraction": 0.9,
+      "carb_ice_rate": {
+        "points": [
+          [
+            -60,
+            0
+          ],
+          [
+            60,
+            0
+          ]
+        ],
+        "source": "estimate: unused for injection."
+      },
+      "carb_ice_humidity": {
+        "points": [
+          [
+            0,
+            0
+          ],
+          [
+            1,
+            0
+          ]
+        ],
+        "source": "estimate: unused for injection."
+      },
+      "carb_heat_clear_rate": 0.006,
+      "egt_lag_s": 8,
+      "cht_lag_s": 90,
+      "start_time_s": 2,
+      "starter_amps": 100
+    },
+    "electric_gyro_load": "glass_standby",
+    "modern": {
+      "selector_both": false,
+      "parachute": {
+        "hold_s": 2,
+        "deployment_delay_s": 0.5,
+        "inflation_s": 2,
+        "descent_rate_mps": 7,
+        "hanging_pitch_rad": -0.3
+      },
+      "annunciations": [
+        {
+          "source": "low_voltage",
+          "severity": "caution",
+          "label": "LOW VOLTAGE",
+          "threshold": 12
+        },
+        {
+          "source": "low_fuel_pressure",
+          "severity": "warning",
+          "label": "FUEL PRESSURE",
+          "threshold": 280000
+        },
+        {
+          "source": "lane_fault",
+          "severity": "caution",
+          "label": "LANE FAULT",
+          "threshold": 0
+        },
+        {
+          "source": "high_coolant_temperature",
+          "severity": "warning",
+          "label": "COOLANT",
+          "threshold": 120
+        },
+        {
+          "source": "door_open",
+          "severity": "caution",
+          "label": "CANOPY",
+          "threshold": 0
+        },
+        {
+          "source": "parachute_armed",
+          "severity": "caution",
+          "label": "CHUTE ARMED",
+          "threshold": 0
+        },
+        {
+          "source": "engine_shutdown",
+          "severity": "warning",
+          "label": "SHUT DOWN ENGINE",
+          "threshold": 0
+        }
+      ]
+    }
+  }
+}

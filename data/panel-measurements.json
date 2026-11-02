@@ -1,0 +1,754 @@
+{
+  "source": "Supplied measured panel specification; coordinates in a 1728 by 968 reference frame. No reference imagery is distributed.",
+  "mm_per_px": 0.77,
+  "elements": [
+    {
+      "id": "left_display",
+      "centre_px": [
+        460,
+        462
+      ],
+      "size_px": [
+        424,
+        308
+      ]
+    },
+    {
+      "id": "right_display",
+      "centre_px": [
+        1274,
+        462
+      ],
+      "size_px": [
+        424,
+        308
+      ]
+    },
+    {
+      "id": "standby",
+      "centre_px": [
+        864,
+        306.5
+      ],
+      "size_px": [
+        132,
+        137
+      ]
+    },
+    {
+      "id": "navigator",
+      "centre_px": [
+        862.5,
+        431
+      ],
+      "size_px": [
+        235,
+        98
+      ]
+    },
+    {
+      "id": "autopilot",
+      "centre_px": [
+        863.5,
+        523.5
+      ],
+      "size_px": [
+        243,
+        77
+      ]
+    },
+    {
+      "id": "caution",
+      "centre_px": [
+        613,
+        287
+      ],
+      "size_px": [
+        40,
+        40
+      ]
+    },
+    {
+      "id": "warning",
+      "centre_px": [
+        653,
+        287
+      ],
+      "size_px": [
+        40,
+        40
+      ]
+    },
+    {
+      "id": "seat_left",
+      "centre_px": [
+        420,
+        298
+      ],
+      "size_px": [
+        125,
+        12
+      ]
+    },
+    {
+      "id": "registration",
+      "centre_px": [
+        538,
+        297
+      ],
+      "size_px": [
+        75,
+        12
+      ]
+    },
+    {
+      "id": "spins",
+      "centre_px": [
+        1205,
+        298
+      ],
+      "size_px": [
+        145,
+        12
+      ]
+    },
+    {
+      "id": "seat_right",
+      "centre_px": [
+        1320,
+        298
+      ],
+      "size_px": [
+        120,
+        12
+      ]
+    },
+    {
+      "id": "lane_label",
+      "centre_px": [
+        198,
+        372
+      ],
+      "size_px": [
+        40,
+        12
+      ]
+    },
+    {
+      "id": "essentials",
+      "centre_px": [
+        735,
+        297
+      ],
+      "size_px": [
+        108,
+        12
+      ]
+    },
+    {
+      "id": "avionics_bracket",
+      "centre_px": [
+        1000,
+        297
+      ],
+      "size_px": [
+        108,
+        12
+      ]
+    },
+    {
+      "id": "breaker_landing",
+      "centre_px": [
+        692,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_taxi",
+      "centre_px": [
+        719,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_nav",
+      "centre_px": [
+        745,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_strobe",
+      "centre_px": [
+        771,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_usb",
+      "centre_px": [
+        692,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_aux",
+      "centre_px": [
+        719,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_cabin",
+      "centre_px": [
+        745,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_flaps",
+      "centre_px": [
+        771,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_efis_aux",
+      "centre_px": [
+        692,
+        392
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_start_relay",
+      "centre_px": [
+        719,
+        392
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_pitot_heat",
+      "centre_px": [
+        692,
+        427
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_touch_left",
+      "centre_px": [
+        960,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_touch_right",
+      "centre_px": [
+        987,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_glass_standby",
+      "centre_px": [
+        1013,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_adc",
+      "centre_px": [
+        1040,
+        322
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_navigator",
+      "centre_px": [
+        960,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_efis_backup",
+      "centre_px": [
+        987,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_glass_ahrs",
+      "centre_px": [
+        1013,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_ahrs2",
+      "centre_px": [
+        1040,
+        356
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_standby_aux",
+      "centre_px": [
+        1013,
+        392
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_ap",
+      "centre_px": [
+        1040,
+        392
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_main_bus",
+      "centre_px": [
+        1513,
+        382
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "breaker_backup_bus",
+      "centre_px": [
+        1513,
+        454
+      ],
+      "size_px": [
+        26,
+        32
+      ]
+    },
+    {
+      "id": "lane_a",
+      "centre_px": [
+        178,
+        400
+      ],
+      "size_px": [
+        30,
+        45
+      ]
+    },
+    {
+      "id": "lane_a_guard_m1",
+      "centre_px": [
+        161,
+        403
+      ],
+      "size_px": [
+        4,
+        43
+      ]
+    },
+    {
+      "id": "lane_a_guard_1",
+      "centre_px": [
+        195,
+        403
+      ],
+      "size_px": [
+        4,
+        43
+      ]
+    },
+    {
+      "id": "lane_a_lamp",
+      "centre_px": [
+        178,
+        382
+      ],
+      "size_px": [
+        22,
+        22
+      ]
+    },
+    {
+      "id": "lane_b",
+      "centre_px": [
+        218,
+        400
+      ],
+      "size_px": [
+        30,
+        45
+      ]
+    },
+    {
+      "id": "lane_b_guard_m1",
+      "centre_px": [
+        201,
+        403
+      ],
+      "size_px": [
+        4,
+        43
+      ]
+    },
+    {
+      "id": "lane_b_guard_1",
+      "centre_px": [
+        235,
+        403
+      ],
+      "size_px": [
+        4,
+        43
+      ]
+    },
+    {
+      "id": "lane_b_lamp",
+      "centre_px": [
+        218,
+        382
+      ],
+      "size_px": [
+        22,
+        22
+      ]
+    },
+    {
+      "id": "ignition",
+      "centre_px": [
+        190,
+        472
+      ],
+      "size_px": [
+        58,
+        58
+      ]
+    },
+    {
+      "id": "vent_left",
+      "centre_px": [
+        145,
+        560
+      ],
+      "size_px": [
+        122,
+        122
+      ]
+    },
+    {
+      "id": "vent_right",
+      "centre_px": [
+        1575,
+        560
+      ],
+      "size_px": [
+        122,
+        122
+      ]
+    },
+    {
+      "id": "elt",
+      "centre_px": [
+        1565,
+        450
+      ],
+      "size_px": [
+        40,
+        85
+      ]
+    },
+    {
+      "id": "backlight",
+      "centre_px": [
+        707,
+        532
+      ],
+      "size_px": [
+        38,
+        45
+      ]
+    },
+    {
+      "id": "cabin_heat",
+      "centre_px": [
+        1022,
+        470
+      ],
+      "size_px": [
+        63,
+        63
+      ]
+    },
+    {
+      "id": "cabin_light",
+      "centre_px": [
+        1022,
+        535
+      ],
+      "size_px": [
+        38,
+        45
+      ]
+    },
+    {
+      "id": "ems_backup",
+      "centre_px": [
+        695,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "pump1",
+      "centre_px": [
+        740,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "pump2",
+      "centre_px": [
+        785,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "efis_backup_switch",
+      "centre_px": [
+        827,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "avionics_switch",
+      "centre_px": [
+        860,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "beacon_switch",
+      "centre_px": [
+        896,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "nav_switch",
+      "centre_px": [
+        930,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "taxi_switch",
+      "centre_px": [
+        963,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "landing_switch",
+      "centre_px": [
+        996,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "pitot_switch",
+      "centre_px": [
+        1030,
+        597
+      ],
+      "size_px": [
+        31,
+        48
+      ]
+    },
+    {
+      "id": "lights_bracket",
+      "centre_px": [
+        946,
+        572
+      ],
+      "size_px": [
+        140,
+        10
+      ]
+    },
+    {
+      "id": "guard_712",
+      "centre_px": [
+        712,
+        598
+      ],
+      "size_px": [
+        4,
+        50
+      ]
+    },
+    {
+      "id": "guard_763",
+      "centre_px": [
+        763,
+        598
+      ],
+      "size_px": [
+        4,
+        50
+      ]
+    },
+    {
+      "id": "guard_806",
+      "centre_px": [
+        806,
+        598
+      ],
+      "size_px": [
+        4,
+        50
+      ]
+    },
+    {
+      "id": "parachute",
+      "centre_px": [
+        865,
+        650
+      ],
+      "size_px": [
+        90,
+        36
+      ]
+    },
+    {
+      "id": "fuel_selector",
+      "centre_px": [
+        865,
+        890
+      ],
+      "size_px": [
+        110,
+        140
+      ]
+    }
+  ]
+}

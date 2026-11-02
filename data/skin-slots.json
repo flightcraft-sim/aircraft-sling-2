@@ -1,0 +1,73 @@
+{
+  "contract_version": 1,
+  "base_panel": "sling2-ifr",
+  "coordinate_units": "mm",
+  "requires_host_equipment_skin_hook": true,
+  "slots": [
+    {
+      "id": "left_display",
+      "role": "pfd",
+      "position_mm": [
+        190.96,
+        237.16000000000003
+      ],
+      "size_mm": [
+        326.4800000000001,
+        237.16000000000003
+      ],
+      "public_skin": "original"
+    },
+    {
+      "id": "right_display",
+      "role": "mfd",
+      "position_mm": [
+        817.7400000000001,
+        237.16000000000003
+      ],
+      "size_mm": [
+        326.4800000000001,
+        237.16000000000003
+      ],
+      "public_skin": "original"
+    },
+    {
+      "id": "standby",
+      "role": "standby",
+      "position_mm": [
+        614.46,
+        183.26000000000002
+      ],
+      "size_mm": [
+        101.64000000000001,
+        105.49000000000001
+      ],
+      "public_skin": "original"
+    },
+    {
+      "id": "navigator",
+      "role": "navigator",
+      "position_mm": [
+        573.6500000000001,
+        294.14000000000004
+      ],
+      "size_mm": [
+        180.95000000000002,
+        75.46000000000001
+      ],
+      "public_skin": "original"
+    },
+    {
+      "id": "autopilot",
+      "role": "autopilot",
+      "position_mm": [
+        571.34,
+        373.45000000000005
+      ],
+      "size_mm": [
+        187.11,
+        59.290000000000006
+      ],
+      "public_skin": "original"
+    }
+  ]
+}
