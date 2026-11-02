@@ -55,51 +55,51 @@
           [
             [
               38.5,
-              446.6000000000001
+              446.6
             ],
             [
-              15.400000000000002,
+              32.34,
               361.90000000000003
             ],
             [
-              69.30000000000001,
-              260.26
+              77.0,
+              257.95
             ],
             [
-              138.60000000000002,
+              142.45000000000002,
               224.84
             ]
           ],
           [
             [
-              138.60000000000002,
+              142.45000000000002,
               224.84
             ],
             [
-              227.15,
-              187.88000000000002
+              231.0,
+              187.88
             ],
             [
               415.8,
               180.95000000000002
             ],
             [
-              500.50000000000006,
+              500.5,
               154.0
             ]
           ],
           [
             [
-              500.50000000000006,
+              500.5,
               154.0
             ],
             [
-              554.4000000000001,
-              138.60000000000002
+              554.4,
+              138.6
             ],
             [
-              777.7000000000002,
-              138.60000000000002
+              777.7,
+              138.6
             ],
             [
               831.6,
@@ -116,7 +116,7 @@
               184.8
             ],
             [
-              1116.5000000000002,
+              1116.5,
               184.8
             ],
             [
@@ -130,142 +130,142 @@
               224.84
             ],
             [
-              1274.3500000000001,
-              260.26
-            ],
-            [
-              1301.3000000000002,
-              365.75
-            ],
-            [
-              1289.75,
-              446.6000000000001
-            ]
-          ],
-          [
-            [
-              1289.75,
-              446.6000000000001
+              1262.8,
+              257.95
             ],
             [
               1297.45,
+              361.90000000000003
+            ],
+            [
+              1289.75,
+              446.6
+            ]
+          ],
+          [
+            [
+              1289.75,
+              446.6
+            ],
+            [
+              1293.6000000000001,
+              510.51
+            ],
+            [
+              1266.65,
               539.0
             ],
             [
-              1255.1000000000001,
-              565.95
-            ],
-            [
               1216.6000000000001,
-              569.8000000000001
+              534.38
             ]
           ],
           [
             [
               1216.6000000000001,
-              569.8000000000001
+              534.38
             ],
             [
               1078.0,
-              508.2
+              485.1
             ],
             [
               924.0,
-              492.80000000000007
+              483.56
             ],
             [
               808.5,
-              512.0500000000001
+              503.58
             ]
           ],
           [
             [
               808.5,
+              503.58
+            ],
+            [
+              750.75,
               512.0500000000001
             ],
             [
-              746.9000000000001,
-              527.45
+              743.0500000000001,
+              532.07
             ],
             [
-              735.35,
-              631.4000000000001
-            ],
-            [
-              723.8000000000001,
-              745.3600000000001
+              710.71,
+              532.84
             ]
           ],
           [
             [
-              723.8000000000001,
-              745.3600000000001
+              710.71,
+              532.84
             ],
             [
-              693.0,
-              745.3600000000001
+              677.6,
+              535.92
             ],
             [
-              639.1,
-              745.3600000000001
+              650.65,
+              535.92
             ],
             [
-              608.3000000000001,
-              745.3600000000001
+              622.16,
+              532.84
             ]
           ],
           [
             [
-              608.3000000000001,
-              745.3600000000001
+              622.16,
+              532.84
             ],
             [
-              596.75,
-              635.25
+              589.82,
+              531.3000000000001
             ],
             [
-              577.5000000000001,
-              527.45
-            ],
-            [
-              523.6,
-              512.0500000000001
-            ]
-          ],
-          [
-            [
-              523.6,
-              512.0500000000001
-            ],
-            [
-              385.00000000000006,
-              492.80000000000007
-            ],
-            [
-              231.0,
+              577.5,
               508.2
             ],
             [
-              107.80000000000001,
-              569.8000000000001
+              523.6,
+              503.58
             ]
           ],
           [
             [
-              107.80000000000001,
-              569.8000000000001
+              523.6,
+              503.58
             ],
             [
-              57.75,
-              565.95
+              377.3,
+              483.56
             ],
             [
-              46.2,
-              523.6
+              231.0,
+              485.1
+            ],
+            [
+              107.8,
+              534.38
+            ]
+          ],
+          [
+            [
+              107.8,
+              534.38
+            ],
+            [
+              63.14,
+              535.92
+            ],
+            [
+              43.89,
+              508.2
             ],
             [
               38.5,
-              446.6000000000001
+              446.6
             ]
           ]
         ]
@@ -572,8 +572,155 @@
         [
           751.5200000000001,
           366.52000000000004
+        ],
+        [
+          208.67,
+          252.56
+        ],
+        [
+          499.73,
+          252.56
+        ],
+        [
+          208.67,
+          457.38
+        ],
+        [
+          499.73,
+          457.38
+        ],
+        [
+          835.45,
+          252.56
+        ],
+        [
+          1126.51,
+          252.56
+        ],
+        [
+          835.45,
+          457.38
+        ],
+        [
+          1126.51,
+          457.38
+        ],
+        [
+          579.04,
+          299.53
+        ],
+        [
+          749.21,
+          299.53
+        ],
+        [
+          579.04,
+          364.98
+        ],
+        [
+          749.21,
+          364.98
+        ],
+        [
+          576.73,
+          378.07
+        ],
+        [
+          753.06,
+          378.07
+        ],
+        [
+          576.73,
+          427.35
+        ],
+        [
+          753.06,
+          427.35
         ]
-      ]
+      ],
+      "centre_console": {
+        "kind": "cubic",
+        "curves": [
+          [
+            [
+              523.6,
+              503.58
+            ],
+            [
+              569.8000000000001,
+              511.28000000000003
+            ],
+            [
+              585.2,
+              545.16
+            ],
+            [
+              604.45,
+              658.35
+            ]
+          ],
+          [
+            [
+              604.45,
+              658.35
+            ],
+            [
+              635.25,
+              660.66
+            ],
+            [
+              696.85,
+              660.66
+            ],
+            [
+              726.88,
+              658.35
+            ]
+          ],
+          [
+            [
+              726.88,
+              658.35
+            ],
+            [
+              743.0500000000001,
+              545.16
+            ],
+            [
+              766.15,
+              512.0500000000001
+            ],
+            [
+              808.5,
+              503.58
+            ]
+          ],
+          [
+            [
+              808.5,
+              503.58
+            ],
+            [
+              731.5,
+              515.9
+            ],
+            [
+              592.9,
+              515.9
+            ],
+            [
+              523.6,
+              503.58
+            ]
+          ]
+        ]
+      },
+      "palette": {
+        "face": "#333333",
+        "glare_shield": "#0b0b0b",
+        "bezel": "#080808",
+        "placard_text": "#f5f5f2"
+      }
     },
     "elements": [
       {
@@ -589,7 +736,7 @@
         "element": {
           "kind": "touch_display",
           "load": "touch_left",
-          "layout": "full_pfd",
+          "layout": "integrated_pfd",
           "engine_strip": true,
           "composition": {
             "top_data_bar": true,
@@ -603,9 +750,35 @@
               },
               {
                 "corner": "bottom_right",
-                "content": "navigation"
+                "content": "terrain"
               }
             ]
+          }
+        },
+        "appearance": {
+          "synthetic_vision": true,
+          "bezel": {
+            "color": "#080808",
+            "edge_trim": "#9b9b9b",
+            "margins": [
+              16.94,
+              21.560000000000002,
+              16.94,
+              46.2
+            ],
+            "softkeys": true,
+            "softkey_count": 4,
+            "corner_knobs": [
+              [
+                26.18,
+                217.91
+              ],
+              [
+                300.3,
+                217.91
+              ]
+            ],
+            "card_slot": true
           }
         }
       },
@@ -622,7 +795,7 @@
         "element": {
           "kind": "touch_display",
           "load": "touch_right",
-          "layout": "map_engine",
+          "layout": "integrated_pfd",
           "engine_strip": true,
           "composition": {
             "top_data_bar": true,
@@ -636,9 +809,35 @@
               },
               {
                 "corner": "bottom_right",
-                "content": "navigation"
+                "content": "terrain"
               }
             ]
+          }
+        },
+        "appearance": {
+          "synthetic_vision": true,
+          "bezel": {
+            "color": "#080808",
+            "edge_trim": "#9b9b9b",
+            "margins": [
+              16.94,
+              21.560000000000002,
+              16.94,
+              46.2
+            ],
+            "softkeys": true,
+            "softkey_count": 4,
+            "corner_knobs": [
+              [
+                26.18,
+                217.91
+              ],
+              [
+                300.3,
+                217.91
+              ]
+            ],
+            "card_slot": true
           }
         }
       },
@@ -670,6 +869,9 @@
           "kind": "navigator",
           "load": "navigator",
           "transponder": true
+        },
+        "appearance": {
+          "navigator_layout": "home_columns"
         }
       },
       {
@@ -684,6 +886,181 @@
         ],
         "element": {
           "kind": "autopilot"
+        },
+        "appearance": {
+          "controller": {
+            "sections": [
+              {
+                "label": " ",
+                "rect": [
+                  0.77,
+                  0.77,
+                  59.29,
+                  57.75
+                ]
+              },
+              {
+                "label": " ",
+                "rect": [
+                  60.83,
+                  0.77,
+                  43.89,
+                  57.75
+                ]
+              },
+              {
+                "label": " ",
+                "rect": [
+                  105.49000000000001,
+                  0.77,
+                  80.85000000000001,
+                  57.75
+                ]
+              }
+            ],
+            "controls": [
+              {
+                "action": "heading_knob",
+                "rect": [
+                  3.85,
+                  2.31,
+                  36.19,
+                  40.81
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "apr",
+                "rect": [
+                  41.58,
+                  6.93,
+                  17.71,
+                  13.09
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "hdg",
+                "rect": [
+                  13.86,
+                  45.43,
+                  18.48,
+                  10.78
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "nav",
+                "rect": [
+                  36.96,
+                  45.43,
+                  18.48,
+                  10.78
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "ap",
+                "rect": [
+                  62.37,
+                  17.71,
+                  17.71,
+                  13.09
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "lvl",
+                "rect": [
+                  85.47,
+                  17.71,
+                  17.71,
+                  13.09
+                ],
+                "lit_color": "#00d8ef"
+              },
+              {
+                "action": "fd",
+                "rect": [
+                  62.37,
+                  36.19,
+                  17.71,
+                  13.09
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "yd",
+                "rect": [
+                  85.47,
+                  36.19,
+                  17.71,
+                  13.09
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "pitch_wheel",
+                "rect": [
+                  107.03,
+                  13.09,
+                  10.01,
+                  39.27
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "ias",
+                "rect": [
+                  121.66,
+                  6.93,
+                  19.25,
+                  12.32
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "vnav",
+                "rect": [
+                  121.66,
+                  24.64,
+                  19.25,
+                  12.32
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "vs",
+                "rect": [
+                  121.66,
+                  45.43,
+                  19.25,
+                  10.78
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "alt",
+                "rect": [
+                  145.53,
+                  45.43,
+                  21.56,
+                  10.78
+                ],
+                "lit_color": "#69d887"
+              },
+              {
+                "action": "altitude_knob",
+                "rect": [
+                  142.45,
+                  2.31,
+                  40.81,
+                  40.81
+                ],
+                "lit_color": "#69d887"
+              }
+            ]
+          }
         }
       },
       {
@@ -785,23 +1162,6 @@
         }
       },
       {
-        "id": "lane_label",
-        "position": [
-          137.06,
-          281.82000000000005
-        ],
-        "size": [
-          30.800000000000004,
-          9.24
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "LANE",
-          "font_size_mm": 5.390000000000001,
-          "color": "white"
-        }
-      },
-      {
         "id": "essentials",
         "position": [
           524.37,
@@ -812,8 +1172,10 @@
           9.24
         ],
         "element": {
-          "kind": "bracket",
-          "label": "ESSENTIALS"
+          "kind": "placard",
+          "text": "ESSENTIALS",
+          "font_size_mm": 4.851,
+          "color": "white"
         }
       },
       {
@@ -827,8 +1189,10 @@
           9.24
         ],
         "element": {
-          "kind": "bracket",
-          "label": "AVIONICS"
+          "kind": "placard",
+          "text": "AVIONICS",
+          "font_size_mm": 4.851,
+          "color": "white"
         }
       },
       {
@@ -844,7 +1208,10 @@
         "element": {
           "kind": "breaker",
           "load": "landing",
-          "label": " "
+          "label": "LAND"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -860,7 +1227,10 @@
         "element": {
           "kind": "breaker",
           "load": "taxi",
-          "label": " "
+          "label": "TAXI"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -876,7 +1246,10 @@
         "element": {
           "kind": "breaker",
           "load": "nav",
-          "label": " "
+          "label": "NAV"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -892,7 +1265,10 @@
         "element": {
           "kind": "breaker",
           "load": "strobe",
-          "label": " "
+          "label": "STROBE"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -908,7 +1284,10 @@
         "element": {
           "kind": "breaker",
           "load": "usb",
-          "label": " "
+          "label": "USB"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -924,7 +1303,10 @@
         "element": {
           "kind": "breaker",
           "load": "aux",
-          "label": " "
+          "label": "AUX"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -940,7 +1322,10 @@
         "element": {
           "kind": "breaker",
           "load": "cabin",
-          "label": " "
+          "label": "CABIN"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -956,7 +1341,10 @@
         "element": {
           "kind": "breaker",
           "load": "flaps",
-          "label": " "
+          "label": "FLAPS"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -972,7 +1360,10 @@
         "element": {
           "kind": "breaker",
           "load": "efis_aux",
-          "label": " "
+          "label": "EFIS AUX"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -988,7 +1379,10 @@
         "element": {
           "kind": "breaker",
           "load": "start_relay",
-          "label": " "
+          "label": "START RELAY"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1004,7 +1398,10 @@
         "element": {
           "kind": "breaker",
           "load": "pitot_heat",
-          "label": " "
+          "label": "PITOT"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1020,7 +1417,10 @@
         "element": {
           "kind": "breaker",
           "load": "touch_left",
-          "label": " "
+          "label": "PFD 1"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1036,7 +1436,10 @@
         "element": {
           "kind": "breaker",
           "load": "touch_right",
-          "label": " "
+          "label": "PFD 2"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1052,7 +1455,10 @@
         "element": {
           "kind": "breaker",
           "load": "glass_standby",
-          "label": " "
+          "label": "STBY"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1068,7 +1474,10 @@
         "element": {
           "kind": "breaker",
           "load": "adc",
-          "label": " "
+          "label": "AIR DATA"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1084,7 +1493,10 @@
         "element": {
           "kind": "breaker",
           "load": "navigator",
-          "label": " "
+          "label": "NAV/COM"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1100,7 +1512,10 @@
         "element": {
           "kind": "breaker",
           "load": "efis_backup",
-          "label": " "
+          "label": "EFIS BKUP"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1116,7 +1531,10 @@
         "element": {
           "kind": "breaker",
           "load": "glass_ahrs",
-          "label": " "
+          "label": "AHRS 1"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1132,7 +1550,10 @@
         "element": {
           "kind": "breaker",
           "load": "ahrs2",
-          "label": " "
+          "label": "AHRS 2"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1148,7 +1569,10 @@
         "element": {
           "kind": "breaker",
           "load": "standby_aux",
-          "label": " "
+          "label": "STBY"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1164,7 +1588,10 @@
         "element": {
           "kind": "breaker",
           "load": "ap",
-          "label": " "
+          "label": "AP"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1180,7 +1607,10 @@
         "element": {
           "kind": "breaker",
           "load": "main_bus",
-          "label": " "
+          "label": "MAIN"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
@@ -1196,171 +1626,101 @@
         "element": {
           "kind": "breaker",
           "load": "backup_bus",
-          "label": " "
+          "label": "BKUP BUS"
+        },
+        "appearance": {
+          "style": "push_pull_breaker"
         }
       },
       {
         "id": "lane_a",
         "position": [
-          125.51,
-          290.67500000000007
+          124.74,
+          288.36798449612405
         ],
         "size": [
-          23.1,
-          34.650000000000006
+          24.64,
+          27.45736434108527
         ],
         "element": {
-          "kind": "rocker",
-          "switch": "lane_a",
-          "label": "A",
-          "backlit": false
-        }
-      },
-      {
-        "id": "lane_a_guard_m1",
-        "position": [
-          122.43,
-          293.755
-        ],
-        "size": [
-          3.08,
-          33.11000000000001
-        ],
-        "element": {
-          "kind": "guard_bar"
-        }
-      },
-      {
-        "id": "lane_a_guard_1",
-        "position": [
-          148.61,
-          293.755
-        ],
-        "size": [
-          3.08,
-          33.11000000000001
-        ],
-        "element": {
-          "kind": "guard_bar"
-        }
-      },
-      {
-        "id": "lane_a_lamp",
-        "position": [
-          128.59,
-          285.67
-        ],
-        "size": [
-          16.94,
-          16.94
-        ],
-        "element": {
-          "kind": "lamp",
-          "label": "A",
-          "color": "red"
+          "kind": "toggle",
+          "label": "LANE A",
+          "guarded": true,
+          "lamp": true
+        },
+        "appearance": {
+          "binding": "lane_a"
         }
       },
       {
         "id": "lane_b",
         "position": [
-          156.31,
-          290.67500000000007
+          155.54,
+          288.36798449612405
         ],
         "size": [
-          23.1,
-          34.650000000000006
+          24.64,
+          27.45736434108527
         ],
         "element": {
-          "kind": "rocker",
-          "switch": "lane_b",
-          "label": "B",
-          "backlit": false
-        }
-      },
-      {
-        "id": "lane_b_guard_m1",
-        "position": [
-          153.23000000000002,
-          293.755
-        ],
-        "size": [
-          3.08,
-          33.11000000000001
-        ],
-        "element": {
-          "kind": "guard_bar"
-        }
-      },
-      {
-        "id": "lane_b_guard_1",
-        "position": [
-          179.41,
-          293.755
-        ],
-        "size": [
-          3.08,
-          33.11000000000001
-        ],
-        "element": {
-          "kind": "guard_bar"
-        }
-      },
-      {
-        "id": "lane_b_lamp",
-        "position": [
-          159.39000000000001,
-          285.67
-        ],
-        "size": [
-          16.94,
-          16.94
-        ],
-        "element": {
-          "kind": "lamp",
-          "label": "B",
-          "color": "red"
+          "kind": "toggle",
+          "label": "LANE B",
+          "guarded": true,
+          "lamp": true
+        },
+        "appearance": {
+          "binding": "lane_b"
         }
       },
       {
         "id": "ignition",
         "position": [
-          123.97,
-          341.11
+          117.04,
+          334.18
         ],
         "size": [
-          44.660000000000004,
-          44.660000000000004
+          58.52,
+          58.52
         ],
         "element": {
           "kind": "key"
+        },
+        "appearance": {
+          "style": "silver_key"
         }
       },
       {
         "id": "vent_left",
         "position": [
-          64.68,
-          384.2300000000001
+          56.21,
+          395.01
         ],
         "size": [
-          93.94000000000001,
-          93.94000000000001
+          110.88,
+          110.88
         ],
         "element": {
           "kind": "vent"
+        },
+        "appearance": {
+          "style": "louvred_eyeball"
         }
       },
       {
         "id": "vent_right",
         "position": [
-          1165.7800000000002,
-          384.2300000000001
+          1157.31,
+          395.01
         ],
         "size": [
-          93.94000000000001,
-          93.94000000000001
+          110.88,
+          110.88
         ],
         "element": {
           "kind": "vent"
+        },
+        "appearance": {
+          "style": "louvred_eyeball"
         }
       },
       {
@@ -1376,223 +1736,265 @@
         "element": {
           "kind": "elt",
           "label": "ELT"
+        },
+        "appearance": {
+          "style": "elt_plate"
         }
       },
       {
         "id": "backlight",
         "position": [
-          529.7600000000001,
-          392.31500000000005
+          529.76,
+          397.115
         ],
         "size": [
           29.26,
-          34.650000000000006
+          34.65
         ],
         "element": {
           "kind": "dimmer",
-          "label": "BACKLIGHT"
+          "label": " "
+        },
+        "appearance": {
+          "style": "arc_dimmer"
         }
       },
       {
         "id": "cabin_heat",
         "position": [
-          762.6850000000001,
-          337.64500000000004
+          766.15,
+          345.91
         ],
         "size": [
-          48.510000000000005,
-          48.510000000000005
+          41.58,
+          41.58
         ],
         "element": {
           "kind": "push_pull",
-          "label": "CABIN HEAT"
+          "label": " "
+        },
+        "appearance": {
+          "style": "cabin_heat"
         }
       },
       {
         "id": "cabin_light",
         "position": [
-          772.3100000000002,
-          394.62500000000006
+          772.3100000000001,
+          399.425
         ],
         "size": [
           29.26,
-          34.650000000000006
+          34.65
         ],
         "element": {
           "kind": "dimmer",
-          "label": "CABIN LIGHT"
+          "label": " "
+        },
+        "appearance": {
+          "style": "arc_dimmer"
         }
       },
       {
         "id": "ems_backup",
         "position": [
-          523.215,
-          441.21000000000004
+          519.75,
+          441.21
         ],
         "size": [
-          23.87,
-          36.96
+          30.8,
+          34.65
         ],
         "element": {
-          "kind": "toggle",
-          "label": " ",
-          "guarded": false,
-          "lamp": false
+          "kind": "rocker",
+          "switch": "ems_backup",
+          "label": "EMS BKUP",
+          "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "pump1",
         "position": [
           554.4,
-          447.986
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
           "switch": "pump1",
-          "label": " ",
+          "label": "FUEL PUMP 1",
           "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "pump2",
         "position": [
           589.05,
-          447.986
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
           "switch": "pump2",
-          "label": " ",
+          "label": "FUEL PUMP 2",
           "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "efis_backup_switch",
         "position": [
-          624.855,
-          441.21000000000004
+          621.39,
+          441.21
         ],
         "size": [
-          23.87,
-          36.96
+          30.8,
+          34.65
         ],
         "element": {
-          "kind": "toggle",
-          "label": " ",
-          "guarded": false,
-          "lamp": false
+          "kind": "rocker",
+          "switch": "efis_backup",
+          "label": "EFIS BKUP",
+          "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "avionics_switch",
         "position": [
-          646.8000000000001,
-          447.986
+          646.8,
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
           "switch": "avionics",
-          "label": " ",
+          "label": "AVIONICS",
           "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "beacon_switch",
         "position": [
           674.52,
-          447.986
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
           "switch": "beacon",
-          "label": " ",
+          "label": "BEACON",
           "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "nav_switch",
         "position": [
           700.7,
-          447.986
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
           "switch": "nav",
-          "label": " ",
+          "label": "NAV",
           "backlit": false,
           "sublabel": "NAV + STROBE"
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "taxi_switch",
         "position": [
           726.11,
-          447.986
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
           "switch": "taxi",
-          "label": " ",
+          "label": "TAXI",
           "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "landing_switch",
         "position": [
           751.52,
-          447.986
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
-          "switch": "landing",
-          "label": " ",
+          "switch": "landing_wigwag",
+          "label": "LAND",
           "backlit": false,
           "sublabel": "WIGWAG"
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
         "id": "pitot_switch",
         "position": [
-          777.7000000000002,
-          447.986
+          777.7,
+          441.21
         ],
         "size": [
-          30.800000000000004,
-          30.800000000000004
+          30.8,
+          34.65
         ],
         "element": {
           "kind": "rocker",
           "switch": "pitot_heat",
-          "label": " ",
+          "label": "PITOT",
           "backlit": false
+        },
+        "appearance": {
+          "style": "black_rocker"
         }
       },
       {
@@ -1606,8 +2008,10 @@
           7.700000000000001
         ],
         "element": {
-          "kind": "bracket",
-          "label": "LIGHTS"
+          "kind": "placard",
+          "text": "LIGHTS",
+          "font_size_mm": 4.235,
+          "color": "white"
         }
       },
       {
@@ -1655,708 +2059,329 @@
       {
         "id": "parachute",
         "position": [
-          631.4000000000001,
-          486.64000000000004
+          639.1,
+          493.57
         ],
         "size": [
-          69.30000000000001,
-          27.720000000000002
+          53.9,
+          15.4
         ],
         "element": {
           "kind": "parachute"
+        },
+        "appearance": {
+          "style": "rounded_pull_handle"
         }
       },
       {
         "id": "fuel_selector",
         "position": [
-          623.7,
-          631.4000000000001
+          605.22,
+          529.76
         ],
         "size": [
-          84.70000000000002,
-          107.80000000000001
+          121.66,
+          126.28
         ],
         "element": {
           "kind": "fuel_selector"
+        },
+        "appearance": {
+          "style": "red_t_handle"
         }
       },
       {
-        "id": "breaker_landing_label",
+        "id": "chute_placard",
         "position": [
-          522.0600000000001,
-          237.16000000000003
+          625.24,
+          486.64
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          81.62,
+          7.7
         ],
         "element": {
           "kind": "placard",
-          "text": "LAND",
-          "font_size_mm": 3.8500000000000005,
+          "text": "BALLISTIC CHUTE",
+          "font_size_mm": 4.466,
           "color": "white"
         }
       },
       {
-        "id": "breaker_taxi_label",
+        "id": "lane_group",
         "position": [
-          542.85,
-          237.16000000000003
+          140.14000000000001,
+          281.82
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          24.64,
+          6.93
         ],
         "element": {
           "kind": "placard",
-          "text": "TAXI",
-          "font_size_mm": 3.8500000000000005,
+          "text": "LANE",
+          "font_size_mm": 3.85,
           "color": "white"
         }
       },
       {
-        "id": "breaker_nav_label",
+        "id": "lane_guard_157",
         "position": [
-          562.8700000000001,
-          237.16000000000003
+          119.58100000000002,
+          295.68
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          2.618,
+          33.11
         ],
         "element": {
-          "kind": "placard",
-          "text": "NAV",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_strobe_label",
+        "id": "lane_guard_198",
         "position": [
-          582.8900000000001,
-          237.16000000000003
+          151.151,
+          295.68
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          2.618,
+          33.11
         ],
         "element": {
-          "kind": "placard",
-          "text": "STROBE",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_usb_label",
+        "id": "lane_guard_239",
         "position": [
-          522.0600000000001,
-          263.34000000000003
+          182.721,
+          295.68
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          2.618,
+          33.11
         ],
         "element": {
-          "kind": "placard",
-          "text": "USB",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_aux_label",
+        "id": "essentials_bracket_left",
         "position": [
-          542.85,
-          263.34000000000003
+          524.37,
+          228.38200000000003
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          23.87,
+          0.6160000000000001
         ],
         "element": {
-          "kind": "placard",
-          "text": "AUX",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_cabin_label",
+        "id": "essentials_bracket_right",
         "position": [
-          562.8700000000001,
-          263.34000000000003
+          583.66,
+          228.38200000000003
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          23.87,
+          0.6160000000000001
         ],
         "element": {
-          "kind": "placard",
-          "text": "CABIN",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_flaps_label",
+        "id": "essentials_end_left",
         "position": [
-          582.8900000000001,
-          263.34000000000003
+          524.37,
+          228.69
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          0.6160000000000001,
+          3.85
         ],
         "element": {
-          "kind": "placard",
-          "text": "FLAPS",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_efis_aux_label_1",
+        "id": "essentials_end_right",
         "position": [
-          522.445,
-          288.365
+          606.9140000000001,
+          228.69
         ],
         "size": [
-          20.790000000000003,
-          3.8500000000000005
+          0.6160000000000001,
+          3.85
         ],
         "element": {
-          "kind": "placard",
-          "text": "EFIS",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_efis_aux_label_2",
-        "position": [
-          522.445,
-          292.21500000000003
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "AUX",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_start_relay_label_1",
-        "position": [
-          543.235,
-          288.365
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "START",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_start_relay_label_2",
-        "position": [
-          543.235,
-          292.21500000000003
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "RELAY",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_pitot_heat_label",
-        "position": [
-          522.0600000000001,
-          318.01000000000005
-        ],
-        "size": [
-          21.560000000000002,
-          6.16
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "PITOT",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_touch_left_label",
+        "id": "avionics_bracket_bracket_left",
         "position": [
           728.4200000000001,
-          237.16000000000003
+          228.38200000000003
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          26.18,
+          0.6160000000000001
         ],
         "element": {
-          "kind": "placard",
-          "text": "PFD 1",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_touch_right_label",
+        "id": "avionics_bracket_bracket_right",
         "position": [
-          749.21,
-          237.16000000000003
+          785.4000000000001,
+          228.38200000000003
         ],
         "size": [
-          21.560000000000002,
-          6.16
+          26.179999999999914,
+          0.6160000000000001
         ],
         "element": {
-          "kind": "placard",
-          "text": "PFD 2",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
+          "kind": "guard_bar"
         }
       },
       {
-        "id": "breaker_glass_standby_label",
-        "position": [
-          769.2300000000001,
-          237.16000000000003
-        ],
-        "size": [
-          21.560000000000002,
-          6.16
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "STBY",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_adc_label_1",
-        "position": [
-          790.405,
-          234.46500000000003
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "AIR",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_adc_label_2",
-        "position": [
-          790.405,
-          238.31500000000003
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "DATA",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_navigator_label",
+        "id": "avionics_bracket_end_left",
         "position": [
           728.4200000000001,
-          263.34000000000003
+          228.69
         ],
         "size": [
-          21.560000000000002,
+          0.6160000000000001,
+          3.85
+        ],
+        "element": {
+          "kind": "guard_bar"
+        }
+      },
+      {
+        "id": "avionics_bracket_end_right",
+        "position": [
+          810.964,
+          228.69
+        ],
+        "size": [
+          0.6160000000000001,
+          3.85
+        ],
+        "element": {
+          "kind": "guard_bar"
+        }
+      },
+      {
+        "id": "lights_bracket_bracket_left",
+        "position": [
+          674.52,
+          440.1320000000001
+        ],
+        "size": [
+          41.194999999999915,
+          0.6160000000000001
+        ],
+        "element": {
+          "kind": "guard_bar"
+        }
+      },
+      {
+        "id": "lights_bracket_bracket_right",
+        "position": [
+          741.1249999999999,
+          440.1320000000001
+        ],
+        "size": [
+          41.195,
+          0.6160000000000001
+        ],
+        "element": {
+          "kind": "guard_bar"
+        }
+      },
+      {
+        "id": "lights_bracket_end_left",
+        "position": [
+          674.52,
+          440.4400000000001
+        ],
+        "size": [
+          0.6160000000000001,
+          3.85
+        ],
+        "element": {
+          "kind": "guard_bar"
+        }
+      },
+      {
+        "id": "lights_bracket_end_right",
+        "position": [
+          781.704,
+          440.4400000000001
+        ],
+        "size": [
+          0.6160000000000001,
+          3.85
+        ],
+        "element": {
+          "kind": "guard_bar"
+        }
+      },
+      {
+        "id": "backlight_placard",
+        "position": [
+          518.21,
+          388.85
+        ],
+        "size": [
+          52.36,
           6.16
         ],
         "element": {
           "kind": "placard",
-          "text": "NAV/COM",
-          "font_size_mm": 3.8500000000000005,
+          "text": "BACKLIGHT",
+          "font_size_mm": 4.235,
           "color": "white"
         }
       },
       {
-        "id": "breaker_efis_backup_label_1",
+        "id": "cabin_heat_placard",
         "position": [
-          749.595,
-          260.64500000000004
+          760.76,
+          342.65000000000003
         ],
         "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "EFIS",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_efis_backup_label_2",
-        "position": [
-          749.595,
-          264.495
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "BKUP",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_glass_ahrs_label",
-        "position": [
-          769.2300000000001,
-          263.34000000000003
-        ],
-        "size": [
-          21.560000000000002,
+          52.36,
           6.16
         ],
         "element": {
           "kind": "placard",
-          "text": "AHRS 1",
-          "font_size_mm": 3.8500000000000005,
+          "text": "CABIN HEAT",
+          "font_size_mm": 4.235,
           "color": "white"
         }
       },
       {
-        "id": "breaker_ahrs2_label",
+        "id": "cabin_light_placard",
         "position": [
-          790.0200000000001,
-          263.34000000000003
+          760.76,
+          390.39
         ],
         "size": [
-          21.560000000000002,
+          52.36,
           6.16
         ],
         "element": {
           "kind": "placard",
-          "text": "AHRS 2",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_standby_aux_label",
-        "position": [
-          769.2300000000001,
-          291.06
-        ],
-        "size": [
-          21.560000000000002,
-          6.16
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "STBY",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_ap_label",
-        "position": [
-          790.0200000000001,
-          291.06
-        ],
-        "size": [
-          21.560000000000002,
-          6.16
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "AP",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_main_bus_label",
-        "position": [
-          1154.2300000000002,
-          283.36
-        ],
-        "size": [
-          21.560000000000002,
-          6.16
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "MAIN",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_backup_bus_label_1",
-        "position": [
-          1154.6150000000002,
-          336.105
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "BKUP",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "breaker_backup_bus_label_2",
-        "position": [
-          1154.6150000000002,
-          339.955
-        ],
-        "size": [
-          20.790000000000003,
-          3.8500000000000005
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "BUS",
-          "font_size_mm": 3.4650000000000003,
-          "color": "white"
-        }
-      },
-      {
-        "id": "ems_backup_label",
-        "position": [
-          520.52,
-          443.13500000000005
-        ],
-        "size": [
-          29.26,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "EMS BKUP",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "pump1_label_1",
-        "position": [
-          555.9399999999999,
-          442.75000000000006
-        ],
-        "size": [
-          27.720000000000002,
-          4.62
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "FUEL",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "pump1_label_2",
-        "position": [
-          555.9399999999999,
-          447.37000000000006
-        ],
-        "size": [
-          27.720000000000002,
-          4.62
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "PUMP 1",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "pump2_label_1",
-        "position": [
-          590.5900000000001,
-          442.75000000000006
-        ],
-        "size": [
-          27.720000000000002,
-          4.62
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "FUEL",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "pump2_label_2",
-        "position": [
-          590.5900000000001,
-          447.37000000000006
-        ],
-        "size": [
-          27.720000000000002,
-          4.62
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "PUMP 2",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "efis_backup_switch_label",
-        "position": [
-          622.1600000000001,
-          443.13500000000005
-        ],
-        "size": [
-          29.26,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "EFIS BKUP",
-          "font_size_mm": 3.8500000000000005,
-          "color": "white"
-        }
-      },
-      {
-        "id": "avionics_switch_label",
-        "position": [
-          648.34,
-          443.13500000000005
-        ],
-        "size": [
-          27.720000000000002,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "AVIONICS",
-          "font_size_mm": 4.0040000000000004,
-          "color": "white"
-        }
-      },
-      {
-        "id": "beacon_switch_label",
-        "position": [
-          676.0600000000001,
-          443.13500000000005
-        ],
-        "size": [
-          27.720000000000002,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "BEACON",
-          "font_size_mm": 4.0040000000000004,
-          "color": "white"
-        }
-      },
-      {
-        "id": "nav_switch_label",
-        "position": [
-          702.2400000000001,
-          443.13500000000005
-        ],
-        "size": [
-          27.720000000000002,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "NAV",
-          "font_size_mm": 4.0040000000000004,
-          "color": "white"
-        }
-      },
-      {
-        "id": "taxi_switch_label",
-        "position": [
-          727.6500000000001,
-          443.13500000000005
-        ],
-        "size": [
-          27.720000000000002,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "TAXI",
-          "font_size_mm": 4.0040000000000004,
-          "color": "white"
-        }
-      },
-      {
-        "id": "landing_switch_label",
-        "position": [
-          753.06,
-          443.13500000000005
-        ],
-        "size": [
-          27.720000000000002,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "LAND",
-          "font_size_mm": 4.0040000000000004,
-          "color": "white"
-        }
-      },
-      {
-        "id": "pitot_switch_label",
-        "position": [
-          779.2400000000001,
-          443.13500000000005
-        ],
-        "size": [
-          27.720000000000002,
-          6.930000000000001
-        ],
-        "element": {
-          "kind": "placard",
-          "text": "PITOT",
-          "font_size_mm": 4.0040000000000004,
+          "text": "CABIN LIGHT",
+          "font_size_mm": 4.235,
           "color": "white"
         }
       }

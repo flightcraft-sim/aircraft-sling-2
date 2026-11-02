@@ -1,6 +1,6 @@
 # Validation
 
-The harness loads the distributed manifest and six layer documents through `AircraftCatalog::install_pack`, resolves the aircraft, initializes the engine's `Sim`, and installs its operational systems. It uses public engine APIs and never modifies the engine. Local verification uses engine revision `c581b9d3704ba7157a3fbc0e96651c7962d67381`; CI instead resolves Git `main` on every run.
+The panel and systems use the optional fidelity hooks from current engine main. The harness loads the distributed manifest and six layer documents through `AircraftCatalog::install_pack`, resolves the aircraft, initializes the engine's `Sim`, and installs its operational systems. It uses public engine APIs and never modifies the engine. Local verification uses engine revision `3512ca9`; CI instead resolves Git `main` on every run.
 
 All performance flights use 700 kg, symmetric occupants and fuel, a valid CG at 1.738071 m aft of datum, standard atmosphere, calm air, and the engine's 120 Hz rigid-body integration. Fuel burn updates mass during flight. The measured results below use the local engine checkout.
 
@@ -29,10 +29,10 @@ Cruise runs hold altitude with pitch and the specified engine RPM with throttle 
 
 Takeoff uses 10° flap, full power, and rotation beginning at the published 40 kt. Roll ends at the first sample with every wheel airborne, with at most two simulation steps of measurement resolution. Landing starts near 15 m on a full-flap final at the published 65 kt threshold speed, flares, applies brakes at first contact, and measures contact-to-stop distance. These are **ground-roll** comparisons; approach path and total 15 m obstacle distance are not acceptance-tested. Concrete and grass use actual engine ground-surface classifications.
 
-Additional tests exercise numeric provenance, stable panel/skin rectangles, CG edges, mass limits, individual and dual lane loss, pump redundancy, breaker interruption, key restart, selector starvation, master warning, and propeller gearing. Existing engine tests cover equipment internals; this harness checks their pack wiring.
+Additional tests exercise numeric provenance, stable panel/skin rectangles, CG edges, mass limits, individual and dual lane loss, pump redundancy, breaker interruption, key restart, selector starvation, master warning, propeller gearing, guarded lane bindings, backup-bus isolation, breaker interruption on backup, and alternating landing lights. Existing engine tests cover equipment internals; this harness checks their pack wiring.
 
 ## Limits of acceptance
 
-The observed flight targets do not establish a type-accurate aircraft throughout its envelope. Forward-CG stall specificity, 15 m obstacle distances, a full two-compartment baggage model, enforcement of all engine limits, photo-exact hardware, functional backup routing, and private equipment screen skins remain incomplete. See `estimates.md`, `panel-review.md`, and `private-skins.md`. The engine's generic exterior mesh is also used for this unknown aircraft identifier; these previews depict the panel, not a Sling-specific exterior model.
+The observed flight targets do not establish a type-accurate aircraft throughout its envelope. Forward-CG stall specificity, 15 m obstacle distances, a full two-compartment baggage model, enforcement of all engine limits, and a photographic hardware match remain incomplete. See `estimates.md`, `panel-review.md`, and `private-skins.md`. The engine's generic exterior mesh is also used for this unknown aircraft identifier; these previews depict the panel, not a Sling-specific exterior model.
 
 No CI run is claimed until the work is pushed. All local compilation and tests are run through the build queue; formatting runs directly.

@@ -1,50 +1,54 @@
 {
-  "source": "Supplied measured panel specification; coordinates in a 1728 by 968 reference frame. No reference imagery is distributed.",
+  "source": "Measured panel specification, with the owner-authorized fuel selector and console correction from visual photo measurements. No reference image pixels are distributed.",
   "mm_per_px": 0.77,
   "elements": [
     {
       "id": "left_display",
       "centre_px": [
-        460,
-        462
+        460.0,
+        462.0
       ],
       "size_px": [
-        424,
-        308
-      ]
+        424.0,
+        308.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "right_display",
       "centre_px": [
-        1274,
-        462
+        1274.0,
+        462.0
       ],
       "size_px": [
-        424,
-        308
-      ]
+        424.0,
+        308.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "standby",
       "centre_px": [
-        864,
+        864.0,
         306.5
       ],
       "size_px": [
-        132,
-        137
-      ]
+        132.0,
+        137.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "navigator",
       "centre_px": [
         862.5,
-        431
+        431.0
       ],
       "size_px": [
-        235,
-        98
-      ]
+        235.0,
+        98.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "autopilot",
@@ -53,702 +57,1113 @@
         523.5
       ],
       "size_px": [
-        243,
-        77
-      ]
+        243.0,
+        77.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "caution",
       "centre_px": [
-        613,
-        287
+        613.0,
+        287.0
       ],
       "size_px": [
-        40,
-        40
-      ]
+        40.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "warning",
       "centre_px": [
-        653,
-        287
+        653.0,
+        287.0
       ],
       "size_px": [
-        40,
-        40
-      ]
+        40.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "seat_left",
       "centre_px": [
-        420,
-        298
+        420.0,
+        298.0
       ],
       "size_px": [
-        125,
-        12
-      ]
+        125.0,
+        12.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "registration",
       "centre_px": [
-        538,
-        297
+        538.0,
+        297.0
       ],
       "size_px": [
-        75,
-        12
-      ]
+        75.0,
+        12.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "spins",
       "centre_px": [
-        1205,
-        298
+        1205.0,
+        298.0
       ],
       "size_px": [
-        145,
-        12
-      ]
+        145.0,
+        12.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "seat_right",
       "centre_px": [
-        1320,
-        298
+        1320.0,
+        298.0
       ],
       "size_px": [
-        120,
-        12
-      ]
-    },
-    {
-      "id": "lane_label",
-      "centre_px": [
-        198,
-        372
+        120.0,
+        12.0
       ],
-      "size_px": [
-        40,
-        12
-      ]
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "essentials",
       "centre_px": [
-        735,
-        297
+        735.0,
+        297.0
       ],
       "size_px": [
-        108,
-        12
-      ]
+        108.0,
+        12.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "avionics_bracket",
       "centre_px": [
-        1000,
-        297
+        1000.0,
+        297.0
       ],
       "size_px": [
-        108,
-        12
-      ]
+        108.0,
+        12.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "breaker_landing",
       "centre_px": [
-        692,
-        322
+        692.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        692.0,
+        325.0
       ]
     },
     {
       "id": "breaker_taxi",
       "centre_px": [
-        719,
-        322
+        719.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        719.0,
+        325.0
       ]
     },
     {
       "id": "breaker_nav",
       "centre_px": [
-        745,
-        322
+        745.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        745.0,
+        325.0
       ]
     },
     {
       "id": "breaker_strobe",
       "centre_px": [
-        771,
-        322
+        771.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        771.0,
+        325.0
       ]
     },
     {
       "id": "breaker_usb",
       "centre_px": [
-        692,
-        356
+        692.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        692.0,
+        359.0
       ]
     },
     {
       "id": "breaker_aux",
       "centre_px": [
-        719,
-        356
+        719.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        719.0,
+        359.0
       ]
     },
     {
       "id": "breaker_cabin",
       "centre_px": [
-        745,
-        356
+        745.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        745.0,
+        359.0
       ]
     },
     {
       "id": "breaker_flaps",
       "centre_px": [
-        771,
-        356
+        771.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        771.0,
+        359.0
       ]
     },
     {
       "id": "breaker_efis_aux",
       "centre_px": [
-        692,
-        392
+        692.0,
+        391.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        692.0,
+        395.0
       ]
     },
     {
       "id": "breaker_start_relay",
       "centre_px": [
-        719,
-        392
+        719.0,
+        391.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        719.0,
+        395.0
       ]
     },
     {
       "id": "breaker_pitot_heat",
       "centre_px": [
-        692,
-        427
+        692.0,
+        426.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        692.0,
+        430.0
       ]
     },
     {
       "id": "breaker_touch_left",
       "centre_px": [
-        960,
-        322
+        960.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        960.0,
+        325.0
       ]
     },
     {
       "id": "breaker_touch_right",
       "centre_px": [
-        987,
-        322
+        987.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        987.0,
+        325.0
       ]
     },
     {
       "id": "breaker_glass_standby",
       "centre_px": [
-        1013,
-        322
+        1013.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1013.0,
+        325.0
       ]
     },
     {
       "id": "breaker_adc",
       "centre_px": [
-        1040,
-        322
+        1040.0,
+        321.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1040.0,
+        325.0
       ]
     },
     {
       "id": "breaker_navigator",
       "centre_px": [
-        960,
-        356
+        960.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        960.0,
+        359.0
       ]
     },
     {
       "id": "breaker_efis_backup",
       "centre_px": [
-        987,
-        356
+        987.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        987.0,
+        359.0
       ]
     },
     {
       "id": "breaker_glass_ahrs",
       "centre_px": [
-        1013,
-        356
+        1013.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1013.0,
+        359.0
       ]
     },
     {
       "id": "breaker_ahrs2",
       "centre_px": [
-        1040,
-        356
+        1040.0,
+        355.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1040.0,
+        359.0
       ]
     },
     {
       "id": "breaker_standby_aux",
       "centre_px": [
-        1013,
-        392
+        1013.0,
+        391.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1013.0,
+        395.0
       ]
     },
     {
       "id": "breaker_ap",
       "centre_px": [
-        1040,
-        392
+        1040.0,
+        391.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1040.0,
+        395.0
       ]
     },
     {
       "id": "breaker_main_bus",
       "centre_px": [
-        1513,
-        382
+        1513.0,
+        381.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1513.0,
+        385.0
       ]
     },
     {
       "id": "breaker_backup_bus",
       "centre_px": [
-        1513,
-        454
+        1513.0,
+        453.8
       ],
       "size_px": [
-        26,
-        32
+        30.0,
+        40.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1513.0,
+        457.0
       ]
     },
     {
       "id": "lane_a",
       "centre_px": [
-        178,
-        400
+        178.0,
+        392.333333
       ],
       "size_px": [
-        30,
-        45
-      ]
-    },
-    {
-      "id": "lane_a_guard_m1",
-      "centre_px": [
-        161,
-        403
+        32.0,
+        35.658915
       ],
-      "size_px": [
-        4,
-        43
-      ]
-    },
-    {
-      "id": "lane_a_guard_1",
-      "centre_px": [
-        195,
-        403
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        178.0,
+        400.0
       ],
-      "size_px": [
-        4,
-        43
-      ]
-    },
-    {
-      "id": "lane_a_lamp",
-      "centre_px": [
-        178,
-        382
-      ],
-      "size_px": [
-        22,
-        22
+      "lamp_centre_px": [
+        178.0,
+        377.0
       ]
     },
     {
       "id": "lane_b",
       "centre_px": [
-        218,
-        400
+        218.0,
+        392.333333
       ],
       "size_px": [
-        30,
-        45
-      ]
-    },
-    {
-      "id": "lane_b_guard_m1",
-      "centre_px": [
-        201,
-        403
+        32.0,
+        35.658915
       ],
-      "size_px": [
-        4,
-        43
-      ]
-    },
-    {
-      "id": "lane_b_guard_1",
-      "centre_px": [
-        235,
-        403
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        218.0,
+        400.0
       ],
-      "size_px": [
-        4,
-        43
-      ]
-    },
-    {
-      "id": "lane_b_lamp",
-      "centre_px": [
-        218,
-        382
-      ],
-      "size_px": [
-        22,
-        22
+      "lamp_centre_px": [
+        218.0,
+        377.0
       ]
     },
     {
       "id": "ignition",
       "centre_px": [
-        190,
-        472
+        190.0,
+        472.0
       ],
       "size_px": [
-        58,
-        58
-      ]
+        76.0,
+        76.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "vent_left",
       "centre_px": [
-        145,
-        560
+        145.0,
+        585
       ],
       "size_px": [
-        122,
-        122
-      ]
+        144,
+        144
+      ],
+      "source": "Visual comparison correction: the photo vent centres are lower and their outer rims larger than the earlier written coordinates."
     },
     {
       "id": "vent_right",
       "centre_px": [
-        1575,
-        560
+        1575.0,
+        585
       ],
       "size_px": [
-        122,
-        122
-      ]
+        144,
+        144
+      ],
+      "source": "Visual comparison correction: the photo vent centres are lower and their outer rims larger than the earlier written coordinates."
     },
     {
       "id": "elt",
       "centre_px": [
-        1565,
-        450
+        1565.0,
+        450.0
       ],
       "size_px": [
-        40,
-        85
-      ]
+        40.0,
+        85.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "backlight",
       "centre_px": [
-        707,
-        532
+        707.0,
+        538.2337662337662
       ],
       "size_px": [
-        38,
-        45
+        38.0,
+        45.0
+      ],
+      "source": "Measured knob centre; installation envelope compensates for the native face centre offset.",
+      "hardware_centre_px": [
+        707,
+        532
       ]
     },
     {
       "id": "cabin_heat",
       "centre_px": [
-        1022,
-        470
+        1021.9999999999999,
+        476.2337662337663
       ],
       "size_px": [
-        63,
-        63
+        54.0,
+        54.0
+      ],
+      "source": "Measured knob centre; installation envelope compensates for the native face centre offset.",
+      "hardware_centre_px": [
+        1022,
+        470
       ]
     },
     {
       "id": "cabin_light",
       "centre_px": [
-        1022,
-        535
+        1022.0,
+        541.2337662337662
       ],
       "size_px": [
-        38,
-        45
+        38.0,
+        45.0
+      ],
+      "source": "Measured knob centre; installation envelope compensates for the native face centre offset.",
+      "hardware_centre_px": [
+        1022,
+        535
       ]
     },
     {
       "id": "ems_backup",
       "centre_px": [
-        695,
-        597
+        695.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        695.0,
+        596.85
       ]
     },
     {
       "id": "pump1",
       "centre_px": [
-        740,
-        597
+        740.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        740.0,
+        596.85
       ]
     },
     {
       "id": "pump2",
       "centre_px": [
-        785,
-        597
+        785.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        785.0,
+        596.85
       ]
     },
     {
       "id": "efis_backup_switch",
       "centre_px": [
-        827,
-        597
+        827.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        827.0,
+        596.85
       ]
     },
     {
       "id": "avionics_switch",
       "centre_px": [
-        860,
-        597
+        860.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        860.0,
+        596.85
       ]
     },
     {
       "id": "beacon_switch",
       "centre_px": [
-        896,
-        597
+        896.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        896.0,
+        596.85
       ]
     },
     {
       "id": "nav_switch",
       "centre_px": [
-        930,
-        597
+        930.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        930.0,
+        596.85
       ]
     },
     {
       "id": "taxi_switch",
       "centre_px": [
-        963,
-        597
+        963.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        963.0,
+        596.85
       ]
     },
     {
       "id": "landing_switch",
       "centre_px": [
-        996,
-        597
+        996.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        996.0,
+        596.85
       ]
     },
     {
       "id": "pitot_switch",
       "centre_px": [
-        1030,
-        597
+        1030.0,
+        595.5
       ],
       "size_px": [
-        31,
-        48
+        40.0,
+        45.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions.",
+      "hardware_centre_px": [
+        1030.0,
+        596.85
       ]
     },
     {
       "id": "lights_bracket",
       "centre_px": [
-        946,
-        572
+        946.0,
+        572.0
       ],
       "size_px": [
-        140,
-        10
-      ]
+        140.0,
+        10.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "guard_712",
       "centre_px": [
-        712,
-        598
+        712.0,
+        598.0
       ],
       "size_px": [
-        4,
-        50
-      ]
+        4.0,
+        50.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "guard_763",
       "centre_px": [
-        763,
-        598
+        763.0,
+        598.0
       ],
       "size_px": [
-        4,
-        50
-      ]
+        4.0,
+        50.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "guard_806",
       "centre_px": [
-        806,
-        598
+        806.0,
+        598.0
       ],
       "size_px": [
-        4,
-        50
-      ]
+        4.0,
+        50.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "parachute",
       "centre_px": [
-        865,
-        650
+        865.0,
+        651.0
       ],
       "size_px": [
-        90,
-        36
-      ]
+        70.0,
+        20.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
     },
     {
       "id": "fuel_selector",
       "centre_px": [
+        865.0,
+        770.0
+      ],
+      "size_px": [
+        158.0,
+        164.0
+      ],
+      "source": "Photo measurement at (865, 770), authorized to replace the written y = 890 position."
+    },
+    {
+      "id": "chute_placard",
+      "centre_px": [
+        865.0,
+        637.0
+      ],
+      "size_px": [
+        106.0,
+        10.0
+      ],
+      "source": "Supplied measured layout; installation envelope includes native face labels and hit regions."
+    },
+    {
+      "id": "lane_group",
+      "centre_px": [
+        198.0,
+        370.49999999999994
+      ],
+      "size_px": [
+        32.0,
+        9.0
+      ],
+      "source": "Original measured silver lane-guard bars and group placard."
+    },
+    {
+      "id": "lane_guard_157",
+      "centre_px": [
+        157.00000000000003,
+        405.5
+      ],
+      "size_px": [
+        3.4,
+        43.0
+      ],
+      "source": "Original measured silver lane-guard bars and group placard."
+    },
+    {
+      "id": "lane_guard_198",
+      "centre_px": [
+        198.0,
+        405.5
+      ],
+      "size_px": [
+        3.4,
+        43.0
+      ],
+      "source": "Original measured silver lane-guard bars and group placard."
+    },
+    {
+      "id": "lane_guard_239",
+      "centre_px": [
+        239.0,
+        405.5
+      ],
+      "size_px": [
+        3.4,
+        43.0
+      ],
+      "source": "Original measured silver lane-guard bars and group placard."
+    },
+    {
+      "id": "essentials_bracket_left",
+      "centre_px": [
+        696.4999999999999,
+        297.0
+      ],
+      "size_px": [
+        31.0,
+        0.8000000000000002
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "essentials_bracket_right",
+      "centre_px": [
+        773.4999999999999,
+        297.0
+      ],
+      "size_px": [
+        31.0,
+        0.8000000000000002
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "essentials_end_left",
+      "centre_px": [
+        681.4,
+        299.5
+      ],
+      "size_px": [
+        0.8000000000000002,
+        5.0
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "essentials_end_right",
+      "centre_px": [
+        788.6000000000001,
+        299.5
+      ],
+      "size_px": [
+        0.8000000000000002,
+        5.0
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "avionics_bracket_bracket_left",
+      "centre_px": [
+        963.0000000000001,
+        297.0
+      ],
+      "size_px": [
+        34.0,
+        0.8000000000000002
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "avionics_bracket_bracket_right",
+      "centre_px": [
+        1037.0,
+        297.0
+      ],
+      "size_px": [
+        33.999999999999886,
+        0.8000000000000002
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "avionics_bracket_end_left",
+      "centre_px": [
+        946.4000000000001,
+        299.5
+      ],
+      "size_px": [
+        0.8000000000000002,
+        5.0
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "avionics_bracket_end_right",
+      "centre_px": [
+        1053.6000000000001,
+        299.5
+      ],
+      "size_px": [
+        0.8000000000000002,
+        5.0
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "lights_bracket_bracket_left",
+      "centre_px": [
+        902.7499999999999,
+        572.0000000000001
+      ],
+      "size_px": [
+        53.499999999999886,
+        0.8000000000000002
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "lights_bracket_bracket_right",
+      "centre_px": [
+        989.2499999999998,
+        572.0000000000001
+      ],
+      "size_px": [
+        53.5,
+        0.8000000000000002
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "lights_bracket_end_left",
+      "centre_px": [
+        876.4,
+        574.5000000000001
+      ],
+      "size_px": [
+        0.8000000000000002,
+        5.0
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "lights_bracket_end_right",
+      "centre_px": [
+        1015.5999999999999,
+        574.5000000000001
+      ],
+      "size_px": [
+        0.8000000000000002,
+        5.0
+      ],
+      "source": "Measured group bracket, with original small-cap caption geometry."
+    },
+    {
+      "id": "backlight_placard",
+      "centre_px": [
+        707.0,
+        509.0
+      ],
+      "size_px": [
+        68.0,
+        8.0
+      ],
+      "source": "Measured knob placard, positioned above the physical control."
+    },
+    {
+      "id": "cabin_heat_placard",
+      "centre_px": [
+        1021.9999999999999,
+        449.0
+      ],
+      "size_px": [
+        68.0,
+        8.0
+      ],
+      "source": "Measured knob placard, positioned above the physical control."
+    },
+    {
+      "id": "cabin_light_placard",
+      "centre_px": [
+        1021.9999999999999,
+        510.99999999999994
+      ],
+      "size_px": [
+        68.0,
+        8.0
+      ],
+      "source": "Measured knob placard, positioned above the physical control."
+    }
+  ],
+  "console": {
+    "bottom_y_px": 855,
+    "source": "Photo measurement correction; supersedes the written continuation to y = 968."
+  },
+  "format_version": 2,
+  "corrections": [
+    {
+      "installation": "fuel_selector",
+      "previous_centre_px": [
         865,
         890
       ],
-      "size_px": [
-        110,
-        140
-      ]
+      "photo_centre_px": [
+        865,
+        770
+      ],
+      "reason": "The owner explicitly selected the photograph over the earlier written console measurement."
+    },
+    {
+      "installation": "centre_console",
+      "previous_bottom_y_px": 968,
+      "photo_bottom_y_px": 855,
+      "reason": "The console terminates directly below the photographed selector."
+    },
+    {
+      "installation": "vents",
+      "previous_centre_y_px": 560,
+      "photo_centre_y_px": 585,
+      "reason": "Side-by-side inspection showed the written vent centres were above the photographed rims; 144 px installation envelopes yield approximately 137 px outer rims in the native style."
     }
   ]
 }

@@ -193,7 +193,7 @@
           "id": "landing",
           "bus": "main",
           "switch": "landing",
-          "amps": 5,
+          "amps": 2.5,
           "breaker_amps": 10,
           "backup_capacity_ah": 0
         },
@@ -275,6 +275,14 @@
           "switch": "pitot_heat",
           "amps": 8,
           "breaker_amps": 15,
+          "backup_capacity_ah": 0
+        },
+        {
+          "id": "landing_right",
+          "bus": "main",
+          "switch": "landing",
+          "amps": 2.5,
+          "breaker_amps": 10,
           "backup_capacity_ah": 0
         }
       ]
@@ -404,7 +412,39 @@
           "label": "SHUT DOWN ENGINE",
           "threshold": 0
         }
-      ]
+      ],
+      "backup_buses": [
+        {
+          "circuit": "ems",
+          "capacity_ah": 2,
+          "voltage": 12,
+          "loads": [
+            "lane_a",
+            "lane_b",
+            "pump_1",
+            "pump_2"
+          ]
+        },
+        {
+          "circuit": "efis",
+          "capacity_ah": 2,
+          "voltage": 12,
+          "loads": [
+            "touch_left",
+            "touch_right",
+            "glass_ahrs",
+            "ahrs2",
+            "adc",
+            "navigator",
+            "efis_backup"
+          ]
+        }
+      ],
+      "wigwag": {
+        "left_load": "landing",
+        "right_load": "landing_right",
+        "half_period_s": 0.5
+      }
     }
   }
 }

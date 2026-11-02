@@ -1855,7 +1855,7 @@
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
     "/definition/electrical/loads/18/amps": {
-      "value": 5,
+      "value": 2.5,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
     "/definition/electrical/loads/18/breaker_amps": {
@@ -1983,6 +1983,18 @@
       "source": "Supplied measured panel layout; push-pull breaker amp rating."
     },
     "/definition/electrical/loads/28/backup_capacity_ah": {
+      "value": 0,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/electrical/loads/29/amps": {
+      "value": 2.5,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/electrical/loads/29/breaker_amps": {
+      "value": 10,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/electrical/loads/29/backup_capacity_ah": {
       "value": 0,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
@@ -2149,6 +2161,26 @@
     "/definition/modern/annunciations/6/threshold": {
       "value": 0,
       "source": "engine_shutdown"
+    },
+    "/definition/modern/backup_buses/0/capacity_ah": {
+      "value": 2,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/modern/backup_buses/0/voltage": {
+      "value": 12,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/modern/backup_buses/1/capacity_ah": {
+      "value": 2,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/modern/backup_buses/1/voltage": {
+      "value": 12,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/modern/wigwag/half_period_s": {
+      "value": 0.5,
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     }
   },
   "panel.json": {
@@ -2197,11 +2229,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/0/0/1": {
-      "value": 446.6000000000001,
+      "value": 446.6,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/0/1/0": {
-      "value": 15.400000000000002,
+      "value": 32.34,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/0/1/1": {
@@ -2209,15 +2241,15 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/0/2/0": {
-      "value": 69.30000000000001,
+      "value": 77.0,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/0/2/1": {
-      "value": 260.26,
+      "value": 257.95,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/0/3/0": {
-      "value": 138.60000000000002,
+      "value": 142.45000000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/0/3/1": {
@@ -2225,7 +2257,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/1/0/0": {
-      "value": 138.60000000000002,
+      "value": 142.45000000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/1/0/1": {
@@ -2233,11 +2265,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/1/1/0": {
-      "value": 227.15,
+      "value": 231.0,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/1/1/1": {
-      "value": 187.88000000000002,
+      "value": 187.88,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/1/2/0": {
@@ -2249,7 +2281,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/1/3/0": {
-      "value": 500.50000000000006,
+      "value": 500.5,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/1/3/1": {
@@ -2257,7 +2289,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/2/0/0": {
-      "value": 500.50000000000006,
+      "value": 500.5,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/2/0/1": {
@@ -2265,19 +2297,19 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/2/1/0": {
-      "value": 554.4000000000001,
+      "value": 554.4,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/2/1/1": {
-      "value": 138.60000000000002,
+      "value": 138.6,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/2/2/0": {
-      "value": 777.7000000000002,
+      "value": 777.7,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/2/2/1": {
-      "value": 138.60000000000002,
+      "value": 138.6,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/2/3/0": {
@@ -2305,7 +2337,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/3/2/0": {
-      "value": 1116.5000000000002,
+      "value": 1116.5,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/3/2/1": {
@@ -2329,19 +2361,19 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/4/1/0": {
-      "value": 1274.3500000000001,
+      "value": 1262.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/4/1/1": {
-      "value": 260.26,
+      "value": 257.95,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/4/2/0": {
-      "value": 1301.3000000000002,
+      "value": 1297.45,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/4/2/1": {
-      "value": 365.75,
+      "value": 361.90000000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/4/3/0": {
@@ -2349,7 +2381,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/4/3/1": {
-      "value": 446.6000000000001,
+      "value": 446.6,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/0/0": {
@@ -2357,23 +2389,23 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/0/1": {
-      "value": 446.6000000000001,
+      "value": 446.6,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/1/0": {
-      "value": 1297.45,
+      "value": 1293.6000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/1/1": {
-      "value": 539.0,
+      "value": 510.51,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/2/0": {
-      "value": 1255.1000000000001,
+      "value": 1266.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/2/1": {
-      "value": 565.95,
+      "value": 539.0,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/3/0": {
@@ -2381,7 +2413,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/5/3/1": {
-      "value": 569.8000000000001,
+      "value": 534.38,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/0/0": {
@@ -2389,7 +2421,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/0/1": {
-      "value": 569.8000000000001,
+      "value": 534.38,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/1/0": {
@@ -2397,7 +2429,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/1/1": {
-      "value": 508.2,
+      "value": 485.1,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/2/0": {
@@ -2405,7 +2437,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/2/1": {
-      "value": 492.80000000000007,
+      "value": 483.56,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/3/0": {
@@ -2413,7 +2445,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/6/3/1": {
-      "value": 512.0500000000001,
+      "value": 503.58,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/0/0": {
@@ -2421,87 +2453,87 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/0/1": {
-      "value": 512.0500000000001,
+      "value": 503.58,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/1/0": {
-      "value": 746.9000000000001,
+      "value": 750.75,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/1/1": {
-      "value": 527.45,
+      "value": 512.0500000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/2/0": {
-      "value": 735.35,
+      "value": 743.0500000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/2/1": {
-      "value": 631.4000000000001,
+      "value": 532.07,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/3/0": {
-      "value": 723.8000000000001,
+      "value": 710.71,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/7/3/1": {
-      "value": 745.3600000000001,
+      "value": 532.84,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/0/0": {
-      "value": 723.8000000000001,
+      "value": 710.71,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/0/1": {
-      "value": 745.3600000000001,
+      "value": 532.84,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/1/0": {
-      "value": 693.0,
+      "value": 677.6,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/1/1": {
-      "value": 745.3600000000001,
+      "value": 535.92,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/2/0": {
-      "value": 639.1,
+      "value": 650.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/2/1": {
-      "value": 745.3600000000001,
+      "value": 535.92,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/3/0": {
-      "value": 608.3000000000001,
+      "value": 622.16,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/8/3/1": {
-      "value": 745.3600000000001,
+      "value": 532.84,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/0/0": {
-      "value": 608.3000000000001,
+      "value": 622.16,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/0/1": {
-      "value": 745.3600000000001,
+      "value": 532.84,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/1/0": {
-      "value": 596.75,
+      "value": 589.82,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/1/1": {
-      "value": 635.25,
+      "value": 531.3000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/2/0": {
-      "value": 577.5000000000001,
+      "value": 577.5,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/2/1": {
-      "value": 527.45,
+      "value": 508.2,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/3/0": {
@@ -2509,7 +2541,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/9/3/1": {
-      "value": 512.0500000000001,
+      "value": 503.58,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/0/0": {
@@ -2517,15 +2549,15 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/0/1": {
-      "value": 512.0500000000001,
+      "value": 503.58,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/1/0": {
-      "value": 385.00000000000006,
+      "value": 377.3,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/1/1": {
-      "value": 492.80000000000007,
+      "value": 483.56,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/2/0": {
@@ -2533,39 +2565,39 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/2/1": {
-      "value": 508.2,
+      "value": 485.1,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/3/0": {
-      "value": 107.80000000000001,
+      "value": 107.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/10/3/1": {
-      "value": 569.8000000000001,
+      "value": 534.38,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/0/0": {
-      "value": 107.80000000000001,
+      "value": 107.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/0/1": {
-      "value": 569.8000000000001,
+      "value": 534.38,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/1/0": {
-      "value": 57.75,
+      "value": 63.14,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/1/1": {
-      "value": 565.95,
+      "value": 535.92,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/2/0": {
-      "value": 46.2,
+      "value": 43.89,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/2/1": {
-      "value": 523.6,
+      "value": 508.2,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/3/0": {
@@ -2573,7 +2605,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/outline/curves/11/3/1": {
-      "value": 446.6000000000001,
+      "value": 446.6,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/shell/glare_shield/curves/0/0/0": {
@@ -3128,6 +3160,262 @@
       "value": 366.52000000000004,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
+    "/equipment/shell/screws/29/0": {
+      "value": 208.67,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/29/1": {
+      "value": 252.56,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/30/0": {
+      "value": 499.73,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/30/1": {
+      "value": 252.56,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/31/0": {
+      "value": 208.67,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/31/1": {
+      "value": 457.38,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/32/0": {
+      "value": 499.73,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/32/1": {
+      "value": 457.38,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/33/0": {
+      "value": 835.45,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/33/1": {
+      "value": 252.56,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/34/0": {
+      "value": 1126.51,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/34/1": {
+      "value": 252.56,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/35/0": {
+      "value": 835.45,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/35/1": {
+      "value": 457.38,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/36/0": {
+      "value": 1126.51,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/36/1": {
+      "value": 457.38,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/37/0": {
+      "value": 579.04,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/37/1": {
+      "value": 299.53,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/38/0": {
+      "value": 749.21,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/38/1": {
+      "value": 299.53,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/39/0": {
+      "value": 579.04,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/39/1": {
+      "value": 364.98,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/40/0": {
+      "value": 749.21,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/40/1": {
+      "value": 364.98,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/41/0": {
+      "value": 576.73,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/41/1": {
+      "value": 378.07,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/42/0": {
+      "value": 753.06,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/42/1": {
+      "value": 378.07,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/43/0": {
+      "value": 576.73,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/43/1": {
+      "value": 427.35,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/44/0": {
+      "value": 753.06,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/screws/44/1": {
+      "value": 427.35,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/0/0": {
+      "value": 523.6,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/0/1": {
+      "value": 503.58,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/1/0": {
+      "value": 569.8000000000001,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/1/1": {
+      "value": 511.28000000000003,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/2/0": {
+      "value": 585.2,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/2/1": {
+      "value": 545.16,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/3/0": {
+      "value": 604.45,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/0/3/1": {
+      "value": 658.35,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/0/0": {
+      "value": 604.45,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/0/1": {
+      "value": 658.35,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/1/0": {
+      "value": 635.25,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/1/1": {
+      "value": 660.66,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/2/0": {
+      "value": 696.85,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/2/1": {
+      "value": 660.66,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/3/0": {
+      "value": 726.88,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/1/3/1": {
+      "value": 658.35,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/0/0": {
+      "value": 726.88,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/0/1": {
+      "value": 658.35,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/1/0": {
+      "value": 743.0500000000001,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/1/1": {
+      "value": 545.16,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/2/0": {
+      "value": 766.15,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/2/1": {
+      "value": 512.0500000000001,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/3/0": {
+      "value": 808.5,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/2/3/1": {
+      "value": 503.58,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/0/0": {
+      "value": 808.5,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/0/1": {
+      "value": 503.58,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/1/0": {
+      "value": 731.5,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/1/1": {
+      "value": 515.9,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/2/0": {
+      "value": 592.9,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/2/1": {
+      "value": 515.9,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/3/0": {
+      "value": 523.6,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/shell/centre_console/curves/3/3/1": {
+      "value": 503.58,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
     "/equipment/elements/0/position/0": {
       "value": 190.96,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
@@ -3148,6 +3436,42 @@
       "value": 0.2,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
+    "/equipment/elements/0/appearance/bezel/margins/0": {
+      "value": 16.94,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/margins/1": {
+      "value": 21.560000000000002,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/margins/2": {
+      "value": 16.94,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/margins/3": {
+      "value": 46.2,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/softkey_count": {
+      "value": 4,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/corner_knobs/0/0": {
+      "value": 26.18,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/corner_knobs/0/1": {
+      "value": 217.91,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/corner_knobs/1/0": {
+      "value": 300.3,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/0/appearance/bezel/corner_knobs/1/1": {
+      "value": 217.91,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
     "/equipment/elements/1/position/0": {
       "value": 817.7400000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
@@ -3166,6 +3490,42 @@
     },
     "/equipment/elements/1/element/composition/engine_strip_fraction": {
       "value": 0.2,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/margins/0": {
+      "value": 16.94,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/margins/1": {
+      "value": 21.560000000000002,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/margins/2": {
+      "value": 16.94,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/margins/3": {
+      "value": 46.2,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/softkey_count": {
+      "value": 4,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/corner_knobs/0/0": {
+      "value": 26.18,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/corner_knobs/0/1": {
+      "value": 217.91,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/corner_knobs/1/0": {
+      "value": 300.3,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/1/appearance/bezel/corner_knobs/1/1": {
+      "value": 217.91,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/2/position/0": {
@@ -3214,6 +3574,278 @@
     },
     "/equipment/elements/4/size/1": {
       "value": 59.290000000000006,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/0/rect/0": {
+      "value": 0.77,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/0/rect/1": {
+      "value": 0.77,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/0/rect/2": {
+      "value": 59.29,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/0/rect/3": {
+      "value": 57.75,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/1/rect/0": {
+      "value": 60.83,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/1/rect/1": {
+      "value": 0.77,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/1/rect/2": {
+      "value": 43.89,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/1/rect/3": {
+      "value": 57.75,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/2/rect/0": {
+      "value": 105.49000000000001,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/2/rect/1": {
+      "value": 0.77,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/2/rect/2": {
+      "value": 80.85000000000001,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/sections/2/rect/3": {
+      "value": 57.75,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/0/rect/0": {
+      "value": 3.85,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/0/rect/1": {
+      "value": 2.31,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/0/rect/2": {
+      "value": 36.19,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/0/rect/3": {
+      "value": 40.81,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/1/rect/0": {
+      "value": 41.58,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/1/rect/1": {
+      "value": 6.93,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/1/rect/2": {
+      "value": 17.71,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/1/rect/3": {
+      "value": 13.09,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/2/rect/0": {
+      "value": 13.86,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/2/rect/1": {
+      "value": 45.43,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/2/rect/2": {
+      "value": 18.48,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/2/rect/3": {
+      "value": 10.78,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/3/rect/0": {
+      "value": 36.96,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/3/rect/1": {
+      "value": 45.43,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/3/rect/2": {
+      "value": 18.48,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/3/rect/3": {
+      "value": 10.78,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/4/rect/0": {
+      "value": 62.37,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/4/rect/1": {
+      "value": 17.71,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/4/rect/2": {
+      "value": 17.71,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/4/rect/3": {
+      "value": 13.09,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/5/rect/0": {
+      "value": 85.47,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/5/rect/1": {
+      "value": 17.71,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/5/rect/2": {
+      "value": 17.71,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/5/rect/3": {
+      "value": 13.09,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/6/rect/0": {
+      "value": 62.37,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/6/rect/1": {
+      "value": 36.19,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/6/rect/2": {
+      "value": 17.71,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/6/rect/3": {
+      "value": 13.09,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/7/rect/0": {
+      "value": 85.47,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/7/rect/1": {
+      "value": 36.19,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/7/rect/2": {
+      "value": 17.71,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/7/rect/3": {
+      "value": 13.09,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/8/rect/0": {
+      "value": 107.03,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/8/rect/1": {
+      "value": 13.09,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/8/rect/2": {
+      "value": 10.01,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/8/rect/3": {
+      "value": 39.27,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/9/rect/0": {
+      "value": 121.66,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/9/rect/1": {
+      "value": 6.93,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/9/rect/2": {
+      "value": 19.25,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/9/rect/3": {
+      "value": 12.32,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/10/rect/0": {
+      "value": 121.66,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/10/rect/1": {
+      "value": 24.64,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/10/rect/2": {
+      "value": 19.25,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/10/rect/3": {
+      "value": 12.32,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/11/rect/0": {
+      "value": 121.66,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/11/rect/1": {
+      "value": 45.43,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/11/rect/2": {
+      "value": 19.25,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/11/rect/3": {
+      "value": 10.78,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/12/rect/0": {
+      "value": 145.53,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/12/rect/1": {
+      "value": 45.43,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/12/rect/2": {
+      "value": 21.56,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/12/rect/3": {
+      "value": 10.78,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/13/rect/0": {
+      "value": 142.45,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/13/rect/1": {
+      "value": 2.31,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/13/rect/2": {
+      "value": 40.81,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/4/appearance/controller/controls/13/rect/3": {
+      "value": 40.81,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/5/position/0": {
@@ -3329,15 +3961,15 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/11/position/0": {
-      "value": 137.06,
+      "value": 524.37,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/11/position/1": {
-      "value": 281.82000000000005,
+      "value": 224.07000000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/11/size/0": {
-      "value": 30.800000000000004,
+      "value": 83.16000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/11/size/1": {
@@ -3345,11 +3977,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/11/element/font_size_mm": {
-      "value": 5.390000000000001,
+      "value": 4.851,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/12/position/0": {
-      "value": 524.37,
+      "value": 728.4200000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/12/position/1": {
@@ -3364,24 +3996,28 @@
       "value": 9.24,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
+    "/equipment/elements/12/element/font_size_mm": {
+      "value": 4.851,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
     "/equipment/elements/13/position/0": {
-      "value": 728.4200000000001,
+      "value": 521.2900000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/13/position/1": {
-      "value": 224.07000000000002,
+      "value": 232.38600000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/13/size/0": {
-      "value": 83.16000000000001,
+      "value": 23.1,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/13/size/1": {
-      "value": 9.24,
+      "value": 30.800000000000004,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/14/position/0": {
-      "value": 521.2900000000001,
+      "value": 542.08,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/14/position/1": {
@@ -3397,7 +4033,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/15/position/0": {
-      "value": 542.08,
+      "value": 562.1000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/15/position/1": {
@@ -3413,7 +4049,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/16/position/0": {
-      "value": 562.1000000000001,
+      "value": 582.12,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/16/position/1": {
@@ -3429,11 +4065,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/17/position/0": {
-      "value": 582.12,
+      "value": 521.2900000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/17/position/1": {
-      "value": 232.38600000000002,
+      "value": 258.56600000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/17/size/0": {
@@ -3445,7 +4081,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/18/position/0": {
-      "value": 521.2900000000001,
+      "value": 542.08,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/18/position/1": {
@@ -3461,7 +4097,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/19/position/0": {
-      "value": 542.08,
+      "value": 562.1000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/19/position/1": {
@@ -3477,7 +4113,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/20/position/0": {
-      "value": 562.1000000000001,
+      "value": 582.12,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/20/position/1": {
@@ -3493,11 +4129,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/21/position/0": {
-      "value": 582.12,
+      "value": 521.2900000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/21/position/1": {
-      "value": 258.56600000000003,
+      "value": 286.286,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/21/size/0": {
@@ -3509,7 +4145,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/22/position/0": {
-      "value": 521.2900000000001,
+      "value": 542.08,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/22/position/1": {
@@ -3525,11 +4161,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/23/position/0": {
-      "value": 542.08,
+      "value": 521.2900000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/23/position/1": {
-      "value": 286.286,
+      "value": 313.23600000000005,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/23/size/0": {
@@ -3541,11 +4177,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/24/position/0": {
-      "value": 521.2900000000001,
+      "value": 727.6500000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/24/position/1": {
-      "value": 313.23600000000005,
+      "value": 232.38600000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/24/size/0": {
@@ -3557,7 +4193,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/25/position/0": {
-      "value": 727.6500000000001,
+      "value": 748.44,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/25/position/1": {
@@ -3573,7 +4209,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/26/position/0": {
-      "value": 748.44,
+      "value": 768.4600000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/26/position/1": {
@@ -3589,7 +4225,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/27/position/0": {
-      "value": 768.4600000000002,
+      "value": 789.2500000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/27/position/1": {
@@ -3605,11 +4241,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/28/position/0": {
-      "value": 789.2500000000001,
+      "value": 727.6500000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/28/position/1": {
-      "value": 232.38600000000002,
+      "value": 258.56600000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/28/size/0": {
@@ -3621,7 +4257,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/29/position/0": {
-      "value": 727.6500000000001,
+      "value": 748.44,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/29/position/1": {
@@ -3637,7 +4273,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/30/position/0": {
-      "value": 748.44,
+      "value": 768.4600000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/30/position/1": {
@@ -3653,7 +4289,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/31/position/0": {
-      "value": 768.4600000000002,
+      "value": 789.2500000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/31/position/1": {
@@ -3669,11 +4305,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/32/position/0": {
-      "value": 789.2500000000001,
+      "value": 768.4600000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/32/position/1": {
-      "value": 258.56600000000003,
+      "value": 286.286,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/32/size/0": {
@@ -3685,7 +4321,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/33/position/0": {
-      "value": 768.4600000000002,
+      "value": 789.2500000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/33/position/1": {
@@ -3701,11 +4337,11 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/34/position/0": {
-      "value": 789.2500000000001,
+      "value": 1153.4600000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/34/position/1": {
-      "value": 286.286,
+      "value": 278.586,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/34/size/0": {
@@ -3721,7 +4357,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/35/position/1": {
-      "value": 278.586,
+      "value": 334.02600000000007,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/35/size/0": {
@@ -3733,767 +4369,739 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/36/position/0": {
-      "value": 1153.4600000000003,
+      "value": 124.74,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/36/position/1": {
-      "value": 334.02600000000007,
+      "value": 288.36798449612405,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/36/size/0": {
-      "value": 23.1,
+      "value": 24.64,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/36/size/1": {
-      "value": 30.800000000000004,
+      "value": 27.45736434108527,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/37/position/0": {
-      "value": 125.51,
+      "value": 155.54,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/37/position/1": {
-      "value": 290.67500000000007,
+      "value": 288.36798449612405,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/37/size/0": {
-      "value": 23.1,
+      "value": 24.64,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/37/size/1": {
-      "value": 34.650000000000006,
+      "value": 27.45736434108527,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/38/position/0": {
-      "value": 122.43,
+      "value": 117.04,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/38/position/1": {
-      "value": 293.755,
+      "value": 334.18,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/38/size/0": {
-      "value": 3.08,
+      "value": 58.52,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/38/size/1": {
-      "value": 33.11000000000001,
+      "value": 58.52,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/39/position/0": {
-      "value": 148.61,
+      "value": 56.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/39/position/1": {
-      "value": 293.755,
+      "value": 395.01,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/39/size/0": {
-      "value": 3.08,
+      "value": 110.88,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/39/size/1": {
-      "value": 33.11000000000001,
+      "value": 110.88,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/40/position/0": {
-      "value": 128.59,
+      "value": 1157.31,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/40/position/1": {
-      "value": 285.67,
+      "value": 395.01,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/40/size/0": {
-      "value": 16.94,
+      "value": 110.88,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/40/size/1": {
-      "value": 16.94,
+      "value": 110.88,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/41/position/0": {
-      "value": 156.31,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/41/position/1": {
-      "value": 290.67500000000007,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/41/size/0": {
-      "value": 23.1,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/41/size/1": {
-      "value": 34.650000000000006,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/42/position/0": {
-      "value": 153.23000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/42/position/1": {
-      "value": 293.755,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/42/size/0": {
-      "value": 3.08,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/42/size/1": {
-      "value": 33.11000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/43/position/0": {
-      "value": 179.41,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/43/position/1": {
-      "value": 293.755,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/43/size/0": {
-      "value": 3.08,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/43/size/1": {
-      "value": 33.11000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/44/position/0": {
-      "value": 159.39000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/44/position/1": {
-      "value": 285.67,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/44/size/0": {
-      "value": 16.94,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/44/size/1": {
-      "value": 16.94,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/45/position/0": {
-      "value": 123.97,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/45/position/1": {
-      "value": 341.11,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/45/size/0": {
-      "value": 44.660000000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/45/size/1": {
-      "value": 44.660000000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/46/position/0": {
-      "value": 64.68,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/46/position/1": {
-      "value": 384.2300000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/46/size/0": {
-      "value": 93.94000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/46/size/1": {
-      "value": 93.94000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/47/position/0": {
-      "value": 1165.7800000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/47/position/1": {
-      "value": 384.2300000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/47/size/0": {
-      "value": 93.94000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/47/size/1": {
-      "value": 93.94000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/48/position/0": {
       "value": 1189.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/48/position/1": {
+    "/equipment/elements/41/position/1": {
       "value": 313.77500000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/48/size/0": {
+    "/equipment/elements/41/size/0": {
       "value": 30.800000000000004,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/48/size/1": {
+    "/equipment/elements/41/size/1": {
       "value": 65.45,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/49/position/0": {
-      "value": 529.7600000000001,
+    "/equipment/elements/42/position/0": {
+      "value": 529.76,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/49/position/1": {
-      "value": 392.31500000000005,
+    "/equipment/elements/42/position/1": {
+      "value": 397.115,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/49/size/0": {
+    "/equipment/elements/42/size/0": {
       "value": 29.26,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/49/size/1": {
-      "value": 34.650000000000006,
+    "/equipment/elements/42/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/50/position/0": {
-      "value": 762.6850000000001,
+    "/equipment/elements/43/position/0": {
+      "value": 766.15,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/50/position/1": {
-      "value": 337.64500000000004,
+    "/equipment/elements/43/position/1": {
+      "value": 345.91,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/50/size/0": {
-      "value": 48.510000000000005,
+    "/equipment/elements/43/size/0": {
+      "value": 41.58,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/50/size/1": {
-      "value": 48.510000000000005,
+    "/equipment/elements/43/size/1": {
+      "value": 41.58,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/51/position/0": {
-      "value": 772.3100000000002,
+    "/equipment/elements/44/position/0": {
+      "value": 772.3100000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/51/position/1": {
-      "value": 394.62500000000006,
+    "/equipment/elements/44/position/1": {
+      "value": 399.425,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/51/size/0": {
+    "/equipment/elements/44/size/0": {
       "value": 29.26,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/51/size/1": {
-      "value": 34.650000000000006,
+    "/equipment/elements/44/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/52/position/0": {
-      "value": 523.215,
+    "/equipment/elements/45/position/0": {
+      "value": 519.75,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/52/position/1": {
-      "value": 441.21000000000004,
+    "/equipment/elements/45/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/52/size/0": {
-      "value": 23.87,
+    "/equipment/elements/45/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/52/size/1": {
-      "value": 36.96,
+    "/equipment/elements/45/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/53/position/0": {
+    "/equipment/elements/46/position/0": {
       "value": 554.4,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/53/position/1": {
-      "value": 447.986,
+    "/equipment/elements/46/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/53/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/46/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/53/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/46/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/54/position/0": {
+    "/equipment/elements/47/position/0": {
       "value": 589.05,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/54/position/1": {
-      "value": 447.986,
+    "/equipment/elements/47/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/54/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/47/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/54/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/47/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/55/position/0": {
-      "value": 624.855,
+    "/equipment/elements/48/position/0": {
+      "value": 621.39,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/55/position/1": {
-      "value": 441.21000000000004,
+    "/equipment/elements/48/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/55/size/0": {
-      "value": 23.87,
+    "/equipment/elements/48/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/55/size/1": {
-      "value": 36.96,
+    "/equipment/elements/48/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/56/position/0": {
-      "value": 646.8000000000001,
+    "/equipment/elements/49/position/0": {
+      "value": 646.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/56/position/1": {
-      "value": 447.986,
+    "/equipment/elements/49/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/56/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/49/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/56/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/49/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/57/position/0": {
+    "/equipment/elements/50/position/0": {
       "value": 674.52,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/57/position/1": {
-      "value": 447.986,
+    "/equipment/elements/50/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/57/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/50/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/57/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/50/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/58/position/0": {
+    "/equipment/elements/51/position/0": {
       "value": 700.7,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/58/position/1": {
-      "value": 447.986,
+    "/equipment/elements/51/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/58/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/51/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/58/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/51/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/59/position/0": {
+    "/equipment/elements/52/position/0": {
       "value": 726.11,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/59/position/1": {
-      "value": 447.986,
+    "/equipment/elements/52/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/59/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/52/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/59/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/52/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/60/position/0": {
+    "/equipment/elements/53/position/0": {
       "value": 751.52,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/60/position/1": {
-      "value": 447.986,
+    "/equipment/elements/53/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/60/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/53/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/60/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/53/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/61/position/0": {
-      "value": 777.7000000000002,
+    "/equipment/elements/54/position/0": {
+      "value": 777.7,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/61/position/1": {
-      "value": 447.986,
+    "/equipment/elements/54/position/1": {
+      "value": 441.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/61/size/0": {
-      "value": 30.800000000000004,
+    "/equipment/elements/54/size/0": {
+      "value": 30.8,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/61/size/1": {
-      "value": 30.800000000000004,
+    "/equipment/elements/54/size/1": {
+      "value": 34.65,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/62/position/0": {
+    "/equipment/elements/55/position/0": {
       "value": 674.52,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/62/position/1": {
+    "/equipment/elements/55/position/1": {
       "value": 436.59000000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/62/size/0": {
+    "/equipment/elements/55/size/0": {
       "value": 107.80000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/62/size/1": {
+    "/equipment/elements/55/size/1": {
       "value": 7.700000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/63/position/0": {
+    "/equipment/elements/55/element/font_size_mm": {
+      "value": 4.235,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/56/position/0": {
       "value": 546.7,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/63/position/1": {
+    "/equipment/elements/56/position/1": {
       "value": 441.21000000000004,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/63/size/0": {
+    "/equipment/elements/56/size/0": {
       "value": 3.08,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/63/size/1": {
+    "/equipment/elements/56/size/1": {
       "value": 38.5,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/64/position/0": {
+    "/equipment/elements/57/position/0": {
       "value": 585.97,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/64/position/1": {
+    "/equipment/elements/57/position/1": {
       "value": 441.21000000000004,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/64/size/0": {
+    "/equipment/elements/57/size/0": {
       "value": 3.08,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/64/size/1": {
+    "/equipment/elements/57/size/1": {
       "value": 38.5,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/65/position/0": {
+    "/equipment/elements/58/position/0": {
       "value": 619.0800000000002,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/65/position/1": {
+    "/equipment/elements/58/position/1": {
       "value": 441.21000000000004,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/65/size/0": {
+    "/equipment/elements/58/size/0": {
       "value": 3.08,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
-    "/equipment/elements/65/size/1": {
+    "/equipment/elements/58/size/1": {
       "value": 38.5,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
+    "/equipment/elements/59/position/0": {
+      "value": 639.1,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/59/position/1": {
+      "value": 493.57,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/59/size/0": {
+      "value": 53.9,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/59/size/1": {
+      "value": 15.4,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/60/position/0": {
+      "value": 605.22,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/60/position/1": {
+      "value": 529.76,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/60/size/0": {
+      "value": 121.66,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/60/size/1": {
+      "value": 126.28,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/61/position/0": {
+      "value": 625.24,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/61/position/1": {
+      "value": 486.64,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/61/size/0": {
+      "value": 81.62,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/61/size/1": {
+      "value": 7.7,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/61/element/font_size_mm": {
+      "value": 4.466,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/62/position/0": {
+      "value": 140.14000000000001,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/62/position/1": {
+      "value": 281.82,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/62/size/0": {
+      "value": 24.64,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/62/size/1": {
+      "value": 6.93,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/62/element/font_size_mm": {
+      "value": 3.85,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/63/position/0": {
+      "value": 119.58100000000002,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/63/position/1": {
+      "value": 295.68,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/63/size/0": {
+      "value": 2.618,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/63/size/1": {
+      "value": 33.11,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/64/position/0": {
+      "value": 151.151,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/64/position/1": {
+      "value": 295.68,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/64/size/0": {
+      "value": 2.618,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/64/size/1": {
+      "value": 33.11,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/65/position/0": {
+      "value": 182.721,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/65/position/1": {
+      "value": 295.68,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/65/size/0": {
+      "value": 2.618,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
+    "/equipment/elements/65/size/1": {
+      "value": 33.11,
+      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
+    },
     "/equipment/elements/66/position/0": {
-      "value": 631.4000000000001,
+      "value": 524.37,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/66/position/1": {
-      "value": 486.64000000000004,
+      "value": 228.38200000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/66/size/0": {
-      "value": 69.30000000000001,
+      "value": 23.87,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/66/size/1": {
-      "value": 27.720000000000002,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/67/position/0": {
-      "value": 623.7,
+      "value": 583.66,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/67/position/1": {
-      "value": 631.4000000000001,
+      "value": 228.38200000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/67/size/0": {
-      "value": 84.70000000000002,
+      "value": 23.87,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/67/size/1": {
-      "value": 107.80000000000001,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/68/position/0": {
-      "value": 522.0600000000001,
+      "value": 524.37,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/68/position/1": {
-      "value": 237.16000000000003,
+      "value": 228.69,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/68/size/0": {
-      "value": 21.560000000000002,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/68/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/68/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 3.85,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/69/position/0": {
-      "value": 542.85,
+      "value": 606.9140000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/69/position/1": {
-      "value": 237.16000000000003,
+      "value": 228.69,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/69/size/0": {
-      "value": 21.560000000000002,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/69/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/69/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 3.85,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/70/position/0": {
-      "value": 562.8700000000001,
+      "value": 728.4200000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/70/position/1": {
-      "value": 237.16000000000003,
+      "value": 228.38200000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/70/size/0": {
-      "value": 21.560000000000002,
+      "value": 26.18,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/70/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/70/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/71/position/0": {
-      "value": 582.8900000000001,
+      "value": 785.4000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/71/position/1": {
-      "value": 237.16000000000003,
+      "value": 228.38200000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/71/size/0": {
-      "value": 21.560000000000002,
+      "value": 26.179999999999914,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/71/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/71/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/72/position/0": {
-      "value": 522.0600000000001,
+      "value": 728.4200000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/72/position/1": {
-      "value": 263.34000000000003,
+      "value": 228.69,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/72/size/0": {
-      "value": 21.560000000000002,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/72/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/72/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 3.85,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/73/position/0": {
-      "value": 542.85,
+      "value": 810.964,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/73/position/1": {
-      "value": 263.34000000000003,
+      "value": 228.69,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/73/size/0": {
-      "value": 21.560000000000002,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/73/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/73/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 3.85,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/74/position/0": {
-      "value": 562.8700000000001,
+      "value": 674.52,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/74/position/1": {
-      "value": 263.34000000000003,
+      "value": 440.1320000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/74/size/0": {
-      "value": 21.560000000000002,
+      "value": 41.194999999999915,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/74/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/74/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/75/position/0": {
-      "value": 582.8900000000001,
+      "value": 741.1249999999999,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/75/position/1": {
-      "value": 263.34000000000003,
+      "value": 440.1320000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/75/size/0": {
-      "value": 21.560000000000002,
+      "value": 41.195,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/75/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/75/element/font_size_mm": {
-      "value": 3.8500000000000005,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/76/position/0": {
-      "value": 522.445,
+      "value": 674.52,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/76/position/1": {
-      "value": 288.365,
+      "value": 440.4400000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/76/size/0": {
-      "value": 20.790000000000003,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/76/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/76/element/font_size_mm": {
-      "value": 3.4650000000000003,
+      "value": 3.85,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/77/position/0": {
-      "value": 522.445,
+      "value": 781.704,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/77/position/1": {
-      "value": 292.21500000000003,
+      "value": 440.4400000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/77/size/0": {
-      "value": 20.790000000000003,
+      "value": 0.6160000000000001,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/77/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/77/element/font_size_mm": {
-      "value": 3.4650000000000003,
+      "value": 3.85,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/78/position/0": {
-      "value": 543.235,
+      "value": 518.21,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/78/position/1": {
-      "value": 288.365,
+      "value": 388.85,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/78/size/0": {
-      "value": 20.790000000000003,
+      "value": 52.36,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/78/size/1": {
-      "value": 3.8500000000000005,
+      "value": 6.16,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/78/element/font_size_mm": {
-      "value": 3.4650000000000003,
+      "value": 4.235,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/79/position/0": {
-      "value": 543.235,
+      "value": 760.76,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/79/position/1": {
-      "value": 292.21500000000003,
+      "value": 342.65000000000003,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/79/size/0": {
-      "value": 20.790000000000003,
+      "value": 52.36,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/79/size/1": {
-      "value": 3.8500000000000005,
+      "value": 6.16,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/79/element/font_size_mm": {
-      "value": 3.4650000000000003,
+      "value": 4.235,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/80/position/0": {
-      "value": 522.0600000000001,
+      "value": 760.76,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/80/position/1": {
-      "value": 318.01000000000005,
+      "value": 390.39,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/80/size/0": {
-      "value": 21.560000000000002,
+      "value": 52.36,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/80/size/1": {
@@ -4501,547 +5109,7 @@
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     },
     "/equipment/elements/80/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/81/position/0": {
-      "value": 728.4200000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/81/position/1": {
-      "value": 237.16000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/81/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/81/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/81/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/82/position/0": {
-      "value": 749.21,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/82/position/1": {
-      "value": 237.16000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/82/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/82/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/82/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/83/position/0": {
-      "value": 769.2300000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/83/position/1": {
-      "value": 237.16000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/83/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/83/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/83/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/84/position/0": {
-      "value": 790.405,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/84/position/1": {
-      "value": 234.46500000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/84/size/0": {
-      "value": 20.790000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/84/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/84/element/font_size_mm": {
-      "value": 3.4650000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/85/position/0": {
-      "value": 790.405,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/85/position/1": {
-      "value": 238.31500000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/85/size/0": {
-      "value": 20.790000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/85/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/85/element/font_size_mm": {
-      "value": 3.4650000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/86/position/0": {
-      "value": 728.4200000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/86/position/1": {
-      "value": 263.34000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/86/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/86/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/86/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/87/position/0": {
-      "value": 749.595,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/87/position/1": {
-      "value": 260.64500000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/87/size/0": {
-      "value": 20.790000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/87/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/87/element/font_size_mm": {
-      "value": 3.4650000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/88/position/0": {
-      "value": 749.595,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/88/position/1": {
-      "value": 264.495,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/88/size/0": {
-      "value": 20.790000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/88/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/88/element/font_size_mm": {
-      "value": 3.4650000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/89/position/0": {
-      "value": 769.2300000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/89/position/1": {
-      "value": 263.34000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/89/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/89/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/89/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/90/position/0": {
-      "value": 790.0200000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/90/position/1": {
-      "value": 263.34000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/90/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/90/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/90/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/91/position/0": {
-      "value": 769.2300000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/91/position/1": {
-      "value": 291.06,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/91/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/91/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/91/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/92/position/0": {
-      "value": 790.0200000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/92/position/1": {
-      "value": 291.06,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/92/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/92/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/92/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/93/position/0": {
-      "value": 1154.2300000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/93/position/1": {
-      "value": 283.36,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/93/size/0": {
-      "value": 21.560000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/93/size/1": {
-      "value": 6.16,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/93/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/94/position/0": {
-      "value": 1154.6150000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/94/position/1": {
-      "value": 336.105,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/94/size/0": {
-      "value": 20.790000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/94/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/94/element/font_size_mm": {
-      "value": 3.4650000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/95/position/0": {
-      "value": 1154.6150000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/95/position/1": {
-      "value": 339.955,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/95/size/0": {
-      "value": 20.790000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/95/size/1": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/95/element/font_size_mm": {
-      "value": 3.4650000000000003,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/96/position/0": {
-      "value": 520.52,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/96/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/96/size/0": {
-      "value": 29.26,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/96/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/96/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/97/position/0": {
-      "value": 555.9399999999999,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/97/position/1": {
-      "value": 442.75000000000006,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/97/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/97/size/1": {
-      "value": 4.62,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/97/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/98/position/0": {
-      "value": 555.9399999999999,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/98/position/1": {
-      "value": 447.37000000000006,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/98/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/98/size/1": {
-      "value": 4.62,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/98/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/99/position/0": {
-      "value": 590.5900000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/99/position/1": {
-      "value": 442.75000000000006,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/99/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/99/size/1": {
-      "value": 4.62,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/99/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/100/position/0": {
-      "value": 590.5900000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/100/position/1": {
-      "value": 447.37000000000006,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/100/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/100/size/1": {
-      "value": 4.62,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/100/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/101/position/0": {
-      "value": 622.1600000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/101/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/101/size/0": {
-      "value": 29.26,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/101/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/101/element/font_size_mm": {
-      "value": 3.8500000000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/102/position/0": {
-      "value": 648.34,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/102/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/102/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/102/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/102/element/font_size_mm": {
-      "value": 4.0040000000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/103/position/0": {
-      "value": 676.0600000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/103/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/103/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/103/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/103/element/font_size_mm": {
-      "value": 4.0040000000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/104/position/0": {
-      "value": 702.2400000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/104/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/104/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/104/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/104/element/font_size_mm": {
-      "value": 4.0040000000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/105/position/0": {
-      "value": 727.6500000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/105/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/105/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/105/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/105/element/font_size_mm": {
-      "value": 4.0040000000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/106/position/0": {
-      "value": 753.06,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/106/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/106/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/106/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/106/element/font_size_mm": {
-      "value": 4.0040000000000004,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/107/position/0": {
-      "value": 779.2400000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/107/position/1": {
-      "value": 443.13500000000005,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/107/size/0": {
-      "value": 27.720000000000002,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/107/size/1": {
-      "value": 6.930000000000001,
-      "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
-    },
-    "/equipment/elements/107/element/font_size_mm": {
-      "value": 4.0040000000000004,
+      "value": 4.235,
       "source": "Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates."
     }
   },

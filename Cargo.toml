@@ -7,11 +7,15 @@ flightcraft-aero = { git = "https://github.com/flightcraft-sim/flightcraft", bra
 flightcraft-sim = { git = "https://github.com/flightcraft-sim/flightcraft", branch = "main" }
 flightcraft-world = { git = "https://github.com/flightcraft-sim/flightcraft", branch = "main" }
 flightcraft-control = { git = "https://github.com/flightcraft-sim/flightcraft", branch = "main" }
+flightcraft-render = { git = "https://github.com/flightcraft-sim/flightcraft", branch = "main" }
 flightcraft-ui = { git = "https://github.com/flightcraft-sim/flightcraft", branch = "main" }
+egui-wgpu = { version = "=0.33.3", default-features = false }
+wgpu = { version = "27", default-features = false, features = ["std", "vulkan", "gles", "wgsl"] }
+pollster = "0.4"
 serde_json = "1"
 libm = "0.2"
 eframe = { version = "=0.33.3", default-features = false, features = ["wgpu", "x11", "wayland"] }
-image = { version = "0.25", default-features = false, features = ["png"] }
+image = { version = "0.25", default-features = false, features = ["png", "jpeg"] }
 
 [package]
 name = "sling2-fidelity"
@@ -21,7 +25,7 @@ license = "Apache-2.0"
 publish = false
 
 [features]
-previews = ["dep:flightcraft-control", "dep:flightcraft-ui", "dep:eframe", "dep:image"]
+previews = ["dep:flightcraft-control", "dep:flightcraft-ui", "dep:flightcraft-render", "dep:eframe", "dep:image", "dep:egui-wgpu", "dep:wgpu", "dep:pollster"]
 
 [dependencies]
 flightcraft-aero.workspace = true
@@ -31,6 +35,10 @@ serde_json.workspace = true
 libm.workspace = true
 flightcraft-control = { workspace = true, optional = true }
 flightcraft-ui = { workspace = true, optional = true }
+flightcraft-render = { workspace = true, optional = true }
+egui-wgpu = { workspace = true, optional = true }
+wgpu = { workspace = true, optional = true }
+pollster = { workspace = true, optional = true }
 eframe = { workspace = true, optional = true }
 image = { workspace = true, optional = true }
 
@@ -60,3 +68,6 @@ unreachable = "deny"
 
 [lints]
 workspace = true
+
+[package.metadata.flightcraft]
+minimum-engine-revision = "3512ca9"

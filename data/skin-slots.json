@@ -2,7 +2,6 @@
   "contract_version": 1,
   "base_panel": "sling2-ifr",
   "coordinate_units": "mm",
-  "requires_host_equipment_skin_hook": true,
   "slots": [
     {
       "id": "left_display",
@@ -69,5 +68,6 @@
       ],
       "public_skin": "original"
     }
-  ]
+  ],
+  "equipment_skin_hook": "Registry::register_equipment_skin and Registry::set_equipment_skin; appearance.skin selects registered private artwork."
 }

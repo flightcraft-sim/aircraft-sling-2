@@ -414,6 +414,41 @@ fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
             assert!((actual / scale - target).abs() < 0.01, "{id} moved");
         }
     }
+    for id in ["left_display", "right_display"] {
+        let display = p
+            .elements
+            .iter()
+            .find(|e| e.id == id)
+            .ok_or("display missing")?;
+        assert!(matches!(
+            display.element,
+            flightcraft_aero::modern::PanelElement::TouchDisplay {
+                layout: flightcraft_aero::modern::TouchLayout::IntegratedPfd,
+                engine_strip: true,
+                ..
+            }
+        ));
+        assert!(display.appearance.synthetic_vision);
+        let bezel = display.appearance.bezel.as_ref().ok_or("bezel missing")?;
+        assert_eq!(
+            bezel.margins,
+            [22. * scale, 28. * scale, 22. * scale, 60. * scale]
+        );
+        assert_eq!(bezel.softkey_count, 4);
+    }
+    let selector = p
+        .elements
+        .iter()
+        .find(|e| e.id == "fuel_selector")
+        .ok_or("selector missing")?;
+    assert!(((selector.position[1] + selector.size[1] / 2.) / scale - 770.).abs() < 0.01);
+    assert_eq!(
+        p.shell
+            .as_ref()
+            .and_then(|s| s.palette.face.as_ref())
+            .map(|c| c.0.as_str()),
+        Some("#333333")
+    );
     let slots: serde_json::Value = serde_json::from_str(include_str!("../data/skin-slots.json"))?;
     for slot in slots["slots"].as_array().ok_or("slots not array")? {
         let e = p
@@ -515,5 +550,128 @@ fn electronic_engine_pumps_key_breakers_and_selector() -> Result<(), Error> {
         .ok_or("missing modern controls")?;
     assert!(modern.master_warning);
     assert!((modern.propeller_rpm * 2.43 - sim.readout().engine_rpm).abs() < 1e-6);
+    Ok(())
+}
+
+#[test]
+fn guarded_lanes_backup_buses_and_wigwag_are_connected() -> Result<(), Error> {
+    use flightcraft_aero::panel_fidelity::BackupCircuit;
+    use flightcraft_sim::{
+        modern::ModernSetting,
+        systems::{SystemSetting, SystemSwitch},
+    };
+    let mut sim = flight(&configuration()?, 1200., 50.)?;
+    let action = |sim: &mut Sim, setting| sim.set_systems(SystemSetting::Equipment { setting });
+    assert!(
+        action(
+            &mut sim,
+            ModernSetting::PanelControl {
+                id: "lane_a".into(),
+                value: 0.
+            }
+        )
+        .is_err()
+    );
+    action(
+        &mut sim,
+        ModernSetting::PanelGuard {
+            id: "lane_a".into(),
+            open: true,
+        },
+    )?;
+    action(
+        &mut sim,
+        ModernSetting::PanelControl {
+            id: "lane_a".into(),
+            value: 0.,
+        },
+    )?;
+    sim.step(1);
+    assert!(
+        !sim.systems()
+            .modern
+            .as_ref()
+            .ok_or("missing engine equipment")?
+            .lane_a
+            .on
+    );
+    action(
+        &mut sim,
+        ModernSetting::PanelControl {
+            id: "lane_a".into(),
+            value: 1.,
+        },
+    )?;
+    for circuit in [BackupCircuit::Ems, BackupCircuit::Efis] {
+        action(&mut sim, ModernSetting::BackupPower { circuit, on: true })?;
+    }
+    sim.set_systems(SystemSetting::Switch {
+        switch: SystemSwitch::Master,
+        on: false,
+    })?;
+    sim.step(120);
+    let powered = |sim: &Sim, id: &str| {
+        sim.systems()
+            .electrical
+            .loads
+            .iter()
+            .any(|load| load.id == id && load.powered)
+    };
+    for id in [
+        "pump_1",
+        "pump_2",
+        "touch_left",
+        "touch_right",
+        "glass_ahrs",
+        "navigator",
+    ] {
+        assert!(powered(&sim, id), "backup feed missing: {id}");
+    }
+    let modern = sim
+        .systems()
+        .modern
+        .as_ref()
+        .ok_or("missing backup equipment")?;
+    assert!(
+        modern
+            .backup_buses
+            .iter()
+            .all(|b| b.on && b.remaining_ah < 2. && b.remaining_ah > 0.)
+    );
+    sim.set_systems(SystemSetting::Breaker {
+        load: "touch_left".into(),
+        closed: false,
+    })?;
+    sim.step(1);
+    assert!(!powered(&sim, "touch_left"));
+    assert!(powered(&sim, "touch_right"));
+    action(
+        &mut sim,
+        ModernSetting::BackupPower {
+            circuit: BackupCircuit::Ems,
+            on: false,
+        },
+    )?;
+    sim.step(1);
+    assert!(!powered(&sim, "pump_1"));
+    assert!(powered(&sim, "touch_right"));
+
+    let mut lights = flight(&configuration()?, 1200., 50.)?;
+    action(&mut lights, ModernSetting::Wigwag { on: true })?;
+    lights.step(1);
+    let first = (
+        powered(&lights, "landing"),
+        powered(&lights, "landing_right"),
+    );
+    lights.step(60);
+    let second = (
+        powered(&lights, "landing"),
+        powered(&lights, "landing_right"),
+    );
+    assert_ne!(first.0, first.1, "lamps must alternate");
+    assert_eq!(second, (first.1, first.0));
+    action(&mut lights, ModernSetting::Wigwag { on: false })?;
+    lights.step(1);
+    assert!(powered(&lights, "landing") && powered(&lights, "landing_right"));
     Ok(())
 }

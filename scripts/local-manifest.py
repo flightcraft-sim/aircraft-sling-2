@@ -6,7 +6,7 @@ import re
 root = Path(__file__).resolve().parent.parent
 engine = Path(os.environ.get('FLIGHTCRAFT_ENGINE', root.parent / 'flightcraft')).resolve()
 manifest = (root / 'Cargo.toml').read_text()
-for crate in ['aero', 'sim', 'world', 'control', 'ui']:
+for crate in ['aero', 'sim', 'world', 'control', 'ui', 'render']:
     name = 'flightcraft-' + crate
     replacement = name + ' = { path = "' + (engine / 'crates' / crate).as_posix() + '" }'
     manifest = re.sub(r'^' + name + r' = \{ git = [^\n]+$', lambda _: replacement, manifest, flags=re.M)
