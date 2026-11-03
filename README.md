@@ -48,37 +48,43 @@ Stable installation identifiers and a separate [skin-slot contract](data/skin-sl
 
 ## Original exterior (pack format 2)
 
-The pack now includes `exterior.glb` and `exterior-lod1.glb`, produced by the checked-in
-`scripts/generate-exterior.py` using Python's standard library. Rebuild with:
+The installed exterior is the accepted **V8 Blender revision**, generated with **Blender
+5.2.0 LTS** from the original source [`scripts/blender-exterior.py`](scripts/blender-exterior.py).
+It includes `exterior.glb`, `exterior-lod1.glb`, and `exterior-lod2.glb`, with
+**101,452 / 18,583 / 4,204 triangles**. Each GLB embeds its PBR PNG atlas; the six standalone
+4096² maps are retained under `textures/exterior/` for review. `pack.json` and `exterior.json`
+declare all three LODs and the runtime registration paint surface. The default **N371FC** is
+baked on both sides; the host replaces it in the base-color atlas when a user sets a number,
+and restores the original on reset. Motion, steering, wheel, propeller, and light bindings
+remain named and independent of the simulation geometry.
+
+See [regeneration and integration](docs/blender-exterior.md) for the confined Blender job,
+installer, acceptance gates, and seven matched Cycles/engine camera views. Numerical receipts
+and camera metadata are in `docs/exterior-blender-validation.json` and
+`docs/exterior-cameras.json`. All three LODs passed the 1% POH dimension gate and the
+5 mm cross-LOD extremum gate. The remaining chunky edge-on wing root is accepted for now;
+a smoother, thinner root fillet is later visual polish.
+
+This exterior requires the host's embedded-PNG/PBR exterior loader, optional LOD2, sorted glass,
+and registration-atlas painter. Those engine changes are supplied by the uncommitted
+`fc-plane` worktree; flight lead will rebase them onto main `460784d` (Rust 1.98, scenery/city
+providers, and web packaging). That main revision by itself does not include this exterior
+integration. The six JSON aircraft layers retain format 2.
+
+Dimensions use Sling 2 POH DC-POH-002-X-B-2.8, January 2026, §1.4 SI facts: 9.165 m span,
+6.675 m length, 2.45 m height, 11.845 m² wing area, 1.79 m three-blade propeller diameter,
+5° dihedral, 1.375 taper ratio, 2.825 m horizontal tail span, and 1.95 m main-wheel track.
+The Blender contours, analytic wing section, cabin, paint, registration glyphs, fairings, and
+wear are independent original constructions and modeling estimates. The Blender source uses
+numerical POH text and written shape observations, without handbook artwork or photographs.
+Flaps rotate about their hinges; Fowler translation is not represented.
+
+The unchanged `scripts/generate-exterior.py` remains for reproducing **older pack revisions**:
 
 ```sh
-python3 scripts/generate-exterior.py --sling-out .
+python3 scripts/generate-exterior.py --sling-out /path/to/old-revision-output
 ```
 
-This requires a FlightCraft host supporting pack manifest format 2 and the material-color GLB
-profile. The six JSON layers retain aircraft format 2. Desktop and browser transports load both
-GLBs directly from the manifest. The original white, navy, and teal livery carries **N371FC** in
-geometry lettering on both fuselage sides, with no manufacturer logos. The model has roughly
-22,100 triangles at LOD0 and 3,700 at LOD1, with independent hinged surfaces, steering and rolling
-wheels, spring travel, a three-blade propeller and blur disc, and named lighting fixtures.
-
-Dimensions come from Sling 2 POH DC-POH-002-X-B-2.8, January 2026, Section 1.4: span 9.165 m,
-overall length 6.675 m, overall height 2.45 m, wing area 11.845 m², and the 1.79 m three-blade
-fixed-pitch propeller option. Other numeric facts used are 5° dihedral, 1.375 taper ratio,
-2.825 m horizontal tail span, and 1.95 m main-wheel track. Section 7 describes a conventional
-elevator, semi-slotted Fowler flaps, and a sliding canopy. The fuselage shares the family's datum;
-the host applies the loaded CG offset.
-
-The original analytic shapes were revised after visually inspecting the POH Section 1.3 three-view
-figures on pages 1-5 and 1-6: tall swept conventional fin and separate full-height rudder, low wing
-with curved tips, sliding canopy rails and rear quarter windows, wheel pants, pitot tube, and
-raked dorsal antenna. This is independent modeling from the figures and dimensional facts, with
-no copied source artwork. Fine contours and section thickness remain modeling estimates. The
-analytic wing is an original approximation, not a digitized NACA 4415 profile. Flaps currently
-rotate about their hinges; Fowler translation is not represented. No POH prose, PDF, image, or
-manufacturer artwork is included.
-
-Engine tests accept `FLIGHTCRAFT_SLING_PACK=/path/to/this/pack` to add Sling bounds, both LODs,
-all moving nodes, and the five offscreen exterior captures. Captures are written to the engine's
-`out/exterior-after/`. Flight lead should also take packaged-build cockpit-takeoff, wing-climb,
-flyby-cruise, tower-final, and night-lights shots, and review registration from both sides.
+Keep its output separate from the installed V8 assets. Its older untextured geometry and
+geometry lettering are not the current exterior. See the attribution ledger for the separate
+legacy provenance.

@@ -1,0 +1,163 @@
+{
+  "director-front": {
+    "eye_body_m": [
+      10,
+      -10,
+      -3.0
+    ],
+    "target_body_m": [
+      -2.2,
+      0,
+      -0.15
+    ],
+    "up_body": [
+      -0.13750211894512177,
+      0.11270684003829956,
+      -0.9840682744979858
+    ],
+    "size": [
+      1600,
+      1000
+    ],
+    "projection": "perspective",
+    "vertical_fov_rad": 0.5117845633031866
+  },
+  "director-rear": {
+    "eye_body_m": [
+      -13,
+      9,
+      -3.6
+    ],
+    "target_body_m": [
+      -2.2,
+      0,
+      -0.15
+    ],
+    "up_body": [
+      0.18309198319911957,
+      -0.15257668495178223,
+      -0.9711836576461792
+    ],
+    "size": [
+      1600,
+      1000
+    ],
+    "projection": "perspective",
+    "vertical_fov_rad": 0.5117845633031866
+  },
+  "director-left": {
+    "eye_body_m": [
+      -2.2,
+      -13.5,
+      -1.7
+    ],
+    "target_body_m": [
+      -2.2,
+      0,
+      -0.15
+    ],
+    "up_body": [
+      -7.631341247815726e-08,
+      0.11406543850898743,
+      -0.99347323179245
+    ],
+    "size": [
+      1600,
+      1000
+    ],
+    "projection": "perspective",
+    "vertical_fov_rad": 0.5117845633031866
+  },
+  "director-top": {
+    "eye_body_m": [
+      -2.2,
+      0,
+      -19.5
+    ],
+    "target_body_m": [
+      -2.2,
+      0,
+      -0.15
+    ],
+    "up_body": [
+      0.0,
+      -1.0,
+      -0.0
+    ],
+    "size": [
+      1600,
+      1000
+    ],
+    "projection": "perspective",
+    "vertical_fov_rad": 0.5117845633031866
+  },
+  "beauty": {
+    "eye_body_m": [
+      7.8,
+      -10.5,
+      -3.1
+    ],
+    "target_body_m": [
+      -2.15,
+      0,
+      -0.1
+    ],
+    "up_body": [
+      -0.13967841863632202,
+      0.14739927649497986,
+      -0.9791646599769592
+    ],
+    "size": [
+      1600,
+      1000
+    ],
+    "projection": "perspective",
+    "vertical_fov_rad": 0.5117845633031866
+  },
+  "elevation-side": {
+    "eye_body_m": [
+      -2.6625,
+      -20,
+      -0.375
+    ],
+    "target_body_m": [
+      -2.6625,
+      0,
+      -0.375
+    ],
+    "up_body": [
+      0.0,
+      -0.0,
+      -0.9999999403953552
+    ],
+    "size": [
+      1600,
+      1000
+    ],
+    "projection": "orthographic",
+    "ortho_width_m": 8.0
+  },
+  "plan-top": {
+    "eye_body_m": [
+      -2.6625,
+      0,
+      -20
+    ],
+    "target_body_m": [
+      -2.6625,
+      0,
+      -0.375
+    ],
+    "up_body": [
+      0.9999999403953552,
+      -0.0,
+      -0.0
+    ],
+    "size": [
+      1600,
+      1000
+    ],
+    "projection": "orthographic",
+    "ortho_width_m": 12.4
+  }
+}

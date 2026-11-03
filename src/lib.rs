@@ -30,13 +30,29 @@ pub fn catalog() -> Result<AircraftCatalog, Error> {
             "exterior-lod1.glb".to_owned(),
             include_bytes!("../exterior-lod1.glb").to_vec(),
         ),
+        (
+            "exterior-lod2.glb".to_owned(),
+            include_bytes!("../exterior-lod2.glb").to_vec(),
+        ),
     ]);
     catalog.install_pack_with_assets(&manifest, &documents, &assets)?;
     Ok(catalog)
 }
 
 pub fn configuration() -> Result<ResolvedAircraft, Error> {
-    Ok(catalog()?.resolve_aircraft("sling2")?)
+    // Embedded pack inputs cannot change during a run. Validate/decode the full
+    // exterior once, then clone only the aircraft configuration for each flight
+    // measurement; repeated 4K atlas decoding would dominate the fidelity suite.
+    static CONFIGURATION: std::sync::OnceLock<Result<ResolvedAircraft, String>> =
+        std::sync::OnceLock::new();
+    CONFIGURATION
+        .get_or_init(|| {
+            catalog()
+                .and_then(|catalog| Ok(catalog.resolve_aircraft("sling2")?))
+                .map_err(|error| error.to_string())
+        })
+        .clone()
+        .map_err(Into::into)
 }
 
 /// A symmetric, full-gross performance loading, within the published CG limits.

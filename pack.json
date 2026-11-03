@@ -325,8 +325,31 @@
       ],
       "registration": {
         "node": "registration",
-        "text": "N371FC"
-      }
+        "text": "N371FC",
+        "surface": {
+          "node": "airframe",
+          "x_m": [
+            -4.68,
+            -3.17
+          ],
+          "z_m": [
+            -0.23,
+            0.1
+          ],
+          "height_m": 0.3,
+          "background": [
+            0.86,
+            0.89,
+            0.9
+          ],
+          "color": [
+            0.015,
+            0.038,
+            0.067
+          ]
+        }
+      },
+      "lod2": "exterior-lod2.glb"
     }
   ]
 }
