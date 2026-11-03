@@ -683,9 +683,9 @@ fn radio_identity_and_audio_follow_the_navigator_installation() -> Result<(), Er
     use serde_json::json;
 
     let config = configuration()?;
-    assert_eq!(config.aircraft.identity.registration, "N1234B");
+    assert_eq!(config.aircraft.identity.registration, "N371FC");
     assert_eq!(config.aircraft.identity.spoken_type, "Sling");
-    assert_eq!(config.variant.identity.registration, "N1234B");
+    assert_eq!(config.variant.identity.registration, "N371FC");
     assert_eq!(config.variant.identity.spoken_type, "Sling");
     let panel = config.panel.equipment.as_ref().ok_or("missing equipment")?;
     assert!(
@@ -697,7 +697,7 @@ fn radio_identity_and_audio_follow_the_navigator_installation() -> Result<(), Er
     );
     assert!(panel.elements.iter().any(|e| {
         e.id == "registration"
-            && matches!(&e.element, PanelElement::Placard { text, .. } if text == "N1234B")
+            && matches!(&e.element, PanelElement::Placard { text, .. } if text == "N371FC")
     }));
     let installation = &config.panel.audio_panel;
     assert_eq!(installation.power_load, "navigator");
@@ -718,9 +718,9 @@ fn radio_identity_and_audio_follow_the_navigator_installation() -> Result<(), Er
     )?;
     let callsign = session.pilot_callsign();
     assert!(!callsign.overridden);
-    assert_eq!(callsign.registration, "N1234B");
+    assert_eq!(callsign.registration, "N371FC");
     assert_eq!(callsign.spoken_type, "Sling");
-    assert_eq!(callsign.full, "Sling One Two Three Four Bravo");
+    assert_eq!(callsign.full, "Sling Three Seven One Foxtrot Charlie");
     assert_eq!(callsign.current, callsign.full);
     assert!(session.comms_state().powered);
     session.execute(

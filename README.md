@@ -2,7 +2,7 @@
 
 A clean-room FlightCraft aircraft pack for the Sling 2 with a Rotax 912 iS and an advanced IFR two-display panel. **Not affiliated with or endorsed by Sling Aircraft.** Original files are Apache-2.0. This is simulation software, not flight-planning or training material.
 
-Both touch displays start on the integrated PFD page, with engine strips, synthetic vision, a lower-left map, and a lower-right terrain inset. A centre navigator, digital autopilot with flight director, electronic standby, electronic engine lanes, independent fuel pumps, key start, breakers, annunciators, and recovery parachute use the engine's existing equipment. The measured panel uses original FlightCraft screen artwork and no manufacturer logos. Its registration is **N1234B**, with spoken type **Sling**: “Sling One Two Three Four Bravo.”
+Both touch displays start on the integrated PFD page, with engine strips, synthetic vision, a lower-left map, and a lower-right terrain inset. A centre navigator, digital autopilot with flight director, electronic standby, electronic engine lanes, independent fuel pumps, key start, breakers, annunciators, and recovery parachute use the engine's existing equipment. The measured panel uses original FlightCraft screen artwork and no manufacturer logos. Its registration is **N371FC**, with spoken type **Sling**: “Sling Three Seven One Foxtrot Charlie.”
 
 Place this directory immediately inside a packs directory, then launch the desktop application:
 
@@ -57,7 +57,7 @@ python3 scripts/generate-exterior.py --sling-out .
 
 This requires a FlightCraft host supporting pack manifest format 2 and the material-color GLB
 profile. The six JSON layers retain aircraft format 2. Desktop and browser transports load both
-GLBs directly from the manifest. The original white, navy, and teal livery carries **N1234B** in
+GLBs directly from the manifest. The original white, navy, and teal livery carries **N371FC** in
 geometry lettering on both fuselage sides, with no manufacturer logos. The model has roughly
 22,100 triangles at LOD0 and 3,700 at LOD1, with independent hinged surfaces, steering and rolling
 wheels, spring travel, a three-blade propeller and blur disc, and named lighting fixtures.

@@ -33,7 +33,7 @@ The hardware uses native black rockers, black push-pull breakers, guarded lane t
 
 ## Navigator audio installation
 
-The aircraft selection and variant explicitly declare registration `N1234B` and spoken type `Sling`. The registration placard reads `N1234B`; the session's full callsign is “Sling One Two Three Four Bravo,” without a callsign override.
+The aircraft selection and variant explicitly declare registration `N371FC` and spoken type `Sling`. The registration placard reads `N371FC`; the session's full callsign is “Sling Three Seven One Foxtrot Charlie,” without a callsign override.
 
 The nonvisual `panel.audio_panel` installation declares `power_load`, `com1_load`, and `com2_load` as `navigator`. Audio and both logical COM receivers therefore share the existing navigator demand, avionics switch, and NAV/COM breaker. This is a lumped installation assumption, not a claim that separate physical COM units are fitted. No `PanelElement::AudioPanel` face is added, and no control is placed on the glare shield or hidden outside the panel.
 
