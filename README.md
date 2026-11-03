@@ -44,3 +44,41 @@ The measured hardware arrangement comes from a supplied layout specification. Th
 Audio power and both COM receivers share the navigator’s existing electrical load and NAV/COM breaker. There is no separate audio face. Current main has no pack-selectable navigator Audio page; use the toolbar **Radios** window or `comms.audio_panel` commands until the [missing host hook](docs/panel-review.md#navigator-audio-installation) is available. FAA/NASR frequencies come from the engine’s installed region, rather than a pack-specific station list.
 
 Stable installation identifiers and a separate [skin-slot contract](data/skin-slots.json) reserve a path for private artwork without moving equipment. See [private skins](docs/private-skins.md) for registration and private host integration.
+
+
+## Original exterior (pack format 2)
+
+The pack now includes `exterior.glb` and `exterior-lod1.glb`, produced by the checked-in
+`scripts/generate-exterior.py` using Python's standard library. Rebuild with:
+
+```sh
+python3 scripts/generate-exterior.py --sling-out .
+```
+
+This requires a FlightCraft host supporting pack manifest format 2 and the material-color GLB
+profile. The six JSON layers retain aircraft format 2. Desktop and browser transports load both
+GLBs directly from the manifest. The original white, navy, and teal livery carries **N1234B** in
+geometry lettering on both fuselage sides, with no manufacturer logos. The model has roughly
+22,100 triangles at LOD0 and 3,700 at LOD1, with independent hinged surfaces, steering and rolling
+wheels, spring travel, a three-blade propeller and blur disc, and named lighting fixtures.
+
+Dimensions come from Sling 2 POH DC-POH-002-X-B-2.8, January 2026, Section 1.4: span 9.165 m,
+overall length 6.675 m, overall height 2.45 m, wing area 11.845 m², and the 1.79 m three-blade
+fixed-pitch propeller option. Other numeric facts used are 5° dihedral, 1.375 taper ratio,
+2.825 m horizontal tail span, and 1.95 m main-wheel track. Section 7 describes a conventional
+elevator, semi-slotted Fowler flaps, and a sliding canopy. The fuselage shares the family's datum;
+the host applies the loaded CG offset.
+
+The original analytic shapes were revised after visually inspecting the POH Section 1.3 three-view
+figures on pages 1-5 and 1-6: tall swept conventional fin and separate full-height rudder, low wing
+with curved tips, sliding canopy rails and rear quarter windows, wheel pants, pitot tube, and
+raked dorsal antenna. This is independent modeling from the figures and dimensional facts, with
+no copied source artwork. Fine contours and section thickness remain modeling estimates. The
+analytic wing is an original approximation, not a digitized NACA 4415 profile. Flaps currently
+rotate about their hinges; Fowler translation is not represented. No POH prose, PDF, image, or
+manufacturer artwork is included.
+
+Engine tests accept `FLIGHTCRAFT_SLING_PACK=/path/to/this/pack` to add Sling bounds, both LODs,
+all moving nodes, and the five offscreen exterior captures. Captures are written to the engine's
+`out/exterior-after/`. Flight lead should also take packaged-build cockpit-takeoff, wing-climb,
+flyby-cruise, tower-final, and night-lights shots, and review registration from both sides.
