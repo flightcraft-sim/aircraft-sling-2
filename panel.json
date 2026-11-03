@@ -868,7 +868,8 @@
         "element": {
           "kind": "navigator",
           "load": "navigator",
-          "transponder": true
+          "transponder": true,
+          "audio_panel": true
         },
         "appearance": {
           "navigator_layout": "home_columns"
