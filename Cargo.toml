@@ -25,7 +25,7 @@ license = "Apache-2.0"
 publish = false
 
 [features]
-previews = ["dep:flightcraft-control", "dep:flightcraft-ui", "dep:flightcraft-render", "dep:eframe", "dep:image", "dep:egui-wgpu", "dep:wgpu", "dep:pollster"]
+previews = ["dep:flightcraft-ui", "dep:flightcraft-render", "dep:eframe", "dep:image", "dep:egui-wgpu", "dep:wgpu", "dep:pollster"]
 
 [dependencies]
 flightcraft-aero.workspace = true
@@ -33,7 +33,7 @@ flightcraft-sim.workspace = true
 flightcraft-world.workspace = true
 serde_json.workspace = true
 libm.workspace = true
-flightcraft-control = { workspace = true, optional = true }
+flightcraft-control.workspace = true
 flightcraft-ui = { workspace = true, optional = true }
 flightcraft-render = { workspace = true, optional = true }
 egui-wgpu = { workspace = true, optional = true }
@@ -70,4 +70,4 @@ unreachable = "deny"
 workspace = true
 
 [package.metadata.flightcraft]
-minimum-engine-revision = "3512ca9"
+minimum-engine-revision = "580e2e0"

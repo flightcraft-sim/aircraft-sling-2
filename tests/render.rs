@@ -7,8 +7,6 @@ use flightcraft_world::{HeightTile, Region, RegionOrigin, Surface, World};
 use sling2_fidelity::Error;
 use std::path::PathBuf;
 
-#[path = "support/comparison.rs"]
-mod comparison;
 #[path = "support/gpu_capture.rs"]
 mod gpu_capture;
 
@@ -131,10 +129,6 @@ fn render_panel_previews() -> Result<(), Error> {
         Ok(())
     })?;
     image.save(output.join("in-flight-panel.png"))?;
-    comparison::write(
-        &image,
-        config.panel.equipment.as_ref().ok_or("missing equipment")?,
-    )?;
     for (id, x, y, w, h) in [
         ("pfd", 248, 308, 424, 308),
         ("mfd", 1062, 308, 424, 308),

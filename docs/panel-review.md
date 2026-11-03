@@ -1,6 +1,6 @@
 # Panel review
 
-The panel uses FlightCraft main revision `3512ca9` and its placed equipment, shell palette, display composition, and typed hardware controls. The 1728 × 968 previews preserve the reference image's aspect ratio. `tests/render.rs` loads the distributed pack into a real session. The in-flight capture runs the actual egui and GPU synthetic-vision passes over original procedural review terrain; the detail images are crops of that capture. The ground preview uses the engine's public CPU preview helper, which omits GPU synthetic vision.
+The panel uses FlightCraft main revision `580e2e0` and its placed equipment, shell palette, display composition, and typed hardware controls. The 1728 × 968 previews preserve the reference image's aspect ratio. `tests/render.rs` loads the distributed pack into a real session. The in-flight capture runs the actual egui and GPU synthetic-vision passes over original procedural review terrain; the detail images are crops of that capture. The ground preview uses the engine's public CPU preview helper, which omits GPU synthetic vision.
 
 The reference and successive renders were inspected side by side. The photograph, comparison overlays, and side-by-side files remain outside this repository. No reference pixels, manufacturer logos, or replica screen software appear in the pack's previews.
 
@@ -31,11 +31,23 @@ The shell face is `#333333`, the glare shield is near-black `#0b0b0b`, the bezel
 
 The hardware uses native black rockers, black push-pull breakers, guarded lane toggles with typed lane bindings, a rounded red chute pull, a silver ignition key, louvred vents, an ELT plate with a red rocker, and a red floor T-handle. EMS BKUP and EFIS BKUP feed real independent backup buses. LAND controls both landing-light loads and its WIGWAG function alternates them. Tests verify guarded input, loss of main power, backup discharge, breaker isolation on backup, and both wigwag phases.
 
-## Comparison artifacts and tool limitation
+## Navigator audio installation
 
-The requested engine `cargo xtask panel-compare` command was run through the build queue with the external reference and external output directory. It failed its output-location guard: the guard considers empty ancestor `.git` marker directories to be repositories, even when Git reports that the output is outside a checkout. Repeating the command with an external temporary output target produced the same error. The engine was left unchanged.
+The aircraft selection and variant explicitly declare registration `N1234B` and spoken type `Sling`. The registration placard reads `N1234B`; the session's full callsign is “Sling One Two Three Four Bravo,” without a callsign override.
 
-The pack's optional render test therefore includes a local comparison helper. With `SLING2_REFERENCE_PANEL` and `SLING2_COMPARE_OUTPUT` set, it writes `render.png`, `side-by-side.png`, `overlay.png`, `edge-difference.png`, and `alignment.json` outside any Git checkout. The report explicitly records that the engine comparison did not complete. The helper compares actual in-flight GPU pixels; it does not substitute replica instrument artwork. Its symmetric edge-proximity scores are sensitive to fonts, hardware artwork, and screen content, so they are review aids rather than percentage placement errors or acceptance thresholds.
+The nonvisual `panel.audio_panel` installation declares `power_load`, `com1_load`, and `com2_load` as `navigator`. Audio and both logical COM receivers therefore share the existing navigator demand, avionics switch, and NAV/COM breaker. This is a lumped installation assumption, not a claim that separate physical COM units are fitted. No `PanelElement::AudioPanel` face is added, and no control is placed on the glare shield or hidden outside the panel.
+
+**Missing engine hook:** current main has no declarative audio host or navigator Audio page. `AudioPanelInstallation` contains only the three electrical load references. `PanelElement::AudioPanel` draws a separate face in an installation rectangle. `NavigatorPage` has Home, FlightPlan, DirectTo, Procedures, Nearest, Map, WaypointInfo, Frequencies, and Transponder, with no Audio variant; neither the navigator element nor `appearance.navigator_layout` can select an embedded audio control host. A private equipment skin receives read-only state and cannot supply this missing command-bearing page.
+
+The required hook is an opt-in audio page hosted by the existing `navigator` installation, with a pack field associating that navigator id with the audio installation. Its controls must read the shared `CommsSnapshot` and issue `CommsAudioPanel` commands for COM1/COM2 MIC and receive selection, NAV identification, intercom, volume, squelch, speech, and captions. Opening it must reuse the navigator's rectangle and preserve the panel layout. The engine is read-only for this pack update, so this hook remains unimplemented here. The working fallback is the toolbar **Radios** window or `comms.audio_panel` commands; COM1 tuning is already shared with the navigator.
+
+FAA/NASR frequencies are supplied by the selected engine region. The pack does not duplicate or override that catalogue, and its procedural preview scenery has no station catalogue. No real-station reception or platform speech-device verification is claimed by the pack tests.
+
+## Comparison artifacts
+
+The engine's output-directory guard is fixed in this main revision. The requested `cargo xtask panel-compare` command completed successfully through the build queue and generated `render.png`, `side-by-side.png`, `overlay.png`, `edge-difference.png`, and `alignment.json` in the external review directory. Its 81 installation records confirm the five primary rectangles listed above. The old pack-local comparison fallback has been removed. Reference-derived artifacts remain outside both repositories.
+
+The engine command compares its actual CPU ground-panel capture at startup, including sensor-alignment flags and an inactive autopilot; it omits GPU synthetic vision. The separate `previews/in-flight-panel.png` and its crops run the actual GPU renderer over original procedural terrain after sensor alignment. These are distinct review states. Symmetric edge-proximity scores are sensitive to fonts, hardware artwork, and screen content, so they are review aids rather than percentage placement errors or acceptance thresholds.
 
 ## Remaining differences
 

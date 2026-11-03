@@ -5,7 +5,9 @@
     "id": "sling2-912is",
     "display_name": "Sling 2 / 912 iS",
     "description": "Sling 2 POH Rev 2.8, section 1.4; Sling 2 POH Rev 2.8, section 2.2; Sling 2 POH Rev 2.8, section 2.8; Sling 2 POH Rev 2.8, section 2.9; Sling 2 POH Rev 2.8, section 6.5. Empty CG and inertia are estimates, not an individual aircraft weighing.",
-    "author": "FlightCraft contributors"
+    "author": "FlightCraft contributors",
+    "registration": "N1234B",
+    "spoken_type": "Sling"
   },
   "family": "sling2-family",
   "engine": "sling2-rotax912is",

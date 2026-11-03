@@ -675,3 +675,73 @@ fn guarded_lanes_backup_buses_and_wigwag_are_connected() -> Result<(), Error> {
     assert!(powered(&lights, "landing") && powered(&lights, "landing_right"));
     Ok(())
 }
+
+#[test]
+fn radio_identity_and_audio_follow_the_navigator_installation() -> Result<(), Error> {
+    use flightcraft_aero::modern::PanelElement;
+    use flightcraft_control::{Session, read_pack};
+    use serde_json::json;
+
+    let config = configuration()?;
+    assert_eq!(config.aircraft.identity.registration, "N1234B");
+    assert_eq!(config.aircraft.identity.spoken_type, "Sling");
+    assert_eq!(config.variant.identity.registration, "N1234B");
+    assert_eq!(config.variant.identity.spoken_type, "Sling");
+    let panel = config.panel.equipment.as_ref().ok_or("missing equipment")?;
+    assert!(
+        !panel
+            .elements
+            .iter()
+            .any(|e| matches!(e.element, PanelElement::AudioPanel)),
+        "audio controls must not add a separate panel face"
+    );
+    assert!(panel.elements.iter().any(|e| {
+        e.id == "registration"
+            && matches!(&e.element, PanelElement::Placard { text, .. } if text == "N1234B")
+    }));
+    let installation = &config.panel.audio_panel;
+    assert_eq!(installation.power_load, "navigator");
+    assert_eq!(installation.com1_load, "navigator");
+    assert_eq!(installation.com2_load, "navigator");
+
+    let manifest = std::path::Path::new(env!("CARGO_MANIFEST_DIR"));
+    let root = if manifest.join("pack.json").is_file() {
+        manifest.to_owned()
+    } else {
+        manifest.join("..")
+    };
+    let mut session = Session::new()?;
+    session.install_pack(&read_pack(&root)?)?;
+    session.execute(
+        "aircraft.load",
+        json!({"source":{"kind":"installed","id":"sling2"},"reset":true}),
+    )?;
+    let callsign = session.pilot_callsign();
+    assert!(!callsign.overridden);
+    assert_eq!(callsign.registration, "N1234B");
+    assert_eq!(callsign.spoken_type, "Sling");
+    assert_eq!(callsign.full, "Sling One Two Three Four Bravo");
+    assert_eq!(callsign.current, callsign.full);
+    assert!(session.comms_state().powered);
+    session.execute(
+        "comms.audio_panel",
+        json!({"transmit":2,"receive_com2":true,"intercom":false,"volume":0.6}),
+    )?;
+    let audio = session.comms_state();
+    assert_eq!(audio.panel.transmit, 2);
+    assert!(audio.panel.receive_com2 && !audio.panel.intercom);
+    assert!((audio.panel.volume - 0.6).abs() < f64::EPSILON);
+    assert!(audio.com1_powered && audio.com2_powered);
+    session.execute(
+        "systems.set",
+        json!({"setting":{"kind":"breaker","load":"navigator","closed":false}}),
+    )?;
+    let unpowered = session.comms_state();
+    assert!(!unpowered.powered && !unpowered.com1_powered && !unpowered.com2_powered);
+    session.execute(
+        "systems.set",
+        json!({"setting":{"kind":"breaker","load":"navigator","closed":true}}),
+    )?;
+    assert!(session.comms_state().powered);
+    Ok(())
+}

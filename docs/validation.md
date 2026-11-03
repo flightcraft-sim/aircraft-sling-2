@@ -1,6 +1,6 @@
 # Validation
 
-The panel and systems use the optional fidelity hooks from current engine main. The harness loads the distributed manifest and six layer documents through `AircraftCatalog::install_pack`, resolves the aircraft, initializes the engine's `Sim`, and installs its operational systems. It uses public engine APIs and never modifies the engine. Local verification uses engine revision `3512ca9`; CI instead resolves Git `main` on every run.
+The panel and systems use the optional fidelity hooks from current engine main. The harness loads the distributed manifest and six layer documents through `AircraftCatalog::install_pack`, resolves the aircraft, initializes the engine's `Sim`, and installs its operational systems. It uses public engine APIs and never modifies the engine. Local verification uses engine revision `580e2e0`; CI instead resolves Git `main` on every run.
 
 All performance flights use 700 kg, symmetric occupants and fuel, a valid CG at 1.738071 m aft of datum, standard atmosphere, calm air, and the engine's 120 Hz rigid-body integration. Fuel burn updates mass during flight. The measured results below use the local engine checkout.
 
@@ -29,7 +29,7 @@ Cruise runs hold altitude with pitch and the specified engine RPM with throttle 
 
 Takeoff uses 10° flap, full power, and rotation beginning at the published 40 kt. Roll ends at the first sample with every wheel airborne, with at most two simulation steps of measurement resolution. Landing starts near 15 m on a full-flap final at the published 65 kt threshold speed, flares, applies brakes at first contact, and measures contact-to-stop distance. These are **ground-roll** comparisons; approach path and total 15 m obstacle distance are not acceptance-tested. Concrete and grass use actual engine ground-surface classifications.
 
-Additional tests exercise numeric provenance, stable panel/skin rectangles, CG edges, mass limits, individual and dual lane loss, pump redundancy, breaker interruption, key restart, selector starvation, master warning, propeller gearing, guarded lane bindings, backup-bus isolation, breaker interruption on backup, and alternating landing lights. Existing engine tests cover equipment internals; this harness checks their pack wiring.
+Additional tests load the pack through a real session, verify its explicit N1234B/Sling identity and full spoken callsign without an override, exercise audio commands, and check that the NAV/COM breaker interrupts the audio and both COM feeds without adding a separate face. Further tests exercise numeric provenance, stable panel/skin rectangles, CG edges, mass limits, individual and dual lane loss, pump redundancy, breaker interruption, key restart, selector starvation, master warning, propeller gearing, guarded lane bindings, backup-bus isolation, breaker interruption on backup, and alternating landing lights. Existing engine tests cover equipment internals; this harness checks their pack wiring.
 
 ## Limits of acceptance
 

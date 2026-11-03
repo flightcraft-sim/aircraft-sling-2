@@ -5,7 +5,9 @@
     "id": "sling2",
     "display_name": "Sling 2",
     "description": "Rotax 912 iS with advanced IFR two-display panel. Not affiliated with or endorsed by Sling Aircraft.",
-    "author": "FlightCraft contributors"
+    "author": "FlightCraft contributors",
+    "registration": "N1234B",
+    "spoken_type": "Sling"
   },
   "variant": "sling2-912is",
   "panel": "sling2-ifr",

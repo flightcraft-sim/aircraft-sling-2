@@ -1122,7 +1122,7 @@
         ],
         "element": {
           "kind": "placard",
-          "text": "N1234",
+          "text": "N1234B",
           "font_size_mm": 9.24,
           "color": "white"
         }
@@ -2386,5 +2386,10 @@
         }
       }
     ]
+  },
+  "audio_panel": {
+    "power_load": "navigator",
+    "com1_load": "navigator",
+    "com2_load": "navigator"
   }
 }
