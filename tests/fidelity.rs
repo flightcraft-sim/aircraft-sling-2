@@ -399,8 +399,8 @@ fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
     let p = c.panel.equipment.ok_or("missing equipment")?;
     let scale = 0.77;
     for (id, x, y, w, h) in [
-        ("left_display", 248., 308., 424., 308.),
-        ("right_display", 1062., 308., 424., 308.),
+        ("left_display", 248., 310., 424., 304.),
+        ("right_display", 1062., 310., 424., 304.),
         ("navigator", 745., 382., 235., 98.),
         ("autopilot", 742., 485., 243., 77.),
         ("standby", 798., 238., 132., 137.),
@@ -437,12 +437,21 @@ fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
             (id == "right_display").then_some(flightcraft_aero::modern::TouchLayout::Mfd)
         );
         assert!(display.appearance.synthetic_vision);
+        // Both displays are the 10.6-inch landscape touch EFIS: its model supplies the bezel
+        // geometry and the real control row, and the installation has the model's bezel aspect.
         let bezel = display.appearance.bezel.as_ref().ok_or("bezel missing")?;
         assert_eq!(
-            bezel.margins,
-            [22. * scale, 28. * scale, 22. * scale, 60. * scale]
+            bezel.model,
+            Some(flightcraft_aero::display_model::DisplayModel::LandscapeTouchEfis)
         );
-        assert_eq!(bezel.softkey_count, 4);
+        let aspect = display.size[0] / display.size[1];
+        let model_aspect = flightcraft_aero::display_model::DisplayModel::LandscapeTouchEfis.bezel_aspect();
+        assert!((aspect / model_aspect - 1.).abs() < 0.01, "{aspect} vs {model_aspect}");
+        // The pack recommends the public skin pack by id; it is a soft reference.
+        assert_eq!(
+            display.appearance.recommended_skin.as_deref(),
+            Some("landscape-touch-efis")
+        );
     }
     let selector = p
         .elements
