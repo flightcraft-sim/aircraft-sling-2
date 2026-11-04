@@ -25,7 +25,7 @@ All 23 breaker caps have the measured labels, ratings, and centres. Native label
 
 ## Equipment and colour
 
-Both touch displays default to `integrated_pfd`, with synthetic vision, a left engine strip, a bottom-left map, and a bottom-right terrain inset. Their configurable bezels use the specified margins, four softkeys, two corner knobs, and a card slot. The navigator has a home column, four-by-two tiles, and a frequency column. The autopilot fills its measured rectangle with individually placed controls; LVL is cyan when the host reports its level mode active.
+The left touch display defaults to `integrated_pfd`, with synthetic vision, a left engine strip, a bottom-left map, and a bottom-right terrain inset. The right display keeps that PFD layout as its installed layout but declares `default_page: mfd`, so it opens as the multi-function display. Their configurable bezels use the specified margins, four softkeys, two corner knobs, and a card slot. The navigator has a home column, four-by-two tiles, and a frequency column. The autopilot fills its measured rectangle with individually placed controls; LVL is cyan when the host reports its level mode active.
 
 The shell face is `#333333`, the glare shield is near-black `#0b0b0b`, the bezels are `#080808`, and the placards are `#f5f5f2`. These follow the requested charcoal range. A flat-face sample at image coordinate (730, 275) is RGB (51, 51, 51) in the render and (77, 77, 77) in the supplied photograph. Thus the requested material colour is implemented, but a few-percent photographic colour match is not claimed; exposure, reflections, and shading differ.
 

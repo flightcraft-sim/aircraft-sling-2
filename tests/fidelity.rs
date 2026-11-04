@@ -428,6 +428,14 @@ fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
                 ..
             }
         ));
+        // A pilot in the left seat: PFD on the left, MFD on the right.
+        let flightcraft_aero::modern::PanelElement::TouchDisplay { default_page, .. } = &display.element else {
+            return Err("not a touch display".into());
+        };
+        assert_eq!(
+            *default_page,
+            (id == "right_display").then_some(flightcraft_aero::modern::TouchLayout::Mfd)
+        );
         assert!(display.appearance.synthetic_vision);
         let bezel = display.appearance.bezel.as_ref().ok_or("bezel missing")?;
         assert_eq!(
