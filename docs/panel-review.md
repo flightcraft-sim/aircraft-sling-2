@@ -88,3 +88,7 @@ A few-percent overall photograph match remains incomplete:
 - The single visible LAND breaker interrupts the left logical lamp load; the right lamp has an independent logical breaker. Shared physical-breaker wiring remains a host limitation, documented in the estimate register.
 
 The private skin extension now has working host registration hooks, described in `private-skins.md`. Stable installation ids and rectangles allow a separate private artwork pack to refine hardware and screens without moving this public layout.
+
+## Cockpit flight controls
+
+The master switch, flap selector, throttle, hand brake lever, park-brake valve, and the pilot's stick (with its trim buttons) are panel elements, so the normal-procedure checklists can highlight them and a cold-and-dark start can be worked entirely with the pointer. The master and flap selector sit on the dash where the POH 7.10 figure puts items 1 and 20. The throttle, brake lever, and park valve (POH 7.9 items 7, 4, 6) and the stick are below the measured console outline; the dash view reaches them with its Console button. Coordinates are estimates; see `estimates.md`. The two display installations were not touched.

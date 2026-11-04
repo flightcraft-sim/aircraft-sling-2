@@ -1018,3 +1018,259 @@ fn preflight_walkaround_encodes_poh_section_4_4() -> Result<(), Box<dyn std::err
     }
     Ok(())
 }
+
+// Cockpit flight controls. Every position below is POH Rev 2.8 section 7.2, 7.4, 7.9, 7.10, 7.11
+// or 7.15, or an estimate listed in docs/estimates.md ("Cockpit flight controls").
+mod cockpit_controls {
+    use super::*;
+    use flightcraft_aero::modern::{PanelElement, Rocker};
+    use flightcraft_sim::systems::{SystemSetting, SystemSwitch};
+
+    fn element<'a>(
+        c: &'a flightcraft_aero::ResolvedAircraft,
+        id: &str,
+    ) -> Result<&'a flightcraft_aero::modern::EquipmentInstallation, Error> {
+        c.panel
+            .equipment
+            .as_ref()
+            .ok_or("missing equipment")?
+            .elements
+            .iter()
+            .find(|e| e.id == id)
+            .ok_or_else(|| format!("panel has no {id}").into())
+    }
+    fn parked() -> Result<Sim, Error> {
+        let c = configuration()?;
+        let mut sim = Sim::new_with_aircraft(
+            &Start::RunwayAt {
+                threshold_ned_m: [0., 0., 0.],
+                heading_rad: 0.,
+            },
+            c.aircraft.clone(),
+        )?;
+        sim.configure_systems(&c)?;
+        sim.set_controls(Controls::default());
+        sim.step(240);
+        Ok(sim)
+    }
+
+    #[test]
+    fn each_control_exists_with_the_right_kind_and_clear_of_the_displays() -> Result<(), Error> {
+        let c = configuration()?;
+        assert!(matches!(
+            element(&c, "master_switch")?.element,
+            PanelElement::Rocker {
+                switch: Rocker::Master,
+                ..
+            }
+        ));
+        assert!(matches!(
+            element(&c, "flap_selector")?.element,
+            PanelElement::FlapSelector { .. }
+        ));
+        assert!(matches!(
+            element(&c, "pilot_stick")?.element,
+            PanelElement::ControlStick { .. }
+        ));
+        assert!(matches!(
+            element(&c, "throttle")?.element,
+            PanelElement::Throttle { .. }
+        ));
+        assert!(matches!(
+            element(&c, "brake_lever")?.element,
+            PanelElement::BrakeLever { .. }
+        ));
+        assert!(matches!(
+            element(&c, "park_brake")?.element,
+            PanelElement::ParkBrake { .. }
+        ));
+        // The two displays and their measured rectangles are untouched.
+        let left = element(&c, "left_display")?;
+        let right = element(&c, "right_display")?;
+        let same = |a: [f64; 2], b: [f64; 2]| a.iter().zip(b).all(|(x, y)| (x - y).abs() < 1e-9);
+        assert!(same(left.position, [190.96, 238.7]) && same(left.size, [326.48, 234.08]));
+        assert!(same(right.position, [817.74, 238.7]) && same(right.size, [326.48, 234.08]));
+        let overlap = |a: &flightcraft_aero::modern::EquipmentInstallation,
+                       b: &flightcraft_aero::modern::EquipmentInstallation| {
+            a.position[0] < b.position[0] + b.size[0]
+                && b.position[0] < a.position[0] + a.size[0]
+                && a.position[1] < b.position[1] + b.size[1]
+                && b.position[1] < a.position[1] + a.size[1]
+        };
+        let ids = [
+            "master_switch",
+            "flap_selector",
+            "pilot_stick",
+            "throttle",
+            "brake_lever",
+            "park_brake",
+        ];
+        for (i, a) in ids.iter().enumerate() {
+            for d in [left, right] {
+                assert!(!overlap(element(&c, a)?, d), "{a} overlaps {}", d.id);
+            }
+            for b in ids.iter().skip(i + 1) {
+                assert!(
+                    !overlap(element(&c, a)?, element(&c, b)?),
+                    "{a} overlaps {b}"
+                );
+            }
+        }
+        // The POH puts the throttle, brake lever, and park valve on the centre console, below the
+        // fuel selector, and the master and flap controls on the instrument panel itself.
+        let selector = element(&c, "fuel_selector")?;
+        for id in ["throttle", "brake_lever", "park_brake"] {
+            assert!(element(&c, id)?.position[1] >= selector.position[1] + selector.size[1]);
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn master_switch_connects_the_battery_to_the_main_bus() -> Result<(), Error> {
+        let mut sim = parked()?;
+        for on in [false, true] {
+            sim.set_systems(SystemSetting::Switch {
+                switch: SystemSwitch::Master,
+                on,
+            })?;
+            sim.step(60);
+            assert_eq!(sim.systems().controls.master, on);
+            assert_eq!(sim.systems().electrical.main_bus_voltage > 9., on);
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn throttle_lever_sets_the_engine_power() -> Result<(), Error> {
+        let mut sim = parked()?;
+        sim.set_systems(SystemSetting::Throttle { value: 0. })?;
+        sim.set_systems(SystemSetting::ParkBrake { on: true })?;
+        sim.step(480);
+        let idle = sim.systems().engine_rpm;
+        sim.set_systems(SystemSetting::Throttle { value: 0.8 })?;
+        sim.step(480);
+        assert!((sim.controls().throttle - 0.8).abs() < 1e-9);
+        assert!(
+            sim.systems().engine_rpm > idle + 500.,
+            "idle {idle}, now {}",
+            sim.systems().engine_rpm
+        );
+        assert!(
+            sim.set_systems(SystemSetting::Throttle { value: 1.5 })
+                .is_err()
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn flap_selector_positions_are_the_four_pohs_detents() -> Result<(), Error> {
+        let c = configuration()?;
+        // POH 7.2: positions 0, 1, 2, 3 (0, 10, 20 and 32 degrees).
+        assert_eq!(c.variant.flap_stages.len(), 4);
+        let mut sim = parked()?;
+        for stage in &c.variant.flap_stages {
+            sim.set_systems(SystemSetting::Flaps {
+                value: stage.position,
+            })?;
+            assert!((sim.controls().flaps - stage.position).abs() < 1e-9);
+        }
+        Ok(())
+    }
+
+    #[test]
+    fn brake_lever_and_park_valve_hold_the_wheels() -> Result<(), Error> {
+        let roll = |lever: f64, park: bool| -> Result<f64, Error> {
+            let mut sim = parked()?;
+            sim.set_systems(SystemSetting::WheelBrake { value: lever })?;
+            sim.set_systems(SystemSetting::ParkBrake { on: park })?;
+            sim.set_systems(SystemSetting::Throttle { value: 0.5 })?;
+            sim.step(480);
+            Ok(sim.readout().ground_speed_mps)
+        };
+        assert!(roll(0., false)? > 3., "free rolling accelerates");
+        assert!(roll(1., false)? < 1., "the hand lever holds the wheels");
+        // POH 7.4: the intercept valve stops pressure relief, so the brakes stay on with the
+        // lever released.
+        assert!(roll(0., true)? < 1., "the closed valve holds the wheels");
+        let mut sim = parked()?;
+        sim.set_systems(SystemSetting::ParkBrake { on: true })?;
+        assert!(sim.systems().controls.park_brake);
+        assert!(
+            sim.controls().brake < 0.01,
+            "the lever itself is not squeezed"
+        );
+        Ok(())
+    }
+
+    #[test]
+    fn stick_trim_moves_the_trim_tab_and_is_bounded() -> Result<(), Error> {
+        let mut sim = parked()?;
+        let before = sim.effective_controls().elevator;
+        sim.set_systems(SystemSetting::Trim { value: 0.1 })?;
+        assert!(sim.effective_controls().elevator > before, "trim up");
+        sim.set_systems(SystemSetting::Trim { value: -0.1 })?;
+        assert!(sim.effective_controls().elevator < before, "trim down");
+        assert!(sim.set_systems(SystemSetting::Trim { value: 0.4 }).is_err());
+        Ok(())
+    }
+
+    #[test]
+    fn every_checklist_control_names_a_panel_element() -> Result<(), Error> {
+        let c = configuration()?;
+        let set = c
+            .installed_systems
+            .procedures
+            .as_ref()
+            .ok_or("no procedures")?;
+        let mut named = std::collections::BTreeSet::new();
+        for list in &set.checklists {
+            for item in &list.items {
+                if let Some(id) = &item.control {
+                    element(&c, id)?;
+                    named.insert(id.as_str());
+                }
+            }
+        }
+        for id in [
+            "master_switch",
+            "throttle",
+            "park_brake",
+            "brake_lever",
+            "flap_selector",
+            "pilot_stick",
+            "fuel_selector",
+        ] {
+            assert!(named.contains(id), "no checklist item highlights {id}");
+        }
+        // Items that operate or read these controls name them.
+        let control = |list: &str, item: &str| -> Result<Option<String>, Error> {
+            Ok(set
+                .checklists
+                .iter()
+                .find(|l| l.id == list)
+                .and_then(|l| l.items.iter().find(|i| i.id == item))
+                .ok_or("missing item")?
+                .control
+                .clone())
+        };
+        for (list, item, expected) in [
+            ("engine_start", "master", "master_switch"),
+            ("engine_start", "throttle_idle", "throttle"),
+            ("engine_start", "smooth_running", "throttle"),
+            ("before_start", "brakes", "park_brake"),
+            ("taxi", "flaps_up", "flap_selector"),
+            ("taxi", "brakes_off", "park_brake"),
+            ("before_takeoff", "trim", "pilot_stick"),
+            ("before_takeoff", "flaps", "flap_selector"),
+            ("securing", "parking_brake", "park_brake"),
+            ("shutdown", "master", "master_switch"),
+        ] {
+            assert_eq!(
+                control(list, item)?.as_deref(),
+                Some(expected),
+                "{list}/{item}"
+            );
+        }
+        Ok(())
+    }
+}

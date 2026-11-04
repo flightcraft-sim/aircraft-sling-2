@@ -2339,7 +2339,8 @@
             "verify": {
               "kind": "brake",
               "set": true
-            }
+            },
+            "control": "park_brake"
           }
         ]
       },
@@ -2358,7 +2359,8 @@
               "kind": "master",
               "on": true
             },
-            "note": "Observe the temperature limits for engine start (POH 2.14)."
+            "note": "Observe the temperature limits for engine start (POH 2.14).",
+            "control": "master_switch"
           },
           {
             "id": "efis_backup",
@@ -2417,7 +2419,8 @@
             "text": "Lane A and Lane B warning lights",
             "response": "on for about 5 s, then out",
             "poh_ref": "POH 9.4.12 item 6 (warning)",
-            "note": "Flashing, or not lighting, is a deficiency: do not take the engine into operation before it is rectified."
+            "note": "Flashing, or not lighting, is a deficiency: do not take the engine into operation before it is rectified.",
+            "control": "lane_a"
           },
           {
             "id": "fuel_selector",
@@ -2442,7 +2445,8 @@
               "kind": "throttle",
               "max": 0.05
             },
-            "note": "Start with the throttle at idle or at most 5% open, to avoid shock loading."
+            "note": "Start with the throttle at idle or at most 5% open, to avoid shock loading.",
+            "control": "throttle"
           },
           {
             "id": "pump_1",
@@ -2504,7 +2508,8 @@
               "kind": "rpm",
               "min": 1700,
               "max": 2300
-            }
+            },
+            "control": "throttle"
           },
           {
             "id": "oil_pressure",
@@ -2578,7 +2583,8 @@
             "verify": {
               "kind": "brake",
               "set": true
-            }
+            },
+            "control": "park_brake"
           },
           {
             "id": "warm_2000",
@@ -2595,7 +2601,8 @@
               "kind": "hold",
               "seconds": 120
             },
-            "note": "Supplement 9.4.12 item 14 allows one minute for the 912 iS; the longer figure of 4.5.3 is used here."
+            "note": "Supplement 9.4.12 item 14 allows one minute for the 912 iS; the longer figure of 4.5.3 is used here.",
+            "control": "throttle"
           },
           {
             "id": "alt_b",
@@ -2619,7 +2626,8 @@
               "kind": "rpm",
               "min": 2300,
               "max": 2700
-            }
+            },
+            "control": "throttle"
           },
           {
             "id": "oil_temp",
@@ -2648,7 +2656,8 @@
             "id": "instruments",
             "text": "Engine instrument readings",
             "response": "verify all",
-            "poh_ref": "POH 9.4.12 after item 17"
+            "poh_ref": "POH 9.4.12 after item 17",
+            "control": "left_display"
           }
         ],
         "limits": [
@@ -2690,7 +2699,8 @@
             "verify": {
               "kind": "brake",
               "set": true
-            }
+            },
+            "control": "park_brake"
           },
           {
             "id": "into_wind",
@@ -2852,7 +2862,8 @@
             },
             "note": "Maximum take-off rpm is 5,800 (5 minutes). A fixed-pitch propeller turns slower held on the brakes than in the take-off roll (POH 4.7.2 shows 5,500 to 5,800).",
             "unverified": "4,600 rpm static minimum and 8 s acceleration are original estimates for this simulator's propeller; the POH gives no static figure",
-            "stop_on_failure": true
+            "stop_on_failure": true,
+            "control": "throttle"
           },
           {
             "id": "throttle_back",
@@ -2862,7 +2873,8 @@
             "verify": {
               "kind": "throttle",
               "max": 0.1
-            }
+            },
+            "control": "throttle"
           }
         ],
         "limits": [
@@ -2986,7 +2998,8 @@
             "verify": {
               "kind": "flaps",
               "max": 0.05
-            }
+            },
+            "control": "flap_selector"
           },
           {
             "id": "brakes_off",
@@ -2996,26 +3009,30 @@
             "verify": {
               "kind": "brake",
               "set": false
-            }
+            },
+            "control": "park_brake"
           },
           {
             "id": "controls",
             "text": "Controls",
             "response": "neutral position, or as required for wind",
-            "poh_ref": "POH 4.6 item 4"
+            "poh_ref": "POH 4.6 item 4",
+            "control": "pilot_stick"
           },
           {
             "id": "brakes_check",
             "text": "Brakes",
             "response": "verify",
             "poh_ref": "POH 4.6 item 6",
-            "note": "Apply power and brakes as needed to control movement."
+            "note": "Apply power and brakes as needed to control movement.",
+            "control": "brake_lever"
           },
           {
             "id": "instruments",
             "text": "Instruments",
             "response": "verify",
-            "poh_ref": "POH 4.6 item 7"
+            "poh_ref": "POH 4.6 item 7",
+            "control": "left_display"
           }
         ]
       },
@@ -3035,7 +3052,8 @@
               "check": "controls",
               "min_deflection": 0.8
             },
-            "note": "Move stick fore and aft, left and right, and both rudder pedals, watching the surfaces."
+            "note": "Move stick fore and aft, left and right, and both rudder pedals, watching the surfaces.",
+            "control": "pilot_stick"
           },
           {
             "id": "trim",
@@ -3045,7 +3063,8 @@
             "verify": {
               "kind": "trim_neutral",
               "tolerance": 0.02
-            }
+            },
+            "control": "pilot_stick"
           },
           {
             "id": "choke",
@@ -3058,7 +3077,8 @@
             "id": "flaps",
             "text": "Flaps",
             "response": "as required (typically 1 notch)",
-            "poh_ref": "POH 4.7.1 item 4"
+            "poh_ref": "POH 4.7.1 item 4",
+            "control": "flap_selector"
           },
           {
             "id": "fuel_quantity",
@@ -3110,7 +3130,8 @@
             "id": "altimeter",
             "text": "Altimeter",
             "response": "set QNH / QFE",
-            "poh_ref": "POH 4.7.1 item 10"
+            "poh_ref": "POH 4.7.1 item 10",
+            "control": "left_display"
           },
           {
             "id": "switches",
@@ -3185,7 +3206,8 @@
               "kind": "throttle",
               "max": 0.1
             },
-            "note": "For the 912 iS at least 5 minutes must elapse between landing and shutting off the engine. If the engine is hot, cool it about 2 minutes at approximately 3,000 rpm first."
+            "note": "For the 912 iS at least 5 minutes must elapse between landing and shutting off the engine. If the engine is hot, cool it about 2 minutes at approximately 3,000 rpm first.",
+            "control": "throttle"
           },
           {
             "id": "parameters",
@@ -3279,7 +3301,8 @@
             "verify": {
               "kind": "master",
               "on": false
-            }
+            },
+            "control": "master_switch"
           },
           {
             "id": "fuel_selector",
@@ -3327,7 +3350,8 @@
             "verify": {
               "kind": "master",
               "on": false
-            }
+            },
+            "control": "master_switch"
           },
           {
             "id": "fuel_selector",
@@ -3348,10 +3372,11 @@
             "response": "use as necessary",
             "poh_ref": "POH 4.16 item 5",
             "verify": {
-              "kind": "brake",
+              "kind": "park_brake",
               "set": true
             },
-            "note": "Use the parking brake for short-period parking only; for long periods use wheel chocks as well."
+            "note": "Use the parking brake for short-period parking only; for long periods use wheel chocks as well.",
+            "control": "park_brake"
           },
           {
             "id": "canopy",

@@ -54,3 +54,24 @@ Pilot eye (-2.30, -0.205, -0.72) m in body axes is an original seating estimate,
 Side trim, armrests, pedal positions, curved dash and coaming, upholstery weave, and material roughness
 are independent visual estimates. Existing V10 canopy seam, 1.10 m travel, and clearance gates stay
 in force. V11 has not been run or accepted by the cockpit lane.
+
+## Cockpit flight controls (master, flaps, trim, throttle, brakes)
+
+What the POH (Rev 2.8) fixes, and where each control is. Positions are millimetres on the panel layer.
+
+| Control (element id) | POH | Placement in the pack | Status |
+|---|---|---|---|
+| Master switch (`master_switch`, rocker) | 7.2 electrical switch table and 7.10 key item 1 "Master switch and starter"; 9.4.7 for the 912 iS (the master only connects the battery to the main bus; the ignition key only runs the starter) | (68, 335), left of the ignition key, at the lower left of the dash | Estimate: the POH figure gives the zone, not a coordinate. |
+| Flap selector (`flap_selector`) | 7.2 "four-position rotary knob ... on the instrument panel", positions 0/1/2/3 = 0/10/20/32 degrees; 7.10 item 20; 7.11 | (579, 478), lower dash left of the ballistic chute handle (item 20 sits between the electrical switches and the fuel selector) | Estimate for the coordinate. Detents are the four `flap_stages` of the variant layer. |
+| Throttle (`throttle`) | 7.9 item 7 and 7.15: hand lever on the cabin centre console, forward for more power | (606, 670), console-top row below the fuel selector | Estimate: the POH does not say where on the console, or the order of the three console controls. The photograph stops at the console front, so the console top row is outside it. |
+| Hand brake lever (`brake_lever`) | 7.4 and 7.9 item 4: hydraulic brake actuated by a lever on the cabin centre console (absent if differential foot brakes are fitted) | (652, 670) | Estimate for position. |
+| Park-brake valve (`park_brake`) | 7.4 and 7.9 item 6: an intercept valve acts as a parking brake by stopping pressure relief | (698, 670) | Estimate for position. |
+| Trim (`pilot_stick`, buttons 1 and 3) | 7.2: elevator trim is electric, by buttons on the control stick; button 1 is trim down, button 3 trim up, 2 autopilot, 4 not allocated, 5 push to talk (also 7.9 item 3, PTT on the front of the handle); 7.11 | (542, 670), left of the console | Estimate for position. Buttons 2, 4 and 5 are drawn as in the POH figure but are not wired to the dash. |
+
+Modelling choices that are not from the POH:
+
+- **No flap-position or trim-position indicator is drawn.** The POH describes neither as hardware: the flap selector is a detented knob (its pointer is the indication) and the trim buttons have no gauge in sections 7.2, 7.10 or 7.11. Pilot-visible trim and flap values on the G3X are not claimed. A hover on the stick shows the trim value.
+- **Park brake.** The valve model is "closed holds full brake pressure with the lever released"; the real valve holds whatever pressure the lever last built. The POH gives no pressure figures.
+- **Trim authority and rate.** The engine's trim range of +/-0.3 elevator-equivalent is symmetric; the POH's trim tab travel (8 degrees up, 20 degrees down, +/-5) is not mapped to it. Holding a stick button runs trim at 0.15 of that range per second, as the keyboard binding does.
+- **Console plates.** The throttle, brake, valve and stick faces carry their own plates below the measured console outline; no console outline was added or moved.
+- **Flap detents.** `variant.json` already normalises the stages to 0, 1/3, 2/3 and 1; the POH's 32 degree last stage would be 0.3125, 0.625, 1. That earlier estimate is unchanged here.
