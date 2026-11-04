@@ -33,7 +33,7 @@
       "kind": "aircraft"
     }
   ],
-  "format_version": 3,
+  "format_version": 4,
   "exterior": [
     {
       "aircraft": "sling2",

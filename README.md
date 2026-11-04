@@ -31,11 +31,11 @@ buildq run flightcraft "$PWD" -- cargo clippy --manifest-path .local-harness/Car
 
 Set `FLIGHTCRAFT_ENGINE` before preparing the manifest when the engine is elsewhere. Hosts that need pkg-config metadata can pass their configuration with Cargo's `--config` option. All local compilation goes through the build queue. Optional actual UI captures use `--features previews --test render -- --ignored`; they require the UI's platform libraries.
 
-See [validation](docs/validation.md) for measured results and acceptance conditions, and [panel review](docs/panel-review.md) for the layout comparison. The pack requires FlightCraft main revision `580e2e0` or newer (and a revision with the `default_page` display field for the right-hand MFD; older hosts reject the field) for its radio identity and audio installation, in addition to placed hardware, display composition, backup buses, and private equipment artwork. The review documents separate measured layout accuracy from remaining artistic differences.
+See [validation](docs/validation.md) for measured results and acceptance conditions, and [panel review](docs/panel-review.md) for the layout comparison. The pack requires FlightCraft revision `1ccd4e8` (pack format 4, the pre-flight walkaround) or newer; the display and radio features below need `580e2e0` or newer (and a revision with the `default_page` display field for the right-hand MFD; older hosts reject the field) for its radio identity and audio installation, in addition to placed hardware, display composition, backup buses, and private equipment artwork. The review documents separate measured layout accuracy from remaining artistic differences.
 
 ## Sources and estimates
 
-Numerical aircraft facts come from **Sling 2 POH Rev 2.8**: sections 1.4, 2.2, 2.7–2.9, 4.2, 5.1–5.4, 6.4–6.5, 7.5, 9.4, 9.4.1, and 9.4.9. Section 5 describes the equal-power baseline engine; section 9.4 explains its performance applicability to the 912 iS. No POH prose, figures, or images are distributed. [Facts](data/poh-facts.json) retain section citations; [numeric provenance](data/sources.json) maps every layer number to its source or estimate.
+Numerical aircraft facts come from **Sling 2 POH Rev 2.8**: sections 1.4, 2.2, 2.7–2.9, 4.2, 4.4, 5.1–5.4, 6.4–6.5, 7.5, 9.4, 9.4.1, and 9.4.9. Section 5 describes the equal-power baseline engine; section 9.4 explains its performance applicability to the 912 iS. No POH prose, figures, or images are distributed. [Facts](data/poh-facts.json) retain section citations; [numeric provenance](data/sources.json) maps every layer number to its source or estimate.
 
 The [estimate register](docs/estimates.md) covers aerodynamics, inertia, empty CG, dimensional placement, propeller coefficients, reduction ratio, fuel density, electrical and sensor dynamics, recovery dynamics, autopilot settings, panel curves, and default loading. These are simulation assumptions, not measured aircraft characteristics.
 
@@ -89,3 +89,9 @@ python3 scripts/generate-exterior.py --sling-out /path/to/old-revision-output
 Keep its output separate from the installed V8 assets. Its older untextured geometry and
 geometry lettering are not the current exterior. See the attribution ledger for the separate
 legacy provenance.
+
+## Pre-flight walkaround (pack format 4)
+
+`systems.json` carries a `preflight` section: every item of **POH Rev 2.8 section 4.4 Pre-flight check** in the handbook's walk order, with its reference. Six stations (cabin, fuselage, empennage, right wing and main gear, nose section and nose gear, left wing), 67 items, the pitot cover, wheel chocks and tie-down ropes, the two wing filler caps, and the findings an instructor may seed on each item (low oil or fuel, a loose cowl fastener, missing aileron or flap hinge hardware, a damaged tyre, a cracked wheel fairing). The engine draws a figure that walks it; see FlightCraft's `docs/preflight.md`. Item text is a terse restatement of each checklist line (facts only, no POH prose). Because older engines reject the new field, `pack.json` declares `format_version: 4`.
+
+Positions come from the exterior model (see the [estimate register](docs/estimates.md)); `scripts/generate-preflight.py` writes the section into `systems.json` and is the readable source for the list. The POH has no fuel sump drain step, so none is encoded. Run it, then `scripts/source-ledger.py`, after any edit.

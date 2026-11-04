@@ -3,6 +3,7 @@
 | Resource | Origin | Use and licence |
 |---|---|---|
 | Aircraft numerical facts | Sling 2 Pilot Operating Handbook, Rev 2.8; sections listed in `data/poh-facts.json` | Facts only, transcribed into original data structures; no handbook prose, figures, or images redistributed. The handbook remains its publisher's work. |
+| Pre-flight walkaround list (`systems.json` `preflight`, written by `scripts/generate-preflight.py`) | Sling 2 POH DC-POH-002-X-B-2.8 Rev 2.8, section 4.4 Pre-flight check, items, order, and the fuel-level warning and propeller caution | Facts only: item names restated tersely with their section references, no handbook prose, figures, or images. Positions come from this pack's own exterior model; the filler cap, tail rope, parachute cover, extinguisher and document locations are approximations (see `docs/estimates.md`). Apache-2.0. |
 | Measured hardware arrangement | Supplied dimensional layout specification | Original declarative coordinates and curve construction; Apache-2.0. Reference photography is neither distributed nor embedded. |
 | Aerodynamic, mechanical, and operational models | Original dimensional, lifting-line, tail-volume, and energy-balance estimates | Apache-2.0; assumptions listed in `docs/estimates.md`. |
 | Panel previews | Rendered from this pack using FlightCraft's original equipment and display artwork | Apache-2.0. No reference-image pixels or manufacturer logos. |

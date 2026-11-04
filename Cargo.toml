@@ -70,4 +70,4 @@ unreachable = "deny"
 workspace = true
 
 [package.metadata.flightcraft]
-minimum-engine-revision = "580e2e0"
+minimum-engine-revision = "1ccd4e8"

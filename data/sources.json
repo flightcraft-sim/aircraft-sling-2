@@ -2182,21 +2182,1645 @@
       "value": 0.5,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
-    "/definition/sliding_canopy": {
-      "value": true,
-      "source": "Sling 2 POH Rev 2.8 section 7.7; enabled atomically by V9 installer"
-    },
     "/emergencies/0/best_glide_mps": {
       "value": 32.0,
-      "source": "estimate: original canopy-unlatched advisory grading; see docs/estimates.md (not a POH emergency checklist)"
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
     "/emergencies/0/glide_ratio": {
       "value": 10.0,
-      "source": "estimate: original canopy-unlatched advisory grading; see docs/estimates.md (not a POH emergency checklist)"
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
     "/emergencies/0/speed_tolerance_mps": {
       "value": 5.0,
-      "source": "estimate: original canopy-unlatched advisory grading; see docs/estimates.md (not a POH emergency checklist)"
+      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/preflight/version": {
+      "value": 1,
+      "source": "FlightCraft preflight section version."
+    },
+    "/preflight/pace_mps": {
+      "value": 1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/seat_m/0": {
+      "value": -2.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/seat_m/1": {
+      "value": -0.205,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/seat_m/2": {
+      "value": -0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/0/min_m/0": {
+      "value": -6.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/0/min_m/1": {
+      "value": -0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/0/max_m/0": {
+      "value": 0.33,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/0/max_m/1": {
+      "value": 0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/1/min_m/0": {
+      "value": -2.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/1/min_m/1": {
+      "value": -4.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/1/max_m/0": {
+      "value": -1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/1/max_m/1": {
+      "value": -0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/2/min_m/0": {
+      "value": -2.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/2/min_m/1": {
+      "value": 0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/2/max_m/0": {
+      "value": -1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/2/max_m/1": {
+      "value": 4.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/3/min_m/0": {
+      "value": -5.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/3/min_m/1": {
+      "value": -1.42,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/3/max_m/0": {
+      "value": -4.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/3/max_m/1": {
+      "value": 1.42,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/4/min_m/0": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/4/min_m/1": {
+      "value": -0.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/4/max_m/0": {
+      "value": 0.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/keepouts/4/max_m/1": {
+      "value": 0.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/0/position_m/0": {
+      "value": 1.25,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/0/position_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/1/position_m/0": {
+      "value": 1.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/1/position_m/1": {
+      "value": 1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/2/position_m/0": {
+      "value": 0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/2/position_m/1": {
+      "value": 1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/3/position_m/0": {
+      "value": -0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/3/position_m/1": {
+      "value": 0.85,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/4/position_m/0": {
+      "value": -0.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/4/position_m/1": {
+      "value": 1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/5/position_m/0": {
+      "value": -0.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/5/position_m/1": {
+      "value": 3.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/6/position_m/0": {
+      "value": -0.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/6/position_m/1": {
+      "value": 4.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/7/position_m/0": {
+      "value": -0.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/7/position_m/1": {
+      "value": 4.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/8/position_m/0": {
+      "value": -1.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/8/position_m/1": {
+      "value": 4.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/9/position_m/0": {
+      "value": -2.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/9/position_m/1": {
+      "value": 4.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/10/position_m/0": {
+      "value": -2.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/10/position_m/1": {
+      "value": 3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/11/position_m/0": {
+      "value": -2.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/11/position_m/1": {
+      "value": 2.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/12/position_m/0": {
+      "value": -2.78,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/12/position_m/1": {
+      "value": 1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/13/position_m/0": {
+      "value": -3.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/13/position_m/1": {
+      "value": 1.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/14/position_m/0": {
+      "value": -4.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/14/position_m/1": {
+      "value": 1.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/15/position_m/0": {
+      "value": -4.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/15/position_m/1": {
+      "value": 1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/16/position_m/0": {
+      "value": -6.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/16/position_m/1": {
+      "value": 1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/17/position_m/0": {
+      "value": -6.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/17/position_m/1": {
+      "value": 0.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/18/position_m/0": {
+      "value": -6.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/18/position_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/19/position_m/0": {
+      "value": -6.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/19/position_m/1": {
+      "value": -0.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/20/position_m/0": {
+      "value": -6.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/20/position_m/1": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/21/position_m/0": {
+      "value": -4.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/21/position_m/1": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/22/position_m/0": {
+      "value": -4.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/22/position_m/1": {
+      "value": -1.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/23/position_m/0": {
+      "value": -3.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/23/position_m/1": {
+      "value": -1.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/24/position_m/0": {
+      "value": -2.78,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/24/position_m/1": {
+      "value": -1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/25/position_m/0": {
+      "value": -2.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/25/position_m/1": {
+      "value": -2.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/26/position_m/0": {
+      "value": -2.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/26/position_m/1": {
+      "value": -3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/27/position_m/0": {
+      "value": -2.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/27/position_m/1": {
+      "value": -4.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/28/position_m/0": {
+      "value": -1.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/28/position_m/1": {
+      "value": -4.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/29/position_m/0": {
+      "value": -0.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/29/position_m/1": {
+      "value": -4.95,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/30/position_m/0": {
+      "value": -0.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/30/position_m/1": {
+      "value": -4.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/31/position_m/0": {
+      "value": -0.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/31/position_m/1": {
+      "value": -3.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/32/position_m/0": {
+      "value": -0.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/32/position_m/1": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/33/position_m/0": {
+      "value": -0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/33/position_m/1": {
+      "value": -0.85,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/34/position_m/0": {
+      "value": 0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/34/position_m/1": {
+      "value": -1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/35/position_m/0": {
+      "value": 1.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/route/35/position_m/1": {
+      "value": -1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/0/camera/target_m/0": {
+      "value": -2.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/0/camera/target_m/1": {
+      "value": -0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/0/camera/target_m/2": {
+      "value": -0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/0/camera/eye_offset_m/0": {
+      "value": -1.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/0/camera/eye_offset_m/1": {
+      "value": -3.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/0/camera/eye_offset_m/2": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/1/camera/target_m/0": {
+      "value": -3.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/1/camera/target_m/1": {
+      "value": -0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/1/camera/target_m/2": {
+      "value": -0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/1/camera/eye_offset_m/0": {
+      "value": -1.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/1/camera/eye_offset_m/1": {
+      "value": -4.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/1/camera/eye_offset_m/2": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/2/camera/target_m/0": {
+      "value": -5.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/2/camera/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/2/camera/target_m/2": {
+      "value": -0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/2/camera/eye_offset_m/0": {
+      "value": -3.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/2/camera/eye_offset_m/1": {
+      "value": -3.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/2/camera/eye_offset_m/2": {
+      "value": -1.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/3/camera/target_m/0": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/3/camera/target_m/1": {
+      "value": 2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/3/camera/target_m/2": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/3/camera/eye_offset_m/0": {
+      "value": 2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/3/camera/eye_offset_m/1": {
+      "value": 3.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/3/camera/eye_offset_m/2": {
+      "value": -1.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/4/camera/target_m/0": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/4/camera/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/4/camera/target_m/2": {
+      "value": 0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/4/camera/eye_offset_m/0": {
+      "value": 2.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/4/camera/eye_offset_m/1": {
+      "value": -2.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/4/camera/eye_offset_m/2": {
+      "value": -1.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/5/camera/target_m/0": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/5/camera/target_m/1": {
+      "value": -2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/5/camera/target_m/2": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/5/camera/eye_offset_m/0": {
+      "value": 2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/5/camera/eye_offset_m/1": {
+      "value": -3.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/stations/5/camera/eye_offset_m/2": {
+      "value": -1.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/0/action/target_m/0": {
+      "value": -1.85,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/0/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/0/action/target_m/2": {
+      "value": -0.08,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/1/action/target_m/0": {
+      "value": -1.85,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/1/action/target_m/1": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/1/action/target_m/2": {
+      "value": -0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/2/action/target_m/0": {
+      "value": -1.79,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/2/action/target_m/1": {
+      "value": -0.175,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/2/action/target_m/2": {
+      "value": -0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/3/action/target_m/0": {
+      "value": -2.04,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/3/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/3/action/target_m/2": {
+      "value": -0.04,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/4/action/target_m/0": {
+      "value": -1.85,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/4/action/target_m/1": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/4/action/target_m/2": {
+      "value": -0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/5/action/target_m/0": {
+      "value": -1.79,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/5/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/5/action/target_m/2": {
+      "value": -0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/6/action/target_m/0": {
+      "value": -1.98,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/6/action/target_m/1": {
+      "value": -0.205,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/6/action/target_m/2": {
+      "value": -0.25,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/7/action/target_m/0": {
+      "value": -2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/7/action/target_m/1": {
+      "value": -0.205,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/7/action/target_m/2": {
+      "value": -0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/8/action/target_m/0": {
+      "value": -2.28,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/8/action/target_m/1": {
+      "value": -0.205,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/8/action/target_m/2": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/9/action/target_m/0": {
+      "value": -2.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/9/action/target_m/1": {
+      "value": -0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/9/action/target_m/2": {
+      "value": -0.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/10/action/target_m/0": {
+      "value": -2.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/10/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/10/action/target_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/11/action/target_m/0": {
+      "value": -2.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/11/action/target_m/1": {
+      "value": 0.25,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/11/action/target_m/2": {
+      "value": 0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/12/action/target_m/0": {
+      "value": -2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/12/action/target_m/1": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/12/action/target_m/2": {
+      "value": -0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/13/action/target_m/0": {
+      "value": -3.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/13/action/target_m/1": {
+      "value": -0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/13/action/target_m/2": {
+      "value": -0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/14/action/target_m/0": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/14/action/target_m/1": {
+      "value": -0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/14/action/target_m/2": {
+      "value": -0.08,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/14/defects/0/cue_m/0": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/14/defects/0/cue_m/1": {
+      "value": -0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/14/defects/0/cue_m/2": {
+      "value": -0.08,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/15/action/target_m/0": {
+      "value": -2.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/15/action/target_m/1": {
+      "value": -0.62,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/15/action/target_m/2": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/16/action/target_m/0": {
+      "value": -4.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/16/action/target_m/1": {
+      "value": -0.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/16/action/target_m/2": {
+      "value": -0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/17/action/target_m/0": {
+      "value": -3.78,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/17/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/17/action/target_m/2": {
+      "value": -0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/18/action/target_m/0": {
+      "value": -2.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/18/action/target_m/1": {
+      "value": -0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/18/action/target_m/2": {
+      "value": -0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/20/action/target_m/0": {
+      "value": -5.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/20/action/target_m/1": {
+      "value": 1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/20/action/target_m/2": {
+      "value": -0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/21/action/target_m/0": {
+      "value": -5.78,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/21/action/target_m/1": {
+      "value": 0.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/21/action/target_m/2": {
+      "value": -0.14,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/21/action/amplitude": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/22/action/target_m/0": {
+      "value": -5.92,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/22/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/22/action/target_m/2": {
+      "value": -0.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/22/action/amplitude": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/23/action/target_m/0": {
+      "value": -5.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/23/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/23/action/target_m/2": {
+      "value": -0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/24/action/target_m/0": {
+      "value": -5.93,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/24/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/24/action/target_m/2": {
+      "value": -0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/25/action/target_m/0": {
+      "value": -1.96,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/25/action/target_m/1": {
+      "value": 1.03,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/25/action/target_m/2": {
+      "value": 0.42,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/25/defects/0/cue_m/0": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/25/defects/0/cue_m/1": {
+      "value": 1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/25/defects/0/cue_m/2": {
+      "value": 0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/26/action/target_m/0": {
+      "value": -2.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/26/action/target_m/1": {
+      "value": 1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/26/action/target_m/2": {
+      "value": 0.66,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/26/defects/0/cue_m/0": {
+      "value": -1.96,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/26/defects/0/cue_m/1": {
+      "value": 1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/26/defects/0/cue_m/2": {
+      "value": 0.75,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/27/action/target_m/0": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/27/action/target_m/1": {
+      "value": 0.92,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/27/action/target_m/2": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/28/action/target_m/0": {
+      "value": -1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/28/action/target_m/1": {
+      "value": 2.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/28/action/target_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/29/action/target_m/0": {
+      "value": -1.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/29/action/target_m/1": {
+      "value": 2.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/29/action/target_m/2": {
+      "value": 0.03,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/30/action/target_m/0": {
+      "value": -1.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/30/action/target_m/1": {
+      "value": 2.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/30/action/target_m/2": {
+      "value": 0.17,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/31/action/target_m/0": {
+      "value": -2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/31/action/target_m/1": {
+      "value": 3.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/31/action/target_m/2": {
+      "value": 0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/32/action/target_m/0": {
+      "value": -2.39,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/32/action/target_m/1": {
+      "value": 3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/32/action/target_m/2": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/32/action/amplitude": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/33/action/target_m/0": {
+      "value": -2.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/33/action/target_m/1": {
+      "value": 3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/33/action/target_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/33/defects/0/cue_m/0": {
+      "value": -2.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/33/defects/0/cue_m/1": {
+      "value": 3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/33/defects/0/cue_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/34/action/target_m/0": {
+      "value": -2.48,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/34/action/target_m/1": {
+      "value": 1.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/34/action/target_m/2": {
+      "value": 0.22,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/34/action/amplitude": {
+      "value": 0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/34/defects/0/cue_m/0": {
+      "value": -2.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/34/defects/0/cue_m/1": {
+      "value": 1.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/34/defects/0/cue_m/2": {
+      "value": 0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/35/action/target_m/0": {
+      "value": -1.65,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/35/action/target_m/1": {
+      "value": 4.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/35/action/target_m/2": {
+      "value": -0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/36/action/target_m/0": {
+      "value": -1.35,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/36/action/target_m/1": {
+      "value": 4.53,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/36/action/target_m/2": {
+      "value": -0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/37/defects/0/cue_m/0": {
+      "value": -1.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/37/defects/0/cue_m/1": {
+      "value": 1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/37/defects/0/cue_m/2": {
+      "value": 0.02,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/38/action/target_m/0": {
+      "value": 0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/38/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/38/action/target_m/2": {
+      "value": -0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/38/defects/0/cue_m/0": {
+      "value": 0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/38/defects/0/cue_m/1": {
+      "value": 0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/38/defects/0/cue_m/2": {
+      "value": -0.12,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/39/action/target_m/0": {
+      "value": 0.55,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/39/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/39/action/target_m/2": {
+      "value": -0.06,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/40/action/target_m/0": {
+      "value": 0.19,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/40/action/target_m/1": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/40/action/target_m/2": {
+      "value": -0.08,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/41/action/target_m/0": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/41/action/target_m/1": {
+      "value": -0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/41/action/target_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/42/action/target_m/0": {
+      "value": -0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/42/action/target_m/1": {
+      "value": -0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/42/action/target_m/2": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/43/action/target_m/0": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/43/action/target_m/1": {
+      "value": 0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/43/action/target_m/2": {
+      "value": -0.25,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/43/defects/0/cue_m/0": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/43/defects/0/cue_m/1": {
+      "value": 0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/43/defects/0/cue_m/2": {
+      "value": -0.25,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/44/action/target_m/0": {
+      "value": -0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/44/action/target_m/1": {
+      "value": 0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/44/action/target_m/2": {
+      "value": -0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/45/action/target_m/0": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/45/action/target_m/1": {
+      "value": 0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/45/action/target_m/2": {
+      "value": -0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/46/action/target_m/0": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/46/action/target_m/1": {
+      "value": 0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/46/action/target_m/2": {
+      "value": -0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/47/action/target_m/0": {
+      "value": -3.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/47/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/47/action/target_m/2": {
+      "value": -0.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/48/action/target_m/0": {
+      "value": -0.46,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/48/action/target_m/1": {
+      "value": 0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/48/action/target_m/2": {
+      "value": 0.72,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/48/defects/0/cue_m/0": {
+      "value": -0.46,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/48/defects/0/cue_m/1": {
+      "value": 0.17,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/48/defects/0/cue_m/2": {
+      "value": 0.74,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/49/action/target_m/0": {
+      "value": -0.46,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/49/action/target_m/1": {
+      "value": 0.15,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/49/action/target_m/2": {
+      "value": 0.62,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/51/action/target_m/0": {
+      "value": -0.46,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/51/action/target_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/51/action/target_m/2": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/52/action/target_m/0": {
+      "value": 0.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/52/action/target_m/1": {
+      "value": 0.72,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/52/action/target_m/2": {
+      "value": -0.06,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/53/action/target_m/0": {
+      "value": -1.96,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/53/action/target_m/1": {
+      "value": -1.03,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/53/action/target_m/2": {
+      "value": 0.42,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/53/defects/0/cue_m/0": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/53/defects/0/cue_m/1": {
+      "value": -1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/53/defects/0/cue_m/2": {
+      "value": 0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/54/action/target_m/0": {
+      "value": -2.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/54/action/target_m/1": {
+      "value": -1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/54/action/target_m/2": {
+      "value": 0.66,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/54/defects/0/cue_m/0": {
+      "value": -1.96,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/54/defects/0/cue_m/1": {
+      "value": -1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/54/defects/0/cue_m/2": {
+      "value": 0.75,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/55/action/target_m/0": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/55/action/target_m/1": {
+      "value": -0.92,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/55/action/target_m/2": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/56/action/target_m/0": {
+      "value": -1.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/56/action/target_m/1": {
+      "value": -2.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/56/action/target_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/57/action/target_m/0": {
+      "value": -1.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/57/action/target_m/1": {
+      "value": -2.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/57/action/target_m/2": {
+      "value": 0.03,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/58/action/target_m/0": {
+      "value": -1.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/58/action/target_m/1": {
+      "value": -2.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/58/action/target_m/2": {
+      "value": 0.17,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/59/action/target_m/0": {
+      "value": -2.4,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/59/action/target_m/1": {
+      "value": -3.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/59/action/target_m/2": {
+      "value": 0.05,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/60/action/target_m/0": {
+      "value": -2.39,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/60/action/target_m/1": {
+      "value": -3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/60/action/target_m/2": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/60/action/amplitude": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/61/action/target_m/0": {
+      "value": -2.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/61/action/target_m/1": {
+      "value": -3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/61/action/target_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/61/defects/0/cue_m/0": {
+      "value": -2.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/61/defects/0/cue_m/1": {
+      "value": -3.6,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/61/defects/0/cue_m/2": {
+      "value": 0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/62/action/target_m/0": {
+      "value": -2.48,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/62/action/target_m/1": {
+      "value": -1.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/62/action/target_m/2": {
+      "value": 0.22,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/62/action/amplitude": {
+      "value": 0.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/62/defects/0/cue_m/0": {
+      "value": -2.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/62/defects/0/cue_m/1": {
+      "value": -1.7,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/62/defects/0/cue_m/2": {
+      "value": 0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/63/action/target_m/0": {
+      "value": -1.65,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/63/action/target_m/1": {
+      "value": -4.5,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/63/action/target_m/2": {
+      "value": -0.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/64/action/target_m/0": {
+      "value": -1.35,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/64/action/target_m/1": {
+      "value": -4.53,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/64/action/target_m/2": {
+      "value": -0.2,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/66/defects/0/cue_m/0": {
+      "value": -1.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/66/defects/0/cue_m/1": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/items/66/defects/0/cue_m/2": {
+      "value": 0.02,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/0/position_m/0": {
+      "value": -5.85,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/0/position_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/0/position_m/2": {
+      "value": 0.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/0/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/1/position_m/0": {
+      "value": -1.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/1/position_m/1": {
+      "value": -2.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/1/position_m/2": {
+      "value": 0.16,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/1/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/2/position_m/0": {
+      "value": -0.13,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/2/position_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/2/position_m/2": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/2/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/3/position_m/0": {
+      "value": -0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/3/position_m/1": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/3/position_m/2": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/3/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/4/position_m/0": {
+      "value": -2.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/4/position_m/1": {
+      "value": 2.97,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/4/position_m/2": {
+      "value": 0.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/4/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/5/position_m/0": {
+      "value": -2.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/5/position_m/1": {
+      "value": 0.975,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/5/position_m/2": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/5/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/6/position_m/0": {
+      "value": -2.1,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/6/position_m/1": {
+      "value": -2.97,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/6/position_m/2": {
+      "value": 0.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/6/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/7/position_m/0": {
+      "value": -2.3,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/7/position_m/1": {
+      "value": -0.975,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/7/position_m/2": {
+      "value": 0.8,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/props/7/yaw_rad": {
+      "value": 0.0,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/fuel/density_kg_per_l": {
+      "value": 0.72,
+      "source": "Sling 2 POH Rev 2.8, section 1.4; estimate: 0.72 kg/l, as for the tanks."
+    },
+    "/preflight/fuel/covers_bottom_l": {
+      "value": 30.0,
+      "source": "Sling 2 POH Rev 2.8, section 4.4 (4) warning: fuel visibly just covers the bottom of the tank with 30 litres present."
+    },
+    "/preflight/fuel/caps/0/cap_m/0": {
+      "value": -1.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/fuel/caps/0/cap_m/1": {
+      "value": -1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/fuel/caps/0/cap_m/2": {
+      "value": 0.02,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/fuel/caps/1/cap_m/0": {
+      "value": -1.45,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/fuel/caps/1/cap_m/1": {
+      "value": 1.9,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
+    },
+    "/preflight/fuel/caps/1/cap_m/2": {
+      "value": 0.02,
+      "source": "estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4."
     }
   },
   "panel.json": {

@@ -41,6 +41,12 @@ for index in [0, 1]:
     rules['systems.json'][f'/definition/tanks/{index}/unusable_kg'] = poh('1.4') + '; estimate: 2 l per tank at 0.72 kg/l.'
 for index, note in [(1, poh('9.4.1') + '; minimum fuel pressure.'), (3, poh('9.4.1') + '; maximum coolant temperature.')]:
     rules['systems.json'][f'/definition/modern/annunciations/{index}/threshold'] = note
+rules['systems.json'].update({
+    '/preflight': 'estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4.',
+    '/preflight/version': 'FlightCraft preflight section version.',
+    '/preflight/fuel/covers_bottom_l': poh('4.4 (4)') + ' warning: fuel visibly just covers the bottom of the tank with 30 litres present.',
+    '/preflight/fuel/density_kg_per_l': poh('1.4') + '; estimate: 0.72 kg/l, as for the tanks.',
+})
 system = json.loads((root / 'systems.json').read_text())
 measured_breakers = {element['element']['load'] for element in json.loads((root / 'panel.json').read_text())['equipment']['elements'] if element['element']['kind'] == 'breaker'}
 for index, load in enumerate(system['definition']['electrical']['loads']):
@@ -61,7 +67,7 @@ for file, overrides in rules.items():
         if pointer == '/format_version':
             source = 'FlightCraft aircraft schema version.'
         if isinstance(value, dict):
-            source = value.get('source', source)
+            source = source if pointer == '/preflight' else value.get('source', source)
             for key, child in value.items():
                 walk(child, pointer + '/' + key, source)
         elif isinstance(value, list):

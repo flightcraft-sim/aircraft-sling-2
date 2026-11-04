@@ -753,3 +753,92 @@ fn radio_identity_and_audio_follow_the_navigator_installation() -> Result<(), Er
     assert!(session.comms_state().powered);
     Ok(())
 }
+
+#[test]
+fn preflight_walkaround_encodes_poh_section_4_4() -> Result<(), Box<dyn std::error::Error>> {
+    use flightcraft_aero::preflight::{Action, DefectKind, Preflight, PropKind};
+    let systems: serde_json::Value = serde_json::from_str(include_str!("../systems.json"))?;
+    let preflight: Preflight = serde_json::from_value(systems["preflight"].clone())?;
+    preflight.validate()?;
+    let pack: serde_json::Value = serde_json::from_str(include_str!("../pack.json"))?;
+    assert_eq!(pack["format_version"], 4, "a preflight section needs pack format 4");
+    // The six stations of POH 4.4, in handbook order, with the handbook's item counts.
+    let counts: Vec<_> = preflight
+        .stations
+        .iter()
+        .map(|s| (s.id.as_str(), preflight.items.iter().filter(|i| i.station == s.id).count()))
+        .collect();
+    assert_eq!(
+        counts,
+        [
+            ("cabin", 13),
+            ("fuselage", 6),
+            ("empennage", 6),
+            ("right_wing", 13),
+            ("nose", 15),
+            ("left_wing", 14)
+        ]
+    );
+    assert!(preflight.source.contains("Rev 2.8") && preflight.source.contains("4.4"));
+    for item in &preflight.items {
+        assert!(item.poh_ref.starts_with("4.4 ("), "{} has no POH reference", item.id);
+    }
+    // Both wings: the POH's fuel warning, the 30 litre cover level, and no fuel sump drain step.
+    assert!((preflight.fuel.covers_bottom_l - 30.).abs() < f64::EPSILON);
+    for id in ["fuel_level_right", "fuel_level_left"] {
+        let item = preflight.item(id).ok_or("missing fuel level item")?;
+        assert!(matches!(item.action, Action::FuelCap { .. }));
+        assert!(item.warning.as_deref().is_some_and(|w| w.contains("30 litres")));
+    }
+    assert!(!preflight.items.iter().any(|i| i.text.to_lowercase().contains("sump")));
+    // The pitot cover comes off with the left-wing pitot item; chocks and ropes at the nose.
+    let pitot = preflight.item("pitot").ok_or("missing pitot item")?;
+    assert_eq!(pitot.station, "left_wing");
+    assert_eq!(preflight.props_of(pitot).first().map(|p| p.kind), Some(PropKind::PitotCover));
+    let chocks = preflight.item("chocks_ropes").ok_or("missing chocks item")?;
+    assert_eq!(chocks.station, "nose");
+    assert!(preflight.props_of(chocks).iter().any(|p| p.kind == PropKind::Chock));
+    assert!(preflight.props_of(chocks).iter().any(|p| p.kind == PropKind::TieDownRope));
+    // The palm-of-the-hand caution is on the optional propeller item.
+    let prop = preflight.item("propeller_turn").ok_or("missing propeller item")?;
+    assert!(prop.optional && prop.warning.as_deref().is_some_and(|w| w.contains("palm")));
+    // Seedable findings include every kind the lessons use.
+    let kinds: std::collections::BTreeSet<_> = preflight
+        .items
+        .iter()
+        .flat_map(|i| i.defects.iter().map(|d| d.kind))
+        .collect();
+    for kind in [
+        DefectKind::LowOil,
+        DefectKind::LowFuel,
+        DefectKind::LooseCowlFastener,
+        DefectKind::AileronHardwareMissing,
+        DefectKind::FlapHardwareMissing,
+        DefectKind::DamagedTyre,
+        DefectKind::WheelFairingCrack,
+    ] {
+        assert!(kinds.contains(&kind), "{kind:?} cannot be seeded");
+    }
+    // Every hand-moved control is a real moving part of the exterior.
+    let exterior: serde_json::Value = serde_json::from_str(include_str!("../exterior.json"))?;
+    let nodes: Vec<_> = exterior["moving_parts"]
+        .as_array()
+        .ok_or("no moving parts")?
+        .iter()
+        .filter_map(|p| p["node"].as_str())
+        .collect();
+    for part in preflight.driven_parts() {
+        assert!(nodes.contains(&part), "{part} is not a moving part");
+    }
+    // Filler caps sit on the two tanks of the systems definition.
+    let tanks: Vec<_> = systems["definition"]["tanks"]
+        .as_array()
+        .ok_or("no tanks")?
+        .iter()
+        .filter_map(|t| t["id"].as_str())
+        .collect();
+    for cap in &preflight.fuel.caps {
+        assert!(tanks.contains(&cap.tank.as_str()));
+    }
+    Ok(())
+}
