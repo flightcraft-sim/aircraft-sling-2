@@ -429,7 +429,9 @@ fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
             }
         ));
         // A pilot in the left seat: PFD on the left, MFD on the right.
-        let flightcraft_aero::modern::PanelElement::TouchDisplay { default_page, .. } = &display.element else {
+        let flightcraft_aero::modern::PanelElement::TouchDisplay { default_page, .. } =
+            &display.element
+        else {
             return Err("not a touch display".into());
         };
         assert_eq!(
@@ -495,13 +497,22 @@ fn normal_procedures_follow_the_poh_and_bind_to_the_panel() -> Result<(), Error>
             "securing"
         ]
     );
-    let list = |id: &str| set.checklists.iter().find(|l| l.id == id).ok_or("missing list");
+    let list = |id: &str| {
+        set.checklists
+            .iter()
+            .find(|l| l.id == id)
+            .ok_or("missing list")
+    };
     // POH 4.7.1 has eighteen items.
     assert_eq!(list("before_takeoff")?.items.len(), 18);
     let panel = c.panel.equipment.as_ref().ok_or("missing equipment")?;
     for l in &set.checklists {
         for item in &l.items {
-            assert!(item.poh_ref.starts_with("POH"), "{} lacks a POH reference", item.id);
+            assert!(
+                item.poh_ref.starts_with("POH"),
+                "{} lacks a POH reference",
+                item.id
+            );
             if let Some(control) = &item.control {
                 assert!(
                     panel.elements.iter().any(|e| &e.id == control),
@@ -522,7 +533,13 @@ fn normal_procedures_follow_the_poh_and_bind_to_the_panel() -> Result<(), Error>
         .filter(|i| i.unverified.is_some())
         .map(|i| i.id.as_str())
         .collect();
-    for id in ["lane_b_off", "pump_1_alone", "pump_2_alone", "max_power", "efis_battery"] {
+    for id in [
+        "lane_b_off",
+        "pump_1_alone",
+        "pump_2_alone",
+        "max_power",
+        "efis_battery",
+    ] {
         assert!(unverified.contains(&id), "{id} should be marked unverified");
     }
     Ok(())
@@ -869,12 +886,20 @@ fn preflight_walkaround_encodes_poh_section_4_4() -> Result<(), Box<dyn std::err
     let preflight: Preflight = serde_json::from_value(systems["preflight"].clone())?;
     preflight.validate()?;
     let pack: serde_json::Value = serde_json::from_str(include_str!("../pack.json"))?;
-    assert_eq!(pack["format_version"], 4, "a preflight section needs pack format 4");
+    assert_eq!(
+        pack["format_version"], 4,
+        "a preflight section needs pack format 4"
+    );
     // The six stations of POH 4.4, in handbook order, with the handbook's item counts.
     let counts: Vec<_> = preflight
         .stations
         .iter()
-        .map(|s| (s.id.as_str(), preflight.items.iter().filter(|i| i.station == s.id).count()))
+        .map(|s| {
+            (
+                s.id.as_str(),
+                preflight.items.iter().filter(|i| i.station == s.id).count(),
+            )
+        })
         .collect();
     assert_eq!(
         counts,
@@ -889,26 +914,56 @@ fn preflight_walkaround_encodes_poh_section_4_4() -> Result<(), Box<dyn std::err
     );
     assert!(preflight.source.contains("Rev 2.8") && preflight.source.contains("4.4"));
     for item in &preflight.items {
-        assert!(item.poh_ref.starts_with("4.4 ("), "{} has no POH reference", item.id);
+        assert!(
+            item.poh_ref.starts_with("4.4 ("),
+            "{} has no POH reference",
+            item.id
+        );
     }
     // Both wings: the POH's fuel warning, the 30 litre cover level, and no fuel sump drain step.
     assert!((preflight.fuel.covers_bottom_l - 30.).abs() < f64::EPSILON);
     for id in ["fuel_level_right", "fuel_level_left"] {
         let item = preflight.item(id).ok_or("missing fuel level item")?;
         assert!(matches!(item.action, Action::FuelCap { .. }));
-        assert!(item.warning.as_deref().is_some_and(|w| w.contains("30 litres")));
+        assert!(
+            item.warning
+                .as_deref()
+                .is_some_and(|w| w.contains("30 litres"))
+        );
     }
-    assert!(!preflight.items.iter().any(|i| i.text.to_lowercase().contains("sump")));
+    assert!(
+        !preflight
+            .items
+            .iter()
+            .any(|i| i.text.to_lowercase().contains("sump"))
+    );
     // The pitot cover comes off with the left-wing pitot item; chocks and ropes at the nose.
     let pitot = preflight.item("pitot").ok_or("missing pitot item")?;
     assert_eq!(pitot.station, "left_wing");
-    assert_eq!(preflight.props_of(pitot).first().map(|p| p.kind), Some(PropKind::PitotCover));
-    let chocks = preflight.item("chocks_ropes").ok_or("missing chocks item")?;
+    assert_eq!(
+        preflight.props_of(pitot).first().map(|p| p.kind),
+        Some(PropKind::PitotCover)
+    );
+    let chocks = preflight
+        .item("chocks_ropes")
+        .ok_or("missing chocks item")?;
     assert_eq!(chocks.station, "nose");
-    assert!(preflight.props_of(chocks).iter().any(|p| p.kind == PropKind::Chock));
-    assert!(preflight.props_of(chocks).iter().any(|p| p.kind == PropKind::TieDownRope));
+    assert!(
+        preflight
+            .props_of(chocks)
+            .iter()
+            .any(|p| p.kind == PropKind::Chock)
+    );
+    assert!(
+        preflight
+            .props_of(chocks)
+            .iter()
+            .any(|p| p.kind == PropKind::TieDownRope)
+    );
     // The palm-of-the-hand caution is on the optional propeller item.
-    let prop = preflight.item("propeller_turn").ok_or("missing propeller item")?;
+    let prop = preflight
+        .item("propeller_turn")
+        .ok_or("missing propeller item")?;
     assert!(prop.optional && prop.warning.as_deref().is_some_and(|w| w.contains("palm")));
     // Seedable findings include every kind the lessons use.
     let kinds: std::collections::BTreeSet<_> = preflight
