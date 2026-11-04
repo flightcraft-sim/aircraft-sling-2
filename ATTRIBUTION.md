@@ -16,3 +16,7 @@
 | Blender exterior shape observations | Flight lead’s written observations relaying Ray’s review, 2026-11-03 | General layout facts only. Original rounded-rectangle stations, profiles, fairings, and canopy construction; no reference photograph was given to this lane, traced, or committed. |
 
 Not affiliated with or endorsed by Sling Aircraft or any engine or avionics manufacturer.
+
+| V9 sliding canopy, fixed windshield/roll-over bar, rails, bows, handles and open-pose proofs | Original procedural artwork; factual mechanism and latch locations from local Sling 2 POH Rev 2.8 §7.7, levelling reference and normal checklists; dimensions in estimate register | Apache-2.0 (original artwork); POH facts only, no source pages distributed |
+
+| V10 continuous canopy crown, conforming frame strips and flush outside latch | Original procedural Bezier and surface-fitted geometry, derived from original V9; dimensions are modelling estimates in docs/estimates.md | Apache-2.0 |

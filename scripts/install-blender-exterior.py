@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Install an already reviewed V8 Blender output, preserving the legacy procedural generator."""
+"""Install an already reviewed V10 Blender output, preserving the legacy procedural generator."""
 import argparse
 import hashlib
 import importlib.util
@@ -20,7 +20,9 @@ def main():
     generator=importlib.util.module_from_spec(spec);spec.loader.exec_module(generator)
     receipt=json.loads((source/'validation.json').read_text())
     assert receipt['registration']==generator.REGISTRATION_TEXT
-    assert receipt.get('geometry_revision')==generator.GEOMETRY_REVISION, 'requires the V8 wing-root and gear revision'
+    assert receipt.get('geometry_revision')==generator.GEOMETRY_REVISION, 'requires the V10 smooth canopy / attached hardware revision'
+    source_sha256=hashlib.sha256((root/'scripts/blender-exterior.py').read_bytes()).hexdigest()
+    assert receipt.get('source_sha256')==source_sha256, 'output must match the current queued V10 source exactly'
     assert receipt.get('coordinate_conversion')=='proper rotation: x,-y,-z; no reflection'
     containment=json.loads((source/'interior-checks.json').read_text())
     assert set(containment)=={'LOD0','LOD1','LOD2'}
@@ -44,10 +46,13 @@ def main():
         assert data[:8]==b'\x89PNG\r\n\x1a\n'
         assert struct.unpack_from('>II',data,16)==(generator.TEXTURE_SIZE,generator.TEXTURE_SIZE)
     cameras=json.loads((source/'cameras.json').read_text())
-    assert set(cameras)==set(generator.VIEWS)|set(generator.ORTHO_VIEWS)
+    assert set(cameras)==set(generator.VIEWS)|set(generator.ORTHO_VIEWS)|{'beauty-open','elevation-side-open'}
+    for label in ('beauty-open','elevation-side-open'):assert (source/('cycles-'+label+'.png')).is_file()
     assert cameras==receipt['cameras']
     assert (source/'orthographic-dimensions.json').is_file()
     definition=json.loads((root/'exterior.json').read_text())
+    definition['moving_parts']=[p for p in definition['moving_parts'] if p['node']!='canopy_slide']
+    definition['moving_parts'].append(dict(node='canopy_slide',motion='slide',axis=[-1,0,0],travel_m=generator.CANOPY_TRAVEL_M))
     definition['lod2']='exterior-lod2.glb'
     definition['registration']['text']=generator.REGISTRATION_TEXT
     definition['registration']['surface']={
@@ -57,20 +62,26 @@ def main():
     manifest=json.loads((root/'pack.json').read_text())
     entries=[i for i,value in enumerate(manifest['exterior']) if value['aircraft']==definition['aircraft']]
     assert len(entries)==1
+    manifest['format_version']=3
+    manifest['version']='0.3.0'
     manifest['exterior'][entries[0]]=definition
+    systems=json.loads((root/'systems.json').read_text())
+    systems['definition']['sliding_canopy']=True
     # All acceptance checks finish before any installed asset is replaced.
     for name in names:shutil.copyfile(normalized/name,root/name)
     textures=root/'textures/exterior';textures.mkdir(parents=True,exist_ok=True)
     for name in ['basecolor','metallic-roughness','normal','ao','emissive','curvature']:
         shutil.copyfile(source/(name+'.png'),textures/(name+'.png'))
     (root/'exterior.json').write_text(json.dumps(definition,indent=2)+'\n')
+    (root/'systems.json').write_text(json.dumps(systems,indent=2)+'\n')
     (root/'pack.json').write_text(json.dumps(manifest,indent=2)+'\n')
     (root/'docs/exterior-blender-validation.json').write_text(json.dumps(dict(
         geometry_revision=receipt['geometry_revision'],blender=receipt['blender'],
         source_script='scripts/blender-exterior.py',
         source_sha256=hashlib.sha256((root/'scripts/blender-exterior.py').read_bytes()).hexdigest(),
         registration=generator.REGISTRATION_TEXT,lods=reports,blender_lods=receipt['lods'],
-        node_name_mapping=generator.PACK_NODE_NAMES,containment=containment),indent=2)+'\n')
+        node_name_mapping=generator.PACK_NODE_NAMES,containment=containment,
+        canopy=receipt['canopy'],cameras=receipt['cameras']),indent=2)+'\n')
     shutil.copyfile(source/'cameras.json',root/'docs/exterior-cameras.json')
     print(json.dumps(dict(installed=[r['file'] for r in reports],triangles=[r['triangles'] for r in reports],registration=generator.REGISTRATION_TEXT),indent=2))
 

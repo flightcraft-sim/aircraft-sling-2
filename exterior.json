@@ -247,6 +247,16 @@
       ],
       "gear_index": 2,
       "wheel_radius_m": 0.16
+    },
+    {
+      "node": "canopy_slide",
+      "motion": "slide",
+      "axis": [
+        -1,
+        0,
+        0
+      ],
+      "travel_m": 1.1
     }
   ],
   "lights": [

@@ -1,13 +1,59 @@
 {
-  "geometry_revision": "v8-wing-root-gear",
+  "geometry_revision": "v10-smooth-canopy-attached-latch",
   "blender": "5.2.0 LTS",
   "source_script": "scripts/blender-exterior.py",
-  "source_sha256": "9a39a9baa4dd87d84ac552046dff1acd3f3fa4a4dedae51be2bbf081739516ea",
+  "source_sha256": "1a0747181cf824794f5c54c9d3afbef73bd1cb672254b7cb5c5dd748bd4c74ee",
   "registration": "N371FC",
   "lods": [
     {
       "file": "exterior.glb",
-      "triangles": 101452,
+      "canopy_hardware": {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000608734857801
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010298289294180753
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010210637627001455
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010000584907684615
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.0010198255285909102
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025060690561045443
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000615596335682
+          }
+        }
+      },
+      "canopy_clearance_m": 0.02364835888147354,
+      "canopy_travel_m": 1.1,
+      "canopy_swept_x_m": [
+        -4.140846824645996,
+        -1.9498339891433716
+      ],
+      "triangles": 102411,
       "dimensions_m": [
         6.6737061738967896,
         9.164999961853027,
@@ -37,10 +83,10 @@
           "tire_0"
         ]
       },
-      "nodes": 88,
+      "nodes": 102,
       "images": 4,
-      "bytes": 21160448,
-      "sha256": "5e612bbe0dd1ed279b6d214b8fd8d2c4a7d5963950124cc2c3442c2b83f49dbb",
+      "bytes": 21367124,
+      "sha256": "fe79f0668aa3899c1a83951f1b59a2f5d78411ae6e983a4514143f5a1279d9ce",
       "mesh_triangles": {
         "airframe": 38092,
         "spinner": 6912,
@@ -57,21 +103,21 @@
         "flaps_right": 1916,
         "wing_left": 1916,
         "wing_right": 1916,
+        "canopy_glass": 1823,
         "wheel_fairing_0": 1780,
         "wheel_fairing_1": 1780,
         "wheel_fairing_2": 1684,
-        "canopy": 1086,
+        "windshield": 1344,
         "wing_fillet_left": 896,
         "wing_fillet_right": 896,
-        "canopy_rail_-1": 720,
-        "canopy_rail_1": 720,
-        "canopy_frame_rear": 640,
-        "canopy_frame_windshield": 640,
         "wingtip_left": 572,
         "wingtip_right": 572,
         "tire_0": 512,
         "tire_1": 512,
         "tire_2": 512,
+        "windshield_sill_left": 420,
+        "windshield_sill_right": 420,
+        "roll_over_bar": 384,
         "landing": 360,
         "nav_left": 360,
         "nav_right": 360,
@@ -118,14 +164,73 @@
         "pitot": 60,
         "baggage_bulkhead": 44,
         "cabin_floor": 44,
+        "canopy_runner_left": 44,
+        "canopy_runner_right": 44,
         "center_console": 44,
+        "windshield_apron": 44,
+        "canopy_bow_front": 32,
+        "canopy_bow_rear": 32,
+        "canopy_latch_spine": 32,
+        "windshield_frame": 32,
+        "canopy_inside_latch": 24,
+        "canopy_sill_left": 24,
+        "canopy_sill_right": 24,
         "exhaust": 20,
-        "step_left_support": 20
+        "step_left_support": 20,
+        "canopy_outside_latch": 18,
+        "canopy_rail_left": 12,
+        "canopy_rail_right": 12
       }
     },
     {
       "file": "exterior-lod1.glb",
-      "triangles": 18583,
+      "canopy_hardware": {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000779540368478
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010001956433198362
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010000537305687128
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.001000058973363319
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.0010001356176510597
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025000904690171645
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000697576346554
+          }
+        }
+      },
+      "canopy_clearance_m": 0.023096956312656403,
+      "canopy_travel_m": 1.1,
+      "canopy_swept_x_m": [
+        -4.140515899658203,
+        -1.9497671127319336
+      ],
+      "triangles": 19023,
       "dimensions_m": [
         6.6737061738967896,
         9.165154457092285,
@@ -155,10 +260,10 @@
           "tire_0"
         ]
       },
-      "nodes": 88,
+      "nodes": 102,
       "images": 4,
-      "bytes": 18364460,
-      "sha256": "b2d8e2654454d37b6a9e4b9e8014ae9d12aa2b94d6974e8559d1338a588117ea",
+      "bytes": 18581908,
+      "sha256": "0d6da10d49468e04569eb90851fbfbcb182598b023db3ceaab210d73fad5daac",
       "mesh_triangles": {
         "airframe": 6856,
         "spinner": 1244,
@@ -175,22 +280,22 @@
         "flaps_right": 344,
         "wing_left": 344,
         "wing_right": 344,
+        "canopy_glass": 328,
         "wheel_fairing_0": 320,
         "wheel_fairing_1": 320,
         "wheel_fairing_2": 302,
+        "windshield": 241,
         "beacon": 224,
-        "canopy": 194,
         "wing_fillet_left": 160,
         "wing_fillet_right": 160,
-        "canopy_rail_-1": 129,
-        "canopy_rail_1": 129,
-        "canopy_frame_rear": 115,
-        "canopy_frame_windshield": 114,
         "wingtip_left": 102,
         "wingtip_right": 102,
         "tire_0": 92,
         "tire_1": 92,
         "tire_2": 92,
+        "windshield_sill_left": 74,
+        "windshield_sill_right": 74,
+        "roll_over_bar": 68,
         "landing": 64,
         "nav_left": 64,
         "nav_right": 64,
@@ -200,6 +305,8 @@
         "gear_leg_2": 50,
         "baggage_bulkhead": 44,
         "cabin_floor": 44,
+        "canopy_runner_left": 44,
+        "canopy_runner_right": 44,
         "antenna_dorsal": 42,
         "antenna_ventral": 42,
         "hub_0": 40,
@@ -219,6 +326,9 @@
         "belt_1": 34,
         "control_stick_-1": 34,
         "control_stick_1": 34,
+        "canopy_bow_front": 32,
+        "canopy_bow_rear": 32,
+        "canopy_latch_spine": 32,
         "display_-1": 32,
         "display_1": 32,
         "display_bezel_-1": 32,
@@ -229,21 +339,75 @@
         "seat_back_1": 32,
         "seat_cushion_-1": 32,
         "seat_cushion_1": 32,
+        "windshield_frame": 32,
+        "canopy_inside_latch": 24,
+        "canopy_sill_left": 24,
+        "canopy_sill_right": 24,
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
         "exhaust": 20,
         "step_left_support": 20,
+        "canopy_outside_latch": 18,
         "seat_stitch__1__0_065_": 18,
         "step_left": 18,
+        "canopy_rail_left": 12,
+        "canopy_rail_right": 12,
         "pitot": 12,
         "throttle": 12,
-        "center_console": 6
+        "center_console": 6,
+        "windshield_apron": 6
       }
     },
     {
       "file": "exterior-lod2.glb",
-      "triangles": 4204,
+      "canopy_hardware": {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010001486835554897
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.001000173017493414
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.00100003563997244
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.001000049771221784
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.001000214704117489
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025001198453021805
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.00100007591511475
+          }
+        }
+      },
+      "canopy_clearance_m": 0.02457538992166519,
+      "canopy_travel_m": 1.1,
+      "canopy_swept_x_m": [
+        -4.140511131286621,
+        -1.9494142532348633
+      ],
+      "triangles": 4837,
       "dimensions_m": [
         6.675143122673035,
         9.165154457092285,
@@ -273,10 +437,10 @@
           "tire_0"
         ]
       },
-      "nodes": 88,
+      "nodes": 102,
       "images": 4,
-      "bytes": 17797408,
-      "sha256": "f15f7456e1041b04d88dbc05e16b39dfe96b2924bd1f0ec6745fa30d63e39687",
+      "bytes": 18028752,
+      "sha256": "217f6049ad8adf947bcd88f3d342ba40f1188047014eb7d25ae75045d3968b9c",
       "mesh_triangles": {
         "airframe": 1104,
         "beacon": 224,
@@ -284,6 +448,7 @@
         "wing_fillet_left": 160,
         "wing_fillet_right": 160,
         "propeller": 127,
+        "canopy_glass": 108,
         "wingtip_left": 102,
         "wingtip_right": 102,
         "tire_0": 92,
@@ -295,6 +460,10 @@
         "rudder": 86,
         "stabilizer_left": 86,
         "stabilizer_right": 86,
+        "windshield": 80,
+        "windshield_sill_left": 74,
+        "windshield_sill_right": 74,
+        "roll_over_bar": 68,
         "prop_blur": 64,
         "aileron_left": 54,
         "aileron_right": 54,
@@ -310,17 +479,24 @@
         "wheel_fairing_2": 48,
         "baggage_bulkhead": 44,
         "cabin_floor": 44,
-        "canopy": 31,
+        "canopy_runner_left": 44,
+        "canopy_runner_right": 44,
+        "canopy_bow_front": 32,
+        "canopy_bow_rear": 32,
+        "canopy_latch_spine": 32,
+        "windshield_frame": 32,
+        "canopy_inside_latch": 24,
+        "canopy_sill_left": 24,
+        "canopy_sill_right": 24,
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
-        "canopy_rail_-1": 20,
-        "canopy_rail_1": 20,
         "exhaust": 20,
         "step_left_support": 20,
-        "canopy_frame_rear": 18,
-        "canopy_frame_windshield": 18,
+        "canopy_outside_latch": 18,
         "seat_stitch__1__0_065_": 18,
+        "canopy_rail_left": 12,
+        "canopy_rail_right": 12,
         "control_stick_-1": 12,
         "control_stick_1": 12,
         "pitot": 12,
@@ -344,6 +520,7 @@
         "stick_grip_1": 6,
         "strobe_left": 6,
         "strobe_right": 6,
+        "windshield_apron": 6,
         "display_-1": 4,
         "display_1": 4,
         "display_bezel_-1": 4,
@@ -363,7 +540,53 @@
   "blender_lods": [
     {
       "file": "exterior.glb",
-      "triangles": 101452,
+      "canopy_hardware": {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000608734857801
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010298289294180753
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010210637627001455
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010000584907684615
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.0010198255285909102
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025060690561045443
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000615596335682
+          }
+        }
+      },
+      "canopy_clearance_m": 0.02364835888147354,
+      "canopy_travel_m": 1.1,
+      "canopy_swept_x_m": [
+        -4.140846824645996,
+        -1.9498339891433716
+      ],
+      "triangles": 102411,
       "dimensions_m": [
         6.6737061738967896,
         9.164999961853027,
@@ -393,10 +616,10 @@
           "tire_0"
         ]
       },
-      "nodes": 88,
+      "nodes": 102,
       "images": 4,
-      "bytes": 21160448,
-      "sha256": "5e612bbe0dd1ed279b6d214b8fd8d2c4a7d5963950124cc2c3442c2b83f49dbb",
+      "bytes": 21367124,
+      "sha256": "fe79f0668aa3899c1a83951f1b59a2f5d78411ae6e983a4514143f5a1279d9ce",
       "mesh_triangles": {
         "airframe": 38092,
         "spinner": 6912,
@@ -413,21 +636,21 @@
         "flaps_right": 1916,
         "wing_left": 1916,
         "wing_right": 1916,
+        "canopy_glass": 1823,
         "wheel_fairing_0": 1780,
         "wheel_fairing_1": 1780,
         "wheel_fairing_2": 1684,
-        "canopy": 1086,
+        "windshield": 1344,
         "wing_fillet_left": 896,
         "wing_fillet_right": 896,
-        "canopy_rail_-1": 720,
-        "canopy_rail_1": 720,
-        "canopy_frame_rear": 640,
-        "canopy_frame_windshield": 640,
         "wingtip_left": 572,
         "wingtip_right": 572,
         "tire_0": 512,
         "tire_1": 512,
         "tire_2": 512,
+        "windshield_sill_left": 420,
+        "windshield_sill_right": 420,
+        "roll_over_bar": 384,
         "landing": 360,
         "nav_left": 360,
         "nav_right": 360,
@@ -474,14 +697,73 @@
         "pitot": 60,
         "baggage_bulkhead": 44,
         "cabin_floor": 44,
+        "canopy_runner_left": 44,
+        "canopy_runner_right": 44,
         "center_console": 44,
+        "windshield_apron": 44,
+        "canopy_bow_front": 32,
+        "canopy_bow_rear": 32,
+        "canopy_latch_spine": 32,
+        "windshield_frame": 32,
+        "canopy_inside_latch": 24,
+        "canopy_sill_left": 24,
+        "canopy_sill_right": 24,
         "exhaust": 20,
-        "step_left_support": 20
+        "step_left_support": 20,
+        "canopy_outside_latch": 18,
+        "canopy_rail_left": 12,
+        "canopy_rail_right": 12
       }
     },
     {
       "file": "exterior-lod1.glb",
-      "triangles": 18583,
+      "canopy_hardware": {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000779540368478
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010001956433198362
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010000537305687128
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.001000058973363319
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.0010001356176510597
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025000904690171645
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000697576346554
+          }
+        }
+      },
+      "canopy_clearance_m": 0.023096956312656403,
+      "canopy_travel_m": 1.1,
+      "canopy_swept_x_m": [
+        -4.140515899658203,
+        -1.9497671127319336
+      ],
+      "triangles": 19023,
       "dimensions_m": [
         6.6737061738967896,
         9.165154457092285,
@@ -511,10 +793,10 @@
           "tire_0"
         ]
       },
-      "nodes": 88,
+      "nodes": 102,
       "images": 4,
-      "bytes": 18364460,
-      "sha256": "b2d8e2654454d37b6a9e4b9e8014ae9d12aa2b94d6974e8559d1338a588117ea",
+      "bytes": 18581908,
+      "sha256": "0d6da10d49468e04569eb90851fbfbcb182598b023db3ceaab210d73fad5daac",
       "mesh_triangles": {
         "airframe": 6856,
         "spinner": 1244,
@@ -531,22 +813,22 @@
         "flaps_right": 344,
         "wing_left": 344,
         "wing_right": 344,
+        "canopy_glass": 328,
         "wheel_fairing_0": 320,
         "wheel_fairing_1": 320,
         "wheel_fairing_2": 302,
+        "windshield": 241,
         "beacon": 224,
-        "canopy": 194,
         "wing_fillet_left": 160,
         "wing_fillet_right": 160,
-        "canopy_rail_-1": 129,
-        "canopy_rail_1": 129,
-        "canopy_frame_rear": 115,
-        "canopy_frame_windshield": 114,
         "wingtip_left": 102,
         "wingtip_right": 102,
         "tire_0": 92,
         "tire_1": 92,
         "tire_2": 92,
+        "windshield_sill_left": 74,
+        "windshield_sill_right": 74,
+        "roll_over_bar": 68,
         "landing": 64,
         "nav_left": 64,
         "nav_right": 64,
@@ -556,6 +838,8 @@
         "gear_leg_2": 50,
         "baggage_bulkhead": 44,
         "cabin_floor": 44,
+        "canopy_runner_left": 44,
+        "canopy_runner_right": 44,
         "antenna_dorsal": 42,
         "antenna_ventral": 42,
         "hub_0": 40,
@@ -575,6 +859,9 @@
         "belt_1": 34,
         "control_stick_-1": 34,
         "control_stick_1": 34,
+        "canopy_bow_front": 32,
+        "canopy_bow_rear": 32,
+        "canopy_latch_spine": 32,
         "display_-1": 32,
         "display_1": 32,
         "display_bezel_-1": 32,
@@ -585,21 +872,75 @@
         "seat_back_1": 32,
         "seat_cushion_-1": 32,
         "seat_cushion_1": 32,
+        "windshield_frame": 32,
+        "canopy_inside_latch": 24,
+        "canopy_sill_left": 24,
+        "canopy_sill_right": 24,
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
         "exhaust": 20,
         "step_left_support": 20,
+        "canopy_outside_latch": 18,
         "seat_stitch__1__0_065_": 18,
         "step_left": 18,
+        "canopy_rail_left": 12,
+        "canopy_rail_right": 12,
         "pitot": 12,
         "throttle": 12,
-        "center_console": 6
+        "center_console": 6,
+        "windshield_apron": 6
       }
     },
     {
       "file": "exterior-lod2.glb",
-      "triangles": 4204,
+      "canopy_hardware": {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010001486835554897
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.001000173017493414
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.00100003563997244
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.001000049771221784
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.001000214704117489
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025001198453021805
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.00100007591511475
+          }
+        }
+      },
+      "canopy_clearance_m": 0.02457538992166519,
+      "canopy_travel_m": 1.1,
+      "canopy_swept_x_m": [
+        -4.140511131286621,
+        -1.9494142532348633
+      ],
+      "triangles": 4837,
       "dimensions_m": [
         6.675143122673035,
         9.165154457092285,
@@ -629,10 +970,10 @@
           "tire_0"
         ]
       },
-      "nodes": 88,
+      "nodes": 102,
       "images": 4,
-      "bytes": 17797408,
-      "sha256": "f15f7456e1041b04d88dbc05e16b39dfe96b2924bd1f0ec6745fa30d63e39687",
+      "bytes": 18028752,
+      "sha256": "217f6049ad8adf947bcd88f3d342ba40f1188047014eb7d25ae75045d3968b9c",
       "mesh_triangles": {
         "airframe": 1104,
         "beacon": 224,
@@ -640,6 +981,7 @@
         "wing_fillet_left": 160,
         "wing_fillet_right": 160,
         "propeller": 127,
+        "canopy_glass": 108,
         "wingtip_left": 102,
         "wingtip_right": 102,
         "tire_0": 92,
@@ -651,6 +993,10 @@
         "rudder": 86,
         "stabilizer_left": 86,
         "stabilizer_right": 86,
+        "windshield": 80,
+        "windshield_sill_left": 74,
+        "windshield_sill_right": 74,
+        "roll_over_bar": 68,
         "prop_blur": 64,
         "aileron_left": 54,
         "aileron_right": 54,
@@ -666,17 +1012,24 @@
         "wheel_fairing_2": 48,
         "baggage_bulkhead": 44,
         "cabin_floor": 44,
-        "canopy": 31,
+        "canopy_runner_left": 44,
+        "canopy_runner_right": 44,
+        "canopy_bow_front": 32,
+        "canopy_bow_rear": 32,
+        "canopy_latch_spine": 32,
+        "windshield_frame": 32,
+        "canopy_inside_latch": 24,
+        "canopy_sill_left": 24,
+        "canopy_sill_right": 24,
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
-        "canopy_rail_-1": 20,
-        "canopy_rail_1": 20,
         "exhaust": 20,
         "step_left_support": 20,
-        "canopy_frame_rear": 18,
-        "canopy_frame_windshield": 18,
+        "canopy_outside_latch": 18,
         "seat_stitch__1__0_065_": 18,
+        "canopy_rail_left": 12,
+        "canopy_rail_right": 12,
         "control_stick_-1": 12,
         "control_stick_1": 12,
         "pitot": 12,
@@ -700,6 +1053,7 @@
         "stick_grip_1": 6,
         "strobe_left": 6,
         "strobe_right": 6,
+        "windshield_apron": 6,
         "display_-1": 4,
         "display_1": 4,
         "display_bezel_-1": 4,
@@ -812,6 +1166,385 @@
         "throttle": 4
       },
       "violations": []
+    }
+  },
+  "canopy": {
+    "node": "canopy_slide",
+    "axis_body": [
+      -1,
+      0,
+      0
+    ],
+    "travel_m": 1.1,
+    "travel_source": "estimate; POH 7.7 gives no travel",
+    "clearance_checks": [
+      {
+        "lod": 0,
+        "clearance_m": 0.02364835888147354
+      },
+      {
+        "lod": 1,
+        "clearance_m": 0.023096956312656403
+      },
+      {
+        "lod": 2,
+        "clearance_m": 0.02457538992166519
+      }
+    ],
+    "hardware_checks": [
+      {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000608734857801
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010298289294180753
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010210637627001455
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010000584907684615
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.0010198255285909102
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025060690561045443
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000615596335682
+          }
+        }
+      },
+      {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000779540368478
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010001956433198362
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.0010000537305687128
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.001000058973363319
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.0010001356176510597
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025000904690171645
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010000697576346554
+          }
+        }
+      },
+      {
+        "tolerance_m": 0.003,
+        "parts": {
+          "canopy_bow_front": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.0010001486835554897
+          },
+          "canopy_bow_rear": {
+            "surface": "canopy_glass",
+            "vertices": 38,
+            "maximum_distance_m": 0.001000173017493414
+          },
+          "canopy_sill_left": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.00100003563997244
+          },
+          "canopy_sill_right": {
+            "surface": "canopy_glass",
+            "vertices": 26,
+            "maximum_distance_m": 0.001000049771221784
+          },
+          "canopy_latch_spine": {
+            "surface": "canopy_glass",
+            "vertices": 34,
+            "maximum_distance_m": 0.001000214704117489
+          },
+          "canopy_outside_latch": {
+            "surface": "canopy_glass",
+            "vertices": 24,
+            "maximum_distance_m": 0.0025001198453021805
+          },
+          "windshield_frame": {
+            "surface": "windshield",
+            "vertices": 38,
+            "maximum_distance_m": 0.00100007591511475
+          }
+        }
+      }
+    ],
+    "meridian_bezier": [
+      [
+        -3.04,
+        0.46,
+        0.4
+      ],
+      [
+        -2.82,
+        0.58,
+        0.86
+      ],
+      [
+        -1.48,
+        0.61,
+        0.82
+      ],
+      [
+        -1.12,
+        0.08,
+        0.008
+      ]
+    ]
+  },
+  "cameras": {
+    "director-front": {
+      "eye_body_m": [
+        10,
+        -10,
+        -3.0
+      ],
+      "target_body_m": [
+        -2.2,
+        0,
+        -0.15
+      ],
+      "up_body": [
+        -0.13750211894512177,
+        0.11270684003829956,
+        -0.9840682744979858
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "perspective",
+      "vertical_fov_rad": 0.5117845633031866
+    },
+    "director-rear": {
+      "eye_body_m": [
+        -13,
+        9,
+        -3.6
+      ],
+      "target_body_m": [
+        -2.2,
+        0,
+        -0.15
+      ],
+      "up_body": [
+        0.18309198319911957,
+        -0.15257668495178223,
+        -0.9711836576461792
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "perspective",
+      "vertical_fov_rad": 0.5117845633031866
+    },
+    "director-left": {
+      "eye_body_m": [
+        -2.2,
+        -13.5,
+        -1.7
+      ],
+      "target_body_m": [
+        -2.2,
+        0,
+        -0.15
+      ],
+      "up_body": [
+        -7.631341247815726e-08,
+        0.11406543850898743,
+        -0.99347323179245
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "perspective",
+      "vertical_fov_rad": 0.5117845633031866
+    },
+    "director-top": {
+      "eye_body_m": [
+        -2.2,
+        0,
+        -19.5
+      ],
+      "target_body_m": [
+        -2.2,
+        0,
+        -0.15
+      ],
+      "up_body": [
+        0.0,
+        -1.0,
+        -0.0
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "perspective",
+      "vertical_fov_rad": 0.5117845633031866
+    },
+    "beauty": {
+      "eye_body_m": [
+        7.8,
+        -10.5,
+        -3.1
+      ],
+      "target_body_m": [
+        -2.15,
+        0,
+        -0.1
+      ],
+      "up_body": [
+        -0.13967841863632202,
+        0.14739927649497986,
+        -0.9791646599769592
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "perspective",
+      "vertical_fov_rad": 0.5117845633031866
+    },
+    "elevation-side": {
+      "eye_body_m": [
+        -2.6625,
+        -20,
+        -0.375
+      ],
+      "target_body_m": [
+        -2.6625,
+        0,
+        -0.375
+      ],
+      "up_body": [
+        0.0,
+        -0.0,
+        -0.9999999403953552
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "orthographic",
+      "ortho_width_m": 8.0
+    },
+    "plan-top": {
+      "eye_body_m": [
+        -2.6625,
+        0,
+        -20
+      ],
+      "target_body_m": [
+        -2.6625,
+        0,
+        -0.375
+      ],
+      "up_body": [
+        0.9999999403953552,
+        -0.0,
+        -0.0
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "orthographic",
+      "ortho_width_m": 12.4
+    },
+    "beauty-open": {
+      "eye_body_m": [
+        7.8,
+        -10.5,
+        -3.1
+      ],
+      "target_body_m": [
+        -2.15,
+        0,
+        -0.1
+      ],
+      "up_body": [
+        -0.13967841863632202,
+        0.14739927649497986,
+        -0.9791646599769592
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "perspective",
+      "vertical_fov_rad": 0.5117845633031866,
+      "canopy_open_fraction": 1.0
+    },
+    "elevation-side-open": {
+      "eye_body_m": [
+        -2.6625,
+        -20,
+        -0.375
+      ],
+      "target_body_m": [
+        -2.6625,
+        0,
+        -0.375
+      ],
+      "up_body": [
+        0.0,
+        -0.0,
+        -0.9999999403953552
+      ],
+      "size": [
+        1600,
+        1000
+      ],
+      "projection": "orthographic",
+      "ortho_width_m": 8.0,
+      "canopy_open_fraction": 1.0
     }
   }
 }

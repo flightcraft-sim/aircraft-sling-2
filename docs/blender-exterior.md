@@ -1,39 +1,52 @@
 # Blender exterior review job
 
-The accepted **V8** assets are installed from the confined **Blender 5.2.0 LTS** run in
-`~/builds/codex-jobs/blender-queue/fc-plane-sling2-exterior-v8.out/`. The source is
-`scripts/blender-exterior.py`; it is byte-identical to the executed queued V8 script.
-All three GLBs and six 4096² maps are installed. Triangle counts are 101,452 / 18,583 / 4,204;
-all POH, cross-LOD, containment, UV/tangent, PNG, and resource gates passed. The user accepted
-V8 for integration. A smoother, thinner root fillet remains later visual polish; the current
-edge-on root is accepted and unchanged.
+**V10 is installed**, following flight lead's accepted confined Blender 5.2 run. The source
+`scripts/blender-exterior.py` and queued `fc-plane-sling2-exterior-v10.py` have SHA-256
+`1a0747181cf824794f5c54c9d3afbef73bd1cb672254b7cb5c5dd748bd4c74ee`.
+The installed `docs/exterior-blender-validation.json` records revision
+`v10-smooth-canopy-attached-latch`, with **102,411 / 19,023 / 4,837 triangles**.
+The pack is format **3**, version **0.3.0**, with `canopy_slide` translating on body axis
+`[-1, 0, 0]` through the unchanged **1.10 m** estimated travel.
 
-To regenerate, copy `scripts/blender-exterior.py` to the Blender queue and have flight lead
-run it with **Blender 5.2.0 LTS**, network off and only the queue/output folder writable.
-The exact queued source is `~/builds/codex-jobs/blender-queue/fc-plane-sling2-exterior-v8.py`.
-Supply an absolute, fresh output directory after `--`:
+Every checked surface-mounted hardware vertex is within **2.507 mm** of its actual exported
+glass triangles (3 mm limit). The conservative continuous canopy/turtledeck separation is
+**23.648 / 23.097 / 24.575 mm** at LOD0/1/2. The original V9 and accepted V10 Blender outputs
+remain in their separate queue `.out` folders.
+
+Flight lead runs the queued V10 source in Blender 5.2.0 LTS, offline, with only its output folder
+writable. Supply a fresh absolute output folder after `--`:
 
 ```sh
-flatpak run org.blender.Blender -b --python-exit-code 1 --python /path/to/blender-exterior.py -- /path/to/output
+flatpak run org.blender.Blender -b --python-exit-code 1 --python /home/ray/builds/codex-jobs/blender-queue/fc-plane-sling2-exterior-v10.py -- /home/ray/builds/codex-jobs/blender-queue/fc-plane-sling2-exterior-v10.out
 ```
 
-The queued copy is `~/builds/codex-jobs/blender-queue/fc-plane-sling2-exterior-v8.py`. Pass an absolute
-output folder after `--`. The script writes only there. It uses four CPU threads, Cycles, and 4096²
-PNG maps. Do not run the old generator afterward: it regenerates the old untextured model.
+The job uses four CPU render threads and writes three GLBs, six 4096² baked textures, the source
+`.blend`, nine Cycles views (seven closed plus beauty/side open), exact cameras, interior and
+dimension receipts, per-node triangle budgets, clearance measurements, hardware distances, and
+the executed source SHA-256. No external images or source POH pages are embedded or distributed.
 
-Expected output: `exterior.glb`, `exterior-lod1.glb`, `exterior-lod2.glb`, `sling2-exterior.blend`,
-`basecolor.png`, `metallic-roughness.png`, `normal.png`, `ao.png`, `curvature.png`, `emissive.png`,
-`validation.json`, `cameras.json`, `orthographic-dimensions.json`, and seven `cycles-*.png` stills. GLBs embed their PNGs.
-`source-livery-left.png` and `source-livery-right.png` are original projected source masks, not
-exported textures. `interior-checks.json` records the cabin containment gate for all three LODs.
-`mesh-budget.json` records per-object LOD0 triangle counts before baking; validation reports also
-include per-node counts from each exported GLB.
-The normal and AO maps bake from selected high-detail meshes to a UV atlas; curvature and scalar
-material maps bake through emission. High-only rivets and seams consume no game-mesh triangles.
-All seven proof stills use the game mesh and baked atlas, not the high-detail bake source. The job uses
-an outdoor multiple-scattering sky and a sun with a 0.53° disk, plus an original procedural apron. No HDRI or
-external texture is used. The top camera is farther away to include the complete wing span;
-the other four camera positions are unchanged. Match the new `cameras.json` for engine proofs.
+Every GLB must retain the 120k/25k/5k limits and full-travel canopy/turtledeck clearance. Every
+vertex of surface-mounted canopy hardware is fitted to that LOD's actual glass triangles and
+checked within 3 mm after export; new unchecked moving hardware fails validation. The fixed
+inside latch is mounted to the roll-over bar, while rails/runners belong to the mechanism.
+V10 uses one Bezier meridian for both pieces, with a shared seam/tangent and no height clamping.
+The outside handle is flush at canopy centre-top, supported by a moving crown frame strip.
+Travel remains the original 1.10 m estimate.
+
+The engine's `scripts/finalize-sling-exterior.py` completed the installation and proof capture
+synchronously. All three actual-pack proof tests passed: isolated canopy motion at every LOD,
+nine matched camera/pose renders, and the 68-frame motion proof with eight canopy poses in its
+sixth row. Captures used the actual PBR renderer on Vulkan llvmpipe (Mesa 26.0.8).
+The engine open beauty/side views and contact sheet were visually inspected.
+
+Queue artifacts under `~/builds/codex-jobs/blender-queue/` are `fc-plane-engine-v10/` (nine PNGs
+and exact cameras), `fc-plane-v10-comparison.html` (nine Cycles/engine pairs), and
+`fc-plane-v10-proof.json` (status `installed_and_captured`, no pending steps, source/asset/image
+hashes and validation receipts). Separate `fc-plane-v10-engine-changed-files.txt` and
+`fc-plane-v10-pack-changed-files.txt`, plus combined `fc-plane-v10-changed-files.txt`, list the
+uncommitted changes. The 68 motion PNGs, manifest and `contact-sheet.png` are in the engine's
+`out/plane/motion/`. Queue wrapper `fc-plane-v10-engine-proof.sh` repeats the synchronous run.
+Both repositories remain uncommitted for flight lead's merge. Do not run the legacy generator afterward.
 
 V1's six bakes completed successfully in Blender 5.2.0 LTS, but its 122,714-triangle GLB failed
 the unchanged 120,000-triangle gate. V2 reduced brake-line and stitching tube sections/samples,
@@ -329,3 +342,14 @@ also exercises native `read_pack`, session installation, and aircraft selection.
 Engine aero/render and pack-harness Clippy passed with `-D warnings`; render/control
 wasm compilation passed. `cargo deny check licenses` was attempted but unavailable because
 `cargo-deny` is not installed. Full workspace CI remains for the flight lead after rebase.
+
+## V9 mechanism revision (historical)
+
+`scripts/blender-exterior.py` now authors V9 from accepted V8; installed binary assets and
+`exterior.json` remain V8 until flight lead runs and accepts the queue job. Run
+`fc-plane-sling2-exterior-v9.py` in the same confined Blender environment, output to its `.out`
+folder, then run `scripts/install-blender-exterior.py OUTPUT`. That installer validates all LODs,
+continuous swept canopy/turtledeck clearance and nine stills before installing format 3, the
+`canopy_slide` binding, and the `sliding_canopy` capability together. Use the current engine with
+format-3 support. Render seven closed views plus fully open beauty and side elevation.
+The 1.10 m aft travel is an estimate, recorded in `docs/estimates.md`.

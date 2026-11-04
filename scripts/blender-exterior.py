@@ -2,8 +2,9 @@
 """Original Sling 2 exterior; Blender 5.2 background job, no external assets/network.
 
 blender -b --python blender-exterior.py -- /writable/output
-Only the output folder is written. Sources: POH Rev 2.8 Section 1.4 numerical facts;
-all contours, airfoils, lettering, and livery are independent modeling estimates.
+Only the output folder is written. Sources: POH Rev 2.8 Section 1.4 numerical facts,
+Section 7.7 sliding mechanism/latches, levelling reference and normal checklists.
+All contours, travel, airfoils, lettering, and livery are independent modeling estimates.
 The old generator is retained solely for reproducing the previous pack revision.
 """
 import argparse
@@ -19,7 +20,10 @@ FACTS = dict(span=9.165, length=6.675, height=2.45, area=11.845, track=1.95,
              prop_diameter=1.79, blades=3, tail_span=2.825, vertical_span=1.47, dihedral=5.0, taper=1.375)
 BUDGETS = (120000, 25000, 5000)
 TEXTURE_SIZE = 4096
-GEOMETRY_REVISION = 'v8-wing-root-gear'
+GEOMETRY_REVISION = 'v10-smooth-canopy-attached-latch'
+CANOPY_TRAVEL_M = 1.10  # Estimate: front edge clears the seat backs by about 0.45 m.
+CANOPY_SPLIT_X = -1.95
+CANOPY_BASE_Z = -.445  # 45 mm above skin deck: swept glass/frame clears turtledeck.
 LOD_BOUNDS_TOLERANCE_M = .005
 # LOD0 detail allocation: (Bezier samples per span, cross-section bevel resolution).
 # Preserve the canopy rails/frames, fairings, and exterior silhouette settings below.
@@ -29,6 +33,9 @@ TUBE_DETAIL = {
     'belt_': (8, 1),
     'control_stick_': (8, 1),
     'throttle': (6, 1),
+    'canopy_': (2, 1),
+    'windshield_frame': (2, 1),
+    'roll_over_bar': (2, 1),
 }
 TIRE_SEGMENTS = (32, 8)
 # Exact body reference and pivots used by the existing pack. Blender uses z-up internally.
@@ -41,7 +48,8 @@ VIEWS = {
     'director-top': ((-2.2, 0, -19.5), (-2.2, 0, -.15)),
     'beauty': ((7.8, -10.5, -3.1), (-2.15, 0, -.1)),
 }
-REQUIRED = {'airframe', 'canopy', 'spinner', 'propeller', 'prop_blur', 'aileron_left',
+REQUIRED = {'airframe', 'canopy_slide', 'canopy_glass', 'windshield', 'roll_over_bar',
+            'canopy_inside_latch', 'canopy_outside_latch', 'canopy_latch_spine', 'canopy_rail_left', 'canopy_rail_right', 'spinner', 'propeller', 'prop_blur', 'aileron_left',
             'aileron_right', 'flaps_left', 'flaps_right', 'elevator_left', 'elevator_right', 'rudder', 'steering',
             'oleo_0', 'oleo_1', 'oleo_2', 'wheel_0', 'wheel_1', 'wheel_2', 'nav_left',
             'nav_right', 'nav_tail', 'strobe_left', 'strobe_right', 'beacon', 'landing',
@@ -78,11 +86,36 @@ WING_SWEEP = .018
 WING_RATIO = 1/FACTS['taper']
 WING_ROOT_CHORD = FACTS['area']/(FACTS['span']*(WING_INNER_FRACTION+(1-WING_INNER_FRACTION)*(1+WING_RATIO)/2)-2*WING_TIP_RADIUS*WING_RATIO/11)
 WING_TIP_CHORD = WING_ROOT_CHORD*WING_RATIO
-CANOPY_SECTIONS = [
-    (-3.04,.460,.460),(-3.01,.490,.510),(-2.78,.515,.590),
-    (-2.40,.530,.630),(-2.00,.525,.600),(-1.65,.490,.490),
-    (-1.38,.390,.290),(-1.18,.230,.090),(-1.12,.080,.008),
-]
+# One original Bezier meridian for both glazing pieces: x, half-width, crown height.
+# Monotone x permits a unique inverse; no clamping or flat interpolation plateaus.
+CANOPY_PROFILE = ((-3.04,.460,.400),(-2.82,.580,.860),(-1.48,.610,.820),(-1.12,.080,.008))
+CANOPY_HARDWARE_TOLERANCE_M = .003
+CANOPY_SURFACE_HARDWARE = ('canopy_bow_front','canopy_bow_rear','canopy_sill_left',
+                           'canopy_sill_right','canopy_latch_spine','canopy_outside_latch')
+WINDSHIELD_SURFACE_HARDWARE = ('windshield_frame',)
+
+
+def canopy_section(x):
+    """Continuous crown, width and tangent through the fixed/moving seam (body metres)."""
+    assert CANOPY_PROFILE[0][0] <= x <= CANOPY_PROFILE[-1][0], x
+    def evaluate(t):
+        weights=((1-t)**3,3*(1-t)**2*t,3*(1-t)*t*t,t**3)
+        return tuple(sum(w*p[k] for w,p in zip(weights,CANOPY_PROFILE)) for k in range(3))
+    lo,hi=0.,1.
+    for _ in range(60):
+        mid=(lo+hi)/2
+        if evaluate(mid)[0]<x:lo=mid
+        else:hi=mid
+    _,width,height=evaluate((lo+hi)/2)
+    return x,width,height
+
+
+def canopy_surface(x,angle):
+    x,width,height=canopy_section(x)
+    return x,width*math.cos(angle),CANOPY_BASE_Z-height*math.sin(angle)
+
+
+CANOPY_SECTIONS = [canopy_section(CANOPY_PROFILE[0][0]+(CANOPY_PROFILE[-1][0]-CANOPY_PROFILE[0][0])*i/48) for i in range(49)]
 ORTHO_VIEWS = {
     'elevation-side': dict(eye=(-2.6625,-20,-.375),target=(-2.6625,0,-.375),up=(0,0,-1),scale=8.0),
     'plan-top': dict(eye=(-2.6625,0,-20),target=(-2.6625,0,-.375),up=(1,0,0),scale=12.4),
@@ -156,9 +189,9 @@ CABIN_FLOOR_SIZE = (CABIN_FLOOR_FRONT-CABIN_FLOOR_AFT,.86,.10)
 # exhaust and boarding support collapsed to invalid meshes and vanished on export.
 # Keep the small beacon too: it sets the authored upper extent with the fin tip.
 PRESERVE_LOD_MESHES = ('cabin_floor','baggage_bulkhead','prop_blur','beacon',
-                       'exhaust','step_left_support')
+                       'exhaust','step_left_support','canopy_rail_','canopy_runner_','canopy_inside_latch',*CANOPY_SURFACE_HARDWARE,*WINDSHIELD_SURFACE_HARDWARE)
 # These boundary silhouettes need more than the general distant-LOD ratio.
-SILHOUETTE_LOD_PREFIXES = ('tire_','wingtip_','gear_leg_','wing_fillet_')
+SILHOUETTE_LOD_PREFIXES = ('tire_','wingtip_','gear_leg_','wing_fillet_','canopy_glass','canopy_sill_','canopy_bow_','windshield','roll_over_bar')
 INTERIOR_PREFIXES = ('cabin_floor','seat_','belt_','control_stick_','stick_grip_',
                      'display_','panel_silhouette','glareshield','center_console','throttle','baggage_bulkhead')
 
@@ -297,6 +330,7 @@ def body(p):
 def lod_ratio(name, lod):
     """Per-object reduction; preserve small extent markers and sample round silhouettes."""
     if lod == 0 or name.startswith(PRESERVE_LOD_MESHES): return 1.
+    if lod == 2 and name in ('canopy_glass','windshield'): return .06
     if lod == 1 or name.startswith(SILHOUETTE_LOD_PREFIXES): return .18
     return .029
 
@@ -311,7 +345,59 @@ def validate_lod_bounds(reference, candidate):
                 node=candidate['bounds_nodes_body'][end][axis])
 
 
-def validate_glb(path, lod):
+def canopy_clearance(mesh_points,mesh_faces,moving_names):
+    # Continuous proof, not discrete pose sampling: translations never change z.
+    # Use every fuselage triangle whose x interval overlaps the complete swept slider.
+    moving=[p for name in moving_names for p in mesh_points.get(name,[])]
+    assert moving, 'missing sliding canopy geometry'
+    swept_x=(min(p[0] for p in moving)-CANOPY_TRAVEL_M,max(p[0] for p in moving))
+    deck=[p for face in mesh_faces['airframe'] if min(p[0] for p in face)<=swept_x[1] and max(p[0] for p in face)>=swept_x[0] for p in face]
+    clearance=min(p[2] for p in deck)-max(p[2] for p in moving)
+    assert clearance>.003, ('canopy/turtledeck continuous sweep clearance',clearance)
+    assert CANOPY_SPLIT_X-CANOPY_TRAVEL_M < -2.65, 'open front bow must clear seat backs'
+    return clearance,swept_x
+
+
+def point_triangle_distance_sq(p,face):
+    """Distance to a closed triangle, including edges, using projection and barycentrics."""
+    def sub(a,b):return tuple(x-y for x,y in zip(a,b))
+    def dot(a,b):return sum(x*y for x,y in zip(a,b))
+    a,b,c=face;ab=sub(b,a);ac=sub(c,a);ap=sub(p,a)
+    aa=dot(ab,ab);cc=dot(ac,ac);cross=dot(ab,ac)
+    determinant=aa*cc-cross*cross
+    candidates=[]
+    if determinant>1e-24:
+        u=(dot(ap,ab)*cc-dot(ap,ac)*cross)/determinant
+        v=(dot(ap,ac)*aa-dot(ap,ab)*cross)/determinant
+        if u>=0 and v>=0 and u+v<=1:
+            q=tuple(x+u*y+v*z for x,y,z in zip(a,ab,ac))
+            candidates.append(dot(sub(p,q),sub(p,q)))
+    for a,b in ((a,b),(b,c),(c,a)):
+        edge=sub(b,a);length=dot(edge,edge)
+        t=max(0.,min(1.,dot(sub(p,a),edge)/length)) if length>1e-24 else 0.
+        delta=sub(p,tuple(x+t*y for x,y in zip(a,edge)))
+        candidates.append(dot(delta,delta))
+    return min(candidates)
+
+
+def canopy_hardware_check(mesh_points,mesh_faces,moving_names):
+    # Rails/runners belong to the slider mechanism; the fixed inside latch mounts
+    # to the roll-over bar. Every OTHER moving mesh is checked against its glass.
+    hardware=set(moving_names)-{'canopy_slide','canopy_glass','canopy_runner_left','canopy_runner_right'}
+    assert hardware==set(CANOPY_SURFACE_HARDWARE), ('unchecked canopy hardware',hardware)
+    report={}
+    for names,surface in ((CANOPY_SURFACE_HARDWARE,'canopy_glass'),(WINDSHIELD_SURFACE_HARDWARE,'windshield')):
+        faces=mesh_faces[surface];assert faces, ('missing mounting surface',surface)
+        for name in names:
+            points=mesh_points[name];assert points, ('missing canopy hardware',name)
+            distances=[math.sqrt(min(point_triangle_distance_sq(p,f) for f in faces)) for p in points]
+            worst=max(distances)
+            assert worst <= CANOPY_HARDWARE_TOLERANCE_M, ('floating canopy hardware',name,worst,CANOPY_HARDWARE_TOLERANCE_M)
+            report[name]=dict(surface=surface,vertices=len(points),maximum_distance_m=worst)
+    return dict(tolerance_m=CANOPY_HARDWARE_TOLERANCE_M,parts=report)
+
+
+def validate_glb(path, lod, check_canopy=True):
     """Independent binary-level acceptance gate; callable with CPython without Blender."""
     data = path.read_bytes()
     magic, version, length = struct.unpack_from('<III', data)
@@ -325,13 +411,16 @@ def validate_glb(path, lod):
     assert REQUIRED <= names, sorted(REQUIRED - names)
     triangles = 0
     mesh_triangles = {}
+    mesh_points = {}; mesh_faces = {}; moving_names = set()
     lo, hi = [math.inf] * 3, [-math.inf] * 3
     bounds_nodes = dict(min=[None]*3,max=[None]*3)
     # Exporter applies all object scale/rotation before export; pivots use translations only.
     children = {i for n in doc['nodes'] for i in n.get('children', [])}
-    def visit(i, translation):
+    def visit(i, translation, moving=False):
         nonlocal triangles
         n = doc['nodes'][i]
+        moving = moving or n['name']=='canopy_slide'
+        if moving:moving_names.add(n['name'])
         assert 'matrix' not in n and n.get('rotation',[0,0,0,1])==[0,0,0,1] and n.get('scale',[1,1,1])==[1,1,1], n['name']
         t = [a+b for a, b in zip(translation, n.get('translation', [0, 0, 0]))]
         if 'mesh' in n:
@@ -340,12 +429,20 @@ def validate_glb(path, lod):
                 v = doc['bufferViews'][a['bufferView']]
                 offset = v.get('byteOffset', 0) + a.get('byteOffset', 0)
                 stride = v.get('byteStride', 12)
+                positions=[]
                 for j in range(a['count']):
                     p = struct.unpack_from('<3f', binary, offset + j*stride)
+                    positions.append(tuple(p[k]+t[k] for k in range(3)))
                     for k in range(3):
                         value=p[k]+t[k]
                         if value<lo[k]:lo[k]=value;bounds_nodes['min'][k]=n['name']
                         if value>hi[k]:hi[k]=value;bounds_nodes['max'][k]=n['name']
+                mesh_points.setdefault(n['name'],[]).extend(positions)
+                ia=doc['accessors'][prim['indices']];iv=doc['bufferViews'][ia['bufferView']]
+                io=iv.get('byteOffset',0)+ia.get('byteOffset',0)
+                code={5121:'B',5123:'H',5125:'I'}[ia['componentType']]
+                indices=struct.unpack_from('<'+code*ia['count'],binary,io)
+                mesh_faces.setdefault(n['name'],[]).extend(tuple(positions[indices[k+j]] for j in range(3)) for k in range(0,len(indices),3))
                 triangles += doc['accessors'][prim['indices']]['count']//3
                 mesh_triangles[n['name']] = mesh_triangles.get(n['name'], 0) + doc['accessors'][prim['indices']]['count']//3
                 material = doc.get('materials', [])[prim['material']] if 'material' in prim else {}
@@ -353,9 +450,11 @@ def validate_glb(path, lod):
                     assert 'TANGENT' in prim['attributes'], ('missing normal-map tangents', n['name'])
                     assert 'TEXCOORD_0' in prim['attributes'], ('missing normal-map UVs', n['name'])
         for child in n.get('children', []):
-            visit(child, t)
+            visit(child, t, moving)
     for i in set(range(len(doc['nodes']))) - children:
         visit(i, [0, 0, 0])
+    clearance,swept_x=canopy_clearance(mesh_points,mesh_faces,moving_names) if check_canopy else (None,None)
+    hardware=canopy_hardware_check(mesh_points,mesh_faces,moving_names) if check_canopy else None
     assert triangles <= BUDGETS[lod], (lod, triangles, BUDGETS[lod])
     dimensions = [hi[k]-lo[k] for k in range(3)]
     for actual, wanted in zip(dimensions, [FACTS['length'], FACTS['span'], FACTS['height']]):
@@ -371,7 +470,7 @@ def validate_glb(path, lod):
         assert png[:8] == b'\x89PNG\r\n\x1a\n'
         assert struct.unpack_from('>II', png, 16) == (TEXTURE_SIZE, TEXTURE_SIZE)
     assert len(data) <= 64*1024*1024
-    return dict(file=path.name, triangles=triangles, dimensions_m=dimensions,
+    return dict(file=path.name, canopy_hardware=hardware, canopy_clearance_m=clearance, canopy_travel_m=CANOPY_TRAVEL_M, canopy_swept_x_m=swept_x, triangles=triangles, dimensions_m=dimensions,
                 bounds_body_m=dict(min=lo,max=hi),bounds_nodes_body=bounds_nodes,
                 nodes=len(names),images=len(images),bytes=len(data), sha256=hashlib.sha256(data).hexdigest(),
                 mesh_triangles=dict(sorted(mesh_triangles.items(), key=lambda row: (-row[1], row[0]))))
@@ -686,32 +785,60 @@ def build(out):
         cut=fuselage.modifiers.new('Cowl intake','BOOLEAN'); cut.operation='DIFFERENCE'; cut.object=cutter
         apply(fuselage); bpy.data.objects.remove(cutter,do_unlink=True); parts.pop('temporary_intake')
         ellipsoid('intake_recess_'+str(side),(.19,side*.215,-.08),(.05,.052,.048),trim,segments=16,rings=8)
-    # A broad bubble on a flat deck, with a nearly upright rear frame/cap. Bounded
-    # Hermite interpolation prevents overshoot between the original profile stations.
-    sections=[]
-    for i in range(len(CANOPY_SECTIONS)-1):
-        a=CANOPY_SECTIONS[max(0,i-1)];b=CANOPY_SECTIONS[i]
-        c=CANOPY_SECTIONS[i+1];d=CANOPY_SECTIONS[min(len(CANOPY_SECTIONS)-1,i+2)]
-        for step in range(2):
-            t=step/2;values=[]
-            for k in (1,2):
-                value=.5*(2*b[k]+(-a[k]+c[k])*t+(2*a[k]-5*b[k]+4*c[k]-d[k])*t*t+(-a[k]+3*b[k]-3*c[k]+d[k])*t*t*t)
-                values.append(min(max(b[k],c[k]),max(min(b[k],c[k]),value)))
-            sections.append((b[0]+(c[0]-b[0])*t,*values))
-    sections.append(CANOPY_SECTIONS[-1]);points=[];faces=[];cols=32;ring=cols+1
-    for x,width,height in sections:
-        for j in range(ring):
-            angle=j*pi/cols;points.append((x,width*cos(angle),RAIL_Z-height*sin(angle)))
-    for i in range(len(sections)-1):
-        for j in range(cols):
-            a=i*ring+j;faces.append((a,a+1,a+1+ring,a+ring))
-    faces += [tuple(reversed(range(ring))),tuple((len(sections)-1)*ring+j for j in range(ring))]
-    canopy=mesh('canopy',points,faces,glass)
-    for side in [-1,1]:
-        tube('canopy_rail_'+str(side),[(-3.04,side*.46,RAIL_Z),(-2.70,side*.515,RAIL_Z),
-             (-1.65,side*.49,RAIL_Z),(-1.12,side*.08,RAIL_Z)],.017,aluminum)
-    for label,x,width,height in [('rear',-3.04,.46,.46),('windshield',-1.65,.49,.49)]:
-        tube('canopy_frame_'+label,[(x,width*cos(j*pi/32),RAIL_Z-height*sin(j*pi/32)) for j in range(33)],.013,paint,polyline=True)
+    # Both pieces sample the same smooth meridian and share the exact seam ring.
+    sections=CANOPY_SECTIONS
+    seam=canopy_section(CANOPY_SPLIT_X)
+    slide=empty('canopy_slide')
+    def glazing(name,stations,parent=None,rear_cap=False):
+        points=[];faces=[];cols=32;ring=cols+1
+        for x,width,height in stations:
+            for j in range(ring):
+                angle=j*pi/cols
+                points.append((x,width*cos(angle),CANOPY_BASE_Z-height*sin(angle)))
+        for i in range(len(stations)-1):
+            for j in range(cols):
+                a=i*ring+j;faces.append((a,a+1,a+1+ring,a+ring))
+        if rear_cap:faces.append(tuple(reversed(range(ring))))
+        return mesh(name,points,faces,glass,parent=parent)
+    glazing('canopy_glass',[v for v in sections if v[0]<CANOPY_SPLIT_X]+[seam],slide,True)
+    glazing('windshield',[seam]+[v for v in sections if v[0]>CANOPY_SPLIT_X])
+    box('windshield_apron',(-1.10,0,-.420),(.10,.20,.05),paint,.01,bevel_segments=1)
+    def bow(name,x,width,height,radius,material,parent=None,base=CANOPY_BASE_Z):
+        obj=tube(name,[(x,width*cos(j*pi/32),base-height*sin(j*pi/32)) for j in range(33)],radius,material,polyline=True)
+        obj.parent=parent
+        return obj
+    def surface_ribbons(name,patches,material,parent=None):
+        points=[];faces=[]
+        for xs,angles in patches:
+            offset=len(points);ring=len(angles)
+            points.extend(canopy_surface(x,angle) for x in xs for angle in angles)
+            for i in range(len(xs)-1):
+                for j in range(ring-1):
+                    a=offset+i*ring+j;faces.append((a,a+1,a+ring+1,a+ring))
+        return mesh(name,points,faces,material,parent=parent)
+    angles=[j*pi/16 for j in range(17)]
+    surface_ribbons('canopy_bow_rear',[([-3.04,-3.026],angles)],paint,slide)
+    surface_ribbons('canopy_bow_front',[([CANOPY_SPLIT_X-.025,CANOPY_SPLIT_X-.011],angles)],paint,slide)
+    surface_ribbons('windshield_frame',[([CANOPY_SPLIT_X+.005,CANOPY_SPLIT_X+.019],angles)],paint)
+    spine_x=[-3.033+(CANOPY_SPLIT_X-.018+3.033)*i/16 for i in range(17)]
+    surface_ribbons('canopy_latch_spine',[(spine_x,[pi/2-.016,pi/2+.016])],aluminum,slide)
+    # Flush exterior handle at canopy centre-top, connected to the crown frame strip.
+    # Its entire U-shaped outline is surface-mounted, including both ends and bridge.
+    centre=(-3.04+CANOPY_SPLIT_X)/2
+    xs=[centre-.045+i*.09/4 for i in range(5)]
+    surface_ribbons('canopy_outside_latch',[(xs,[pi/2-.025,pi/2-.019]),
+        (xs,[pi/2+.019,pi/2+.025]),([centre+.035,centre+.045],[pi/2-.025,pi/2+.025])],trim,slide)
+    # Fixed hoop behind both seat backs. The POH places the inside latch at its centre top.
+    bow('roll_over_bar',-2.82,.475,.535,.022,aluminum,base=-.405)
+    tube('canopy_inside_latch',[(-2.80,0,-.94),(-2.77,0,-.965),(-2.72,0,-.965)],.010,trim,polyline=True)
+    for label,side in [('left',-1),('right',1)]:
+        # Straight sliders on cockpit side skins; front runners remain on rail throughout travel.
+        tube('canopy_rail_'+label,[(-3.15,side*.55,-.412),(-1.90,side*.55,-.412)],.012,aluminum,polyline=True)
+        sill_x=[-3.04+(CANOPY_SPLIT_X+3.04)*i/12 for i in range(13)]
+        surface_ribbons('canopy_sill_'+label,[(sill_x,[pi-.020,pi] if side<0 else [0,.020])],paint,slide)
+        runner=box('canopy_runner_'+label,(-2.0,side*.55,-.430),(.10,.035,.022),aluminum,.004,bevel_segments=1)
+        runner.parent=slide
+        tube('windshield_sill_'+label,[(seam[0],side*seam[1],-.4225)]+[(x,side*width,-.4225) for x,width,height in sections if x>CANOPY_SPLIT_X],.025,paint,polyline=True)
     # Every cabin fitting lies below the rail and within the original closed fuselage.
     box('cabin_floor',CABIN_FLOOR_CENTER,CABIN_FLOOR_SIZE,trim,bevel_segments=1)
     box('baggage_bulkhead',(CABIN_FLOOR_AFT-.015,0,-.035),(.03,.82,.43),trim,.012,bevel_segments=1)
@@ -911,11 +1038,34 @@ def build(out):
     import re
     for obj in low.objects:
         obj.name=re.sub('[^A-Za-z0-9_-]', '_', obj.name)
+    def fit_canopy_hardware(objects):
+        bpy.context.view_layer.update()
+        for names,surface in ((CANOPY_SURFACE_HARDWARE,'canopy_glass'),(WINDSHIELD_SURFACE_HARDWARE,'windshield')):
+            glass_obj=objects[surface]
+            glass_obj.data.calc_loop_triangles()
+            vertices=[glass_obj.matrix_world @ v.co for v in glass_obj.data.vertices]
+            # Ignore the flat rear closing cap: frames mount to the curved outer shell.
+            curved=[tuple(t.vertices) for t in glass_obj.data.loop_triangles
+                    if max(vertices[i].x for i in t.vertices)-min(vertices[i].x for i in t.vertices)>1e-7]
+            tree=BVHTree.FromPolygons(vertices,curved,all_triangles=True)
+            for name in names:
+                obj=objects[name];inverse=obj.matrix_world.inverted()
+                offset=.0025 if name=='canopy_outside_latch' else .0010
+                for vertex in obj.data.vertices:
+                    nearest,normal,face,distance=tree.find_nearest(obj.matrix_world @ vertex.co)
+                    if nearest is None:raise RuntimeError('Missing hardware mounting face: '+name)
+                    # Point normals out of the half-shell (Blender +Z is up).
+                    outward=Vector((0,nearest.y,max(0.,nearest.z+CANOPY_BASE_Z)))
+                    if normal.dot(outward)<0:normal=-normal
+                    vertex.co=inverse @ (nearest+normal*offset)
+                obj.data.update()
+
     # Freeze low meshes, recalculate consistent exterior normals, and unwrap as ONE atlas.
     for obj in list(low.objects):
         if obj.type=='MESH':
             apply(obj); active(obj); bpy.ops.object.mode_set(mode='EDIT'); bpy.ops.mesh.select_all(action='SELECT')
             bpy.ops.mesh.normals_make_consistent(inside=False); bpy.ops.object.mode_set(mode='OBJECT')
+    fit_canopy_hardware({o.name:o for o in low.objects})
     check_interior(list(low.objects),'LOD0')
     # Fail before the six expensive bakes if an authoring change exceeds the hard budget.
     # Loop triangles measure n-gons exactly as triangles, not polygon counts or guessed ratios.
@@ -928,7 +1078,7 @@ def build(out):
     (out/'mesh-budget.json').write_text(json.dumps(preflight,indent=2)+'\n')
     print('FLIGHTCRAFT_MESH_BUDGET '+json.dumps(preflight),flush=True)
     assert preflight['triangles']<=BUDGETS[0], ('LOD0 before baking',preflight['triangles'],BUDGETS[0])
-    opaque=[o for o in low.objects if o.type=='MESH' and o.name not in ['canopy','prop_blur']]
+    opaque=[o for o in low.objects if o.type=='MESH' and o.name not in ['canopy_glass','windshield','prop_blur']]
     bpy.ops.object.select_all(action='DESELECT')
     for obj in opaque: obj.select_set(True)
     bpy.context.view_layer.objects.active=opaque[0]
@@ -1097,6 +1247,7 @@ def build(out):
                     dec.use_collapse_triangulate=True; apply(cp)
                 if cp.type=='MESH': triangulate(cp)
             export_objects=list(mapping.values())
+            fit_canopy_hardware({obj.name:cp for obj,cp in mapping.items()})
         bpy.ops.object.select_all(action='DESELECT')
         saved_names={}
         for obj in originals_low:
@@ -1159,6 +1310,9 @@ def build(out):
         up=camera.rotation_euler.to_quaternion() @ Vector((0,1,0))
         cameras[label]=dict(eye_body_m=eye,target_body_m=look,up_body=body(up),size=[1600,1000],**projection)
         camera_objects[label]=camera
+    for label in ('beauty','elevation-side'):
+        cameras[label+'-open']={**cameras[label], 'canopy_open_fraction':1.0}
+        camera_objects[label+'-open']=camera_objects[label]
     (out/'cameras.json').write_text(json.dumps(cameras,indent=2)+'\n')
     dimensions=dict(bounds_body_m=reports[0]['bounds_body_m'],length_m=reports[0]['dimensions_m'][0],span_m=reports[0]['dimensions_m'][1],height_m=reports[0]['dimensions_m'][2],
                     required_m=dict(length=FACTS['length'],span=FACTS['span'],height=FACTS['height']),
@@ -1166,17 +1320,24 @@ def build(out):
                     lod_bounds_body_m=[r['bounds_body_m'] for r in reports],
                     lod_bounds_nodes_body=[r['bounds_nodes_body'] for r in reports],
                     fuselage_stations_x_halfwidth_top_bottom_m=FUSELAGE_SECTIONS,
-                    section_exponent=FUSELAGE_EXPONENT,canopy_stations_x_halfwidth_height_m=CANOPY_SECTIONS,
+                    section_exponent=FUSELAGE_EXPONENT,canopy_stations_x_halfwidth_height_m=CANOPY_SECTIONS,canopy_meridian_bezier=CANOPY_PROFILE,
                     note='Body dimensions checked from exported vertices; orthographic views use no perspective distortion; ortho_width_m is horizontal image width.')
     (out/'orthographic-dimensions.json').write_text(json.dumps(dimensions,indent=2)+'\n')
     for label,camera in camera_objects.items():
+        slide.location.x=-CANOPY_TRAVEL_M*cameras[label].get('canopy_open_fraction',0.0)
+        bpy.context.view_layer.update()
         scene.camera=camera;scene.render.filepath=str(out/('cycles-'+label+'.png'))
         scene.cycles.samples=96;bpy.ops.render.render(write_still=True)
+    slide.location.x=0.0
+    bpy.context.view_layer.update()
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'sling2-exterior.blend'))
-    report=dict(blender=bpy.app.version_string,registration=REGISTRATION_TEXT,facts=FACTS,lods=reports,textures=TEXTURE_SIZE,
+    report=dict(blender=bpy.app.version_string,source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),registration=REGISTRATION_TEXT,facts=FACTS,lods=reports,textures=TEXTURE_SIZE,
                 cameras=cameras,coordinate_conversion='proper rotation: x,-y,-z; no reflection',geometry_revision=GEOMETRY_REVISION,
+                canopy=dict(node='canopy_slide',axis_body=[-1,0,0],travel_m=CANOPY_TRAVEL_M,travel_source='estimate; POH 7.7 gives no travel',
+                            clearance_checks=[dict(lod=i,clearance_m=r['canopy_clearance_m']) for i,r in enumerate(reports)],
+                            hardware_checks=[r['canopy_hardware'] for r in reports],meridian_bezier=CANOPY_PROFILE),
                 lod_policy=dict(preserve_prefixes=PRESERVE_LOD_MESHES,silhouette_prefixes=SILHOUETTE_LOD_PREFIXES,
-                                silhouette_ratio=.18,lod1_ratio=.18,lod2_ratio=.029,extremum_tolerance_m=LOD_BOUNDS_TOLERANCE_M),
+                                silhouette_ratio=.18,lod1_ratio=.18,lod2_ratio=.029,glazing_lod2_ratio=.06,extremum_tolerance_m=LOD_BOUNDS_TOLERANCE_M),
                 lighting=dict(sun_direction_body=body(sun_direction),sun_rgb=[3,2.79,2.49],exposure_ev=-.7),status='awaiting visual review; shape contours are estimates')
     (out/'validation.json').write_text(json.dumps(report,indent=2)+'\n')
     (out/'cameras.json').write_text(json.dumps(cameras,indent=2)+'\n')

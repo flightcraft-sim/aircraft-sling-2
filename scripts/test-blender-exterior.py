@@ -15,6 +15,58 @@ spec.loader.exec_module(exterior)
 
 
 class AuthoringTests(unittest.TestCase):
+    def test_crown_is_curved_and_tangent_is_continuous_at_split(self):
+        lo=exterior.CANOPY_PROFILE[0][0];hi=exterior.CANOPY_SPLIT_X
+        xs=[lo+(hi-lo)*i/100 for i in range(101)]
+        heights=[exterior.canopy_section(x)[2] for x in xs]
+        chord=[heights[0]+(heights[-1]-heights[0])*i/100 for i in range(101)]
+        self.assertGreater(max(h-c for h,c in zip(heights,chord)),.15)
+        self.assertEqual(sum(a<b and b>c for a,b,c in zip(heights,heights[1:],heights[2:])),1)
+        e=1e-5;x=exterior.CANOPY_SPLIT_X
+        for k in [1,2]:
+            left=(exterior.canopy_section(x)[k]-exterior.canopy_section(x-e)[k])/e
+            right=(exterior.canopy_section(x+e)[k]-exterior.canopy_section(x)[k])/e
+            self.assertAlmostEqual(left,right,delta=.0001)
+        self.assertEqual(exterior.CANOPY_TRAVEL_M,1.10)
+        self.assertLess(hi-exterior.CANOPY_TRAVEL_M,-2.65)
+
+    def test_every_hardware_vertex_is_checked_not_only_the_mounts(self):
+        names=set(exterior.CANOPY_SURFACE_HARDWARE)
+        moving=names|{'canopy_slide','canopy_glass','canopy_runner_left','canopy_runner_right'}
+        points={n:[(0,0,-.001),(0.1,0,-.0025)] for n in names|set(exterior.WINDSHIELD_SURFACE_HARDWARE)}
+        faces={n:[((-1,-1,0),(1,-1,0),(0,1,0))] for n in ['canopy_glass','windshield']}
+        report=exterior.canopy_hardware_check(points,faces,moving)
+        self.assertEqual(report['parts']['canopy_outside_latch']['vertices'],2)
+        points['canopy_outside_latch'].append((0,0,-.006))
+        with self.assertRaisesRegex(AssertionError,'floating canopy hardware'):
+            exterior.canopy_hardware_check(points,faces,moving)
+        points['canopy_outside_latch'][-1]=(0,0,.006)
+        with self.assertRaisesRegex(AssertionError,'floating canopy hardware'):
+            exterior.canopy_hardware_check(points,faces,moving)
+        with self.assertRaisesRegex(AssertionError,'unchecked canopy hardware'):
+            exterior.canopy_hardware_check(points,faces,moving|{'unregistered_handle'})
+
+    def test_distance_handles_triangle_edges_and_degenerate_faces(self):
+        face=((0,0,0),(1,0,0),(0,1,0))
+        self.assertAlmostEqual(exterior.point_triangle_distance_sq((.2,.2,.003),face),.003**2)
+        self.assertAlmostEqual(exterior.point_triangle_distance_sq((1,1,0),face),.5)
+        self.assertAlmostEqual(exterior.point_triangle_distance_sq((0,0,.005),((0,0,0),)*3),.005**2)
+
+
+    def test_canopy_continuous_clearance_rejects_intersection_at_intermediate_travel(self):
+        moving={'canopy_glass'}
+        points={'canopy_glass':[(-3.04,0,-.445),(-1.95,0,-.445)]}
+        deck={'airframe':[((-4.2,-.5,-.40),(-1.9,.5,-.4),(-3.,0,.3))]}
+        clearance,swept=exterior.canopy_clearance(points,deck,moving)
+        self.assertAlmostEqual(clearance,.045)
+        self.assertAlmostEqual(swept[0],-4.14)
+        # Raised deck patch overlaps only the swept interval, not the closed rear edge.
+        deck['airframe'].append(((-3.7,0,-.46),(-3.5,.1,-.46),(-3.5,-.1,-.46)))
+        with self.assertRaisesRegex(AssertionError,'continuous sweep'):
+            exterior.canopy_clearance(points,deck,moving)
+        with self.assertRaisesRegex(AssertionError,'missing sliding'):
+            exterior.canopy_clearance({},deck,moving)
+
     def test_registration_matches_pack_default(self):
         root=Path(__file__).resolve().parent.parent
         variant=json.loads((root/'variant.json').read_text())
@@ -190,7 +242,7 @@ class ExportTests(unittest.TestCase):
     def test_rotation_preserves_bounds_winding_and_tangent_handedness(self):
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'test.glb'; self.fixture(path); exterior.body_axes_glb(path)
-            result=exterior.validate_glb(path,0)
+            result=exterior.validate_glb(path,0,check_canopy=False)
             for actual,wanted in zip(result['dimensions_m'],[6.675,9.165,2.45]):
                 self.assertAlmostEqual(actual,wanted,places=5)
             data=path.read_bytes(); size=struct.unpack_from('<I',data,12)[0]; binary=data[28+size:]
@@ -202,17 +254,17 @@ class ExportTests(unittest.TestCase):
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'test.glb'; self.fixture(path)
             data=path.read_bytes().replace(b'propeller',b'bad_node_'); path.write_bytes(data)
-            with self.assertRaises(AssertionError): exterior.validate_glb(path,0)
+            with self.assertRaises(AssertionError): exterior.validate_glb(path,0,check_canopy=False)
             self.fixture(path)
             original=exterior.FACTS['length']; exterior.FACTS['length']=10
             try:
-                with self.assertRaises(AssertionError): exterior.validate_glb(path,0)
+                with self.assertRaises(AssertionError): exterior.validate_glb(path,0,check_canopy=False)
             finally: exterior.FACTS['length']=original
 
     def test_extremum_gate_catches_translation_even_when_dimensions_match(self):
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'bounds.glb';self.fixture(path)
-            original=exterior.validate_glb(path,0)
+            original=exterior.validate_glb(path,0,check_canopy=False)
             self.assertEqual(original['bounds_nodes_body']['max'],['airframe']*3)
             # A translated LOD has unchanged overall dimensions but fails the new gate.
             moved=copy.deepcopy(original)
@@ -230,18 +282,18 @@ class ExportTests(unittest.TestCase):
             struct.pack_into('<f',data,28+size+8,-1.14428626)
             path.write_bytes(data)
             with self.assertRaisesRegex(AssertionError,'prop_blur'):
-                exterior.validate_glb(path,2)
+                exterior.validate_glb(path,2,check_canopy=False)
     def test_original_lod_caps_accept_boundary_and_reject_one_triangle_over(self):
         with tempfile.TemporaryDirectory() as folder:
             path=Path(folder)/'budget.glb'
             for lod,limit in enumerate((120000,25000,5000)):
                 with self.subTest(lod=lod):
                     self.fixture(path,limit)
-                    result=exterior.validate_glb(path,lod)
+                    result=exterior.validate_glb(path,lod,check_canopy=False)
                     self.assertEqual(result['triangles'],limit)
                     self.assertEqual(sum(result['mesh_triangles'].values()),limit)
                     self.fixture(path,limit+1)
-                    with self.assertRaises(AssertionError): exterior.validate_glb(path,lod)
+                    with self.assertRaises(AssertionError): exterior.validate_glb(path,lod,check_canopy=False)
 
 
 if __name__=='__main__': unittest.main()

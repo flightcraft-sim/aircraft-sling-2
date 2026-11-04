@@ -20,3 +20,29 @@ Numbers absent from the cited POH sections are estimates. `data/sources.json` co
 | Preview scenery | The procedural height field, grass surface, runway, and geographic origin in the render harness are invented review scenery. They exercise the real synthetic-vision renderer and do not affect the fidelity flights or describe an actual location. |
 
 The engine's V-speed ordering requires `vs <= vr`. The POH lists rotation at 40 kt, below the clean 46 kt stall. Consequently `variant.v_speeds.vr_mps` contains the published 48 kt **liftoff** speed. The authoritative facts retain both 40 and 48 kt, and the takeoff pilot begins rotation at 40 kt. A separate rotation/liftoff API is needed to display both correctly.
+
+## V9 sliding canopy
+
+POH Rev 2.8 §7.7 establishes a sliding mechanism, access from either side, the inside latch at the top centre of the fixed roll-over bar, and the exterior latch at canopy centre. The levelling reference places sliders on cockpit side skins. Before-takeoff item 16 requires closed and latched; securing item 6 requires closing and locking as necessary. No POH travel dimension is given.
+
+The 1.10 m aft translation, -1.95 m windshield seam, -2.82 m fixed hoop station, rail spacing, bow contours, handles, and 45 mm shell/deck offset are original modelling estimates. Fully open, the front bow reaches -3.05 m, behind seat backs near -2.55 m, permitting entry from either side. Actual exported triangles must pass a continuous full-travel canopy/turtledeck separation bound (>3 mm) at every LOD. This conservative bound includes the whole moving shell and its rear edge, rather than just eight sampled poses.
+
+Opening guards (ground speed ≤2 m/s and airspeed ≤5 m/s), instantaneous command motion, door-open drag/noise mapping, and the original canopy-unlatched advisory procedure are simulator estimates, not POH limitations or an approved emergency checklist.
+
+## V10 crown and attached latch
+
+The single longitudinal cubic Bezier meridian (rear to front, x/half-width/height in metres) is
+`[[-3.04,.460,.400],[-2.82,.580,.860],[-1.48,.610,.820],[-1.12,.080,.008]]`.
+It replaces the clamped height interpolation and shares both position and tangent through the
+windshield/sliding split at x=-1.95 m. These crown and frame contours are original visual estimates.
+The 1.10 m aft travel remains unchanged.
+
+The flush U-shaped outside handle is at the sliding shell's longitudinal centre and lateral
+centre-top, connected to a slim crown frame strip. Every vertex of the complete outside handle,
+crown strip, moving bows/sills and windshield frame is fitted to the actual glazing triangles
+at each LOD and must be within 3 mm in the exported GLB. This checks tips and edges as well as
+mounts. The handle rests 2.5 mm above the shell; frame strips rest 1 mm above it. These are
+modelling estimates, not published latch dimensions. Rails/runners are mechanism hardware;
+the fixed inside latch mounts to the roll-over bar, so these are not classified as glass-mounted
+hardware. All other moving hardware is required to participate in the distance check.
+The continuous canopy/turtledeck sweep and resource/dimension limits remain in force.

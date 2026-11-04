@@ -2181,6 +2181,22 @@
     "/definition/modern/wigwag/half_period_s": {
       "value": 0.5,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
+    },
+    "/definition/sliding_canopy": {
+      "value": true,
+      "source": "Sling 2 POH Rev 2.8 section 7.7; enabled atomically by V9 installer"
+    },
+    "/emergencies/0/best_glide_mps": {
+      "value": 32.0,
+      "source": "estimate: original canopy-unlatched advisory grading; see docs/estimates.md (not a POH emergency checklist)"
+    },
+    "/emergencies/0/glide_ratio": {
+      "value": 10.0,
+      "source": "estimate: original canopy-unlatched advisory grading; see docs/estimates.md (not a POH emergency checklist)"
+    },
+    "/emergencies/0/speed_tolerance_mps": {
+      "value": 5.0,
+      "source": "estimate: original canopy-unlatched advisory grading; see docs/estimates.md (not a POH emergency checklist)"
     }
   },
   "panel.json": {

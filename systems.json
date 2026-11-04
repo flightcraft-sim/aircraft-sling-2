@@ -397,7 +397,7 @@
         {
           "source": "door_open",
           "severity": "caution",
-          "label": "CANOPY",
+          "label": "CANOPY UNLATCHED",
           "threshold": 0
         },
         {
@@ -445,6 +445,33 @@
         "right_load": "landing_right",
         "half_period_s": 0.5
       }
+    },
+    "sliding_canopy": true
+  },
+  "emergencies": [
+    {
+      "id": "door_open",
+      "title": "Canopy unlatched",
+      "best_glide_mps": 32.0,
+      "glide_ratio": 10.0,
+      "speed_tolerance_mps": 5.0,
+      "items": [
+        {
+          "id": "control",
+          "instruction": "Maintain aircraft control; avoid abrupt manoeuvres.",
+          "memory": true
+        },
+        {
+          "id": "canopy",
+          "instruction": "Keep the canopy closed; latch only when fully closed and safe to reach.",
+          "memory": false
+        },
+        {
+          "id": "land",
+          "instruction": "Land at a suitable airfield if the canopy cannot be secured.",
+          "memory": false
+        }
+      ]
     }
-  }
+  ]
 }
