@@ -697,7 +697,7 @@ fn radio_identity_and_audio_follow_the_navigator_installation() -> Result<(), Er
     );
     assert!(panel.elements.iter().any(|e| {
         e.id == "registration"
-            && matches!(&e.element, PanelElement::Placard { text, .. } if text == "N371FC")
+            && matches!(&e.element, PanelElement::Placard { text, .. } if text == "{registration}")
     }));
     let installation = &config.panel.audio_panel;
     assert_eq!(installation.power_load, "navigator");
