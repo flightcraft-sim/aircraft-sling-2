@@ -373,6 +373,8 @@
     "pump_1_load": "pump_1",
     "pump_2_load": "pump_2",
     "single_lane_power_fraction": 0.98,
+    "lane_a_only_power_fraction": 1.0,
+    "lane_b_only_power_fraction": 0.93,
     "fuel_pressure_pa": 300000,
     "coolant_temperature_c": {
       "points": [

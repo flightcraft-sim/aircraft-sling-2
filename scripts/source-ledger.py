@@ -25,6 +25,8 @@ rules = {
         '/propulsion/max_rpm': poh('9.4.1') + '; estimate: divide engine RPM by 2.43 reduction ratio.',
         '/propulsion/min_rps': poh('9.4.1') + '; estimate: divide idle RPM by 2.43 and 60.',
         '/control/fuel_pressure_pa': poh('9.4.1') + '; midpoint of 2.8 to 3.2 bar.',
+        '/control/lane_a_only_power_fraction': poh('9.4.13') + '; no rpm drop is allowed with lane B switched off, so lane A alone carries full power.',
+        '/control/lane_b_only_power_fraction': poh('9.4.13') + '; estimate: tuned so lane A switched off drops about 100 rpm at 4,000 rpm, inside the 180 rpm limit.',
     },
     'systems.json': {},
     'panel.json': {'/equipment': 'Supplied measured panel layout; original curve interpolation, decorative details, and display composition estimates.'},

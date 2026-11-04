@@ -471,6 +471,64 @@ fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
 }
 
 #[test]
+fn normal_procedures_follow_the_poh_and_bind_to_the_panel() -> Result<(), Error> {
+    let c = configuration()?;
+    let set = c
+        .installed_systems
+        .procedures
+        .as_ref()
+        .ok_or("the systems layer carries no normal procedures")?;
+    set.validate()?;
+    assert_eq!(set.version, 1);
+    assert!(set.source.contains("Revision 2.8") && set.source.contains("9.4.13"));
+    let ids: Vec<_> = set.checklists.iter().map(|l| l.id.as_str()).collect();
+    assert_eq!(
+        ids,
+        [
+            "before_start",
+            "engine_start",
+            "warm_up",
+            "run_up",
+            "taxi",
+            "before_takeoff",
+            "shutdown",
+            "securing"
+        ]
+    );
+    let list = |id: &str| set.checklists.iter().find(|l| l.id == id).ok_or("missing list");
+    // POH 4.7.1 has eighteen items.
+    assert_eq!(list("before_takeoff")?.items.len(), 18);
+    let panel = c.panel.equipment.as_ref().ok_or("missing equipment")?;
+    for l in &set.checklists {
+        for item in &l.items {
+            assert!(item.poh_ref.starts_with("POH"), "{} lacks a POH reference", item.id);
+            if let Some(control) = &item.control {
+                assert!(
+                    panel.elements.iter().any(|e| &e.id == control),
+                    "{} points at {control}, which is not on the panel",
+                    item.id
+                );
+            }
+        }
+    }
+    // The ignition check is the supplement's: 4,000 rpm, no drop with lane B off, under 180 with lane A off.
+    let json = serde_json::to_string(list("run_up")?)?;
+    assert!(json.contains("\"lane\":\"b\",\"at_rpm\":4000.0,\"max_drop_rpm\":0.0"));
+    assert!(json.contains("\"lane\":\"a\",\"at_rpm\":4000.0,\"max_drop_rpm\":180.0"));
+    // Numbers that did not come from the POH say so.
+    let unverified: Vec<_> = list("run_up")?
+        .items
+        .iter()
+        .filter(|i| i.unverified.is_some())
+        .map(|i| i.id.as_str())
+        .collect();
+    for id in ["lane_b_off", "pump_1_alone", "pump_2_alone", "max_power", "efis_battery"] {
+        assert!(unverified.contains(&id), "{id} should be marked unverified");
+    }
+    Ok(())
+}
+
+#[test]
 fn electronic_engine_pumps_key_breakers_and_selector() -> Result<(), Error> {
     use flightcraft_sim::modern::{KeyPosition, Lane, ModernSetting, Pump};
     use flightcraft_sim::systems::{FuelSelector, SystemSetting};
@@ -486,7 +544,57 @@ fn electronic_engine_pumps_key_breakers_and_selector() -> Result<(), Error> {
     )?;
     sim.step(1);
     assert!(sim.systems().engine_running);
-    assert!((sim.systems().engine_power_fraction - 0.98).abs() < 1e-9);
+    // Lane A off leaves lane B alone: a drop (POH 9.4.13 allows under 180 rpm at 4,000 rpm).
+    assert!((sim.systems().engine_power_fraction - 0.93).abs() < 1e-9);
+    // Lane B off leaves lane A alone: the POH allows no drop at all.
+    action(
+        &mut sim,
+        ModernSetting::Lane {
+            lane: Lane::A,
+            on: true,
+        },
+    )?;
+    action(
+        &mut sim,
+        ModernSetting::Lane {
+            lane: Lane::B,
+            on: false,
+        },
+    )?;
+    sim.step(1);
+    assert!((sim.systems().engine_power_fraction - 1.0).abs() < 1e-9);
+    action(
+        &mut sim,
+        ModernSetting::Lane {
+            lane: Lane::A,
+            on: false,
+        },
+    )?;
+    action(
+        &mut sim,
+        ModernSetting::Lane {
+            lane: Lane::B,
+            on: true,
+        },
+    )?;
+    // A seeded weak lane loses further power when it carries the engine alone.
+    action(
+        &mut sim,
+        ModernSetting::Failure {
+            component: flightcraft_sim::modern::Component::LaneBWeak,
+            failed: true,
+        },
+    )?;
+    sim.step(1);
+    assert!((sim.systems().engine_power_fraction - 0.93 * 0.82).abs() < 1e-9);
+    action(
+        &mut sim,
+        ModernSetting::Failure {
+            component: flightcraft_sim::modern::Component::LaneBWeak,
+            failed: false,
+        },
+    )?;
+    sim.step(1);
     action(
         &mut sim,
         ModernSetting::Lane {
