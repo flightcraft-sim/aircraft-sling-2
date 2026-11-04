@@ -46,3 +46,10 @@ modelling estimates, not published latch dimensions. Rails/runners are mechanism
 the fixed inside latch mounts to the roll-over bar, so these are not classified as glass-mounted
 hardware. All other moving hardware is required to participate in the distance check.
 The continuous canopy/turtledeck sweep and resource/dimension limits remain in force.
+
+## V11 pilot-seat interior estimates (queued)
+
+Pilot eye (-2.30, -0.205, -0.72) m in body axes is an original seating estimate, not a POH dimension.
+Side trim, armrests, pedal positions, curved dash and coaming, upholstery weave, and material roughness
+are independent visual estimates. Existing V10 canopy seam, 1.10 m travel, and clearance gates stay
+in force. V11 has not been run or accepted by the cockpit lane.

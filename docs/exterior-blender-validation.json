@@ -1,8 +1,8 @@
 {
-  "geometry_revision": "v10-smooth-canopy-attached-latch",
+  "geometry_revision": "v11-pilot-seat-interior",
   "blender": "5.2.0 LTS",
   "source_script": "scripts/blender-exterior.py",
-  "source_sha256": "1a0747181cf824794f5c54c9d3afbef73bd1cb672254b7cb5c5dd748bd4c74ee",
+  "source_sha256": "9d0305d5985938f0b13a36eba74619c64e5df1f0a7be7c7e42acef218ebb2296",
   "registration": "N371FC",
   "lods": [
     {
@@ -53,7 +53,7 @@
         -4.140846824645996,
         -1.9498339891433716
       ],
-      "triangles": 102411,
+      "triangles": 104107,
       "dimensions_m": [
         6.6737061738967896,
         9.164999961853027,
@@ -83,10 +83,10 @@
           "tire_0"
         ]
       },
-      "nodes": 102,
+      "nodes": 109,
       "images": 4,
-      "bytes": 21367124,
-      "sha256": "fe79f0668aa3899c1a83951f1b59a2f5d78411ae6e983a4514143f5a1279d9ce",
+      "bytes": 22249892,
+      "sha256": "6293b050587a01cf276a5373f20851eec0780326b84c9afc3129aaaa5ceb31bb",
       "mesh_triangles": {
         "airframe": 38092,
         "spinner": 6912,
@@ -110,6 +110,8 @@
         "windshield": 1344,
         "wing_fillet_left": 896,
         "wing_fillet_right": 896,
+        "glareshield": 660,
+        "panel_silhouette": 660,
         "wingtip_left": 572,
         "wingtip_right": 572,
         "tire_0": 512,
@@ -148,12 +150,15 @@
         "display_1": 188,
         "display_bezel_-1": 188,
         "display_bezel_1": 188,
-        "glareshield": 188,
-        "panel_silhouette": 188,
         "seat_back_-1": 188,
         "seat_back_1": 188,
         "seat_cushion_-1": 188,
         "seat_cushion_1": 188,
+        "side_panel_-1": 164,
+        "side_panel_1": 164,
+        "throttle_grip": 120,
+        "armrest_-1": 108,
+        "armrest_1": 108,
         "step_left": 108,
         "throttle": 72,
         "prop_blur": 64,
@@ -167,6 +172,8 @@
         "canopy_runner_left": 44,
         "canopy_runner_right": 44,
         "center_console": 44,
+        "rudder_pedal_-1": 44,
+        "rudder_pedal_1": 44,
         "windshield_apron": 44,
         "canopy_bow_front": 32,
         "canopy_bow_rear": 32,
@@ -230,7 +237,7 @@
         -4.140515899658203,
         -1.9497671127319336
       ],
-      "triangles": 19023,
+      "triangles": 19323,
       "dimensions_m": [
         6.6737061738967896,
         9.165154457092285,
@@ -260,10 +267,10 @@
           "tire_0"
         ]
       },
-      "nodes": 102,
+      "nodes": 109,
       "images": 4,
-      "bytes": 18581908,
-      "sha256": "0d6da10d49468e04569eb90851fbfbcb182598b023db3ceaab210d73fad5daac",
+      "bytes": 19408664,
+      "sha256": "ceca42943856085cd59ecfe714fc22cc5dd39bd65417edff4ed0f1b7fa19bad9",
       "mesh_triangles": {
         "airframe": 6856,
         "spinner": 1244,
@@ -288,6 +295,8 @@
         "beacon": 224,
         "wing_fillet_left": 160,
         "wing_fillet_right": 160,
+        "glareshield": 118,
+        "panel_silhouette": 118,
         "wingtip_left": 102,
         "wingtip_right": 102,
         "tire_0": 92,
@@ -333,29 +342,34 @@
         "display_1": 32,
         "display_bezel_-1": 32,
         "display_bezel_1": 32,
-        "glareshield": 32,
-        "panel_silhouette": 32,
         "seat_back_-1": 32,
         "seat_back_1": 32,
         "seat_cushion_-1": 32,
         "seat_cushion_1": 32,
         "windshield_frame": 32,
+        "side_panel_-1": 28,
+        "side_panel_1": 28,
         "canopy_inside_latch": 24,
         "canopy_sill_left": 24,
         "canopy_sill_right": 24,
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
+        "seat_stitch__1__0_065_": 22,
         "exhaust": 20,
         "step_left_support": 20,
+        "throttle_grip": 20,
+        "armrest_-1": 18,
+        "armrest_1": 18,
         "canopy_outside_latch": 18,
-        "seat_stitch__1__0_065_": 18,
         "step_left": 18,
         "canopy_rail_left": 12,
         "canopy_rail_right": 12,
         "pitot": 12,
         "throttle": 12,
         "center_console": 6,
+        "rudder_pedal_-1": 6,
+        "rudder_pedal_1": 6,
         "windshield_apron": 6
       }
     },
@@ -407,7 +421,7 @@
         -4.140511131286621,
         -1.9494142532348633
       ],
-      "triangles": 4837,
+      "triangles": 4882,
       "dimensions_m": [
         6.675143122673035,
         9.165154457092285,
@@ -437,10 +451,10 @@
           "tire_0"
         ]
       },
-      "nodes": 102,
+      "nodes": 109,
       "images": 4,
-      "bytes": 18028752,
-      "sha256": "217f6049ad8adf947bcd88f3d342ba40f1188047014eb7d25ae75045d3968b9c",
+      "bytes": 18840288,
+      "sha256": "14d48a12bb0594b8907e0619ee963984584e2447389ae6dfd621ee49985fbdcb",
       "mesh_triangles": {
         "airframe": 1104,
         "beacon": 224,
@@ -491,10 +505,12 @@
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
+        "seat_stitch__1__0_065_": 22,
         "exhaust": 20,
         "step_left_support": 20,
         "canopy_outside_latch": 18,
-        "seat_stitch__1__0_065_": 18,
+        "glareshield": 18,
+        "panel_silhouette": 18,
         "canopy_rail_left": 12,
         "canopy_rail_right": 12,
         "control_stick_-1": 12,
@@ -525,15 +541,20 @@
         "display_1": 4,
         "display_bezel_-1": 4,
         "display_bezel_1": 4,
-        "glareshield": 4,
-        "panel_silhouette": 4,
         "seat_back_-1": 4,
         "seat_back_1": 4,
         "seat_cushion_-1": 4,
         "seat_cushion_1": 4,
+        "side_panel_-1": 4,
+        "side_panel_1": 4,
         "throttle": 2,
+        "armrest_-1": 1,
+        "armrest_1": 1,
         "center_console": 1,
-        "step_left": 1
+        "rudder_pedal_-1": 1,
+        "rudder_pedal_1": 1,
+        "step_left": 1,
+        "throttle_grip": 1
       }
     }
   ],
@@ -586,7 +607,7 @@
         -4.140846824645996,
         -1.9498339891433716
       ],
-      "triangles": 102411,
+      "triangles": 104107,
       "dimensions_m": [
         6.6737061738967896,
         9.164999961853027,
@@ -616,10 +637,10 @@
           "tire_0"
         ]
       },
-      "nodes": 102,
+      "nodes": 109,
       "images": 4,
-      "bytes": 21367124,
-      "sha256": "fe79f0668aa3899c1a83951f1b59a2f5d78411ae6e983a4514143f5a1279d9ce",
+      "bytes": 22249892,
+      "sha256": "6293b050587a01cf276a5373f20851eec0780326b84c9afc3129aaaa5ceb31bb",
       "mesh_triangles": {
         "airframe": 38092,
         "spinner": 6912,
@@ -643,6 +664,8 @@
         "windshield": 1344,
         "wing_fillet_left": 896,
         "wing_fillet_right": 896,
+        "glareshield": 660,
+        "panel_silhouette": 660,
         "wingtip_left": 572,
         "wingtip_right": 572,
         "tire_0": 512,
@@ -681,12 +704,15 @@
         "display_1": 188,
         "display_bezel_-1": 188,
         "display_bezel_1": 188,
-        "glareshield": 188,
-        "panel_silhouette": 188,
         "seat_back_-1": 188,
         "seat_back_1": 188,
         "seat_cushion_-1": 188,
         "seat_cushion_1": 188,
+        "side_panel_-1": 164,
+        "side_panel_1": 164,
+        "throttle_grip": 120,
+        "armrest_-1": 108,
+        "armrest_1": 108,
         "step_left": 108,
         "throttle": 72,
         "prop_blur": 64,
@@ -700,6 +726,8 @@
         "canopy_runner_left": 44,
         "canopy_runner_right": 44,
         "center_console": 44,
+        "rudder_pedal_-1": 44,
+        "rudder_pedal_1": 44,
         "windshield_apron": 44,
         "canopy_bow_front": 32,
         "canopy_bow_rear": 32,
@@ -763,7 +791,7 @@
         -4.140515899658203,
         -1.9497671127319336
       ],
-      "triangles": 19023,
+      "triangles": 19323,
       "dimensions_m": [
         6.6737061738967896,
         9.165154457092285,
@@ -793,10 +821,10 @@
           "tire_0"
         ]
       },
-      "nodes": 102,
+      "nodes": 109,
       "images": 4,
-      "bytes": 18581908,
-      "sha256": "0d6da10d49468e04569eb90851fbfbcb182598b023db3ceaab210d73fad5daac",
+      "bytes": 19408664,
+      "sha256": "ceca42943856085cd59ecfe714fc22cc5dd39bd65417edff4ed0f1b7fa19bad9",
       "mesh_triangles": {
         "airframe": 6856,
         "spinner": 1244,
@@ -821,6 +849,8 @@
         "beacon": 224,
         "wing_fillet_left": 160,
         "wing_fillet_right": 160,
+        "glareshield": 118,
+        "panel_silhouette": 118,
         "wingtip_left": 102,
         "wingtip_right": 102,
         "tire_0": 92,
@@ -866,29 +896,34 @@
         "display_1": 32,
         "display_bezel_-1": 32,
         "display_bezel_1": 32,
-        "glareshield": 32,
-        "panel_silhouette": 32,
         "seat_back_-1": 32,
         "seat_back_1": 32,
         "seat_cushion_-1": 32,
         "seat_cushion_1": 32,
         "windshield_frame": 32,
+        "side_panel_-1": 28,
+        "side_panel_1": 28,
         "canopy_inside_latch": 24,
         "canopy_sill_left": 24,
         "canopy_sill_right": 24,
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
+        "seat_stitch__1__0_065_": 22,
         "exhaust": 20,
         "step_left_support": 20,
+        "throttle_grip": 20,
+        "armrest_-1": 18,
+        "armrest_1": 18,
         "canopy_outside_latch": 18,
-        "seat_stitch__1__0_065_": 18,
         "step_left": 18,
         "canopy_rail_left": 12,
         "canopy_rail_right": 12,
         "pitot": 12,
         "throttle": 12,
         "center_console": 6,
+        "rudder_pedal_-1": 6,
+        "rudder_pedal_1": 6,
         "windshield_apron": 6
       }
     },
@@ -940,7 +975,7 @@
         -4.140511131286621,
         -1.9494142532348633
       ],
-      "triangles": 4837,
+      "triangles": 4882,
       "dimensions_m": [
         6.675143122673035,
         9.165154457092285,
@@ -970,10 +1005,10 @@
           "tire_0"
         ]
       },
-      "nodes": 102,
+      "nodes": 109,
       "images": 4,
-      "bytes": 18028752,
-      "sha256": "217f6049ad8adf947bcd88f3d342ba40f1188047014eb7d25ae75045d3968b9c",
+      "bytes": 18840288,
+      "sha256": "14d48a12bb0594b8907e0619ee963984584e2447389ae6dfd621ee49985fbdcb",
       "mesh_triangles": {
         "airframe": 1104,
         "beacon": 224,
@@ -1024,10 +1059,12 @@
         "seat_stitch__-1__-0_065_": 22,
         "seat_stitch__-1__0_065_": 22,
         "seat_stitch__1__-0_065_": 22,
+        "seat_stitch__1__0_065_": 22,
         "exhaust": 20,
         "step_left_support": 20,
         "canopy_outside_latch": 18,
-        "seat_stitch__1__0_065_": 18,
+        "glareshield": 18,
+        "panel_silhouette": 18,
         "canopy_rail_left": 12,
         "canopy_rail_right": 12,
         "control_stick_-1": 12,
@@ -1058,15 +1095,20 @@
         "display_1": 4,
         "display_bezel_-1": 4,
         "display_bezel_1": 4,
-        "glareshield": 4,
-        "panel_silhouette": 4,
         "seat_back_-1": 4,
         "seat_back_1": 4,
         "seat_cushion_-1": 4,
         "seat_cushion_1": 4,
+        "side_panel_-1": 4,
+        "side_panel_1": 4,
         "throttle": 2,
+        "armrest_-1": 1,
+        "armrest_1": 1,
         "center_console": 1,
-        "step_left": 1
+        "rudder_pedal_-1": 1,
+        "rudder_pedal_1": 1,
+        "step_left": 1,
+        "throttle_grip": 1
       }
     }
   ],
@@ -1078,7 +1120,7 @@
   },
   "containment": {
     "LOD0": {
-      "vertices": 1854,
+      "vertices": 2716,
       "parts": {
         "cabin_floor": 24,
         "baggage_bulkhead": 24,
@@ -1091,6 +1133,9 @@
         "stick_grip_-1": 114,
         "display_bezel_-1": 96,
         "display_-1": 96,
+        "side_panel_-1": 84,
+        "armrest_-1": 56,
+        "rudder_pedal_-1": 24,
         "seat_cushion_1": 96,
         "seat_back_1": 96,
         "seat_stitch__1__-0_065_": 36,
@@ -1100,15 +1145,19 @@
         "stick_grip_1": 114,
         "display_bezel_1": 96,
         "display_1": 96,
-        "panel_silhouette": 96,
-        "glareshield": 96,
+        "side_panel_1": 84,
+        "armrest_1": 56,
+        "rudder_pedal_1": 24,
+        "panel_silhouette": 332,
+        "glareshield": 332,
         "center_console": 24,
-        "throttle": 42
+        "throttle": 42,
+        "throttle_grip": 62
       },
       "violations": []
     },
     "LOD1": {
-      "vertices": 431,
+      "vertices": 595,
       "parts": {
         "cabin_floor": 24,
         "baggage_bulkhead": 24,
@@ -1121,24 +1170,31 @@
         "stick_grip_-1": 22,
         "display_bezel_-1": 18,
         "display_-1": 18,
+        "side_panel_-1": 16,
+        "armrest_-1": 11,
+        "rudder_pedal_-1": 5,
         "seat_cushion_1": 18,
         "seat_back_1": 18,
         "seat_stitch__1__-0_065_": 14,
-        "seat_stitch__1__0_065_": 12,
+        "seat_stitch__1__0_065_": 14,
         "belt_1": 22,
         "control_stick_1": 22,
         "stick_grip_1": 22,
         "display_bezel_1": 18,
         "display_1": 18,
-        "panel_silhouette": 18,
-        "glareshield": 18,
+        "side_panel_1": 16,
+        "armrest_1": 11,
+        "rudder_pedal_1": 5,
+        "panel_silhouette": 61,
+        "glareshield": 61,
         "center_console": 5,
-        "throttle": 12
+        "throttle": 12,
+        "throttle_grip": 12
       },
       "violations": []
     },
     "LOD2": {
-      "vertices": 193,
+      "vertices": 232,
       "parts": {
         "cabin_floor": 24,
         "baggage_bulkhead": 24,
@@ -1151,21 +1207,56 @@
         "stick_grip_-1": 5,
         "display_bezel_-1": 4,
         "display_-1": 4,
+        "side_panel_-1": 4,
+        "armrest_-1": 3,
+        "rudder_pedal_-1": 3,
         "seat_cushion_1": 4,
         "seat_back_1": 4,
         "seat_stitch__1__-0_065_": 14,
-        "seat_stitch__1__0_065_": 12,
+        "seat_stitch__1__0_065_": 14,
         "belt_1": 8,
         "control_stick_1": 9,
         "stick_grip_1": 5,
         "display_bezel_1": 4,
         "display_1": 4,
-        "panel_silhouette": 4,
-        "glareshield": 4,
+        "side_panel_1": 4,
+        "armrest_1": 3,
+        "rudder_pedal_1": 3,
+        "panel_silhouette": 11,
+        "glareshield": 11,
         "center_console": 3,
-        "throttle": 4
+        "throttle": 4,
+        "throttle_grip": 3
       },
       "violations": []
+    }
+  },
+  "installed_bytes": {
+    "exterior.glb": 3786656,
+    "exterior-lod1.glb": 944952,
+    "exterior-lod2.glb": 376444
+  },
+  "installed_sha256": {
+    "exterior.glb": "163dad307ea60646536f6c337a047cd75aa4f33b67919a5ccc2e8e47d326696d",
+    "exterior-lod1.glb": "0b475555e4b07f0981cf064614c4c9bc910d67cc5d9b48a0d8d9228f2825108c",
+    "exterior-lod2.glb": "91c0ec41fcafae2d11b07b83e576ed20e778558038be79c83fe9d9881400181a"
+  },
+  "shared_textures": {
+    "textures/exterior/shared-805d5ea28bf4a563.png": {
+      "bytes": 282920,
+      "sha256": "805d5ea28bf4a5634356ccfaabf1b700cd2ae572a28430300f93fe4b7be8ee9c"
+    },
+    "textures/exterior/shared-65d51136bbdddcdc.png": {
+      "bytes": 4738251,
+      "sha256": "65d51136bbdddcdc6e68d426f7b8fd1aa3f249cec92eb82b2debb22e2a2b3ea8"
+    },
+    "textures/exterior/shared-58194a864ba60050.png": {
+      "bytes": 11495785,
+      "sha256": "58194a864ba600502529c05b46ab0041365326d39c6aa3c3d04de89d78aa071f"
+    },
+    "textures/exterior/shared-f61ea41abddfaae9.png": {
+      "bytes": 1945706,
+      "sha256": "f61ea41abddfaae9c04b90d0bbe69ce7c00f0814d69eb754c56c5f8f0b5b76f4"
     }
   },
   "canopy": {

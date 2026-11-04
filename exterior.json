@@ -322,5 +322,18 @@
       ]
     }
   },
-  "lod2": "exterior-lod2.glb"
+  "lod2": "exterior-lod2.glb",
+  "textures": [
+    "textures/exterior/shared-58194a864ba60050.png",
+    "textures/exterior/shared-65d51136bbdddcdc.png",
+    "textures/exterior/shared-805d5ea28bf4a563.png",
+    "textures/exterior/shared-f61ea41abddfaae9.png"
+  ],
+  "interior": {
+    "pilot_eye_m": [
+      -2.3,
+      -0.205,
+      -0.72
+    ]
+  }
 }

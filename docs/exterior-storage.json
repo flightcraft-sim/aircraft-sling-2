@@ -1,0 +1,28 @@
+{
+  "before_glb_bytes": 60498844,
+  "models": {
+    "exterior.glb": 3786656,
+    "exterior-lod1.glb": 944952,
+    "exterior-lod2.glb": 376444
+  },
+  "textures": {
+    "textures/exterior/shared-805d5ea28bf4a563.png": 282920,
+    "textures/exterior/shared-65d51136bbdddcdc.png": 4738251,
+    "textures/exterior/shared-58194a864ba60050.png": 11495785,
+    "textures/exterior/shared-f61ea41abddfaae9.png": 1945706
+  },
+  "after_download_bytes": 23570714,
+  "geometry_and_image_bytes_identical_to": "9d0305d5985938f0b13a36eba74619c64e5df1f0a7be7c7e42acef218ebb2296",
+  "geometry_revision": "v11-pilot-seat-interior",
+  "model_sha256": {
+    "exterior.glb": "163dad307ea60646536f6c337a047cd75aa4f33b67919a5ccc2e8e47d326696d",
+    "exterior-lod1.glb": "0b475555e4b07f0981cf064614c4c9bc910d67cc5d9b48a0d8d9228f2825108c",
+    "exterior-lod2.glb": "91c0ec41fcafae2d11b07b83e576ed20e778558038be79c83fe9d9881400181a"
+  },
+  "texture_sha256": {
+    "textures/exterior/shared-805d5ea28bf4a563.png": "805d5ea28bf4a5634356ccfaabf1b700cd2ae572a28430300f93fe4b7be8ee9c",
+    "textures/exterior/shared-65d51136bbdddcdc.png": "65d51136bbdddcdc6e68d426f7b8fd1aa3f249cec92eb82b2debb22e2a2b3ea8",
+    "textures/exterior/shared-58194a864ba60050.png": "58194a864ba600502529c05b46ab0041365326d39c6aa3c3d04de89d78aa071f",
+    "textures/exterior/shared-f61ea41abddfaae9.png": "f61ea41abddfaae9c04b90d0bbe69ce7c00f0814d69eb754c56c5f8f0b5b76f4"
+  }
+}

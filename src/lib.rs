@@ -21,20 +21,7 @@ pub fn catalog() -> Result<AircraftCatalog, Error> {
     .map(|(name, text)| (name.to_owned(), text.to_owned()))
     .collect::<BTreeMap<_, _>>();
     let mut catalog = AircraftCatalog::builtins()?;
-    let assets = BTreeMap::from([
-        (
-            "exterior.glb".to_owned(),
-            include_bytes!("../exterior.glb").to_vec(),
-        ),
-        (
-            "exterior-lod1.glb".to_owned(),
-            include_bytes!("../exterior-lod1.glb").to_vec(),
-        ),
-        (
-            "exterior-lod2.glb".to_owned(),
-            include_bytes!("../exterior-lod2.glb").to_vec(),
-        ),
-    ]);
+    let assets = include!("exterior_assets.rs");
     catalog.install_pack_with_assets(&manifest, &documents, &assets)?;
     Ok(catalog)
 }

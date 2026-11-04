@@ -52,7 +52,7 @@ The installed exterior is the accepted **V8 Blender revision**, generated with *
 5.2.0 LTS** from the original source [`scripts/blender-exterior.py`](scripts/blender-exterior.py).
 It includes `exterior.glb`, `exterior-lod1.glb`, and `exterior-lod2.glb`, with
 **101,452 / 18,583 / 4,204 triangles**. Each GLB embeds its PBR PNG atlas; the six standalone
-4096² maps are retained under `textures/exterior/` for review. `pack.json` and `exterior.json`
+One shared set of four 4096² PNGs is distributed under `textures/exterior/`; LOD GLBs reference them by URI. Review bake channels remain in the confined Blender output. `pack.json` and `exterior.json`
 declare all three LODs and the runtime registration paint surface. The default **N371FC** is
 baked on both sides; the host replaces it in the base-color atlas when a user sets a number,
 and restores the original on reset. Motion, steering, wheel, propeller, and light bindings
@@ -65,11 +65,12 @@ and camera metadata are in `docs/exterior-blender-validation.json` and
 5 mm cross-LOD extremum gate. The remaining chunky edge-on wing root is accepted for now;
 a smoother, thinner root fillet is later visual polish.
 
-This exterior requires the host's embedded-PNG/PBR exterior loader, optional LOD2, sorted glass,
-and registration-atlas painter. Those engine changes are supplied by the uncommitted
-`fc-plane` worktree; flight lead will rebase them onto main `460784d` (Rust 1.98, scenery/city
-providers, and web packaging). That main revision by itself does not include this exterior
-integration. The six JSON aircraft layers retain format 2.
+This exterior requires the host's bounded shared-PNG/PBR loader, optional LOD2, sorted glass,
+registration-atlas painter, and `interior.pilot_eye_m` support from the uncommitted **fc-cockpit**
+lane. Install the pack and engine changes together. Runtime assets total 22.65 MB, down from
+57.98 MB with repeated embedded maps. Geometry is still accepted V10; the current Blender source
+queues V11 cabin material/detail improvements. See [Blender workflow](docs/blender-exterior.md)
+and [storage receipt](docs/exterior-storage.json). The six JSON aircraft layers retain format 2.
 
 Dimensions use Sling 2 POH DC-POH-002-X-B-2.8, January 2026, §1.4 SI facts: 9.165 m span,
 6.675 m length, 2.45 m height, 11.845 m² wing area, 1.79 m three-blade propeller diameter,

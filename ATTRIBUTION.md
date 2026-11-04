@@ -20,3 +20,6 @@ Not affiliated with or endorsed by Sling Aircraft or any engine or avionics manu
 | V9 sliding canopy, fixed windshield/roll-over bar, rails, bows, handles and open-pose proofs | Original procedural artwork; factual mechanism and latch locations from local Sling 2 POH Rev 2.8 §7.7, levelling reference and normal checklists; dimensions in estimate register | Apache-2.0 (original artwork); POH facts only, no source pages distributed |
 
 | V10 continuous canopy crown, conforming frame strips and flush outside latch | Original procedural Bezier and surface-fitted geometry, derived from original V9; dimensions are modelling estimates in docs/estimates.md | Apache-2.0 |
+
+| V11 pilot-seat eye, woven seat material, matte panel coating, anodized controls, side trim, armrests, pedals, and curved dash and coaming (queued source) | Original procedural artwork and modeling estimates; no external images or meshes | Apache-2.0 |
+| Shared exterior PNGs | Lossless extraction of original accepted V10 atlas bytes; original bake channels retained only in confined output | Apache-2.0 |

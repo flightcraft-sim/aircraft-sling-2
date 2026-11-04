@@ -15,6 +15,23 @@ spec.loader.exec_module(exterior)
 
 
 class AuthoringTests(unittest.TestCase):
+    def test_queued_dash_and_lining_are_closed_curved_and_below_the_rail(self):
+        from collections import Counter
+        for name,(points,faces) in [
+            ('panel_silhouette',exterior.dashboard_geometry()),
+            ('glareshield',exterior.dashboard_geometry(True)),
+            ('side_panel_left',exterior.side_panel_geometry(-1)),
+            ('side_panel_right',exterior.side_panel_geometry(1)),
+        ]:
+            with self.subTest(name=name):
+                edges=Counter(tuple(sorted((a,b))) for face in faces for a,b in zip(face,face[1:]+face[:1]))
+                self.assertTrue(all(count==2 for count in edges.values()),'open or nonmanifold seam')
+                self.assertTrue(all(exterior.interior_vertex_error(point,True,name) is None for point in points))
+                self.assertLess(max(p[2] for p in points)-min(p[2] for p in points),.5)
+        points,_=exterior.dashboard_geometry(True)
+        self.assertGreater(max(p[2] for p in points)-min(p[2] for p in points),.10)
+        self.assertGreater(max(p[0] for p in points)-min(p[0] for p in points),.4)
+
     def test_crown_is_curved_and_tangent_is_continuous_at_split(self):
         lo=exterior.CANOPY_PROFILE[0][0];hi=exterior.CANOPY_SPLIT_X
         xs=[lo+(hi-lo)*i/100 for i in range(101)]

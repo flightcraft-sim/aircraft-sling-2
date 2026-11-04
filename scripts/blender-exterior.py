@@ -20,7 +20,8 @@ FACTS = dict(span=9.165, length=6.675, height=2.45, area=11.845, track=1.95,
              prop_diameter=1.79, blades=3, tail_span=2.825, vertical_span=1.47, dihedral=5.0, taper=1.375)
 BUDGETS = (120000, 25000, 5000)
 TEXTURE_SIZE = 4096
-GEOMETRY_REVISION = 'v10-smooth-canopy-attached-latch'
+GEOMETRY_REVISION = 'v11-pilot-seat-interior'
+PILOT_EYE_M = (-2.30, -.205, -.72)  # Original pilot-seat estimate, in body axes.
 CANOPY_TRAVEL_M = 1.10  # Estimate: front edge clears the seat backs by about 0.45 m.
 CANOPY_SPLIT_X = -1.95
 CANOPY_BASE_Z = -.445  # 45 mm above skin deck: swept glass/frame clears turtledeck.
@@ -47,6 +48,12 @@ VIEWS = {
     'director-left': ((-2.2, -13.5, -1.7), (-2.2, 0, -.15)),
     'director-top': ((-2.2, 0, -19.5), (-2.2, 0, -.15)),
     'beauty': ((7.8, -10.5, -3.1), (-2.15, 0, -.1)),
+}
+PILOT_LOOKS = {
+    'pilot-forward': (0.,0.,0.), 'pilot-left': (-1.25,-.08,0.),
+    'pilot-right': (1.25,-.08,0.), 'pilot-down': (0.,-.65,0.),
+    'pilot-right-down': (1.25,-.65,0.), 'pilot-rear-left': (-2.1,-.65,0.),
+    'pilot-canopy-closed': (-.65,.32,0.), 'pilot-canopy-open': (-.65,.32,1.),
 }
 REQUIRED = {'airframe', 'canopy_slide', 'canopy_glass', 'windshield', 'roll_over_bar',
             'canopy_inside_latch', 'canopy_outside_latch', 'canopy_latch_spine', 'canopy_rail_left', 'canopy_rail_right', 'spinner', 'propeller', 'prop_blur', 'aileron_left',
@@ -193,7 +200,49 @@ PRESERVE_LOD_MESHES = ('cabin_floor','baggage_bulkhead','prop_blur','beacon',
 # These boundary silhouettes need more than the general distant-LOD ratio.
 SILHOUETTE_LOD_PREFIXES = ('tire_','wingtip_','gear_leg_','wing_fillet_','canopy_glass','canopy_sill_','canopy_bow_','windshield','roll_over_bar')
 INTERIOR_PREFIXES = ('cabin_floor','seat_','belt_','control_stick_','stick_grip_',
-                     'display_','panel_silhouette','glareshield','center_console','throttle','baggage_bulkhead')
+                     'display_','panel_silhouette','glareshield','center_console','throttle','baggage_bulkhead',
+                     'side_panel_','armrest_','rudder_pedal_')
+
+
+def dashboard_geometry(glareshield=False):
+    """Original curved dash/coaming; no cuboid slab or imported/photographed outline."""
+    samples=24
+    if not glareshield:
+        # High, domed center, dropping to rounded shoulders beside the two displays.
+        outline=[(-.40+.80*i/samples,-.352+.105*((-.40+.80*i/samples)/.40)**2) for i in range(samples+1)]
+        outline += [(.40-.80*i/samples,.018+.035*(1-((.40-.80*i/samples)/.40)**2)) for i in range(samples+1)]
+        count=len(outline)
+        points=[(x,y,z) for x in [-1.82,-1.76] for y,z in outline]
+        faces=[tuple(reversed(range(count))),tuple(count+i for i in range(count))]
+        faces += [(i,(i+1)%count,(i+1)%count+count,i+count) for i in range(count)]
+        return points,faces
+    # The pilot edge bows aft in plan; the top follows the domed panel shoulders.
+    # A narrow rolled lip and smooth top replace the old flat rectangular box.
+    points=[]
+    for layer in range(2):
+        for i in range(samples+1):
+            y=-.42+.84*i/samples;s=(y/.42)**2
+            for edge in range(2):
+                x=-1.48 if edge==0 else -1.92+.12*s
+                z=-.378+.10*s+layer*.022
+                points.append((x,y,z))
+    stride=2*(samples+1);faces=[]
+    for i in range(samples):
+        a=2*i
+        faces += [(a,a+2,a+3,a+1),(a+stride+1,a+stride+3,a+stride+2,a+stride),
+                  (a,a+stride,a+stride+2,a+2),(a+1,a+3,a+stride+3,a+stride+1)]
+    faces += [(0,1,stride+1,stride),(stride-2,2*stride-2,2*stride-1,stride-1)]
+    return points,faces
+
+
+def side_panel_geometry(side):
+    """Sloped cabin lining: turn inward under the rail, rather than crossing the outer skin."""
+    profile=[(.34,-.37),(.424,-.25),(.424,.06),(.412,.06),(.412,-.25),(.328,-.37)]
+    count=len(profile)
+    points=[(x,side*y,z) for x in [-2.61,-1.67] for y,z in profile]
+    faces=[tuple(reversed(range(count))),tuple(count+i for i in range(count))]
+    faces += [(i,(i+1)%count,(i+1)%count+count,i+count) for i in range(count)]
+    return points,faces
 
 
 def interior_vertex_error(point, inside_shell, part_name=''):
@@ -463,10 +512,15 @@ def validate_glb(path, lod, check_canopy=True):
     images = doc.get('images', [])
     assert len(images) <= 8
     for image in images:
-        assert 'uri' not in image and image['mimeType'] == 'image/png'
-        view = doc['bufferViews'][image['bufferView']]
-        start = view.get('byteOffset', 0)
-        png = binary[start:start+view['byteLength']]
+        assert image['mimeType'] == 'image/png'
+        if 'uri' in image:
+            uri=image['uri']
+            assert uri.startswith('textures/exterior/shared-') and uri.endswith('.png') and '..' not in uri
+            png=(path.parent/uri).read_bytes()
+        else:
+            view = doc['bufferViews'][image['bufferView']]
+            start = view.get('byteOffset', 0)
+            png = binary[start:start+view['byteLength']]
         assert png[:8] == b'\x89PNG\r\n\x1a\n'
         assert struct.unpack_from('>II', png, 16) == (TEXTURE_SIZE, TEXTURE_SIZE)
     assert len(data) <= 64*1024*1024
@@ -586,14 +640,28 @@ def build(out):
     propmat = mat('Satin blade finish', (.13, .15, .17, 1), .76, .27)
     rubber = mat('Rubber', (.014, .017, .02, 1), 0, .76)
     leather = mat('Graphite upholstery', (.045, .058, .064, 1), 0, .62)
-    trim = mat('Panel and rails', (.023, .03, .036, 1), .25, .38)
+    trim = mat('Matte dark panel coating', (.018, .024, .029, 1), .02, .86)
+    anodized = mat('Anodized cabin aluminum', (.075, .090, .105, 1), .82, .34)
+    fabric = mat('Woven graphite seat fabric', (.070, .082, .092, 1), 0, .94)
+    # Original crossed weave, baked into normal/roughness maps; no source photographs.
+    nt=fabric.node_tree;bs=nt.nodes.get('Principled BSDF')
+    texcoord=nt.nodes.new('ShaderNodeTexCoord')
+    weave=[]
+    for direction in ['X','Y']:
+        wave=nt.nodes.new('ShaderNodeTexWave');wave.wave_type='BANDS';wave.bands_direction=direction
+        wave.inputs['Scale'].default_value=180
+        nt.links.new(texcoord.outputs['Generated'],wave.inputs['Vector']);weave.append(wave)
+    multiply=nt.nodes.new('ShaderNodeMath');multiply.operation='MULTIPLY'
+    for i,wave in enumerate(weave):nt.links.new(wave.outputs['Fac'],multiply.inputs[i])
+    bump=nt.nodes.new('ShaderNodeBump');bump.inputs['Distance'].default_value=.00035;bump.inputs['Strength'].default_value=.5
+    nt.links.new(multiply.outputs[0],bump.inputs['Height']);nt.links.new(bump.outputs['Normal'],bs.inputs['Normal'])
     exhaust = mat('Heat stained steel', (.26, .22, .17, 1), .94, .33)
     glass = mat('Tinted acrylic', (.21, .36, .39, .17), 0, .055, .9, glass=True)
     blur = mat('Propeller blur', (.18, .2, .21, .12), .3, .4, glass=True)
     red = mat('Red lens', (.55, .008, .004, 1), .02, .12, .8, 3)
     green = mat('Green lens', (.004, .48, .08, 1), .02, .12, .8, 3)
     lamp = mat('Clear lamp lens', (.8, .9, 1, 1), .05, .13, .8, 4)
-    screen = mat('Display glass', (.03, .2, .3, 1), .15, .16, .7, .65)
+    screen = mat('Passive display glass beside native 2D panel', (.008, .013, .018, 1), 0, .24, .3)
     # Source masks are evaluated on the body itself, so diffuse baking cannot miss a thin decal.
     # These two original art images are not exported; only the final shared UV atlas is exported.
     def scalar(nt,op,*values):
@@ -843,20 +911,28 @@ def build(out):
     box('cabin_floor',CABIN_FLOOR_CENTER,CABIN_FLOOR_SIZE,trim,bevel_segments=1)
     box('baggage_bulkhead',(CABIN_FLOOR_AFT-.015,0,-.035),(.03,.82,.43),trim,.012,bevel_segments=1)
     for side in [-1,1]:
-        box('seat_cushion_'+str(side),(-2.28,side*.205,-.02),(.44,.34,.13),leather,.05)
-        back=box('seat_back_'+str(side),(-2.55,side*.205,-.12),(.10,.29,.33),leather,.045)
+        box('seat_cushion_'+str(side),(-2.28,side*.205,-.02),(.44,.34,.13),fabric,.05)
+        back=box('seat_back_'+str(side),(-2.55,side*.195,-.12),(.10,.25,.48),fabric,.045)
         back.rotation_euler.y=-.12;apply(back)
         for offset in [-.065,.065]:
-            tube('seat_stitch_'+str((side,offset)),[(-2.61,side*.205+offset,-.26),(-2.61,side*.205+offset,-.14),(-2.50,side*.205+offset,-.025)],.0018,aluminum)
+            tube('seat_stitch_'+str((side,offset)),[(-2.61,side*.205+offset,-.35),(-2.61,side*.205+offset,-.14),(-2.50,side*.205+offset,-.025)],.0018,aluminum)
         tube('belt_'+str(side),[(-2.54,side*.32,-.26),(-2.40,side*.205,-.16),(-2.12,side*.08,-.07)],.015,navy)
-        tube('control_stick_'+str(side),[(-2.1,side*.205,.05),(-2.05,side*.205,-.18),(-1.98,side*.205,-.25)],.012,aluminum)
+        tube('control_stick_'+str(side),[(-2.1,side*.205,.05),(-2.05,side*.205,-.18),(-1.98,side*.205,-.25)],.012,anodized)
         ellipsoid('stick_grip_'+str(side),(-1.98,side*.205,-.25),(.025,.026,.065),trim,segments=16,rings=8)
         box('display_bezel_'+str(side),(-1.768,side*.175,-.15),(.030,.28,.19),trim,.009)
         box('display_'+str(side),(-1.787,side*.175,-.15),(.004,.248,.163),screen,.003)
-    box('panel_silhouette',(-1.70,0,-.14),(.10,.66,.27),trim,.025)
-    box('glareshield',(-1.73,0,-.292),(.32,.64,.026),leather,.012)
+        # Side trim follows the cabin rather than a floating flat slab in front of the eye.
+        points,faces=side_panel_geometry(side)
+        lining=mesh('side_panel_'+str(side),points,faces,trim);bevel(lining,.004,2)
+        box('armrest_'+str(side),(-2.26,side*.395,-.205),(.46,.065,.045),fabric,.018,bevel_segments=2)
+        box('rudder_pedal_'+str(side),(-1.54,side*.20,.045),(.045,.13,.09),anodized,.008,bevel_segments=1)
+    points,faces=dashboard_geometry()
+    dash=mesh('panel_silhouette',points,faces,trim);bevel(dash,.006,2)
+    points,faces=dashboard_geometry(glareshield=True)
+    coaming=mesh('glareshield',points,faces,trim);bevel(coaming,.005,2)
     box('center_console',(-2.04,0,-.04),(.60,.15,.18),trim,bevel_segments=1)
-    tube('throttle',[(-1.93,0,-.12),(-1.93,0,-.22)],.018,aluminum)
+    tube('throttle',[(-1.93,0,-.12),(-1.93,0,-.22)],.012,anodized)
+    ellipsoid('throttle_grip',(-1.93,0,-.235),(.025,.042,.025),trim,segments=12,rings=6)
     # Original analytic closed cambered section (not a copied airfoil dataset).
     def foil(name,span,root,tip,lead,z,side=1,fraction=(0,1),start=0,end=None,
              vertical=False,pivot=(0,0,0),wing=False,sweep=.03,dihedral=0,tip_cap=False):
@@ -1328,6 +1404,23 @@ def build(out):
         bpy.context.view_layer.update()
         scene.camera=camera;scene.render.filepath=str(out/('cycles-'+label+'.png'))
         scene.cycles.samples=96;bpy.ops.render.render(write_still=True)
+    # Separate pilot-seat proof retains the accepted exterior camera manifest unchanged.
+    pilot_cameras={}
+    for label,(yaw,pitch,opened) in PILOT_LOOKS.items():
+        forward=(math.cos(pitch)*math.cos(yaw),math.cos(pitch)*math.sin(yaw),-math.sin(pitch))
+        target=tuple(a+b for a,b in zip(PILOT_EYE_M,forward))
+        up_body=(-math.sin(pitch)*math.cos(yaw),-math.sin(pitch)*math.sin(yaw),-math.cos(pitch))
+        direction=Vector(body(forward));up=Vector(body(up_body));right=direction.cross(up).normalized()
+        bpy.ops.object.camera_add(location=body(PILOT_EYE_M));camera=bpy.context.object;camera.name=label
+        camera.rotation_euler=Matrix((right,up,-direction)).transposed().to_euler()
+        camera.data.type='PERSP';camera.data.sensor_fit='HORIZONTAL';camera.data.sensor_width=36
+        fov=math.radians(52);camera.data.lens=(36/1.6)/(2*math.tan(fov/2));camera.data.clip_start=.015
+        slide.location.x=-CANOPY_TRAVEL_M*opened;bpy.context.view_layer.update()
+        pilot_cameras[label]=dict(eye_body_m=PILOT_EYE_M,target_body_m=target,up_body=up_body,
+            projection='perspective',vertical_fov_rad=fov,size=[1600,1000],canopy_open_fraction=opened)
+        scene.camera=camera;scene.render.filepath=str(out/('cycles-'+label+'.png'))
+        scene.cycles.samples=96;bpy.ops.render.render(write_still=True)
+    (out/'pilot-cameras.json').write_text(json.dumps(pilot_cameras,indent=2)+'\n')
     slide.location.x=0.0
     bpy.context.view_layer.update()
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'sling2-exterior.blend'))

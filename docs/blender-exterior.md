@@ -240,8 +240,9 @@ standalone PNG sets, LOD2 declaration, and registration-paint surface with:
 python3 scripts/install-blender-exterior.py /path/to/fc-plane-sling2-exterior-v8.out
 ```
 
-The installer validates all outputs before replacing assets. GLBs carry their own maps; the
-standalone PNGs under `textures/exterior/` are retained for asset review. The old procedural
+The installer validates all outputs before replacing assets. The installer losslessly extracts one shared PNG set under `textures/exterior/` and lists it in
+`exterior.textures`; standalone bake channels remain in the confined output for review. Distant
+LODs use smaller filtered upload levels without extra texture files. The old procedural
 generator remains unchanged for reproducing earlier pack revisions. Runtime overrides erase
 and repaint only the specified white tail patch in the base-color atlas; other PBR channels
 and the original default atlas remain intact. Clean paint samples from the same declared
@@ -353,3 +354,20 @@ continuous swept canopy/turtledeck clearance and nine stills before installing f
 `canopy_slide` binding, and the `sliding_canopy` capability together. Use the current engine with
 format-3 support. Render seven closed views plus fully open beauty and side elevation.
 The 1.10 m aft travel is an estimate, recorded in `docs/estimates.md`.
+
+## Pilot-seat revision and shared downloads
+
+Installed geometry remains accepted V10; current authoring source queues V11. The installed maps
+are 4096². The GLBs now reference four byte-identical shared PNGs by relative URI, rather than
+embedding four copies at each LOD. Total runtime assets shrink from 57,977,784 to 22,648,650 bytes;
+see `exterior-storage.json`. Redundant standalone review bakes are removed from the pack.
+The engine requires shared-PNG and `interior.pilot_eye_m` support from the fc-cockpit lane.
+The declared body-space pilot eye is (-2.30, -0.205, -0.72) m; the renderer subtracts loaded CG.
+
+Run `python3 scripts/share-exterior-textures.py .` to losslessly repack embedded exports; it is
+idempotent. Normal regeneration uses `install-blender-exterior.py OUTPUT`, which performs the
+same extraction after all Blender acceptance checks. No Blender was executed in the cockpit lane.
+The V11 queue job is `~/builds/codex-jobs/blender-queue/fc-cockpit-sling2-interior-v11.py`.
+It authors woven seats, matte panel coating, anodized controls, side trim, armrests, pedals, a
+throttle grip, and a curved dash and coaming. Source/output validation must complete before install.
+The engine's `docs/cockpit-interior.md` gives the offscreen and real-window pilot-seat shot list.
