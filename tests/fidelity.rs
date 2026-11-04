@@ -447,8 +447,12 @@ fn measured_units_and_skin_slots_stay_fixed() -> Result<(), Error> {
             Some(flightcraft_aero::display_model::DisplayModel::LandscapeTouchEfis)
         );
         let aspect = display.size[0] / display.size[1];
-        let model_aspect = flightcraft_aero::display_model::DisplayModel::LandscapeTouchEfis.bezel_aspect();
-        assert!((aspect / model_aspect - 1.).abs() < 0.01, "{aspect} vs {model_aspect}");
+        let model_aspect =
+            flightcraft_aero::display_model::DisplayModel::LandscapeTouchEfis.bezel_aspect();
+        assert!(
+            (aspect / model_aspect - 1.).abs() < 0.01,
+            "{aspect} vs {model_aspect}"
+        );
         // The pack recommends the public skin pack by id; it is a soft reference.
         assert_eq!(
             display.appearance.recommended_skin.as_deref(),

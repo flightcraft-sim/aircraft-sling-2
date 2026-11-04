@@ -33,11 +33,7 @@ buildq run flightcraft "$PWD" -- cargo clippy --manifest-path .local-harness/Car
 
 Set `FLIGHTCRAFT_ENGINE` before preparing the manifest when the engine is elsewhere. Hosts that need pkg-config metadata can pass their configuration with Cargo's `--config` option. All local compilation goes through the build queue. Optional actual UI captures use `--features previews --test render -- --ignored`; they require the UI's platform libraries.
 
-<<<<<<< HEAD
-See [validation](docs/validation.md) for measured results and acceptance conditions, and [panel review](docs/panel-review.md) for the layout comparison. The pack requires FlightCraft revision `c26f8b5` (pack format 4, the pre-flight walkaround) or newer; the display and radio features below need `580e2e0` or newer (and a revision with the `default_page` display field for the right-hand MFD; older hosts reject the field) for its radio identity and audio installation, in addition to placed hardware, display composition, backup buses, and private equipment artwork. The review documents separate measured layout accuracy from remaining artistic differences.
-=======
 See [validation](docs/validation.md) for measured results and acceptance conditions, and [panel review](docs/panel-review.md) for the layout comparison. The pack requires FlightCraft main revision `355e908` or newer (the `landscape_touch_efis` display model and `recommended_skin` field; older hosts reject both, and the `default_page` display field for the right-hand MFD) for its radio identity and audio installation, in addition to placed hardware, display composition, backup buses, and private equipment artwork. The review documents separate measured layout accuracy from remaining artistic differences.
->>>>>>> sling-landscape-efis
 
 ## Sources and estimates
 
