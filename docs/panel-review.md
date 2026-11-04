@@ -10,8 +10,8 @@ Coordinates below use the supplied 1728 × 968 frame, with a uniform conversion 
 
 | Installation | Spec top-left | Pack top-left | Spec and pack size | Declared error |
 |---|---|---|---|---|
-| Left touch display | 248, 308 | 248, 308 | 424 × 308 | <0.01 px |
-| Right touch display | 1062, 308 | 1062, 308 | 424 × 308 | <0.01 px |
+| Left touch display | 248, 310 | 248, 310 | 424 × 304 | <0.01 px |
+| Right touch display | 1062, 310 | 1062, 310 | 424 × 304 | <0.01 px |
 | Electronic standby | 798, 238 | 798, 238 | 132 × 137 | <0.01 px |
 | Navigator | 745, 382 | 745, 382 | 235 × 98 | <0.01 px |
 | Autopilot | 742, 485 | 742, 485 | 243 × 77 | <0.01 px |
@@ -23,9 +23,34 @@ The selector now follows the photograph at y = 770 instead of the written y = 89
 
 All 23 breaker caps have the measured labels, ratings, and centres. Native label offsets are compensated in their installation envelopes. The same distinction is recorded for the lane levers and lamps, rocker faces, and cabin knobs. Small bracket captions, separate knob placards, guard bars, screws, and the chute placard use original measured geometry.
 
+## Display unit
+
+Both touch displays are the 10.6-inch landscape touch display of the Garmin G3X Touch system (display unit GDU 460). The engine models it as `landscape_touch_efis`; this pack declares `"bezel": {"model": "landscape_touch_efis"}` and recommends the `landscape-touch-efis` skin pack by id (a soft reference: the built-in skin shows if it is not installed). Garmin is named here only to identify the unit; the pack is not affiliated with or endorsed by Garmin, and reproduces no Garmin artwork, logo, or font.
+
+Sources (public Garmin documents; only functions, layout geometry, page structure, and procedures were used, with no text or images copied):
+
+| Fact | Document | Revision | Section |
+|---|---|---|---|
+| GDU 46X is the 10.6-inch landscape unit; PFD, MFD, and split-screen modes | G3X Touch Pilot's Guide, 190-01754-00 | Rev. Y, August 2023 | 1.1 |
+| Bezel controls left to right: left knob, NRST, Direct-to, SD card slot, MENU, BACK, right knob. There are no soft keys | same | Rev. Y | 1.2, "Bezel Overview (GDU 46X)" figure and key table |
+| Split and full screen: on-screen button or BACK hold; PFD/MFD startup page; split screen side | same | Rev. Y | 1.5 |
+| Knobs: main (left) heading bug inner and altitude bug outer; alternate (right) course inner and baro outer; right side knob action; press to toggle with a 10 s revert | same | Rev. Y | 1.5, "GDU 45X and GDU 46X knob operation" and the PFD setup table |
+| MENU once for page menu, twice for main menu, third press clears; BACK returns, hold toggles split | same | Rev. Y | 1.2, 1.6 |
+| Page bar and main pages (Map, Charts, Wpt, FPL, Wx, Ter, Trf, Info, Chk, Eng); nearest pages by NRST | same | Rev. Y | 1.6 |
+| PFD element list, airspeed and altitude tapes (400 ft shown, 100 ft labels, 20 ft ticks), 6 s trend vector, baro entry | same | Rev. Y | 2.1 |
+| Reversionary mode: surviving display shows the split PFD/MFD; the autopilot disengages on PFD failure | same | Rev. Y | Appendix F |
+| Panel cutout 262.00 x 185.10 mm | G3X/G3X Touch Installation Manual, 190-01115-01 | Rev. AA read via a third-party copy; Rev. AV is current and could not be fetched | Section 8, GDU 46X outline drawing (secondary text) |
+| Screen 1280 x 768 px, 10.6 in diagonal | Manufacturer announcement quoted on a public forum | n/a | n/a |
+
+**Not verified.** The installation manual's outline drawing, general specifications table, and bezel dimensions could not be read from public text (the drawing is an image and the Garmin file for the current revision was not reachable). The 1280 x 768 resolution is from a quoted announcement, not the manual. The outer bezel (272 x 195 mm) and control spacing are the engine's estimates.
+
+**Correction to the earlier layout.** The previous bezel declared four soft keys and two corner knobs on the upper corners; the unit has no soft keys and its knobs are at the two ends of the bottom control row. The displays are now 424 x 304 px (aspect 1.395, the model's 272 : 195) instead of 424 x 308, keeping the same centres. The photo footprint, 1.377, differs from the model's by 1.3 percent.
+
+**Scale note.** Pack millimetres are photo-derived at 0.77 mm per photo pixel. On that scale a display is 326 mm wide, about 1.2 times the 272 mm outer bezel of the real unit, so every item in the pack is drawn about 1.2 times its true size relative to the pilot. All items share the factor, so the layout is internally consistent; a uniform rescale of the pack would put the displays at 272 mm.
+
 ## Equipment and colour
 
-The left touch display defaults to `integrated_pfd`, with synthetic vision, a left engine strip, a bottom-left map, and a bottom-right terrain inset. The right display keeps that PFD layout as its installed layout but declares `default_page: mfd`, so it opens as the multi-function display. Their configurable bezels use the specified margins, four softkeys, two corner knobs, and a card slot. The navigator has a home column, four-by-two tiles, and a frequency column. The autopilot fills its measured rectangle with individually placed controls; LVL is cyan when the host reports its level mode active.
+The left touch display defaults to `integrated_pfd`, with synthetic vision, a left engine strip, a bottom-left map, and a bottom-right terrain inset. The right display keeps that PFD layout as its installed layout but declares `default_page: mfd`, so it opens as the multi-function display. Their bezels come from the engine's landscape touch EFIS model: the real control row (two knobs, NRST, DIRECT, MENU, BACK, card slot), replacing the earlier four soft keys and corner knobs. The navigator has a home column, four-by-two tiles, and a frequency column. The autopilot fills its measured rectangle with individually placed controls; LVL is cyan when the host reports its level mode active.
 
 The shell face is `#333333`, the glare shield is near-black `#0b0b0b`, the bezels are `#080808`, and the placards are `#f5f5f2`. These follow the requested charcoal range. A flat-face sample at image coordinate (730, 275) is RGB (51, 51, 51) in the render and (77, 77, 77) in the supplied photograph. Thus the requested material colour is implemented, but a few-percent photographic colour match is not claimed; exposure, reflections, and shading differ.
 
@@ -54,7 +79,7 @@ The engine command compares its actual CPU ground-panel capture at startup, incl
 A few-percent overall photograph match remains incomplete:
 
 - FlightCraft's original screen artwork differs deliberately. The native standby face also omits the photograph's detailed bezel controls.
-- Bezel shading, knob profiles, softkey spacing, and card-slot placement remain those of the native configurable style. The photograph has raised, textured hardware and reflections.
+- Bezel shading and knob profiles are the engine's simplified drawing; key spacing and card-slot placement are the model's estimates. The photograph has raised, textured hardware and reflections.
 - The louvred vents have straight slats rather than the photographed curved openings. Their rim position and diameter have been corrected.
 - Lane switches have the host's small red guard frames as well as the measured silver guard bars. The key is a simplified silver symbol. The ELT rocker has native segment proportions.
 - The chute pull retains the host's pin/hold state text, and its red follows the host theme. The selector is a flat red T-handle rather than the photographed raised, sculpted handle. Both are functional controls at the corrected locations.
