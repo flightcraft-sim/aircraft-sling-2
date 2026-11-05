@@ -2242,18 +2242,6 @@
       "value": 5.0,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
-    "/emergencies/2/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.3.1 (p. 3-4)."
-    },
-    "/emergencies/2/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.3.1 (p. 3-4)."
-    },
-    "/emergencies/2/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
     "/emergencies/3/best_glide_mps": {
       "value": 37.04,
       "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.3.4 (p. 3-6)."
@@ -2314,66 +2302,6 @@
       "value": 5.0,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
-    "/emergencies/8/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.5.2 (p. 3-15)."
-    },
-    "/emergencies/8/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.5.2 (p. 3-15)."
-    },
-    "/emergencies/8/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/9/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.5.3 (p. 3-16)."
-    },
-    "/emergencies/9/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.5.3 (p. 3-16)."
-    },
-    "/emergencies/9/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/10/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.4.1 (p. 3-8)."
-    },
-    "/emergencies/10/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.4.1 (p. 3-8)."
-    },
-    "/emergencies/10/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/11/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.4.2 (p. 3-8)."
-    },
-    "/emergencies/11/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.4.2 (p. 3-8)."
-    },
-    "/emergencies/11/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/12/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.4.3 (p. 3-9)."
-    },
-    "/emergencies/12/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.4.3 (p. 3-9)."
-    },
-    "/emergencies/12/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
     "/emergencies/13/best_glide_mps": {
       "value": 37.04,
       "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.4.4 (p. 3-10)."
@@ -2410,87 +2338,15 @@
       "value": 5.0,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },
-    "/emergencies/16/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.5.4 (p. 3-17)."
-    },
-    "/emergencies/16/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.5.4 (p. 3-17)."
-    },
-    "/emergencies/16/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/17/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.6.1 (p. 3-18)."
-    },
-    "/emergencies/17/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.6.1 (p. 3-18)."
-    },
-    "/emergencies/17/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/18/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.6.2 (p. 3-18)."
-    },
-    "/emergencies/18/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.6.2 (p. 3-18)."
-    },
-    "/emergencies/18/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
     "/emergencies/19/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.6.3 (p. 3-19)."
-    },
-    "/emergencies/19/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.6.3 (p. 3-19)."
-    },
-    "/emergencies/19/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/20/best_glide_mps": {
       "value": 37.04,
       "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.6.4 (p. 3-20) and 912 iS supplement 9.4.10 (pp. 9-9 to 9-11)."
     },
-    "/emergencies/20/glide_ratio": {
+    "/emergencies/19/glide_ratio": {
       "value": 10.0,
       "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.6.4 (p. 3-20) and 912 iS supplement 9.4.10 (pp. 9-9 to 9-11)."
     },
-    "/emergencies/20/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/21/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section 3.6.5 (p. 3-21)."
-    },
-    "/emergencies/21/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section 3.6.5 (p. 3-21)."
-    },
-    "/emergencies/21/speed_tolerance_mps": {
-      "value": 5.0,
-      "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
-    },
-    "/emergencies/22/best_glide_mps": {
-      "value": 37.04,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section supplement 9.2.2 (p. 9-23), Magnum 601 ballistic parachute."
-    },
-    "/emergencies/22/glide_ratio": {
-      "value": 10.0,
-      "source": "Sling 2 POH Rev 2.8, section 3.2 (p. 3-3); glide ratio 10:1. Procedure: POH section supplement 9.2.2 (p. 9-23), Magnum 601 ballistic parachute."
-    },
-    "/emergencies/22/speed_tolerance_mps": {
+    "/emergencies/19/speed_tolerance_mps": {
       "value": 5.0,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
     },

@@ -514,11 +514,6 @@
           "memory": false
         },
         {
-          "id": "before_touchdown",
-          "instruction": "Before touch down. Make the final flap selection before turning the master switch off: flaps and elevator trim cannot operate without power on the main bus.",
-          "memory": false
-        },
-        {
           "id": "ignition",
           "instruction": "Magnetos / ignition: off.",
           "memory": false
@@ -538,14 +533,12 @@
           "instruction": "Electric fuel pumps (both): off (912 iS).",
           "memory": false
         }
-      ]
+      ],
+      "note": "Warning: flaps and elevator trim cannot operate without power on the main bus. Make the final flap selection before turning the master switch off."
     },
     {
       "id": "engine_failure_takeoff_run",
       "title": "Engine failure during take-off run (POH 3.3.1)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "throttle",
@@ -636,7 +629,8 @@
           "instruction": "If the engine fails to restart: apply the forced landing without engine power procedure, POH 3.5.1.",
           "memory": false
         }
-      ]
+      ],
+      "note": "Note: the propeller may continue to rotate if the airspeed remains above approximately 72 KIAS, in which case the starter may not be needed. If the propeller stops rotating, increasing airspeed may start it again. The recommended speed for an in-flight engine start is above 72 KIAS."
     },
     {
       "id": "irregular_rpm",
@@ -788,11 +782,6 @@
           "memory": false
         },
         {
-          "id": "before_touchdown",
-          "instruction": "Immediately before touchdown. Make the final flap selection before turning the master switch off: flaps and elevator trim cannot operate without power on the main bus.",
-          "memory": false
-        },
-        {
           "id": "fuel_selector",
           "instruction": "Fuel selector: shut off.",
           "memory": false
@@ -812,14 +801,12 @@
           "instruction": "Master switch: off.",
           "memory": false
         }
-      ]
+      ],
+      "note": "Warning: flaps and elevator trim cannot operate without power on the main bus. Make the final flap selection before turning the master switch off. Before touchdown, shut off the fuel selector, turn the electric fuel pumps off, then magnetos / ignition off and master switch off. Emergency propeller feather (if applicable): select AUTO / FEATHER and actuate the feather engage switch (20 to 40 seconds). A feathered propeller is less likely to break, but may dig in on an uneven surface."
     },
     {
       "id": "precautionary_landing",
       "title": "Precautionary landing (POH 3.5.2)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "area",
@@ -855,20 +842,13 @@
           "id": "after_stop",
           "instruction": "After stopping, switch off all switches, shut off the fuel selector, lock the aircraft and seek assistance.",
           "memory": false
-        },
-        {
-          "id": "keep_in_sight",
-          "instruction": "Keep the chosen area in sight during the precautionary landing.",
-          "memory": false
         }
-      ]
+      ],
+      "note": "Note: keep the chosen area in sight during the precautionary landing."
     },
     {
       "id": "flat_tyre_landing",
       "title": "Landing with a flat tyre or damaged wheel (POH 3.5.3)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "main_gear",
@@ -890,9 +870,6 @@
     {
       "id": "engine_fire_start",
       "title": "Engine fire on the ground during start (POH 3.4.1)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "starter",
@@ -944,9 +921,6 @@
     {
       "id": "engine_fire_ground",
       "title": "Engine fire on the ground, engine running (POH 3.4.2)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "cabin_heat",
@@ -998,9 +972,6 @@
     {
       "id": "engine_fire_takeoff_run",
       "title": "Engine fire during take-off run (POH 3.4.3)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "throttle",
@@ -1055,7 +1026,7 @@
       ]
     },
     {
-      "id": "engine_fire_flight",
+      "id": "engine_fire",
       "title": "Engine fire in flight (POH 3.4.4)",
       "best_glide_mps": 37.04,
       "glide_ratio": 10.0,
@@ -1110,13 +1081,9 @@
           "id": "extinguish",
           "instruction": "Extinguish the fire with the fire extinguisher, or call the fire brigade if you cannot.",
           "memory": false
-        },
-        {
-          "id": "no_restart",
-          "instruction": "Warning: do not attempt to restart the engine.",
-          "memory": false
         }
-      ]
+      ],
+      "note": "Note: the estimated time to empty the carburetors after the fuel selector valve is closed is 30 seconds. Warning: do not attempt to restart the engine."
     },
     {
       "id": "electrical_fire",
@@ -1126,18 +1093,13 @@
       "speed_tolerance_mps": 5.0,
       "items": [
         {
-          "id": "recognise",
-          "instruction": "An electrical fire is often characterised by white smoke and an acrid smell.",
-          "memory": false
-        },
-        {
           "id": "aux_pump",
           "instruction": "Auxiliary fuel pump: on (914 UL only; see the 914 UL warning in the POH).",
           "memory": true
         },
         {
           "id": "master",
-          "instruction": "Master switch: off. If the source can be found and isolated, switch that system off instead. For the 912 iS see the supplement. The EFIS can stay powered from its back-up battery circuit unless the EFIS is the source.",
+          "instruction": "Master switch: off (see the note).",
           "memory": true
         },
         {
@@ -1160,11 +1122,12 @@
           "instruction": "If the fire is extinguished, consider a precautionary landing or land as soon as practical. If it does not extinguish, land immediately.",
           "memory": false
         }
-      ]
+      ],
+      "note": "An electrical fire is often characterised by white smoke and an acrid smell. If the source can be found and isolated, switch that system off; this may avoid switching the master switch off. For the 912 iS see the supplement regarding the master switch. The EFIS and associated equipment can still be powered from the EFIS back-up battery circuit when the master switch is off, unless the EFIS is the source. Warning (914 UL): with the master switch off and the auxiliary fuel pump not on, both fuel pumps are inoperative and the engine stops."
     },
     {
-      "id": "cabin_fire",
-      "title": "Cabin fire (POH 3.4.6)",
+      "id": "cabin_smoke",
+      "title": "Cabin fire and smoke (POH 3.4.6)",
       "best_glide_mps": 37.04,
       "glide_ratio": 10.0,
       "speed_tolerance_mps": 5.0,
@@ -1204,15 +1167,7 @@
     {
       "id": "spin_recovery",
       "title": "Recovery from unintentional spin (POH 3.5.4)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
-        {
-          "id": "prohibited",
-          "instruction": "Warning: intentional spins are prohibited.",
-          "memory": false
-        },
         {
           "id": "throttle",
           "instruction": "Throttle: idle.",
@@ -1243,14 +1198,12 @@
           "instruction": "If a flat spin does not recover after a sustained period: throttle full power, ailerons neutral, full rudder opposite to the spin, neutralise the rudder when rotation stops, throttle idle, then recover as above.",
           "memory": false
         }
-      ]
+      ],
+      "note": "Warning: intentional spins are prohibited. The aircraft is unlikely to enter an unintentional spin unless extreme inputs are applied."
     },
     {
       "id": "vibration",
       "title": "Abnormal vibration (POH 3.6.1)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "rpm",
@@ -1267,9 +1220,6 @@
     {
       "id": "efis_failure",
       "title": "EFIS system failure (POH 3.6.2)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "level",
@@ -1294,40 +1244,6 @@
         {
           "id": "reboot_fail",
           "instruction": "If the system fails to reboot properly: execute a precautionary landing at the first safe opportunity and have the instrument repaired.",
-          "memory": false
-        }
-      ]
-    },
-    {
-      "id": "carb_icing",
-      "title": "Carburetor icing (POH 3.6.3)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
-      "items": [
-        {
-          "id": "speed",
-          "instruction": "Speed: 75 KIAS.",
-          "memory": false
-        },
-        {
-          "id": "throttle",
-          "instruction": "Throttle: 1/3 power.",
-          "memory": false
-        },
-        {
-          "id": "leave",
-          "instruction": "If possible leave the icing area.",
-          "memory": false
-        },
-        {
-          "id": "power",
-          "instruction": "Increase engine power gradually up to cruise conditions after 1 to 2 minutes.",
-          "memory": false
-        },
-        {
-          "id": "land",
-          "instruction": "If power does not recover, land at the nearest airfield (if possible) or perform a precautionary landing according to POH 3.5.2.",
           "memory": false
         }
       ]
@@ -1378,20 +1294,13 @@
           "id": "land",
           "instruction": "Land as soon as possible.",
           "memory": false
-        },
-        {
-          "id": "both_alternators",
-          "instruction": "912 iS supplement 9.4.10: if alternators A and B both fail, the engine stops. Switch the EMS battery back-up on, restart the engine, then follow this procedure. The battery runs the engine for about 30 minutes with all ancillary equipment off.",
-          "memory": false
         }
-      ]
+      ],
+      "note": "912 iS supplement 9.4.10: if alternators A and B both fail, the engine stops. Switch the EMS battery back-up on, restart the engine, then follow this procedure. The battery runs the engine for about 30 minutes with all ancillary equipment off. After an alternator A or B failure the engine keeps running, but switch off all non-critical equipment to conserve battery charge. With adequate battery remaining when landing, the propeller (if applicable) can be re-energised."
     },
     {
       "id": "main_bus_failure",
       "title": "Main bus power failure (POH 3.6.5)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
         {
           "id": "efis_backup",
@@ -1408,20 +1317,13 @@
           "instruction": "Land as soon as possible.",
           "memory": false
         }
-      ]
+      ],
+      "note": "Refer to POH 7.17 (main bus) for the equipment lost with the main bus. With a 912 iS the elevator trim is also inoperative (supplement 9.4.11)."
     },
     {
       "id": "ballistic_parachute",
       "title": "Ballistic parachute deployment (POH 9.2.2)",
-      "best_glide_mps": 37.04,
-      "glide_ratio": 10.0,
-      "speed_tolerance_mps": 5.0,
       "items": [
-        {
-          "id": "parameters",
-          "instruction": "Observe the ballistic parachute operational parameters.",
-          "memory": false
-        },
         {
           "id": "throttle",
           "instruction": "Throttle: idle.",
@@ -1457,7 +1359,8 @@
           "instruction": "Other electrical equipment switches: off.",
           "memory": false
         }
-      ]
+      ],
+      "note": "Operational parameters (POH 9.2.1): limit speed 320 km/h (172.77 kt), deployment time 3 s at limit speed, maximum supported mass 759 kg, descent rate 7 m/s at maximum mass."
     }
   ],
   "preflight": {

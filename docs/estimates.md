@@ -30,7 +30,7 @@ The 1.10 m aft translation, -1.95 m windshield seam, -2.82 m fixed hoop station,
 
 Opening guards (ground speed ≤2 m/s and airspeed ≤5 m/s), instantaneous command motion, door-open drag/noise mapping, and the original canopy-unlatched advisory procedure text are simulator estimates, not POH limitations or an approved emergency checklist. Its best glide speed (72 KIAS) and glide ratio (10:1) are POH 3.2.
 
-The other emergency entries transcribe POH Section 3 (and supplements 9.2.2 and 9.4.10); every entry carries the POH best glide speed and glide ratio because the pack format requires them, even for ground events. The speed tolerance (5 m/s) is a simulator estimate. The pack format has no emergency checklist phase, so these procedures are `emergencies` entries only, not checklist panel lists.
+The other emergency entries transcribe POH Section 3 (and supplements 9.2.2 and 9.4.10); the POH best glide speed (72 KIAS) and glide ratio (10:1) are given only where gliding applies; ground and take-off-run events, fires on the ground, spin recovery, vibration and similar entries carry none. The speed tolerance (5 m/s) is a simulator estimate. POH warnings and notes are in each entry's `note`. The 912 iS is fuel-injected, so the POH carburetor icing procedure (3.6.3) is not carried. The engine lists these in the checklist panel's Emergency tab.
 
 ## V10 crown and attached latch
 
