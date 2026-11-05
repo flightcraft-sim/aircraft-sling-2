@@ -28,7 +28,9 @@ POH Rev 2.8 §7.7 establishes a sliding mechanism, access from either side, the 
 
 The 1.10 m aft translation, -1.95 m windshield seam, -2.82 m fixed hoop station, rail spacing, bow contours, handles, and 45 mm shell/deck offset are original modelling estimates. Fully open, the front bow reaches -3.05 m, behind seat backs near -2.55 m, permitting entry from either side. Actual exported triangles must pass a continuous full-travel canopy/turtledeck separation bound (>3 mm) at every LOD. This conservative bound includes the whole moving shell and its rear edge, rather than just eight sampled poses.
 
-Opening guards (ground speed ≤2 m/s and airspeed ≤5 m/s), instantaneous command motion, door-open drag/noise mapping, and the original canopy-unlatched advisory procedure are simulator estimates, not POH limitations or an approved emergency checklist.
+Opening guards (ground speed ≤2 m/s and airspeed ≤5 m/s), instantaneous command motion, door-open drag/noise mapping, and the original canopy-unlatched advisory procedure text are simulator estimates, not POH limitations or an approved emergency checklist. Its best glide speed (72 KIAS) and glide ratio (10:1) are POH 3.2.
+
+The other emergency entries transcribe POH Section 3 (and supplements 9.2.2 and 9.4.10); every entry carries the POH best glide speed and glide ratio because the pack format requires them, even for ground events. The speed tolerance (5 m/s) is a simulator estimate. The pack format has no emergency checklist phase, so these procedures are `emergencies` entries only, not checklist panel lists.
 
 ## V10 crown and attached latch
 

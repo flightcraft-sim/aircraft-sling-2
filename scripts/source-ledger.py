@@ -49,6 +49,23 @@ rules['systems.json'].update({
     '/preflight/fuel/covers_bottom_l': poh('4.4 (4)') + ' warning: fuel visibly just covers the bottom of the tank with 30 litres present.',
     '/preflight/fuel/density_kg_per_l': poh('1.4') + '; estimate: 0.72 kg/l, as for the tanks.',
 })
+# Emergency procedures: each entry cites its POH section. Best glide 72 KIAS = 37.04 m/s (POH 3.2, 3.3.2, 3.5.1) and 10:1 glide ratio (POH 3.2) apply to every entry because the pack format requires them; the speed tolerance is a simulator estimate.
+_systems = json.loads((root / 'systems.json').read_text())
+_poh_sections = {
+    'engine_failure': '3.3.2 (p. 3-4)', 'engine_failure_takeoff_run': '3.3.1 (p. 3-4)', 'engine_restart': '3.3.4 (p. 3-6)',
+    'irregular_rpm': '3.3.3.1 (p. 3-5)', 'low_fuel_pressure': '3.3.3.2 (p. 3-5)', 'low_oil_pressure': '3.3.3.3 (p. 3-6)',
+    'forced_landing': '3.5.1 (p. 3-13)', 'precautionary_landing': '3.5.2 (p. 3-15)', 'flat_tyre_landing': '3.5.3 (p. 3-16)',
+    'engine_fire_start': '3.4.1 (p. 3-8)', 'engine_fire_ground': '3.4.2 (p. 3-8)', 'engine_fire_takeoff_run': '3.4.3 (p. 3-9)',
+    'engine_fire_flight': '3.4.4 (p. 3-10)', 'electrical_fire': '3.4.5 (p. 3-11)', 'cabin_fire': '3.4.6 (p. 3-12)',
+    'spin_recovery': '3.5.4 (p. 3-17)', 'vibration': '3.6.1 (p. 3-18)', 'efis_failure': '3.6.2 (p. 3-18)',
+    'carb_icing': '3.6.3 (p. 3-19)', 'alternator_failure': '3.6.4 (p. 3-20) and 912 iS supplement 9.4.10 (pp. 9-9 to 9-11)',
+    'main_bus_failure': '3.6.5 (p. 3-21)', 'ballistic_parachute': 'supplement 9.2.2 (p. 9-23), Magnum 601 ballistic parachute',
+    'door_open': '3.2 (p. 3-3); the checklist text itself is an original simulator advisory, not a POH procedure',
+}
+for _i, _e in enumerate(_systems['emergencies']):
+    _s = _poh_sections[_e['id']]
+    rules['systems.json'][f'/emergencies/{_i}/best_glide_mps'] = poh('3.2 (p. 3-3)') + '; best glide speed 72 KIAS = 37.04 m/s at MAUW, flaps retracted. Procedure: POH section ' + _s + '.'
+    rules['systems.json'][f'/emergencies/{_i}/glide_ratio'] = poh('3.2 (p. 3-3)') + '; glide ratio 10:1. Procedure: POH section ' + _s + '.'
 system = json.loads((root / 'systems.json').read_text())
 measured_breakers = {element['element']['load'] for element in json.loads((root / 'panel.json').read_text())['equipment']['elements'] if element['element']['kind'] == 'breaker'}
 for index, load in enumerate(system['definition']['electrical']['loads']):
