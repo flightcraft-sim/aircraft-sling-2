@@ -3832,179 +3832,179 @@
     },
     "/procedures/version": {
       "value": 1,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/1/verify/min_voltage": {
       "value": 11.5,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/4/verify/min_voltage": {
       "value": 11.5,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/7/verify/max": {
       "value": 0.05,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/11/timer/seconds": {
       "value": 10,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/12/verify/min": {
       "value": 1700,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/12/verify/max": {
       "value": 2300,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/13/verify/min_bar": {
       "value": 3.0,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/items/13/timer/seconds": {
       "value": 10,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/limits/0/when/of/1/min": {
       "value": 2600,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/1/limits/0/when/of/2/max_bar": {
       "value": 3.0,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/1/verify/min": {
       "value": 1800,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/1/verify/max": {
       "value": 2200,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/1/timer/seconds": {
       "value": 120,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/2/verify/min_v": {
       "value": 13.8,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/2/verify/max_v": {
       "value": 14.4,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/3/verify/min": {
       "value": 2300,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/3/verify/max": {
       "value": 2700,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/items/4/verify/min_c": {
       "value": 50,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/limits/0/when/of/1/min": {
       "value": 3200,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/2/limits/0/when/of/2/max_c": {
       "value": 49.9,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/2/verify/min_c": {
       "value": 50,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/3/verify/min_voltage": {
       "value": 11.5,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/4/verify/at_rpm": {
       "value": 4000,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/4/verify/max_drop_rpm": {
       "value": 0,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/4/verify/allow_rpm": {
       "value": 25,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/6/verify/at_rpm": {
       "value": 4000,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/6/verify/max_drop_rpm": {
       "value": 180,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/6/verify/allow_rpm": {
       "value": 0,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/8/verify/min_kpa": {
       "value": 280,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/9/verify/min_kpa": {
       "value": 280,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/11/verify/min_rpm": {
       "value": 4600,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/11/verify/max_rpm": {
       "value": 5800,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/11/verify/within_s": {
       "value": 8,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/items/12/verify/max": {
       "value": 0.1,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/limits/0/when/of/1/min": {
       "value": 2800,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/limits/1/when/of/1/min": {
       "value": 3400,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/limits/1/when/of/2/max_c": {
       "value": 49.9,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/limits/3/when/of/1/min": {
       "value": 2600,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/3/limits/3/when/of/2/max_bar": {
       "value": 3.0,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/4/items/1/verify/max": {
       "value": 0.05,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/5/items/0/verify/min_deflection": {
       "value": 0.8,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/5/items/1/verify/tolerance": {
       "value": 0.02,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     },
     "/procedures/checklists/6/items/0/verify/max": {
       "value": 0.1,
-      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked."
+      "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified."
     }
   },
   "panel.json": {

@@ -546,14 +546,12 @@ fn normal_procedures_follow_the_poh_and_bind_to_the_panel() -> Result<(), Error>
         .filter(|i| i.unverified.is_some())
         .map(|i| i.id.as_str())
         .collect();
-    for id in [
-        "lane_b_off",
-        "pump_1_alone",
-        "pump_2_alone",
-        "max_power",
-        "efis_battery",
-    ] {
+    for id in ["lane_b_off", "max_power", "efis_battery"] {
         assert!(unverified.contains(&id), "{id} should be marked unverified");
+    }
+    // The fuel pump check and its 280 kPa limit are published (OM-912 i 3.5, POH 9.4.1).
+    for id in ["pump_1_alone", "pump_2_alone"] {
+        assert!(!unverified.contains(&id), "{id} is sourced");
     }
     Ok(())
 }

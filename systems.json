@@ -2299,7 +2299,7 @@
   },
   "procedures": {
     "version": 1,
-    "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. Rotax 912 iS operator's manual not consulted (not obtainable); items it governs are marked.",
+    "source": "Sling 2 Pilot Operating Handbook DC-POH-002-X-B-2.8 Revision 2.8: sections 4.5.1, 4.5.2, 4.5.3, 4.6, 4.7.1, 4.15, 4.16 and supplement 04/2012 (Rotax 912 iS) sections 9.4.12 and 9.4.13. BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) consulted for the fuel pump check, ignition check and power check procedures and the fuel pressure limits; items still without a published figure are marked unverified.",
     "checklists": [
       {
         "id": "before_start",
@@ -2374,7 +2374,7 @@
               "min_voltage": 11.5
             },
             "control": "efis_backup_switch",
-            "unverified": "The back-up battery voltage limit is an original estimate; the POH asks only that the voltage be verified."
+            "unverified": "The 11.5 V back-up battery limit is an original estimate. Sling 2 POH DC-POH-002-X-B-2.8 supplement 9.4.12 item 2 says only 'verify EFIS on and back-up battery voltage' and gives no figure; BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019, part no. 898741) section 4.1.2 names an EMS supply 'below the minimum required level' without a value, and the Rotax installation manual is not public. A forum post (rotax-owner.com) mentions a 9 V ECU minimum, which is secondhand and not used."
           },
           {
             "id": "lane_a",
@@ -2412,7 +2412,7 @@
               "min_voltage": 11.5
             },
             "control": "ems_backup",
-            "unverified": "The back-up battery voltage limit is an original estimate; the POH asks only that the voltage be verified."
+            "unverified": "The 11.5 V back-up battery limit is an original estimate. Sling 2 POH DC-POH-002-X-B-2.8 supplement 9.4.12 item 2 says only 'verify EFIS on and back-up battery voltage' and gives no figure; BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019, part no. 898741) section 4.1.2 names an EMS supply 'below the minimum required level' without a value, and the Rotax installation manual is not public. A forum post (rotax-owner.com) mentions a 9 V ECU minimum, which is secondhand and not used."
           },
           {
             "id": "lane_lights",
@@ -2734,7 +2734,7 @@
               "min_voltage": 11.5
             },
             "control": "efis_backup_switch",
-            "unverified": "The back-up battery voltage limit is an original estimate; the POH asks only that the voltage be verified.",
+            "unverified": "The 11.5 V back-up battery limit is an original estimate. Sling 2 POH DC-POH-002-X-B-2.8 supplement 9.4.12 item 2 says only 'verify EFIS on and back-up battery voltage' and gives no figure; BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019, part no. 898741) section 4.1.2 names an EMS supply 'below the minimum required level' without a value, and the Rotax installation manual is not public. A forum post (rotax-owner.com) mentions a 9 V ECU minimum, which is secondhand and not used.",
             "stop_on_failure": true
           },
           {
@@ -2752,7 +2752,7 @@
             },
             "control": "lane_b",
             "note": "Only one ignition circuit (lane) at a time. Switching lane B off leaves lane A running the engine.",
-            "unverified": "25 rpm allowance for measurement scatter is an original estimate; lane check detail per Rotax 912 iS operator's manual, not verified",
+            "unverified": "The 25 rpm allowance for measurement scatter is an original simulator tolerance. Sling 2 POH supplement 9.4.13 requires no rpm drop with lane B off at 4,000 rpm (and under 180 rpm with lane A off). BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) section 3.5 'Ignition check' (page 3-11) gives a looser engine limit: speed should not drop or increase by more than 250 rpm; it gives no tighter figure, so 25 rpm has no published source.",
             "stop_on_failure": true
           },
           {
@@ -2808,7 +2808,7 @@
               "min_kpa": 280
             },
             "control": "pump1",
-            "unverified": "fuel pump check and 280 kPa limit (the pack's FUEL PRESSURE annunciation) per Rotax 912 iS operator's manual, not verified",
+            "note": "Procedure: BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019, part no. 898741) section 3.5 'Check of fuel pumps' (pages 3-11 and 3-12): at 2000 rpm switch each pump off for 5 seconds and check the fuel pressure is within limits. Limit: Sling 2 POH DC-POH-002-X-B-2.8 supplement 9.4.1 gives fuel pressure minimum 2.8 bar (42 psi), maximum 3.2 bar (the 280 kPa used here and by the FUEL PRESSURE annunciation). OM-912 i section 2.1 (page 2-4) is tighter, 2.9 to 3.1 bar at the fuel rail, with 2.5 to 3.5 bar acceptable for 3 seconds only after a power change; Sling POH supplements 9.8 and 9.9 (08/2025) also show 2.9 bar.",
             "stop_on_failure": true
           },
           {
@@ -2823,7 +2823,7 @@
               "min_kpa": 280
             },
             "control": "pump2",
-            "unverified": "fuel pump check and 280 kPa limit (the pack's FUEL PRESSURE annunciation) per Rotax 912 iS operator's manual, not verified",
+            "note": "Procedure: BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019, part no. 898741) section 3.5 'Check of fuel pumps' (pages 3-11 and 3-12): at 2000 rpm switch each pump off for 5 seconds and check the fuel pressure is within limits. Limit: Sling 2 POH DC-POH-002-X-B-2.8 supplement 9.4.1 gives fuel pressure minimum 2.8 bar (42 psi), maximum 3.2 bar (the 280 kPa used here and by the FUEL PRESSURE annunciation). OM-912 i section 2.1 (page 2-4) is tighter, 2.9 to 3.1 bar at the fuel rail, with 2.5 to 3.5 bar acceptable for 3 seconds only after a power change; Sling POH supplements 9.8 and 9.9 (08/2025) also show 2.9 bar.",
             "stop_on_failure": true
           },
           {
@@ -2861,7 +2861,7 @@
               "within_s": 8
             },
             "note": "Maximum take-off rpm is 5,800 (5 minutes). A fixed-pitch propeller turns slower held on the brakes than in the take-off roll (POH 4.7.2 shows 5,500 to 5,800).",
-            "unverified": "4,600 rpm static minimum and 8 s acceleration are original estimates for this simulator's propeller; the POH gives no static figure",
+            "unverified": "The 4,600 rpm static minimum and 8 s acceleration are original estimates for this simulator's propeller. Sling 2 POH DC-POH-002-X-B-2.8 gives no static rpm figure (only the 5,800 rpm take-off limit). BRP-Rotax OM-912 i (Edition 2 / Rev. 0, 1 Jan 2019) section 3.5 'Check the power output' (page 3-12) says to run at full load, aircraft stationary, for at most 10 seconds and defers the rpm to the aircraft manual because it depends on the propeller; the 8 s window respects that 10 s maximum but is not itself published.",
             "stop_on_failure": true,
             "control": "throttle"
           },
