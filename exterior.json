@@ -324,10 +324,10 @@
   },
   "lod2": "exterior-lod2.glb",
   "textures": [
-    "textures/exterior/shared-58194a864ba60050.png",
-    "textures/exterior/shared-65d51136bbdddcdc.png",
-    "textures/exterior/shared-805d5ea28bf4a563.png",
-    "textures/exterior/shared-f61ea41abddfaae9.png"
+    "textures/exterior/shared-c1931ce41ee10a77.png",
+    "textures/exterior/shared-d6068808c5c6df10.png",
+    "textures/exterior/shared-e0a4bce7f1b4ee6a.png",
+    "textures/exterior/shared-e8d81720c1a5763e.png"
   ],
   "interior": {
     "pilot_eye_m": [

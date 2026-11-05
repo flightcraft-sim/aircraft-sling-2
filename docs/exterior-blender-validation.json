@@ -1,12 +1,24 @@
 {
-  "geometry_revision": "v11-pilot-seat-interior",
+  "geometry_revision": "v13-thin-wing-fillet",
   "blender": "5.2.0 LTS",
   "source_script": "scripts/blender-exterior.py",
-  "source_sha256": "9d0305d5985938f0b13a36eba74619c64e5df1f0a7be7c7e42acef218ebb2296",
+  "source_sha256": "895f1a9c676240f1a0bd5a65633cd8db119bdc4d498a2e9f4fdd15f0c678f886",
   "registration": "N371FC",
   "lods": [
     {
       "file": "exterior.glb",
+      "wing_fillets": {
+        "wing_fillet_left": {
+          "vertices": 586,
+          "max_rise_above_wing_m": 0.02274262900732285,
+          "tolerance_m": 0.004
+        },
+        "wing_fillet_right": {
+          "vertices": 586,
+          "max_rise_above_wing_m": 0.021785555924645317,
+          "tolerance_m": 0.004
+        }
+      },
       "canopy_hardware": {
         "tolerance_m": 0.003,
         "parts": {
@@ -85,8 +97,8 @@
       },
       "nodes": 109,
       "images": 4,
-      "bytes": 22249892,
-      "sha256": "6293b050587a01cf276a5373f20851eec0780326b84c9afc3129aaaa5ceb31bb",
+      "bytes": 22179784,
+      "sha256": "cc4817a5293b93d14e9b645efaa05d641d75d1b31468ed3f19802ca2a5b89ca2",
       "mesh_triangles": {
         "airframe": 38092,
         "spinner": 6912,
@@ -191,6 +203,18 @@
     },
     {
       "file": "exterior-lod1.glb",
+      "wing_fillets": {
+        "wing_fillet_left": {
+          "vertices": 142,
+          "max_rise_above_wing_m": 0.02291916348889589,
+          "tolerance_m": 0.007
+        },
+        "wing_fillet_right": {
+          "vertices": 138,
+          "max_rise_above_wing_m": 0.021951265141947313,
+          "tolerance_m": 0.007
+        }
+      },
       "canopy_hardware": {
         "tolerance_m": 0.003,
         "parts": {
@@ -269,8 +293,8 @@
       },
       "nodes": 109,
       "images": 4,
-      "bytes": 19408664,
-      "sha256": "ceca42943856085cd59ecfe714fc22cc5dd39bd65417edff4ed0f1b7fa19bad9",
+      "bytes": 19343016,
+      "sha256": "175bd13b0ff203479ce82b4c048df506c64b079bad1024897a1fe7147fe71f59",
       "mesh_triangles": {
         "airframe": 6856,
         "spinner": 1244,
@@ -375,6 +399,18 @@
     },
     {
       "file": "exterior-lod2.glb",
+      "wing_fillets": {
+        "wing_fillet_left": {
+          "vertices": 142,
+          "max_rise_above_wing_m": 0.02291916348889589,
+          "tolerance_m": 0.007
+        },
+        "wing_fillet_right": {
+          "vertices": 138,
+          "max_rise_above_wing_m": 0.021951265141947313,
+          "tolerance_m": 0.007
+        }
+      },
       "canopy_hardware": {
         "tolerance_m": 0.003,
         "parts": {
@@ -453,8 +489,8 @@
       },
       "nodes": 109,
       "images": 4,
-      "bytes": 18840288,
-      "sha256": "14d48a12bb0594b8907e0619ee963984584e2447389ae6dfd621ee49985fbdcb",
+      "bytes": 18775708,
+      "sha256": "e8f15f83a1620768d7325a721db486a343260420862d73143b09bd95971a9f06",
       "mesh_triangles": {
         "airframe": 1104,
         "beacon": 224,
@@ -561,6 +597,18 @@
   "blender_lods": [
     {
       "file": "exterior.glb",
+      "wing_fillets": {
+        "wing_fillet_left": {
+          "vertices": 586,
+          "max_rise_above_wing_m": 0.02274262900732285,
+          "tolerance_m": 0.004
+        },
+        "wing_fillet_right": {
+          "vertices": 586,
+          "max_rise_above_wing_m": 0.021785555924645317,
+          "tolerance_m": 0.004
+        }
+      },
       "canopy_hardware": {
         "tolerance_m": 0.003,
         "parts": {
@@ -639,8 +687,8 @@
       },
       "nodes": 109,
       "images": 4,
-      "bytes": 22249892,
-      "sha256": "6293b050587a01cf276a5373f20851eec0780326b84c9afc3129aaaa5ceb31bb",
+      "bytes": 22179784,
+      "sha256": "cc4817a5293b93d14e9b645efaa05d641d75d1b31468ed3f19802ca2a5b89ca2",
       "mesh_triangles": {
         "airframe": 38092,
         "spinner": 6912,
@@ -745,6 +793,18 @@
     },
     {
       "file": "exterior-lod1.glb",
+      "wing_fillets": {
+        "wing_fillet_left": {
+          "vertices": 142,
+          "max_rise_above_wing_m": 0.02291916348889589,
+          "tolerance_m": 0.007
+        },
+        "wing_fillet_right": {
+          "vertices": 138,
+          "max_rise_above_wing_m": 0.021951265141947313,
+          "tolerance_m": 0.007
+        }
+      },
       "canopy_hardware": {
         "tolerance_m": 0.003,
         "parts": {
@@ -823,8 +883,8 @@
       },
       "nodes": 109,
       "images": 4,
-      "bytes": 19408664,
-      "sha256": "ceca42943856085cd59ecfe714fc22cc5dd39bd65417edff4ed0f1b7fa19bad9",
+      "bytes": 19343016,
+      "sha256": "175bd13b0ff203479ce82b4c048df506c64b079bad1024897a1fe7147fe71f59",
       "mesh_triangles": {
         "airframe": 6856,
         "spinner": 1244,
@@ -929,6 +989,18 @@
     },
     {
       "file": "exterior-lod2.glb",
+      "wing_fillets": {
+        "wing_fillet_left": {
+          "vertices": 142,
+          "max_rise_above_wing_m": 0.02291916348889589,
+          "tolerance_m": 0.007
+        },
+        "wing_fillet_right": {
+          "vertices": 138,
+          "max_rise_above_wing_m": 0.021951265141947313,
+          "tolerance_m": 0.007
+        }
+      },
       "canopy_hardware": {
         "tolerance_m": 0.003,
         "parts": {
@@ -1007,8 +1079,8 @@
       },
       "nodes": 109,
       "images": 4,
-      "bytes": 18840288,
-      "sha256": "14d48a12bb0594b8907e0619ee963984584e2447389ae6dfd621ee49985fbdcb",
+      "bytes": 18775708,
+      "sha256": "e8f15f83a1620768d7325a721db486a343260420862d73143b09bd95971a9f06",
       "mesh_triangles": {
         "airframe": 1104,
         "beacon": 224,
@@ -1232,31 +1304,31 @@
     }
   },
   "installed_bytes": {
-    "exterior.glb": 3786656,
-    "exterior-lod1.glb": 944952,
-    "exterior-lod2.glb": 376444
+    "exterior.glb": 3783756,
+    "exterior-lod1.glb": 946516,
+    "exterior-lod2.glb": 379076
   },
   "installed_sha256": {
-    "exterior.glb": "163dad307ea60646536f6c337a047cd75aa4f33b67919a5ccc2e8e47d326696d",
-    "exterior-lod1.glb": "0b475555e4b07f0981cf064614c4c9bc910d67cc5d9b48a0d8d9228f2825108c",
-    "exterior-lod2.glb": "91c0ec41fcafae2d11b07b83e576ed20e778558038be79c83fe9d9881400181a"
+    "exterior.glb": "43cb6fa05c89c4d2a63f03d20adb3ff47655291e02ae4f7de5c013feaa3cb9d1",
+    "exterior-lod1.glb": "0b09257dcc8d83c8e99189e49255b783d00685d455bcfd881c69317e6499dbe4",
+    "exterior-lod2.glb": "2276a7162ff9807e303ad8591eb5db4d8ea0645cae02299b3e1f7cf97da45ffa"
   },
   "shared_textures": {
-    "textures/exterior/shared-805d5ea28bf4a563.png": {
-      "bytes": 282920,
-      "sha256": "805d5ea28bf4a5634356ccfaabf1b700cd2ae572a28430300f93fe4b7be8ee9c"
+    "textures/exterior/shared-d6068808c5c6df10.png": {
+      "bytes": 284909,
+      "sha256": "d6068808c5c6df10695f704af4fda1dbce112f980026164670cc87ed6d0feb84"
     },
-    "textures/exterior/shared-65d51136bbdddcdc.png": {
-      "bytes": 4738251,
-      "sha256": "65d51136bbdddcdc6e68d426f7b8fd1aa3f249cec92eb82b2debb22e2a2b3ea8"
+    "textures/exterior/shared-e8d81720c1a5763e.png": {
+      "bytes": 4704489,
+      "sha256": "e8d81720c1a5763e0e1b3a9e6d528930337f6dc05a8a1b6d2f0986b6e506075e"
     },
-    "textures/exterior/shared-58194a864ba60050.png": {
-      "bytes": 11495785,
-      "sha256": "58194a864ba600502529c05b46ab0041365326d39c6aa3c3d04de89d78aa071f"
+    "textures/exterior/shared-e0a4bce7f1b4ee6a.png": {
+      "bytes": 11489128,
+      "sha256": "e0a4bce7f1b4ee6af2502a718c7de27a05a4958ea1ab2b99730efe4bb728ba79"
     },
-    "textures/exterior/shared-f61ea41abddfaae9.png": {
-      "bytes": 1945706,
-      "sha256": "f61ea41abddfaae9c04b90d0bbe69ce7c00f0814d69eb754c56c5f8f0b5b76f4"
+    "textures/exterior/shared-c1931ce41ee10a77.png": {
+      "bytes": 1916926,
+      "sha256": "c1931ce41ee10a77435d92e0dc28297bbb75ea264b028f457c88277780eeecb4"
     }
   },
   "canopy": {

@@ -20,7 +20,7 @@ FACTS = dict(span=9.165, length=6.675, height=2.45, area=11.845, track=1.95,
              prop_diameter=1.79, blades=3, tail_span=2.825, vertical_span=1.47, dihedral=5.0, taper=1.375)
 BUDGETS = (120000, 25000, 5000)
 TEXTURE_SIZE = 4096
-GEOMETRY_REVISION = 'v11-pilot-seat-interior'
+GEOMETRY_REVISION = 'v13-thin-wing-fillet'
 PILOT_EYE_M = (-2.30, -.205, -.72)  # Original pilot-seat estimate, in body axes.
 CANOPY_TRAVEL_M = 1.10  # Estimate: front edge clears the seat backs by about 0.45 m.
 CANOPY_SPLIT_X = -1.95
@@ -156,6 +156,88 @@ def wing_point(distance, u, side=1, upper=True, tip=False):
         t=max(0,min(1,(distance-(FACTS['span']/2-WING_TIP_PANEL))/WING_TIP_PANEL))
         y-=side*WING_TIP_RADIUS*t*t*abs(2*u-1)**10;z-=.045*t*t
     return x,y,z
+
+
+# Wing-to-fuselage fillet. v12 rose 55 mm above the wing and reached 190 mm out along nearly the
+# whole chord, which read as a boxy block from the side. v13 is a thin saddle: 20 mm at its
+# crest, 85 mm of reach, and a squared-sine taper so both ends feather out into the wing skin.
+WING_FILLET_RISE = .020
+WING_FILLET_REACH = .085
+WING_FILLET_TAPER = 2.0
+WING_FILLET_ROWS, WING_FILLET_COLS = 24, 8
+WING_FILLET_U = (.012, .716)  # chord fractions covered, ending before the flap hinge
+WING_FILLET_BASE_DISTANCE = .57  # span station where the fillet meets the wing at its feathered ends
+WING_FILLET_TOLERANCE_M = (.004, .007, .007)  # per LOD: 1.5 mm skin thickness plus decimation
+
+
+def wing_fillet_points(side, hull_hit, rows=WING_FILLET_ROWS, cols=WING_FILLET_COLS):
+    """Body-frame saddle vertices from the fuselage side to the wing upper skin.
+
+    hull_hit(x, z) returns the body point where the fuselage skin is met at that x and height
+    (Blender ray cast), or None when the ray misses."""
+    points=[]
+    for i in range(rows+1):
+        u=WING_FILLET_U[0]+(WING_FILLET_U[1]-WING_FILLET_U[0])*i/rows
+        blend=math.sin(math.pi*i/rows)**WING_FILLET_TAPER
+        xx,yy,zz=wing_point(.56,u,side)
+        start_z=zz-WING_FILLET_RISE*blend
+        inner=hull_hit(xx,start_z)
+        if inner is None:raise RuntimeError('Wing fillet missed closed fuselage at '+str((xx,start_z)))
+        end_distance=max(abs(inner[1])+.012,WING_FILLET_BASE_DISTANCE+WING_FILLET_REACH*blend)
+        outer=wing_point(end_distance,u,side)
+        for j in range(cols+1):
+            angle=j*math.pi/(2*cols)
+            points.append((inner[0]+(outer[0]-inner[0])*(1-math.cos(angle)),
+                           inner[1]+(outer[1]-inner[1])*(1-math.cos(angle)),
+                           inner[2]+(outer[2]-inner[2])*math.sin(angle)))
+    return points
+
+
+def wing_fillet_rise_allowance(distance):
+    """Greatest height of the fillet above the wing upper skin at this span station. The crest is
+    WING_FILLET_RISE above the skin at the 0.56 m station it is lofted from; inboard of that the
+    skin itself is lower by the dihedral, and the fillet follows the fuselage side down to it."""
+    return WING_FILLET_RISE+math.tan(math.radians(FACTS['dihedral']))*max(0.,.56-distance)
+
+
+def wing_fillet_envelope_violations(points, side, tolerance=WING_FILLET_TOLERANCE_M[0]):
+    """Vertices of a fillet that leave the wing/fuselage envelope it must stay inside.
+
+    The envelope is the wing's own planform and section: chordwise within the fillet's chord
+    fractions, spanwise on the correct side from the fuselage out to the fillet reach, and
+    vertically between the wing upper skin and the rise allowance above it. A vertex below the
+    upper skin would hide inside the wing; above the rise, or outside the planform or reach, it
+    would stick out as a block. Body axes, z down."""
+    bad=[]
+    for x,y,z in points:
+        distance=abs(y)
+        if y*side<0:
+            bad.append(((x,y,z),'wrong side of the aircraft'));continue
+        chord=wing_chord(distance)
+        u=(-1.05-WING_SWEEP*distance-x)/chord
+        margin=tolerance/chord
+        if not WING_FILLET_U[0]-margin<=u<=WING_FILLET_U[1]+margin:
+            bad.append(((x,y,z),'outside the wing chord range'));continue
+        if distance>WING_FILLET_BASE_DISTANCE+WING_FILLET_REACH+tolerance:
+            bad.append(((x,y,z),'beyond the fillet reach'));continue
+        upper=wing_point(distance,min(max(u,0.),1.),side)[2]
+        if z>upper+tolerance:bad.append(((x,y,z),'below the wing upper skin'))
+        elif z<upper-wing_fillet_rise_allowance(distance)-tolerance:bad.append(((x,y,z),'above the fillet rise'))
+    return bad
+
+
+def wing_fillet_check(mesh_points, lod):
+    """Exported-GLB acceptance gate for the fillets (absent in synthetic test files)."""
+    report={}
+    for side,label in ((-1,'left'),(1,'right')):
+        points=mesh_points.get('wing_fillet_'+label)
+        if not points:continue
+        bad=wing_fillet_envelope_violations(points,side,WING_FILLET_TOLERANCE_M[min(lod,2)])
+        assert not bad, ('wing fillet leaves the wing/fuselage envelope','wing_fillet_'+label,len(bad),bad[:3])
+        zs=[p[2]-wing_point(abs(p[1]),min(max((-1.05-WING_SWEEP*abs(p[1])-p[0])/wing_chord(abs(p[1])),0.),1.),side)[2] for p in points]
+        report['wing_fillet_'+label]=dict(vertices=len(points),max_rise_above_wing_m=-min(zs),
+                                          tolerance_m=WING_FILLET_TOLERANCE_M[min(lod,2)])
+    return report
 
 
 def gear_sections(index, x, y, z):
@@ -504,6 +586,7 @@ def validate_glb(path, lod, check_canopy=True):
         visit(i, [0, 0, 0])
     clearance,swept_x=canopy_clearance(mesh_points,mesh_faces,moving_names) if check_canopy else (None,None)
     hardware=canopy_hardware_check(mesh_points,mesh_faces,moving_names) if check_canopy else None
+    fillets=wing_fillet_check(mesh_points,lod)
     assert triangles <= BUDGETS[lod], (lod, triangles, BUDGETS[lod])
     dimensions = [hi[k]-lo[k] for k in range(3)]
     for actual, wanted in zip(dimensions, [FACTS['length'], FACTS['span'], FACTS['height']]):
@@ -524,7 +607,7 @@ def validate_glb(path, lod, check_canopy=True):
         assert png[:8] == b'\x89PNG\r\n\x1a\n'
         assert struct.unpack_from('>II', png, 16) == (TEXTURE_SIZE, TEXTURE_SIZE)
     assert len(data) <= 64*1024*1024
-    return dict(file=path.name, canopy_hardware=hardware, canopy_clearance_m=clearance, canopy_travel_m=CANOPY_TRAVEL_M, canopy_swept_x_m=swept_x, triangles=triangles, dimensions_m=dimensions,
+    return dict(file=path.name, wing_fillets=fillets, canopy_hardware=hardware, canopy_clearance_m=clearance, canopy_travel_m=CANOPY_TRAVEL_M, canopy_swept_x_m=swept_x, triangles=triangles, dimensions_m=dimensions,
                 bounds_body_m=dict(min=lo,max=hi),bounds_nodes_body=bounds_nodes,
                 nodes=len(names),images=len(images),bytes=len(data), sha256=hashlib.sha256(data).hexdigest(),
                 mesh_triangles=dict(sorted(mesh_triangles.items(), key=lambda row: (-row[1], row[0]))))
@@ -816,6 +899,7 @@ def build(out):
     hull=BVHTree.FromPolygons([v.co.copy() for v in fuselage.data.vertices],
                              [list(p.vertices) for p in fuselage.data.polygons])
     interior_reports={}
+    fillet_checks={}
     def check_interior(objects,label):
         bpy.context.view_layer.update();checked={};bad=[]
         for obj in objects:
@@ -972,24 +1056,21 @@ def build(out):
                    WING_ROOT_Z-start*math.tan(math.radians(FACTS['dihedral']))-.012*wing_chord(start)*sin(pi*.73))
             foil(name+'_'+label,**common,start=start,end=end,fraction=(.734,1),pivot=hinge)
         foil('wingtip_'+label,**common,start=span-WING_TIP_PANEL,tip_cap=True)
-        # Saddle tangent to the fuselage side and upper airfoil, ending before the flap hinge.
-        points=[];faces=[];rows=24;cols=8
-        for i in range(rows+1):
-            u=.012+.704*i/rows;blend=sin(pi*i/rows)**.7
-            xx,yy,zz=wing_point(.56,u,side)
-            start_z=zz-.055*blend
+        # Thin saddle tangent to the fuselage side and upper airfoil, ending before the flap hinge.
+        def hull_hit(xx,start_z,side=side):
             hit=hull.ray_cast(Vector(body((xx,side*2,start_z))),Vector(body((0,-side,0))))
-            if hit[0] is None:raise RuntimeError('Wing fillet missed closed fuselage at '+str((xx,start_z)))
-            inner=body(hit[0]);end_distance=max(abs(inner[1])+.012,.57+.19*blend)
-            outer=wing_point(end_distance,u,side)
-            for j in range(cols+1):
-                angle=j*pi/(2*cols)
-                points.append((inner[0]+(outer[0]-inner[0])*(1-cos(angle)),
-                               inner[1]+(outer[1]-inner[1])*(1-cos(angle)),
-                               inner[2]+(outer[2]-inner[2])*sin(angle)))
+            return None if hit[0] is None else body(hit[0])
+        points=wing_fillet_points(side,hull_hit)
+        cols=WING_FILLET_COLS;rows=WING_FILLET_ROWS;faces=[]
         for i in range(rows):
             for j in range(cols):
                 a=i*(cols+1)+j;faces.append((a,a+1,a+cols+2,a+cols+1))
+        # The fillet must stay inside the wing/fuselage envelope, and out of the fuselage shell.
+        envelope=wing_fillet_envelope_violations(points,side)
+        buried=[p for p in points if (lambda hit:hit[0] is not None and (Vector(body(p))-hit[0]).dot(hit[1])<-.003)(hull.find_nearest(Vector(body(p))))]
+        fillet_checks['wing_fillet_'+label]=dict(vertices=len(points),envelope_violations=len(envelope),
+                                                 inside_fuselage=len(buried),max_rise_m=WING_FILLET_RISE,reach_m=WING_FILLET_REACH)
+        if envelope or buried:raise RuntimeError('Wing fillet envelope failed: '+json.dumps(dict(envelope=envelope[:4],buried=buried[:4])))
         fillet=mesh('wing_fillet_'+label,points,faces,wing_paint)
         skin=fillet.modifiers.new('Fillet sheet thickness','SOLIDIFY');skin.thickness=.0015
         foil('stabilizer_'+label,FACTS['tail_span']/2,.84,.56,-4.95,-.13,side,fraction=(0,.486))
@@ -1425,7 +1506,7 @@ def build(out):
     bpy.context.view_layer.update()
     bpy.ops.wm.save_as_mainfile(filepath=str(out/'sling2-exterior.blend'))
     report=dict(blender=bpy.app.version_string,source_sha256=hashlib.sha256(Path(__file__).read_bytes()).hexdigest(),registration=REGISTRATION_TEXT,facts=FACTS,lods=reports,textures=TEXTURE_SIZE,
-                cameras=cameras,coordinate_conversion='proper rotation: x,-y,-z; no reflection',geometry_revision=GEOMETRY_REVISION,
+                cameras=cameras,coordinate_conversion='proper rotation: x,-y,-z; no reflection',geometry_revision=GEOMETRY_REVISION,wing_fillet=dict(build_checks=fillet_checks,exported=[r['wing_fillets'] for r in reports],rise_m=WING_FILLET_RISE,reach_m=WING_FILLET_REACH),
                 canopy=dict(node='canopy_slide',axis_body=[-1,0,0],travel_m=CANOPY_TRAVEL_M,travel_source='estimate; POH 7.7 gives no travel',
                             clearance_checks=[dict(lod=i,clearance_m=r['canopy_clearance_m']) for i,r in enumerate(reports)],
                             hardware_checks=[r['canopy_hardware'] for r in reports],meridian_bezier=CANOPY_PROFILE),

@@ -73,7 +73,7 @@ def main():
     manifest=json.loads((root/'pack.json').read_text())
     entries=[i for i,value in enumerate(manifest['exterior']) if value['aircraft']==definition['aircraft']]
     assert len(entries)==1
-    manifest['format_version']=3
+    manifest['format_version']=max(int(manifest.get('format_version',1)),3)
     manifest['version']='0.4.0'
     manifest['exterior'][entries[0]]=definition
     systems=json.loads((root/'systems.json').read_text())

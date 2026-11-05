@@ -1,28 +1,28 @@
 {
-  "before_glb_bytes": 60498844,
+  "before_glb_bytes": 60298508,
   "models": {
-    "exterior.glb": 3786656,
-    "exterior-lod1.glb": 944952,
-    "exterior-lod2.glb": 376444
+    "exterior.glb": 3783756,
+    "exterior-lod1.glb": 946516,
+    "exterior-lod2.glb": 379076
   },
   "textures": {
-    "textures/exterior/shared-805d5ea28bf4a563.png": 282920,
-    "textures/exterior/shared-65d51136bbdddcdc.png": 4738251,
-    "textures/exterior/shared-58194a864ba60050.png": 11495785,
-    "textures/exterior/shared-f61ea41abddfaae9.png": 1945706
+    "textures/exterior/shared-d6068808c5c6df10.png": 284909,
+    "textures/exterior/shared-e8d81720c1a5763e.png": 4704489,
+    "textures/exterior/shared-e0a4bce7f1b4ee6a.png": 11489128,
+    "textures/exterior/shared-c1931ce41ee10a77.png": 1916926
   },
-  "after_download_bytes": 23570714,
-  "geometry_and_image_bytes_identical_to": "9d0305d5985938f0b13a36eba74619c64e5df1f0a7be7c7e42acef218ebb2296",
-  "geometry_revision": "v11-pilot-seat-interior",
+  "after_download_bytes": 23504800,
+  "geometry_and_image_bytes_identical_to": "895f1a9c676240f1a0bd5a65633cd8db119bdc4d498a2e9f4fdd15f0c678f886",
+  "geometry_revision": "v13-thin-wing-fillet",
   "model_sha256": {
-    "exterior.glb": "163dad307ea60646536f6c337a047cd75aa4f33b67919a5ccc2e8e47d326696d",
-    "exterior-lod1.glb": "0b475555e4b07f0981cf064614c4c9bc910d67cc5d9b48a0d8d9228f2825108c",
-    "exterior-lod2.glb": "91c0ec41fcafae2d11b07b83e576ed20e778558038be79c83fe9d9881400181a"
+    "exterior.glb": "43cb6fa05c89c4d2a63f03d20adb3ff47655291e02ae4f7de5c013feaa3cb9d1",
+    "exterior-lod1.glb": "0b09257dcc8d83c8e99189e49255b783d00685d455bcfd881c69317e6499dbe4",
+    "exterior-lod2.glb": "2276a7162ff9807e303ad8591eb5db4d8ea0645cae02299b3e1f7cf97da45ffa"
   },
   "texture_sha256": {
-    "textures/exterior/shared-805d5ea28bf4a563.png": "805d5ea28bf4a5634356ccfaabf1b700cd2ae572a28430300f93fe4b7be8ee9c",
-    "textures/exterior/shared-65d51136bbdddcdc.png": "65d51136bbdddcdc6e68d426f7b8fd1aa3f249cec92eb82b2debb22e2a2b3ea8",
-    "textures/exterior/shared-58194a864ba60050.png": "58194a864ba600502529c05b46ab0041365326d39c6aa3c3d04de89d78aa071f",
-    "textures/exterior/shared-f61ea41abddfaae9.png": "f61ea41abddfaae9c04b90d0bbe69ce7c00f0814d69eb754c56c5f8f0b5b76f4"
+    "textures/exterior/shared-d6068808c5c6df10.png": "d6068808c5c6df10695f704af4fda1dbce112f980026164670cc87ed6d0feb84",
+    "textures/exterior/shared-e8d81720c1a5763e.png": "e8d81720c1a5763e0e1b3a9e6d528930337f6dc05a8a1b6d2f0986b6e506075e",
+    "textures/exterior/shared-e0a4bce7f1b4ee6a.png": "e0a4bce7f1b4ee6af2502a718c7de27a05a4958ea1ab2b99730efe4bb728ba79",
+    "textures/exterior/shared-c1931ce41ee10a77.png": "c1931ce41ee10a77435d92e0dc28297bbb75ea264b028f457c88277780eeecb4"
   }
 }

@@ -13,19 +13,19 @@ std::collections::BTreeMap::from([
         include_bytes!("../exterior-lod2.glb").to_vec(),
     ),
     (
-        "textures/exterior/shared-58194a864ba60050.png".to_owned(),
-        include_bytes!("../textures/exterior/shared-58194a864ba60050.png").to_vec(),
+        "textures/exterior/shared-c1931ce41ee10a77.png".to_owned(),
+        include_bytes!("../textures/exterior/shared-c1931ce41ee10a77.png").to_vec(),
     ),
     (
-        "textures/exterior/shared-65d51136bbdddcdc.png".to_owned(),
-        include_bytes!("../textures/exterior/shared-65d51136bbdddcdc.png").to_vec(),
+        "textures/exterior/shared-d6068808c5c6df10.png".to_owned(),
+        include_bytes!("../textures/exterior/shared-d6068808c5c6df10.png").to_vec(),
     ),
     (
-        "textures/exterior/shared-805d5ea28bf4a563.png".to_owned(),
-        include_bytes!("../textures/exterior/shared-805d5ea28bf4a563.png").to_vec(),
+        "textures/exterior/shared-e0a4bce7f1b4ee6a.png".to_owned(),
+        include_bytes!("../textures/exterior/shared-e0a4bce7f1b4ee6a.png").to_vec(),
     ),
     (
-        "textures/exterior/shared-f61ea41abddfaae9.png".to_owned(),
-        include_bytes!("../textures/exterior/shared-f61ea41abddfaae9.png").to_vec(),
+        "textures/exterior/shared-e8d81720c1a5763e.png".to_owned(),
+        include_bytes!("../textures/exterior/shared-e8d81720c1a5763e.png").to_vec(),
     ),
 ])
