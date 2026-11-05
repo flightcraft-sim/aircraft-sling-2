@@ -2170,6 +2170,18 @@
       "value": 0,
       "source": "engine_shutdown"
     },
+    "/definition/modern/annunciations/7/threshold": {
+      "value": 80000,
+      "source": "BRP-Rotax OM-912 i Ed. 2 Rev. 0, section 2.1 (p. 2-3); minimum oil pressure 0.8 bar below 3500 rpm."
+    },
+    "/definition/modern/annunciations/8/threshold": {
+      "value": 130,
+      "source": "Sling 2 POH Rev 2.8, section 9.4.1; BRP-Rotax OM-912 i Ed. 2 Rev. 0, section 2.1; maximum oil temperature 130 C."
+    },
+    "/definition/modern/annunciations/9/threshold": {
+      "value": 0,
+      "source": "cowl_vibration"
+    },
     "/definition/modern/backup_buses/0/capacity_ah": {
       "value": 2,
       "source": "estimate: original engineering or installation assumption; see docs/estimates.md"
