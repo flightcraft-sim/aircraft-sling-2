@@ -411,6 +411,24 @@
           "severity": "warning",
           "label": "SHUT DOWN ENGINE",
           "threshold": 0
+        },
+        {
+          "source": "low_oil_pressure",
+          "severity": "warning",
+          "label": "OIL PRESSURE",
+          "threshold": 80000
+        },
+        {
+          "source": "high_oil_temperature",
+          "severity": "warning",
+          "label": "OIL TEMP",
+          "threshold": 130
+        },
+        {
+          "source": "cowl_vibration",
+          "severity": "caution",
+          "label": "COWL VIBRATION",
+          "threshold": 0
         }
       ],
       "backup_buses": [

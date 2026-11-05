@@ -129,15 +129,30 @@ fn render_panel_previews() -> Result<(), Error> {
         Ok(())
     })?;
     image.save(output.join("in-flight-panel.png"))?;
-    for (id, x, y, w, h) in [
-        ("pfd", 248, 308, 424, 308),
-        ("mfd", 1062, 308, 424, 308),
-        ("navigator", 745, 382, 235, 98),
-        ("autopilot", 742, 485, 243, 77),
+    // The panel layer now holds the centre console and floor below the dash, so the whole panel is
+    // fitted into the frame at its own scale; crops follow the engine's transform rather than the
+    // reference photograph's frame.
+    let equipment = config.panel.equipment.as_ref().ok_or("missing equipment")?;
+    let [left, top, scale] =
+        flightcraft_ui::panel_preview::equipment_transform(equipment, 1728, 968)?;
+    for (name, id, pad) in [
+        ("pfd", "left_display", 0.),
+        ("mfd", "right_display", 0.),
+        ("navigator", "navigator", 0.),
+        ("autopilot", "autopilot", 0.),
     ] {
+        let e = equipment
+            .elements
+            .iter()
+            .find(|e| e.id == id)
+            .ok_or("missing unit")?;
+        let x = (left + e.position[0] * scale - pad).max(0.).round() as u32;
+        let y = (top + e.position[1] * scale - pad).max(0.).round() as u32;
+        let w = ((e.size[0] * scale + 2. * pad).round() as u32).min(1728 - x);
+        let h = ((e.size[1] * scale + 2. * pad).round() as u32).min(968 - y);
         image::imageops::crop_imm(&image, x, y, w, h)
             .to_image()
-            .save(output.join(format!("in-flight-{id}.png")))?;
+            .save(output.join(format!("in-flight-{name}.png")))?;
     }
     Ok(())
 }

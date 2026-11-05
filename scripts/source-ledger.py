@@ -41,7 +41,7 @@ for index in [3, 4]:
 for index in [0, 1]:
     rules['systems.json'][f'/definition/tanks/{index}/capacity_kg'] = poh('1.4') + '; estimate: 75 l at 0.72 kg/l.'
     rules['systems.json'][f'/definition/tanks/{index}/unusable_kg'] = poh('1.4') + '; estimate: 2 l per tank at 0.72 kg/l.'
-for index, note in [(1, poh('9.4.1') + '; minimum fuel pressure.'), (3, poh('9.4.1') + '; maximum coolant temperature.')]:
+for index, note in [(1, poh('9.4.1') + '; minimum fuel pressure.'), (3, poh('9.4.1') + '; maximum coolant temperature.'), (7, 'BRP-Rotax OM-912 i Ed. 2 Rev. 0, section 2.1 (p. 2-3); minimum oil pressure 0.8 bar below 3500 rpm.'), (8, poh('9.4.1') + '; BRP-Rotax OM-912 i Ed. 2 Rev. 0, section 2.1; maximum oil temperature 130 C.'), (9, 'cowl_vibration')]:
     rules['systems.json'][f'/definition/modern/annunciations/{index}/threshold'] = note
 rules['systems.json'].update({
     '/preflight': 'estimate: positions are read from the exterior model and walking pace is a simulation choice; see docs/estimates.md (pre-flight walkaround). The list itself is POH 4.4.',
